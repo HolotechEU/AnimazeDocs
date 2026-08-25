@@ -1,0 +1,15 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+.sass-cache/
+__pycache__/
+*.pyc
+corp-ca-bundle.pem
+.claude/
+run-jekyll.cmd
+main.py
+requirements.txt
+Gemfile
+Gemfile.lock

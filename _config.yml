@@ -1,0 +1,28 @@
+title: Animaze
+description: Animaze FAQ and Manual
+baseurl: "/AnimazeDocs"
+url: "https://holotecheu.github.io"
+
+markdown: kramdown
+theme: null
+
+plugins:
+  - jekyll-redirect-from
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+collections_dir: .
+
+exclude:
+  - main.py
+  - requirements.txt
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - corp-ca-bundle.pem
+  - run-jekyll.cmd

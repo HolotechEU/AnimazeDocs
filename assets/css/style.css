@@ -1,0 +1,214 @@
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --link: #2563eb;
+  --card-bg: #f9fafb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a { color: var(--link); }
+
+img { max-width: 100%; height: auto; }
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.site-header .brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--fg);
+  flex-shrink: 0;
+}
+.site-header nav {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.site-header nav a {
+  margin-left: 1.25rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-search {
+  position: relative;
+  flex: 1 1 220px;
+  max-width: 320px;
+}
+.site-search input[type="search"] {
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--fg);
+  font-size: 0.9rem;
+}
+.site-search input[type="search"]:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 1px;
+}
+.search-results {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-height: 60vh;
+  overflow-y: auto;
+  z-index: 20;
+}
+.search-result {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  text-decoration: none;
+  color: var(--fg);
+  border-bottom: 1px solid var(--border);
+}
+.search-result:last-child { border-bottom: none; }
+.search-result:hover,
+.search-result.is-active {
+  background: var(--card-bg);
+}
+.search-result-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.search-result-snippet {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-empty {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+main.wrap {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  min-height: 60vh;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.site-footer .wrap {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.home-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.home .card {
+  display: block;
+  flex: 1 1 200px;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  text-decoration: none;
+  color: var(--fg);
+}
+.home .card h2 {
+  margin: 0 0 0.4rem;
+  color: var(--link);
+}
+.home .card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.page h2 {
+  font-weight: 300;
+  font-size: 2.25rem;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+.page h2:first-child { margin-top: 0; }
+
+/* Category/section headers on FAQ & manual listing pages are always
+   immediately followed by their question list — that structural pattern
+   (rather than a class we'd have to preserve through Markdown) is what
+   distinguishes them from an ordinary in-article subheading. */
+.page h3:has(+ ul) {
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.page ul li {
+  margin-bottom: 0.5rem;
+}
+
+.category-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+pre, code {
+  background: var(--card-bg);
+  border-radius: 4px;
+}
+pre {
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+}
+code { padding: 0.15rem 0.35rem; }
+pre code { padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}

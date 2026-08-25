@@ -1,0 +1,23 @@
+---
+layout: page
+title: "トラッキングデータに連動したアニメーション要素を持つバックドロップの作成方法"
+source_url: https://www.animaze.us/manual/gettingstartedbackgroundsjpn/jpntrackingdatabackground
+---
+
+# トラッキングデータに連動したアニメーション要素を持つバックドロップの作成方法
+
+## ![Background with overlays]({{ '/assets/images/image001-2aacecf5.png' | relative_url }} "Create a backdrop with animated elements "){: width="800" height="684"}
+
+これは、[スタティック2D背景]({{ '/manual/gettingstartedbackgrounds/2doverlay/' | relative_url }})と同じですが、スカイボックス2Dのインポートウィンドウやシーンの「2Dオーバーレイ」アイテムで2D画像を読み込む代わりに、Live2Dモデルを選択することができます。
+
+画像として読み込むLive2Dモデルにはどれも、階層パネル上に「Live2D拡張」のサブアイテムが表示されます。このサブアイテムのプロパティで、Live2DモデルをフルLive2Dアバターのように設定することができ、挙動をトラッキング・データに紐づけできます。Live2Dアバターの設定に関する詳細な情報は、[こちら]({{ '/manual/gettingstarted2d/createyourown/' | relative_url }})でご覧ください。
+
+このようなLive2Dアセットについての詳細は、こちらの[サンプルモデル](https://s3.amazonaws.com/animaze.us/Animated+Backgrounds+and+Overlays+Sources.zip)を参照してください。
+
+### オーバーレイを含む背景
+
+- [オーバーレイを含む背景（2D）]({{ '/manual/gettingstartedbackgroundsjpn/jpnbackgroundwoverlays/' | relative_url }})
+- [オーバーレイを含むシンプルなスタティックの2D背景の作成方法。]({{ '/manual/gettingstartedbackgroundsjpn/jpn2doverlay/' | relative_url }})
+- [ループするアニメーション背景の作成方法]({{ '/manual/gettingstartedbackgroundsjpn/jpnloopingbackground/' | relative_url }})
+- [トラッキングデータに連動したアニメーション要素を持つバックドロップの作成方法]({{ '/manual/gettingstartedbackgroundsjpn/jpntrackingdatabackground/' | relative_url }})
+- [キーバインドでトリガーされたアニメーション化された要素のあるバックドロップの作成方法]({{ '/manual/gettingstartedbackgroundsjpn/jpnbackgroundtrigger/' | relative_url }})
