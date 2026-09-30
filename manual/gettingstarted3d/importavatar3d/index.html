@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import a 3D avatar &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Import a 3D avatar</h1>
+<div class="aw-page-container">
+<p></p><p>In this guide, we will use the source files of a test avatar, named <strong>AvatarFrogTest</strong>, that you can <a href="https://s3.amazonaws.com/animaze.us/Animaze+Editor+Sample+Assets.zip"><b>download here</b></a>. The sample folder contains 2 directories (<strong>Animations</strong>, <strong>Textures</strong>) and the *<strong>.fbx</strong> file exported from the modeling software the avatar was created in.</p>
+<p><strong>Note that this files folder structure is mandatory for the import process:</strong></p>
+<p>1. <strong>*.fbx</strong> geometry name the same as the folder name</p>
+<p>2. <strong>Textures</strong> (.tga, .png, .jpg files) go in Textures/ folder</p>
+<p>3. <strong>Animations </strong>(skeletal animations exported as solo<strong> .fbx</strong> files)</p>
+<p> </p>
+<p>To ease asset management and make it clear what each asset's role is (i.e. avatar, prop or background), we are using a simple naming convention system that prefixes the asset type to the name of the assets. Here are the three examples:</p>
+<p>* <strong>Avatar</strong>Name - for avatars</p>
+<p>* <strong>Prop</strong>Name - for props</p>
+<p>* <strong>Background</strong>Name - for backgrounds</p>
+<p> </p>
+<p>Now follow these steps to begin importing your model:</p>
+<p>1. Download the AvatarFrogTest archive using the provided link  above and extract the files inside.</p>
+<p>2. Open the Animaze Editor, navigate to <strong>Assets</strong> and select <strong>Import 3D Object</strong>.</p>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="534" src="../../../assets/images/1-4f5a6927.png" title="Learn how to use Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p>3. Open the model's geometry file, the <strong>.fbx</strong> file, from the location you downloaded the files. </p>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="534" src="../../../assets/images/2-0046c699.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p>4. The following window prompts you to select the files you want to import. If this is your first time importing a specific model, make sure all the files are marked and select the item type from the dropdown list before clicking <strong>Import</strong>.</p>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/3-c99f690f.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p></p>
+<p>5. A report of<strong> Import issues</strong> will be displayed after the Animaze Editor checks the files for issues. The warning system checks for skeletal animations. The frog has both skeletal and blendshape animations.</p>
+<p>The <strong>Required animation not found</strong> will be displayed when the corresponding skeletal animation is not found in the source files. This warning will trigger even if there is a valid Blendshape that fills the role of the missing skeletal animation. When using blendshapes instead of animations, that warning message can be ignored, like in this case. Click <strong>X</strong> to dismiss the window.</p>
+<p>The avatar will still be functional using only the animation found at import.</p>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/4-6302b190.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p></p>
+<p>6. Next there's a verbose log that gets prompted for every import, hit the <strong>Ok</strong> button to dismiss. As you work on more complicated models, these logs will surface errors and help you with debugging.</p>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/5-5ee1f4f7.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p></p>
+<p>7. Once the avatar is imported, it will be visible in the <strong>Viewport</strong>. Click on it in the <strong>Hierarchy Panel</strong> to display its details (icon, type, name, position etc) in the <strong>Editor Panel</strong> (right side).</p>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/6-434e5ba4.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p></p>
+<p>8.<b> Save item </b>in the <b>Hierarchy Panel </b>as a final step.</p>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="534" src="../../../assets/images/save_item-27f6b163.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p><span id="docs-internal-guid-89ab2b32-7fff-3277-0501-de5023d6640a" style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"></span></p>
+<p><span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"></span></p>
+<p>That’s it, the import is done. :)</p>
+<p><span id="docs-internal-guid-89ab2b32-7fff-3277-0501-de5023d6640a" style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><br/></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing FBX Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../howtousethedocumentation/index.html">
+                    Steps in creating your own 3D avatar                </a>
+</li>
+<li>
+<a href="../animaze3d/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="index.html">
+                    Import a 3D avatar                </a>
+</li>
+<li>
+<a href="../customizationoptions3d/index.html">
+                    Add customization options on an avatar                </a>
+</li>
+<li>
+<a href="../importtowindows/index.html">
+                    Bundle a 3D avatar into a .avatar file                </a>
+</li>
+<li>
+<a href="../changeavatardetails3d/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../avatarspecialactions/index.html">
+                     How to configure avatar Special Actions                </a>
+</li>
+<li>
+<a href="../frameavatar3d/index.html">
+                    Frame the avatar for the iOS App                </a>
+</li>
+<li>
+<a href="../3dgettingstarted/index.html">
+                    Import a 3D Prop                </a>
+</li>
+<li>
+<a href="../sendavatar3d/index.html">
+                    Send your .avatar file to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="../sendavatar3dw/index.html">
+                    Send your .avatar file to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../sendavatar3df/index.html">
+                    Send your .avatar file to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../troubleshootandsupport3deditor/index.html">
+                    Troubleshoot &amp; Support                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

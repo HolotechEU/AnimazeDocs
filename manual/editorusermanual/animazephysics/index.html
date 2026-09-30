@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Physics &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animaze Physics</h1>
+<div class="aw-page-container">
+<p></p><p></p>
+<p>To have convincing physical behavior, an object must accelerate correctly and be affected by collisions, gravity, and other forces. With just a few parameter settings, you can create objects that behave passively in a realistic way.</p>
+<p>The simulation is done with the help of the open-source physics simulation Bullet Physics SDK v2.83. and makes use of Rigid Bodies, Colliders and Constraints.</p>
+<p>What Bullet provides is a simulation world in which we can create rigid bodies and constrain them if needed to achieve whatever effect you want for your character.</p>
+<p></p>
+<p><span style="font-size: medium;"><b>Rigid bodies and Colliders</b></span></p>
+<p><b>Rigid Body -</b> Simulates single 6-degree of freedom moving objects. It has a world transform, friction, restitution, linear and angular velocity or damping. Each rigid body is attached to a skinned bone.</p>
+<p>A common rigid body is dynamic because it has a specified mass and is thus affected by gravity (the bone follows the rigid body), but it can also have a mass of 0.0, which makes it kinematic, meaning that it’s not affected by gravity (the rigid body follows the bone).</p>
+<p><b>Collider – </b>describes the collision shape of a Rigid Body, such as box, sphere, convex hull or triangle mesh. In our use case all rigid bodies will have a collision shape attached to them, even if we want the Rigid Body to have no collisions with any other rigid body. Since we have a 1 to 1 relationship between rigid bodies and colliders, we can use the name interchangeably.</p>
+<p></p>
+<p><span style="font-size: small;"><b></b></span></p>
+<p><span style="font-size: small;"><b></b></span></p>
+<p><span style="font-size: small;"><b>Common Collider Properties</b></span></p>
+<p><img alt="Animaze Physics" height="377" src="../../../assets/images/index1-ec53a3cf.png" style="display: block; margin-left: auto; margin-right: auto; float: left;" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b>1. World Position and Rotation</b> <b>[-∞, ∞]</b> – represents the position and rotation(degrees) of the collider in world coordinates.</p>
+<p><b>2. Linear and angular velocity [-∞, ∞] </b>–<b> </b>represents the current velocity of the collider. These values are for debug purposes and should not be edited directly.</p>
+<p><b>3. Attach position and rotation</b> <b>[-∞, ∞]</b> – appears only if a collider is attached to a bone. They represent the offset position and rotation (degrees) from the bones’ transformation.</p>
+<p><b>4. External force [-∞, ∞] – </b>a custom force that is applied constantly to the collider. Used to create physics setups that would otherwise not be possible (ex. we can create an inverted pendulum by applying an upwards force that is stronger than gravity to the swinging end of the pendulum).</p>
+<p><b>5. Mass [0, ∞] </b>– represents the rigid body's mass in kilograms. It is limited from 0 to 10,000 Kg although, it isn’t recommended</p>
+<p></p>
+<p><span style="font-size: medium;"><b>Kinematic vs. Dynamic</b></span></p>
+<p>Based on the mass of a collider, it can be either Dynamic or Kinematic:</p>
+<p><b>A)</b> <b>Mass = 0 </b>→ collider is <b>Kinematic</b>, which means that the collider will follow the bone to which it is attached to, put simply, <b>the collider follows the bone.</b></p>
+<p><b>B)</b> <b>Mass &gt; 0</b> → collider is <b>Dynamic</b>, which means that the bone will follow the collider that is attached to it, put simply, <b>the bone follows the collider.</b></p>
+<p>The UI shows whether a collider is kinematic by the row with a disabled checkbox, if it is checked it is kinematic, otherwise it is dynamic.</p>
+<p>If a Kinematic Node is left unattached to a bone, it will rest at its current position and although it will collide with other colliders, it will remain “untouched” as it doesn’t take any forces or impulses from other collisions and will remain perfectly still where it was last positioned.</p>
+<p>6.<b> Restitution [0, 1]</b> – represents the elasticity of collisions with the collider, where 0 means it will not bounce at all, and 1 means it will bounce in its collisions with the same force that it entered the collision.</p>
+<p>7.<b> Apply Linear / Angular Motion</b> – based on whether the option is checked or not, it will apply the motion of the Collider to the Bone. It is sometimes useful if you are interested in applying only one of the two types of motion to the bone.</p>
+<p>8. <b>Linear / Angular Damping [0, 1]</b> – represents the amount of damping to be applied to the linear/angular motions of this collider, where the value 1 means, the collider will try to stop from moving/rotating and 0 means no damping is applied at all.</p>
+<p>9.<b> Radius [0,01, ∞]</b> – in this case, the collider is a Sphere Collider which also comes with a Radius parameter to scale the size of the sphere. A box collider will have the length of one side to determine its size</p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Collider Types</b></span></p>
+<p>Currently, Animaze supports only one type of collider, which is a <b>Sphere Collider</b> along with the <b>Empty Collider</b>, which has no collision detection and only simulates a physical object.</p>
+<ul>
+<li><b>Empty Collider</b> – has no collision shape and as such, it doesn’t collide with any other object.</li>
+</ul>
+<ul>
+<li><b>Sphere Collider</b> – has the collision shape of a sphere with its center in the position of the rigid body and a radius that describes its size.</li>
+</ul>
+<ul>
+<li><b>Box Collider </b><i>– </i>has the collision shape of a cuboid with editable width, height and length.</li>
+</ul>
+<ul>
+<li><b>Mesh Collider</b> <i>–</i> has the collision shape of convex hull. It is defined through a .obj file that is provided. For good performance It is recommended that the shape does not have more than 30-40 vertices. Such a collision shape is often used to prevent other colliders from entering it (ex. a mesh collider placed on the shoulder of a character so the colliders on its hair don’t go through it).</li>
+</ul>
+<ul>
+<li><i>Capsule Collider – not yet available</i></li>
+</ul>
+<ul>
+<li><i>Cylinder Collider – not yet available</i></li>
+</ul>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Constraints</b></span></p>
+<p>Constraints are Bullet’s way of tying two Rigid Bodies together in order to create various kinds of behavior between the two constraint bodies (ex. Springs, Hinges, Cone twist etc.). They are very powerful in terms of possibilities with lots of parameters and can be quite difficult to grasp.</p>
+<p>Currently, we support two of the most powerful type of constraints implemented, the <b>Cone Twist Constraint</b> as well as the <b>6 Degrees of Freedom Constraint</b>, which is the most versatile one.</p>
+<p><img height="63" src="../../../assets/images/0-2e96f9f6.png" style="display: block; margin-left: auto; margin-right: auto;" width="431"/></p>
+<p></p>
+<p><span style="font-size: medium;"><b>Adding new Constraints </b></span></p>
+<p><img alt="Animaze Physics" height="276" src="../../../assets/images/index2-cb37fa2a.png" style="display: block; margin-left: auto; margin-right: auto; float: left;" title="Animaze Physics" width="400"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b>Constraints can be found by selecting any Collider </b>and scrolling to its <b>“Constraints” Section</b>.</p>
+<p>By selecting any Collider, you will be able to see all the Constraints that affect that particular collider. This effectively means that you can find a constraint by selecting either of the affected Colliders</p>
+<p><b>The order in which Colliders are selected for the Constraint matters! </b>Selecting <b>Collider A</b> in the UI and then for the other collider, selecting <b>Collider B </b>yields different results than doing <b>B </b>first and <b>A </b>second, in the sense that some constraint parameters will need to have different values based on the order of colliders chosen, to achieve the exact same result. As such, as a <b>rule of thumb, try to build your physics systems from the inside of the character towards the outside.</b></p>
+<p>Here you will have to choose the type of Constraint you would like to add as well as the other Collider you want to be involved in this new Constraint you are adding.</p>
+<p><b>Modifying Constraint Properties</b></p>
+<p><img alt="Animaze Physics" height="59" src="../../../assets/images/index3a-5fd97a1f.png" style="display: block; margin-left: auto; margin-right: auto; float: left;" title="Animaze Physics" width="261"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b>Animaze Editor</b> can Pause / Play the physics in order to keep the colliders in the same place while modifying properties to constraints and colliders alike. Although possible to modify constraints while the simulation is running, it is <b>highly</b> inadvisable to do so, as constraints in particular act differently based on how they are configured.</p>
+<p>This system works much better if you modify the physics in the paused mode, saving on each step and playing to see that the results are what you expected.</p>
+<p>I would also like to point out that <b>some constraint configurations are very unstable </b>and that they can <b>break the physics simulation in some cases. </b>Therefore, it is advisable to work in steps and <b>save on each iteration of adding to the physics simulation.</b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Cone Twist Constraint</b></span></p>
+<p>It is a special point to point constraint that adds cone and twist axis limits. The x axis serves as twist axis. This constraint is especially useful if you want to limit a collider to move on the surface of a sphere but limit it to be able to move on a smaller surface than the entire sphere. This constraint can also be used to limit the amount of twist one collider executes from the other, at which point, after exceeding the limit, no longer allowing the bodies to twist, acting like a bar connection.</p>
+<p><img alt="Animaze Physics" height="493" src="../../../assets/images/index3-5a0af062.png" style="display: block; margin-left: auto; margin-right: auto;" title="Animaze Physics" width="400"/></p>
+<p></p>
+<p>The <b>properties</b> of a Cone Twist Constraint are as follows:</p>
+<p><b>1. Type</b> – Specifies the type of Constraint</p>
+<p><b>2. Name</b> – The name of the Constraint</p>
+<p><b>3. Other Collider</b> – The name of the Other Collider involved in the Constraint</p>
+<p><b>4. Frame offset in Collider A / B</b> – The local Frame offset position and rotation for the Collider in which the Constraint will be applied.</p>
+<p></p>
+<p>For <b>Example:</b></p>
+<ul>
+<li>a position of (0, 0, 0) will apply the constraint in the very center of the rigid body</li>
+<li>a position of (1, 0, 0) will apply to 1meter offset on the X axis from the rigid body’s actual position in its local coordinates.</li>
+</ul>
+<p>The position and rotation offsets can help you <b>orientate your constraint </b>in the direction you want.</p>
+<p></p>
+<p><b>5. Compute Frame for Collider A / B</b> – This drop-down will help you compute the frame offset in case you want the offset to place collider A in collider B or vice versa.</p>
+<p>If you select for Collider A to compute the offset such that it lands in Collider A as well, the position and rotation values will be (0, 0, 0) as expected.</p>
+<p><b>6. Swing Span XY</b> [0, 360] – Describes how large of an opening on the sphere, in degrees, the colliders can swing.</p>
+<p>For example:</p>
+<p>       Swing span = <b>0</b> <b>degrees</b>→ the colliders cannot swing at all and are locked in their orientation</p>
+<p>       Swing span = <b>90</b> <b>degrees</b>→ the colliders can swing in a cone of 90 degrees on the surface of the imaginary sphere</p>
+<p>       Swing span = <b>180</b> <b>degrees</b>→ the colliders can swing in a cone of 180 degrees on the surface of the imaginary sphere, which is equal to being allowed to move on only half of the sphere.</p>
+<p></p>
+<p><b>7. Twist Span</b> [0, 360] – Describes how much one collider can rotate with respect to the other collider in degrees, where 0 means no rotation is allowed, 180 means half turn, and 360 means unlocked rotation</p>
+<p><b>8. Softness Factor</b> [0, 1] – Describes the percentage of limits where movement is free. Beyond this softness percentage, the limit is gradually enforced until the "hard" (1.0) limit is reached. Recommended values are from ~0.8 to 1</p>
+<p><b>9. Bias Factor</b> [0, 1] - Strength with which the constraint resists zeroth order (angular, not angular velocity) limit violation. Recommended value 0.3 +/-0.3 or so.</p>
+<p><b>10. Relaxation Factor</b> [0, 1] - The lower the value, the less the constraint will fight velocities which violate the angular limits. Recommended to stay near 1.</p>
+<p></p>
+<p><span style="font-size: medium;"><b>6 Degrees of Freedom Constraint (6DOF)</b></span></p>
+<p>The 6 DOF Constraint is one of the most versatile <span style="font-size: small;">constraints</span> available in bullet as it has individual control across all 6 degrees of freedom. Over each axis it can limit confine its freedom between 2 limits, create a spring or motor, although for now motors are not yet available. This combined with Frame offsets allow for a wide variation of use cases for this type of constraint.</p>
+<p><img alt="Animaze Physics" height="621" src="../../../assets/images/index4-5d0616c2.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p><b>Properties:</b></p>
+<p><b>1. Type – </b>Specifies the type of Constraint</p>
+<p><b>2.Name – </b>The name of the Constraint</p>
+<p><b>3. Other Collider – </b>The name of the Other Collider involved in the Constraint</p>
+<p><b>4. Frame Offset in Collider A / B – </b>The local Frame offset position and rotation for the Collider in which the Constraint will be applied.</p>
+<p>For <b>example</b>:</p>
+<ul>
+<li>a position of (0, 0, 0) will apply the constraint in the very center of the rigid body</li>
+<li>a position of (1, 0, 0) will apply to 1meter offset on the <strong>X</strong> axis from the rigid body’s actual position in its local coordinates.</li>
+</ul>
+<p>The position and rotation offsets can help you orientate your constraint in the direction you want.</p>
+<p><b>5. Compute Frame for Collider A / B – </b>This drop-down will help you compute the frame offset in case you want the offset to place collider A in collider B or vice versa.</p>
+<p>If you select for Collider A to compute the offset such that it lands in Collider A as well, the position and rotation values will be (0, 0, 0) as expected.</p>
+<p><b>6. Spring enabled for axis – </b>Decides whether any of the 6 axis will act as a spring. If disabled, the constraint is hard, otherwise, if it is a spring, based on the stiffness and damping of the spring, it will usually result in a weaker, more elastic constraint on that axis, simulating a spring.</p>
+<p><b>7. Spring stiffness for axis – </b>Sets the strength with which the constraint will try to fight any deviation from the spring equilibrium</p>
+<p><strong>8.</strong><b> Spring Damping for axis [0, 1] – </b>Sets the damping factor with which the forces are applied where 1.0 fully dampens the force and 0.0 applies the force fully.</p>
+<p><strong>9.</strong><b> Lock Translation / Rotation</b> – lock particular degrees of freedom in the constraint.</p>
+<p><strong>10.</strong> <b>Linear and Angular Limits – </b>These limits decide for each axis how much it can travel / rotate based on the following rules:</p>
+<p>For each axis:</p>
+<ul>
+<li>Lowerlimit == Upperlimit → axis is locked.</li>
+<li>Lowerlimit &gt; Upperlimit → axis is free</li>
+<li>Lowerlimit &lt; Upperlimit → axis is limited in that range</li>
+</ul>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Undo/redo functionality for physics objects options</b></span></p>
+<p>All collider or constraint options mentioned previously have undo/redo support by using CTLR-Z and CTRL-Y so trying out different values is not too difficult.</p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Debugging physics setups</b></span></p>
+<p>Whenever we build or debug a physics setup for a character, we need to see colliders, as they are not rendered by default. By selecting the viewport and pressing SHIFT-P repeatedly, we can toggle between three different states:</p>
+<ul>
+<li>a state where colliders are rendered with both a wireframe object and a textured object that will always be rendered on top (no depth check). Useful because most colliders will be attached to bones that are not visible with just the wireframe representation.</li>
+<li>a state where colliders are rendered using only a wireframe object. Useful whenever the textured object is blocking the view on other colliders.</li>
+<li>the default state where colliders aren’t drawn.</li>
+</ul>
+<p><img alt="Animaze Physics" height="634" src="../../../assets/images/index5-ec9d43f4.png" title="Animaze Physics" width="398"/>    <img alt="Animaze Physics" height="634" src="../../../assets/images/index6-d145489b.png" title="Animaze Physics" width="414"/></p>
+<p></p>
+<p><span style="font-size: medium;"><strong>Scaling physics setups</strong></span></p>
+<p data-renderer-start-pos="13742">Constraints and colliders will adjust to scaling (constraints length, colliders shapes) at runtime in two ways: transform scaling that scales the entire character or customization scaling (ex. a customization that scales the avatar’s hair, but in this case only colliders and constraints related to bones affected by the customization will scale). Thus, the physics setup only needs to be done for the default character scale.</p>
+<p data-renderer-start-pos="14170">Avatar at 0.1 scale:</p>
+<p data-renderer-start-pos="14170"><img alt="Animaze Physics" height="260" src="../../../assets/images/index7-c8849281.png" title="Animaze Physics" width="500"/></p>
+<p data-renderer-start-pos="14170"></p>
+<p>Avatar at 0.3 scale:</p>
+<p data-renderer-start-pos="14170"><img alt="Animaze Physics" height="255" src="../../../assets/images/index8-1544586c.png" title="Animaze Physics" width="500"/></p>
+<p data-renderer-start-pos="14170"></p>
+<p>This also applies to customizations that scale a part of the avatar:</p>
+<p data-renderer-start-pos="14290">Head scale customizations at 1.0:</p>
+<p data-renderer-start-pos="14290"><img alt="Animaze Physics" height="583" src="../../../assets/images/index9-25174157.png" title="Animaze Physics" width="500"/></p>
+<p data-renderer-start-pos="14290"></p>
+<p>Head scale customization at 0.0:</p>
+<p><img alt="Animaze Physics" height="552" src="../../../assets/images/index10-9f701165.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p></p>
+<h2>Examples</h2>
+<h3 data-renderer-start-pos="14375">1. Creating a simple pendulum setup</h3>
+<p data-renderer-start-pos="14413">The most common physics setup is the pendulum since it’s usable for hair and clothing. This simple example will however walk us through the basic steps of building the setup and lay the foundation for more complicated things.</p>
+<p data-renderer-start-pos="14640">A good example of an item that benefits from the pendulum physics pattern is the Santa hat:</p>
+<p data-renderer-start-pos="14640"><img alt="Animaze Physics" height="425" src="../../../assets/images/index11-f7338824.png" title="Animaze Physics" width="400"/></p>
+<p> </p>
+<p>We would like to setup <strong>a pendulum on the tip of the hat</strong>, so it will move and dangle away. We need two nodes, or collider, to achieve what we want:</p>
+<ul>
+<li><strong data-renderer-mark="true">a kinematic node </strong>that will serve as the base of the pendulum and prevent the other node from falling downwards due to gravity.</li>
+<li><strong data-renderer-mark="true">a dynamic node </strong>that will update the bone from the tip of the hat according to the physics simulation.</li>
+<li><strong data-renderer-mark="true">a constraint </strong>that will tie the two nodes together and define its linear and angular limitations, along with other effects like stiffness.</li>
+</ul>
+<p data-renderer-start-pos="15268">On this model, we have “BipSantaHat1“, which is a bone that is placed a bit outside the model so it’s easier to have a straight pendulum. This node will serve as the <strong data-renderer-mark="true">kinematic node</strong>.</p>
+<p data-renderer-start-pos="15268"><img alt="Animaze Physics" height="398" src="../../../assets/images/index12-72cb72e6.png" title="Animaze Physics" width="400"/></p>
+<p data-renderer-start-pos="15268"></p>
+<p data-renderer-start-pos="15268">We also have “BipSantaHat2“, which is placed on the tip of the hat and will serve as the <strong data-renderer-mark="true">dynamic node</strong>. This node is properly skinned so we can use it for physics.</p>
+<p data-renderer-start-pos="15268"><img alt="Animaze Physics" height="437" src="../../../assets/images/index13-3ff32bb5.png" title="Animaze Physics" width="400"/></p>
+<p data-renderer-start-pos="15268"></p>
+<p>Let’s see what steps need to take, to achieve our goal:</p>
+<p>1. Before we add the collider, we should remember that it’s <strong data-renderer-mark="true">recommended to edit physics while the engine is paused</strong> to avoid getting into weird interactions. Also, when we add a collider, by default, it will have a mass of 1 kilogram so it will be affected by gravity and fall indefinitely.</p>
+<p><img alt="Animaze Physics" height="87" src="../../../assets/images/index14-483e0233.png" title="Animaze Physics" width="191"/></p>
+<p>2. In order to see the colliders that we’re adding, we should go into <b>physics debug mode</b> by selecting the viewport and <b>pressing “SHIFT-P“</b></p>
+<p>3. After that, we can go ahead and attach a collider on “BipSantaHat1“ and one on “BipSantaHat2“</p>
+<p><img alt="Animaze Physics" height="218" src="../../../assets/images/index15-bfa04d1c.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>After adding the colliders, out setup should look like this:</p>
+<p><img alt="Animaze Physics" height="520" src="https://cdn.animaze.us/media/wysiwyg/Editor_Manual/Physics/index16.png%20" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>4. We should now select the collider that is attached to “BipSantaHat1“, which is the base of the pendulum and make it kinematic by setting its mass to 0. While we’re here we might as well halve its radius too, since the default is a little large for our model. We can then go to our other collider and change its radius too, for consistency’s sake.</p>
+<p><img alt="Animaze Physics" height="199" src="../../../assets/images/index17-42ebbbbe.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>5. We can now go ahead create the constraint that will tie our two colliders together. We will use the versatile 6 DOF constraint for this. Remember that the direction of the constraint is important: we could do it either Base &gt; Tip or Tip &gt; Base, but usually we should do it from inside to outside. In this case, it might be more reasonable to set up the constraint Base &gt; Tip. We can select the base collider (the one attached to “BipSantaHat1“) and add the constraint, selecting the other collider as its partner:</p>
+<p><img alt="Animaze Physics" height="157" src="../../../assets/images/index18-27d49178.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>6. Once we have the constraint in place, we’ll notice that whenever we hover the panel that defines its parameters, the two colliders in the constraint are highlighted, along with the constraint (the line connecting them).</p>
+<p><img alt="Animaze Physics" height="412" src="../../../assets/images/index19-26841404.png" title="Animaze Physics" width="700"/></p>
+<p></p>
+<p>7. With a new constraint, the <b>first thing</b> we should think about is the <b>frame position</b>. As mentioned earlier this parameter defines the <b>distance between the two colliders or the length of the constraint</b>. We could find appropriate values by trial and error or use the “<b>Compute Frame</b>“ feature. What this feature does, it takes the current distance between the colliders and uses that (remember that the engine is paused right now, the dynamic collider is not moving the bone at all, so what we’re really doing, is creating the distance between the bones).</p>
+<p><img alt="Animaze Physics" height="196" src="../../../assets/images/index20-4eb4b11a.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>8. You’ll notice that we have two sets of controls, because we can configure the frames both ways (Base &gt; Tip or Tip &gt; Base). To keep our rule of Base &gt; Tip, we’ll use the first set of controls and select “Tip“ from the combo. After we press apply, we’ll notice the frame position has been updated. We’ll also notice that its frame rotation has also been changed, but for this case, we don’t need any frame rotation so we can zero it out.</p>
+<p><img alt="Animaze Physics" height="195" src="../../../assets/images/index21-a65cc4d8.png" title="Animaze Physics" width="500"/></p>
+<p>9. Now we’re almost done, but if we were to un-pause our physics simulation, we’ll notice our colliders going wild in every direction. This is because of the freedom of motion that the constraint allows, rotation-wise. The dynamic is not allowed to move because it’s limits are [0,0], but it’s allowed to rotate in any way possible (because, as mentioned earlier, the lower limit is higher than the upper limit).</p>
+<p><img alt="Animaze Physics" height="162" src="../../../assets/images/index22-7f80b222.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>We can start with a smaller interval for rotation freedom, something like [-15, 15].</p>
+<p><img alt="Animaze Physics" height="149" src="../../../assets/images/index23-5807f312.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>10. We can finally test out result by resuming the physics simulation and moving the hat using the transform gizmo, for example. If we’d like the tip to be less stiff, we could increase the angular interval to something like [-45, 45], but this depends on the effect we want to achieve.</p>
+<p><img alt="Animaze Physics" height="282" src="../../../assets/images/index24-cb0094aa.gif" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>11. Finally, we should remember to save our work. It’s recommended to save often so we avoid getting into weird physics situations and be left unable to revert to a good checkpoint.</p>
+<p><img alt="Animaze Physics" height="318" src="../../../assets/images/index25-79415da2.png" title="Animaze Physics" width="303"/></p>
+<p></p>
+<h3 data-renderer-start-pos="19369" id="2.-Create-a-more-complex-pendulum-setup"></h3>
+<h3 data-renderer-start-pos="19369">2. Create a more complex pendulum setup<span class="heading-anchor-wrapper"></span></h3>
+<p data-renderer-start-pos="19410"><strong data-renderer-mark="true">The Goal</strong></p>
+<p data-renderer-start-pos="19420">Make Avatar Ram’s chin simulate natural movements of its goatee based on how the avatar’s head moves. If we were to list the requirements they would look as follows:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="19589">The Goatee will pivot a certain angle in each direction</p>
+</li>
+<li>
+<p data-renderer-start-pos="19648">It should have little rotation around its length.</p>
+</li>
+<li>
+<p data-renderer-start-pos="19701">The pivoting should be done on the skinned bone “BipChin”</p>
+</li>
+<li>
+<p data-renderer-start-pos="19762">The collider should rotate but ideally stay in the same position with respect to (w.r.t.) the head of the avatar</p>
+</li>
+</ul>
+<p data-renderer-start-pos="19878"><strong data-renderer-mark="true">The Explanation</strong></p>
+<p data-renderer-start-pos="19895">Initially it seems like we could solve this with just two colliders:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="19967"><strong data-renderer-mark="true">Collider 1 - “Fixed Node” </strong>- The collider attached to “BipChin” that will do all the rotations required by the goatee.</p>
+</li>
+<li>
+<p data-renderer-start-pos="20088"><strong data-renderer-mark="true">Collider 3 - “Swinging Node”</strong> - The unattached collider that will somehow connect to the “Fixed Node” and hang from it, rotating it in the direction gravity points to.</p>
+</li>
+</ul>
+<p><img alt="Animaze Physics" height="515" src="../../../assets/images/index26-f228cba3.png" title="Animaze Physics" width="400"/></p>
+<p></p>
+<p>This amounts to two colliders, both dynamic, one to swing from the other, the fixed one rotating the chin. In practice, if we execute this, the Chin node will start rapidly falling, leaving the head behind and stretching its chin to infinity. That is because the chin is a dynamic collider which means it interacts with gravity and is pulled downwards rapidly.</p>
+<p data-renderer-start-pos="20623">We might think about making the Chin collider Kinematic, thus keeping it in the same spot. The problem is that a kinematic node does not apply its transform to the bone, and as such, making the fixed node kinematic does not work.</p>
+<p data-renderer-start-pos="20854">What is left is to introduce a third node:</p>
+<ul>
+<li><strong data-renderer-mark="true">Collider 2 - “Kinematic Node”</strong> - This collider will be used as an anchoring point for the “Fixed Node” such that it stays withing the same frame of reference with respect to the head. That means we will have a second Constraint that will keep the “Fixed Node” in place. This can be placed</li>
+</ul>
+<p data-renderer-start-pos="21191">After deciding upon what colliders we need, the constraints are next. We will need two of them:</p>
+<ul>
+<li><strong data-renderer-mark="true">Cone Constraint (Cone Twist Constraint) – </strong>This will keep the Chin node oriented towards the swinging node, as if constantly following the fixed node.</li>
+<li><strong data-renderer-mark="true">Fixed Constraint (6DOF Constraint) – </strong>This will keep the bipChin node in the very same position with respect to bipJaw node regardless off how the avatar moves. BipJaw is one of the multiple bones that could have been chosen, the only real criteria is that the difference between these bones’ transforms to stay the same regardless of what animation or movement the character is doing. Otherwise, the constraint will not always keep the bipChin collider where it should actually stay.</li>
+</ul>
+<p data-renderer-start-pos="21930">In fact, one could think to take advantage of the fact that <strong data-renderer-mark="true">2 colliders that share a constraint don’t collide with each other</strong> and create another “BipChin” node that is <strong data-renderer-mark="true">kinematic </strong>this time, held by a constraint in the exact same place. But this would probably <strong data-renderer-mark="true">fail </strong>because the dynamic “BipChin” would cause the bone to fall due to gravity, and the kinematic “BipChin” would just follow the bone whilst falling.</p>
+<p data-renderer-start-pos="21930"><img alt="Animaze Physics" height="914" src="../../../assets/images/index27-738268e2.png" title="Animaze Physics" width="400"/></p>
+<p data-renderer-start-pos="21930"></p>
+<p><strong>The Solution</strong></p>
+<ul>
+<li><strong data-renderer-mark="true">The Swinging Node </strong>has relatively standard properties, with a mass of 2kg instead of one in order for it to have slightly higher inertia. It also has slightly smaller damping values (0.25 → 0.1) in order for it to be able to move a bit faster.</li>
+<li><strong data-renderer-mark="true">The Kinematic Node </strong>has the mass 0 because we want it to follow the BipJaw bone.</li>
+<li><strong data-renderer-mark="true">The Fixed Node</strong> has a slightly higher angular damping values so as to try and resist the movement of the chin rotations a bit more than the default.</li>
+</ul>
+<p data-renderer-start-pos="22838">A more important note, it has the <strong data-renderer-mark="true">“Apply linear motion” toggled off</strong>. This is because the node still moves and this is a neat little trick in which we discard the movements of the node and apply only the rotations of the node.</p>
+<p data-renderer-start-pos="23067">Most of these values are discovered by trial and error in order to achieve the desired outcome.</p>
+<p data-renderer-start-pos="23164"><b>Cone </b><strong>Constraint</strong></p>
+<p data-renderer-start-pos="23164"><strong><img alt="Animaze Physics" height="500" src="../../../assets/images/index28-46afeeb3.png" title="Animaze Physics" width="400"/></strong></p>
+<p data-renderer-start-pos="23164"><strong><br/></strong></p>
+<p><b>6 DOF Constraint</b></p>
+<p><img alt="Animaze Physics" height="682" src="../../../assets/images/index29-89509430.png" title="Animaze Physics" width="400"/></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<h3><b>3. Create an inverted pendulum</b></h3>
+<p><b>The Goal</b></p>
+<p>Moving on to something advanced, we could try to create a physics setup for this balloon, so whenever it’s moved, the strings will pull the balloon along with it. Basically, our goal is to create an inverted pendulum.</p>
+<p><img alt="Animaze Physics" height="726" src="../../../assets/images/index30-3d630a67.png" title="Animaze Physics" width="400"/></p>
+<p><b><br/></b></p>
+<p><b>The Explanation</b></p>
+<p>We’re going to need three nodes for our setup in order to have a nice effect:</p>
+<ul>
+<li><b>a base kinematic node </b>that holds the other nodes to the ground through constraints. this is very common and found in any physics setup.</li>
+<li><b>a first dynamic node </b>in the middle of the string. We could have a node directly at the top of the string, where the balloon starts, but our string would always be straight and not very realistic. Creating a chain of at least three nodes is much better.</li>
+<li><b>a second dynamic node </b>at the end of the string. This will be the node that will move the balloon itself.</li>
+</ul>
+<p>Our constraints should be:</p>
+<ul>
+<li><b>base → first dynamic node </b>- this defines the freedom of motion for the base part of the string. This part should have both linear and angular freedom, and its linear freedom should be quite pronounced. We will see how we can achieve this in a moment.</li>
+<li><b>first dynamic node → second dynamic node </b>- this defines the freedom of motion for the balloon itself. The second dynamic node will already inherit the motion of the first dynamic node, so it only needs a little bit of linear freedom so it’s not locked into place.</li>
+</ul>
+<p>The key to this setup is the is the <b>external force </b>property that we can setup on colliders. Using an upward force that is stronger than gravity will ensure that our <b>dynamic colliders will float</b>. We will also spruce up our setup with spring behavior (stiffness and damping).</p>
+<p><b>The Solution</b></p>
+<p>1. The first step is to attach three new colliders to the three skinned bones along the string and then add the default constraints mentioned. Immediately after that, we can configure the frame positions on the two constraints to something that makes sense. Here we have 22 centimeters on the Y axis between the base and the first dynamic collider and 24 centimeters from the first dynamic collider to the second.</p>
+<p data-renderer-start-pos="23164"><strong><img alt="Animaze Physics" height="131" src="../../../assets/images/index31-e4e6f649.png" title="Animaze Physics" width="500"/></strong></p>
+<p data-renderer-start-pos="23164"><strong><img alt="Animaze Physics" height="124" src="../../../assets/images/index32-6d17b3e0.png" title="Animaze Physics" width="500"/></strong></p>
+<p data-renderer-start-pos="23164"></p>
+<p data-renderer-start-pos="23164">2. Afterwards, let’s configure the external force on each collider to something like (0, 20, 0). Since in our engine gravity is defined as (0, -10, 0), we can rest assured that our colliders will float.</p>
+<p data-renderer-start-pos="23164"><strong><img alt="Animaze Physics" height="473" src="../../../assets/images/index33-28264359.png" title="Animaze Physics" width="500"/></strong></p>
+<p data-renderer-start-pos="23164"><strong><br/></strong></p>
+<p data-renderer-start-pos="23164"><strong>3.</strong> To start with, let’s remove all freedom of movements from our constraints so both linear and angular limits should be set to 0.</p>
+<p data-renderer-start-pos="23164"><img alt="Animaze Physics" height="167" src="../../../assets/images/index34-c14edf4f.png" title="Animaze Physics" width="500"/></p>
+<p data-renderer-start-pos="23164"></p>
+<p data-renderer-start-pos="23164">4. Let’s also apply a bit of spring behavior (stiffness and damping) to both constraints.</p>
+<p data-renderer-start-pos="23164"><img alt="Animaze Physics" height="249" src="../../../assets/images/index35-2be082ad.png" title="Animaze Physics" width="500"/></p>
+<p data-renderer-start-pos="23164"></p>
+<p>5. So far, our <strong>Base &gt; First</strong> constraint looks like this:</p>
+<p><img alt="Animaze Physics" height="874" src="../../../assets/images/index36-95781278.png" title="Animaze Physics" width="500"/></p>
+<p data-renderer-start-pos="23164"><strong><br/></strong></p>
+<p>6. And our <strong>FirstDynamic &gt; SecondDynamic</strong> constraint looks like this:</p>
+<p><img alt="Animaze Physics" height="859" src="../../../assets/images/index37-674ce90d.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>Testing our setup, we will see something like this:</p>
+<p><img alt="Animaze Physics" height="282" src="../../../assets/images/index38-612375d3.gif" title="Animaze Physics" width="500"/></p>
+<p data-renderer-start-pos="23164"></p>
+<p data-renderer-start-pos="23164">7. It’s starting to look like what we might want, but the string is not moving, bending or rotating at all. Our final touches need to go into linear and angular limits for each constraint. On the <strong>Base &gt; FirstDynamic</strong> constraint, let’s give it spaces to move in a 0.6 meters cube and angular freedom of 60 degrees.</p>
+<p data-renderer-start-pos="23164"><strong><img alt="Animaze Physics" height="172" src="../../../assets/images/index39-cc458d83.png" title="Animaze Physics" width="500"/></strong></p>
+<p data-renderer-start-pos="23164"><strong><br/></strong></p>
+<p>Testing again, things are looking a lot better! In most cases of an inverted pendulum we could stop here.</p>
+<p><img alt="Animaze Physics" height="282" src="../../../assets/images/index40-6322f979.gif" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>8. The bottom part of the string is moving well, but the upper part is still rigid. Let’s give it some freedom, too. On the <b>FirstDynamic &gt; SecondDynamic</b> constraint we can have the following.</p>
+<p><img alt="Animaze Physics" height="143" src="../../../assets/images/index41-f84bef81.png" title="Animaze Physics" width="500"/></p>
+<p></p>
+<p>The settings above will ensure a bit of linear movements on Y axis for the middle colliders (allowing the string to bend when an upward or downward movement is applied to the balloon) and some angular motion. The X and Z linear limits are fixed to a length of 0.01, which is 1 centimeters, which is the radius of the spheres. This ensures the middle colliders won’t move a lot. If we find that it does, we can reduce these two dimensions to even lower numbers.</p>
+<p>9. Finally, we have our resulting physics setup for the balloon. The wireframe cube you see around the balloon is the space in which the middle collider can move in respect to its constraint with the base collider. This give a visual idea of what the limits will be.</p>
+<p><img alt="Animaze Physics" height="282" src="../../../assets/images/index42-e9b18f38.gif" title="Animaze Physics" width="500"/></p>
+<p> </p>
+<p data-renderer-start-pos="23164"><strong><br/></strong></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Editor User Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../abouteditor/index.html">
+                    About the Animaze Editor                </a>
+</li>
+<li>
+<a href="../steameditor/index.html">
+                    Steam Install Process                </a>
+</li>
+<li>
+<a href="../editorworkflow/index.html">
+                    Animaze Editor Workflow                 </a>
+</li>
+<li>
+<a href="../topbarmenu/index.html">
+                    Top Bar Menu                </a>
+</li>
+<li>
+<a href="../cameranavigationkeys/index.html">
+                    Camera Navigation Keys                </a>
+</li>
+<li>
+<a href="../mainpanels/index.html">
+                    Main Panels                </a>
+</li>
+<li>
+<a href="../editormaterialcomponents/index.html">
+                    Material Components                </a>
+</li>
+<li>
+<a href="../animazeeditorenvironment/index.html">
+                    Environment Properties                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../editorretargetingoverrides/index.html">
+                    Editor Retargeting Overrides                </a>
+</li>
+<li>
+<a href="../emotes/index.html">
+                    How to add animated Emotes                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

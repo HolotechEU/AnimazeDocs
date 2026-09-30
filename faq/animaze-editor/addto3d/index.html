@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How do I add materials on an imported custom 3D Avatar? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>How do I add materials on an imported custom 3D Avatar?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p><span>Animaze Editor importer will automatically create a material per mesh. By default, newly created materials feature diffuse, normal map, specular and lighting components (more on Animaze material components in the .avatar technical doc), and the import process tries to properly bind the textures to these components if the texture sources are in the Textures/ folder beside the geometry .fbx file. If the textures aren't binded correctly, the avatar will be rendered with a white shading and you can manually bind the missing textures.</span></p>
+<p><span>The steps for customizing (binding textures, change component factors, etc.) a mesh material are as follows:</span></p>
+<p>- In the <strong>Hierarchy Panel</strong> select the mesh to which you want to add texture to</p>
+<p><img height="420" src="../../../assets/images/import_3d_3-2e029cdf.png" width="790"/></p>
+<p></p>
+<p>- In the <b>Editor Panel</b>, begin adding the necessary textures by clicking on the square next to the texture name</p>
+<p><img height="335" src="../../../assets/images/import_3d_4-0fb30ffa.png" width="797"/></p>
+<p></p>
+<p>- This will open the <b>Select Texture</b> box, which retrieves all the textures of your avatar in <b>.ktx </b>format</p>
+<p><img height="573" src="../../../assets/images/import_3d_5-213a520c.png" width="479"/></p>
+<p></p>
+<p>- You can filter the textures by typing a tag word or the name of the texture</p>
+<p>- Continue adding the needed textures and components, change the values where needed/applicable</p>
+<p>- <b>Save Material</b> after you finish texturing the mesh</p>
+<p><img height="306" src="../../../assets/images/import_3d_6-1000bb07.png" width="471"/></p>
+<p></p>
+<p>- Continue this process for every mesh of your model until it's complete</p>
+<p><img height="431" src="../../../assets/images/import_3d_7-b349c597.png" width="790"/></p>
+<p></p>
+<p>- Save your model from the <b>Hierarchy Panel</b> by right-clicking on it and selecting <b>Save Item</b></p>
+<p><b><img height="334" src="../../../assets/images/import_3d_8-6469c98b.png" width="301"/></b></p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

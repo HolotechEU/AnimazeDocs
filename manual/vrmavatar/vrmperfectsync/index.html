@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PerfectSync capabilities to .VRM sourced avatars &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">PerfectSync capabilities to .VRM sourced avatars</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span>Animaze features a number of Animation Standards to properly support tracking to animation mappings for differently sourced models (fbx, vrm, glb). These standards are defined by a set of skeletal animations, blendshapes (morph targets), blendshape groups (vrm specific) and skeletal joints (used for procedural animations).</span></p>
+<p dir="ltr"><span>.VRM sourced models imported in Animaze will use the VRoid Animation Standard by default, although this can be changed. This guide will show you how to change the Animation Standard for your .vrm sourced model from the classic VRoid Standard to the Perfect Sync Standard.</span></p>
+<p dir="ltr"><span>The Perfect Sync Animation standard requires 52 face expression blendshapes that are directly compatible with the ARKit face module shapes (full list </span><a href="https://developer.apple.com/documentation/arkit/arfaceanchor/blendshapelocation"><span>here</span></a><span>). The Perfect Sync standard is custom tailored to .vrm models, so the model should follow the .vrm rules and the blendshapes are accessed through VRM expressions or Blendshape Groups.</span></p>
+<p dir="ltr"><span>Changing the Animation Standard from VRoid to Perfect Sync can be done in a few easy steps:</span></p>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Import your .vrm model in Animaze Editor.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr">Click on the newly imported avatar in the Hierarchy Panel on the left-hand side.</p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Change the Animation Standard from the Inspector on the right-hand side<br/><img height="137" src="../../../assets/images/perfectsync_editor-8aa3d037.png" width="488"/></span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Save the item: right click on the avatar in the Hierarchy Panel and click the Save item button</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>You can now test out the animations through the Avatar Puppeteering panel.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The avatar can be bundled and used in Animaze Desktop.</span></p>
+</li>
+</ol>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing VRM Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../vrmgeneral/index.html">
+                    .VRM General Flow                </a>
+</li>
+<li>
+<a href="../vrmgeometry/index.html">
+                    Geometry &amp; Materials &amp; Textures                </a>
+</li>
+<li>
+<a href="../vrmanimations/index.html">
+                    Animations &amp; Retargeting                </a>
+</li>
+<li>
+<a href="../vrmphysics/index.html">
+                    Physics                </a>
+</li>
+<li>
+<a href="index.html">
+                    PerfectSync capabilities to .VRM sourced avatars                </a>
+</li>
+<li>
+<a href="../vrmimport/index.html">
+                    Import Your .VRM Model Into Animaze                </a>
+</li>
+<li>
+<a href="../troubleshootandsupportvrmeditor/index.html">
+                    Troubleshoot &amp; Support                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

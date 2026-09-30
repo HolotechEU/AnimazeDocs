@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Converting 3D Avatars from Facerig to Animaze &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Converting 3D Avatars from Facerig to Animaze</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p><span style="font-size: 12px;">This guide outlines the steps you need to take to convert a custom 3D avatar designed for Facerig to work with Animaze. Please make sure you familiarize yourself with the Animaze </span><span style="text-decoration: underline;"><a href="../../index.html" style="font-size: 12px;"><strong>documentation</strong></a></span><span style="font-size: 12px;"> - you will want to have the </span><span style="text-decoration: underline;"><strong><a href="../../editorusermanual/index.html">Editor User Manual</a></strong></span><span style="font-size: 12px;">, </span><span style="text-decoration: underline;"><strong><a href="../../gettingstarted3d/index.html">Getting Started with 3D Avatars</a></strong></span><span style="font-size: 12px;">, and </span><span style="text-decoration: underline;"><strong><a href="../../technicalreference/index.html">Technical Documentation</a></strong></span><span style="font-size: 12px;"> close by. For additional reference, you may want to view the FaceRig </span><span style="text-decoration: underline;"><strong><a href="https://drive.google.com/file/d/0B9A2HzJCWwFWYnN6SFRPbW1mRWM/view">documentation</a></strong></span><span style="font-size: 12px;"> as well. The below steps will point you to specific sections of each document that contain pertinent information. </span></p>
+<p dir="ltr">If you have any issues or questions, you can always reach out to us at <span style="text-decoration: underline;"><strong><a href="mailto:support@animaze.us">support@animaze.us</a></strong></span> or join our Discord <strong><span style="text-decoration: underline;"><a href="https://animaze.tv/discord">animaze.tv/discord</a></span></strong>. We’ll be happy to help you!</p>
+<p dir="ltr"><span>Note that we have marked steps as </span><span><strong>required</strong>, <strong>recommended</strong>, or <strong>optional</strong></span><span>:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong><span style="text-decoration: underline;">Required</span> </strong><span>steps must be completed for your avatar to function properly within Animaze</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>Recommended</strong></span><span> steps should be completed to maintain your avatar’s look and feel</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>Optional</strong> </span><span>steps utilize new features of Animaze and the .avatar format to improve the quality of your avatar</span></p>
+</li>
+</ul>
+<h1 dir="ltr"><strong><span style="text-decoration: underline;">Step 1: Update Your Textures:</span></strong></h1>
+<p dir="ltr"><span>The first step is updating your avatar’s textures in the programs that you used to create the avatar. Make sure you reference the </span><strong><span style="text-decoration: underline;"><a href="../../technicalreference/texturesandmaterials/index.html">Textures and Materials</a></span></strong><span> section of the Animaze documentation to familiarize yourself with this system.</span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><span style="text-decoration: underline;"><strong>[Required] - Adjust Specular Map</strong></span>: </span><span>Adjust your avatar’s specular map. Unlike Facerig, Animaze does not use the alpha channel for specular maps. Adjust the intensity and spread of your avatar’s textures by modifying the Red channel (for spread) and Green channel (for intensity) instead.  </span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<ul>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>For more information on using Red and Green channels in Animaze, see the Specular Mapping section of </span><span style="text-decoration: underline;"><strong><a href="../../technicalreference/texturesandmaterials/index.html">Textures and Materials</a></strong></span></p>
+</li>
+</ul>
+<li dir="ltr">
+<p dir="ltr"><span><span style="text-decoration: underline;"><strong>[Recommended] - Add New Textures for Subsurface Scattering, Translucency, and Normal Maps</strong></span>: </span><span>Create new textures for subsurface scattering, translucency, and normal maps per the guidelines in the Animaze documentation.</span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>For more information on using subsurface scattering, translucency, and normal maps, see </span><span style="text-decoration: underline;"><strong><a href="../../technicalreference/texturesandmaterials/index.html">Textures and Materials</a></strong></span></p>
+</li>
+</ul>
+<li dir="ltr">
+<p dir="ltr"><span><span style="text-decoration: underline;"><strong>[Recommended]  - Update Alpha Paint Information</strong></span>: </span><span>If the avatar has fur and vertex color information on the mesh, the alpha paint information in the vertices must be redone:</span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>The geometry that contains fur must be exported with the following Vertex Color info: </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Alpha Paint controls the fur length factor (paint this info in vertex color.)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>See the fur section of </span><span style="text-decoration: underline;"><strong><a href="../../technicalreference/texturesandmaterials/index.html">Textures and Materials</a></strong></span><span> section of our documentation for more information</span></p>
+</li>
+</ul>
+</ul>
+<li dir="ltr">
+<p dir="ltr"><span><span style="text-decoration: underline;"><strong>[Optional] - Update Color Customizations</strong></span>:</span><span> Facerig allows two color customizations per material: RGB channel and Alpha channel. Animaze allows for 4 color customizations per material: each of the RBG + A channels can be used individually. </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>If your Facerig avatar utilizes color customizations, you can update the customization options in the Animaze Editor, applying a single customization to each of the RBG+A channels to increase the total number of available color customizations. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>See </span><span style="text-decoration: underline;"><strong><a href="../../technicalreference/texturesandmaterials/index.html">Textures and Materials Section</a></strong></span><span> of our technical documentation and the </span><span style="text-decoration: underline;"><strong><a href="../../editorusermanual/mainpanels/index.html">Color Customization</a></strong></span><span> options section of the Animaze Editor Manual for more information</span></p>
+</li>
+</ul>
+</ul>
+<h1 dir="ltr"><span style="text-decoration: underline;"><strong>Step 2: Convert Your Avatar Files to .FBX</strong></span></h1>
+<p dir="ltr"><span>Now that you’ve updated your textures, the next step is to convert your Facerig avatar’s .DAE avatar files into the .FBX format.</span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>[Required - Export Avatar files as .FBX Format]: </strong></span><span>Animaze uses the .FBX file format. All avatar files must be exported as .fbx to be utilized in the Animaze Editor. DAE-FBX files from Facerig avatars will not be compatible with the Editor. </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>To easily convert your Facerig avatar files to .FBX, use Autodesk’s free FBX converter: </span><span style="text-decoration: underline;"><strong><a href="https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives">https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives</a></strong></span></p>
+</li>
+</ul>
+</ul>
+<h1 dir="ltr"><strong><span style="text-decoration: underline;">Step 3: Revise Your Rig</span></strong></h1>
+<p dir="ltr"><span>Now you need to modify your rig to be compatible with Animaze. Complete the following steps in whatever 3D modeling &amp; rigging software you prefer.</span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>[Required] - Revise Joint Axes Orientation: </strong></span><span>The most important difference between Facerig and Animaze is the joint orientation of the axes for the head and eyes. In Maya, joint rotation axes are oriented as follows: </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>in Facerig y axis points forward, z on the side, x vertically</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>in Animaze z axis points forward, y on the side, x vertically</span></p>
+</li>
+</ul>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>[Required - Revise Head/Eye Joint Z Axis]: </strong></span><span> For the avatar’s eyes, the </span><span>z axis</span><span> of the eye joint must pass through the middle of the pupil. </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>All the animations containing the eye joints will have to be reconstructed to adhere to the new axis orientations</span></p>
+</li>
+</ul>
+</ul>
+<h1 dir="ltr"><span style="text-decoration: underline;"><strong>Step 4: Update Your Animations</strong></span></h1>
+<p dir="ltr"><span>The final step is to update your avatar’s animations to be compatible with Animaze. Complete the following steps in the same program that you used to modify your rig.</span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>[Required] - Split up Left-Right + Up-Down Animations: </strong></span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>In Facerig, Left-Right animations contain both left and right movements in the same animation. For example, in Facerig a Head LR animation would start from </span><span>frame 0</span><span> with the head rotated to the left, at </span><span>frame 15</span><span> the head is in the idle position (center), and at </span><span>frame 30</span><span> the head would be turned all the way to the right.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>In Animaze, all left-right and up-down animations are divided by direction (i.e. instead of Head LR being a single animation, there are two animations: Head L and Head R). Each animation moves a bone in one direction - left, right, up, or down. The only exception is the tongue movement, which has 2 animations: Tongue LeftRight and Tongue Up-Down</span></p>
+</li>
+</ul>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>[Required - Update Animation Naming Conventions]: </strong></span><span>Naming conventions are changed for most animations </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span style="text-decoration: underline;"><strong>[Required - Include Keys in All Base Animations]</strong></span>: All base animations must contain keys at frame 0 on all joints. The 4 base animations are Idle1, MouthOpen, MouthOpen_TongueOut, and MouthClosed_TongueOut.</p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><span style="text-decoration: underline;"><strong>[Optional] - Add New Animations</strong></span>:</span><span> Animaze includes new animations that help increase the avatar's expressiveness. You can add support for these new animations when converting your Facerig avatar to Animaze. </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>For a detailed list animations that Animaze supports, see [Link to Animation Appendix]</span></p>
+</li>
+</ul>
+<li dir="ltr">
+<p dir="ltr"><span><span style="text-decoration: underline;"><strong>[Optional] - Include Special Actions</strong></span>: </span><span>Special Actions: In Animaze, there are no required naming conventions for special actions. You can name your special action animations whatever you want</span></p>
+</li>
+</ul>
+<h1 dir="ltr"><strong><span style="text-decoration: underline;">Step 5: Import Your Avatar into the Animaze Editor</span></strong></h1>
+<p dir="ltr">Congratulations! Now you are ready to import your avatar into the Animaze Editor! If you need help on installing the Animaze Editor, you can follow the steps described <a href="../../editorusermanual/steameditor/index.html">here</a>.</p>
+<p dir="ltr"><span>The Editor will enable you to test and debug your avatar, and import it into the Animaze App. </span></p>
+<p><span id="docs-internal-guid-4a4ee3d9-7fff-560f-b00a-7769e721c056"><span>To import your avatar into the Animaze Editor, follow the steps in our 3D </span><span style="text-decoration: underline;"><strong><a href="../../gettingstarted3d/importavatar3d/index.html">Avatar Importing Guide</a>.</strong></span></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Converting Avatars from Facerig to Animaze        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../convert2davatar/index.html">
+                    Converting Live2D Avatars from Facerig to Animaze                </a>
+</li>
+<li>
+<a href="index.html">
+                    Converting 3D Avatars from Facerig to Animaze                </a>
+</li>
+<li>
+<a href="../convertdebugging/index.html">
+                    Debugging your Live2D avatar in the Animaze Editor                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

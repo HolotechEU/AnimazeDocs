@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create your own 2D avatar &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Create your own 2D avatar</h1>
+<div class="aw-page-container">
+<p></p><p>To start creating your own 2D avatar you will need the Live2D Cubism editor. You can download the Live2D Cubism editor for free from <a href="https://www.live2d.com/en/download/cubism/"><b>here</b></a>. Live2D offers a 42 day free trial of the PRO version to everyone who installs their editor. After the 42 days ends, the PRO version automatically switches to the FREE version, unless you decide to upgrade (at which point you will need to enter in your credit card information). </p>
+<p> </p>
+<p>Live2D is an external partner. Learn more about their software and products <a href="https://www.live2d.com/about/">here</a> and learn more about the differences between the basic and PRO licenses <a href="https://www.live2d.com/en/comparison/"><b>here</b></a>. </p>
+<p> </p>
+<p>The Cubism editor requires <b>.psd </b>format files, so you need to create your model in a software that is able to export this format (Photoshop, Krita, Gimp etc).</p>
+<p> </p>
+<p><a href="https://www.youtube.com/watch?v=Z-GxdkXNroI&amp;list=PLqbLt-S6_fh7pxcasSMzeDjc9K5KPWE9H"><b>Here</b></a> you can find a list of very useful mini-tutorials that will guide you when working in Cubism. There is also a written manual for it <a href="https://docs.live2d.com/cubism-editor-tutorials/top/"><b>here</b></a>.  We find the guides very useful and often refer to them ourselves! </p>
+<p> </p>
+<p>Start with <a href="https://www.youtube.com/watch?v=Z-GxdkXNroI&amp;list=PLqbLt-S6_fh7pxcasSMzeDjc9K5KPWE9H&amp;index=1"><b>this tutorial</b></a> to prepare the files needed for Cubism. Read the <a href="https://docs.live2d.com/cubism-editor-manual/divide-the-material/"><b>rules for creating PSD for import</b></a>.</p>
+<p>Most important rule:</p>
+<p style="text-align: center;"><img height="98" src="../../../assets/images/image001-b7bcbed9.png" width="412"/></p>
+<p>For example, an eye needs to have multiple layers: upper eyelid, lower eyelid, iris, pupil, etc. It is easier to animate each part independently, so you can isolate issues to a single part if they occur, without affecting the whole geometry all at once.</p>
+<p><img alt="Photoshop" height="609" src="../../../assets/images/image002-301753cf.png" title="Photoshop" width="234"/></p>
+<p></p>
+<p>All the textures of the model are on the Texture Atlas and they can be edited/replaced within Cubism. See more about it <a href="https://docs.live2d.com/cubism-editor-manual/texture-atlas-edit/?locale=en_us"><b>here</b></a>. </p>
+<p> </p>
+<p>Once your model is complete in Cubism, you will <a href="https://docs.live2d.com/cubism-editor-manual/export-moc3-motion3-files/"><b>export</b></a> the files in the <b>*.moc3</b> format for the Animaze Editor. </p>
+<p> </p>
+<p>In Cubism editor go to <b>File</b>, choose <b>Export For Runtime</b> and select <b>Export as moc3 file</b>. </p>
+<p><img alt="In Cubism editor go to File, choose Export For Runtime and select Export as moc3 file. " height="358" src="../../../assets/images/image004-03b048f0.png" title="Runtime" width="409"/></p>
+<p></p>
+<p>This action will generate the files needed to import your model in Animaze Editor. </p>
+<p><img alt="This action will generate the files needed to import your model in Animaze Editor. " height="220" src="../../../assets/images/image006-bbd3fddc.png" title="Import avatar" width="459"/></p>
+<p></p>
+<p>Tip: To create the normal map and specular you need to modify the initial 2D elements created in Photoshop and re-import them in Cubism, overwriting the diffuse texture, but saving it as a different file. This way you keep the animations and change only the source 2D elements.</p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing Live2D Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../stepsincreatingyourown2davatar/index.html">
+                    Steps in creating your own 2D avatar                </a>
+</li>
+<li>
+<a href="../animazeintro/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../paramlist/index.html">
+                    Live2D Model Requirements &amp; Animation Standards                </a>
+</li>
+<li>
+<a href="../motionoutput/index.html">
+                    Motion Output Parameter List                 </a>
+</li>
+<li>
+<a href="../complexparam/index.html">
+                    Live 2D Model Creation Process for Complex Mouth Geometries                </a>
+</li>
+<li>
+<a href="../gettingstarted/index.html">
+                    Getting started - Import Live2D model in Animaze Editor                </a>
+</li>
+<li>
+<a href="../changeavatardetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../changerendering/index.html">
+                    Change the rendering options                </a>
+</li>
+<li>
+<a href="../remapanimations/index.html">
+                    Remap avatar animation inputs                </a>
+</li>
+<li>
+<a href="../live2dretargetingoverrides/index.html">
+                    Live2D Retargeting Overrides                 </a>
+</li>
+<li>
+<a href="../specialactions/index.html">
+                    Configure avatar Special Actions &amp; Special Poses                </a>
+</li>
+<li>
+<a href="../frameavatar/index.html">
+                    Frame the avatar                </a>
+</li>
+<li>
+<a href="../modifytexture/index.html">
+                    Quickly modify a texture on your avatar                </a>
+</li>
+<li>
+<a href="../expressiondebugging/index.html">
+                    Expressions debugging - Avatar Puppeteering                </a>
+</li>
+<li>
+<a href="../createavatarbundle/index.html">
+                    Create an *.avatar bundle                 </a>
+</li>
+<li>
+<a href="../importbundle/index.html">
+                    Import an *.avatar bundle in Animaze PC app                </a>
+</li>
+<li>
+<a href="../importlive2d/index.html">
+                    Import Your Live2D Models in Animaze PC                </a>
+</li>
+<li>
+<a href="../sendavatar/index.html">
+                    Send your avatar to Animaze Avatar iOS app                </a>
+</li>
+<li>
+<a href="../leaplive2d/index.html">
+                    Leap Motion Hand Sensors with Live2D avatars                </a>
+</li>
+<li>
+<a href="../diveinto/index.html">
+                    Dive into Documentation                </a>
+</li>
+<li>
+<a href="index.html">
+                    Create your own 2D avatar                </a>
+</li>
+<li>
+<a href="../troubleshootandsupport2deditor/index.html">
+                    Troubleshoot &amp; Support                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

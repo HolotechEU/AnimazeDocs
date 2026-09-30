@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How do I add Particle Systems? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>How do I add Particle Systems?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p class="Animaze">Animaze empowers you to create smoke effects, flames, clouds, magic spells and almost anything you can imagine, by adding of Particle Systems in your scene, or on your model. </p>
+<p class="Animaze">Particles can use textures and 3D models as individual particles, but have a cube mesh as default so the user can focus on generation and movement straight from the beginning. When using textures, each particle behaves as a spherical billboard, facing the camera wherever it may be.</p>
+<p class="Animaze">Additionally, Animaze supports binding animated textures/sprites to the particle system to give the user more artistic freedom. Each particle can also change colors dynamically, using a Color Modifier.</p>
+<p><span style="text-decoration: underline;">Requirements:</span></p>
+<ul>
+<li>The texture files need to be in<b> .jpg, .png</b> or <b>.ktx </b>format.</li>
+<li>The model files need to be compatible with the Prop/Avatar3D format used in Animaze.</li>
+</ul>
+<p>To add particle systems in your scene, or on your model, follow these steps:</p>
+<p class="Animaze">- Select the item in the <b>Hierarchy Panel</b> to which you want to attach a particle system. It can be placed randomly in the scene, or attached to an avatar’s bone.  </p>
+<p class="Animaze">- Right-click the item to which the particle system will be attached and select <b><i>Add &gt;&gt; Attach particle system &gt;&gt; New particle system </i></b></p>
+<p class="Animaze">As an example, we chose Fluffo’s crown to attach a particle system.</p>
+<p class="Animaze"><img height="261" src="../../../assets/images/par_sys_1-f19ce1c7.png" width="475"/></p>
+<p class="Animaze"></p>
+<p class="Animaze">- Select the particle system in the <b>Hierarchy Panel</b> and start customizing it in the <b>Editor Panel</b></p>
+<p class="Animaze"><b><img height="166" src="../../../assets/images/par_sys_2-c7ba7c0b.png" width="475"/></b></p>
+<p class="Animaze"><b><br/></b></p>
+<p class="Animaze">The Emitter that generates individual particles or bursts of particles can be configured in several ways</p>
+<p>- You can edit the settings so that the cone has a larger spread, or the circle has a bigger radius etc.</p>
+<p><img height="548" src="../../../assets/images/par_sys_3-7af6a3ae.png" width="379"/></p>
+<p></p>
+<p>- Play around with the values to attain the desired effect</p>
+<p>- Customize the direction emitter, so that all items can follow the same trajectory or be left moving in random directions.</p>
+<p class="Animaze">- Rotation is also possible around a specified axis or while facing the camera (please note that the two options exclude each other)</p>
+<p class="Animaze"><img height="293" src="../../../assets/images/par_sys_4-e3f858dc.png" width="379"/></p>
+<p class="Animaze"></p>
+<p class="Animaze">- Movement modifier component enables movement randomization, circular motion and acceleration</p>
+<p class="Animaze"><img height="127" src="../../../assets/images/par_sys_move_mod-881041c1.PNG" width="379"/></p>
+<p class="Animaze"></p>
+<p class="Animaze">- Change the color and size of the particles, or use a texture, a <strong>.model</strong> file or animated textures</p>
+<p class="Animaze"><img height="215" src="../../../assets/images/par_sys_6-1e38d011.png" width="475"/></p>
+<p class="Animaze"></p>
+<p class="Animaze">- If the loaded texture is animated, just check the <b>Use Animated Textures</b> box, and it will be rendered as such </p>
+<p class="Animaze">- Particles can also change colors or tints dynamically, using the <b>Color Modifier</b> in the <b>Editor Panel</b></p>
+<p class="Animaze"><b><img height="99" src="../../../assets/images/par_sys_7-d1bc2d2b.png" width="379"/></b></p>
+<p class="Animaze"><b><br/></b></p>
+<ul>
+<li>To choose a color for the particles, <b>double click the color bar</b>, then <b>single click</b> on the <b>segment</b> created and push <b>Choose color</b> button</li>
+</ul>
+<div><img height="225" src="../../../assets/images/par_sys_8-1ef641df.png" width="475"/></div>
+<div></div>
+<div>
+<p class="Animaze">As you can see, the particles are already picking up the bar gradient from left side to the segment, where the red color fades out</p>
+<ul>
+<li>depending on the lifetime of particles, they will also reach to the right side of the gradient and turn blue</li>
+<li>in this case we picked the yellow color, so the particles gradually turn from the initial red of the color bar, to yellow</li>
+</ul>
+</div>
+<div><img height="225" src="../../../assets/images/par_sys_9-99128b6c.png" width="475"/></div>
+<div></div>
+<ul>
+<li>the alpha bar works in the same way as the color bar, but relatively to the transparence and opacity</li>
+<li>to cancel the chosen colors, right click on the <b>segment</b></li>
+</ul>
+<p class="Animaze">- Save your customizations when done by pushing the <b>Save Particle System</b> button</p>
+<p class="Animaze"><b><br/></b></p>
+<p class="Animaze"><b><br/></b></p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

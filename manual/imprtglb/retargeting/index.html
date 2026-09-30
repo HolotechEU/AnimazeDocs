@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retargeting Considerations and Materials &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Retargeting Considerations and Materials</h1>
+<div class="aw-page-container">
+<p></p><h2 data-renderer-start-pos="6292" id="Retargeting-Considerations">Retargeting Considerations<span class="heading-anchor-wrapper"></span></h2>
+<h3 data-renderer-start-pos="6320" id="Look-at/Eyes-movements-require">Look-at/Eyes movements require</h3>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="6354">Head, LeftEye and RightEye joints</p>
+</li>
+<li>
+<p data-renderer-start-pos="6391">LeftEye and RightEye are procedurally moved so they need to be in the center of the eyes' geometry</p>
+</li>
+</ul>
+<h3 data-renderer-start-pos="6493" id="General-animations-retargeting-(dances-and-idle-animations)-require">General animations retargeting (dances and idle animations) require</h3>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="6564">the default pose be in T-Pose</p>
+</li>
+<li>
+<p data-renderer-start-pos="6597">the height of the avatar be at least 1.5m</p>
+</li>
+<li>
+<p data-renderer-start-pos="6642">the pivot of the model at the foot level</p>
+</li>
+</ul>
+<h2 data-renderer-start-pos="6686" id="Materials">Materials<span class="heading-anchor-wrapper"></span></h2>
+<p data-renderer-start-pos="6697">GLB/GLTF format models are assigned the standard Animaze UberShader material.</p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing GLB/GLTF format models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../introglb/index.html">
+                    Intro                </a>
+</li>
+<li>
+<a href="../blendshapes/index.html">
+                    Model Requirements - Blendshapes                </a>
+</li>
+<li>
+<a href="../skltl-joints/index.html">
+                    Model Requirements - Skeletal Joints (expected hierarchy and naming)                </a>
+</li>
+<li>
+<a href="../orientation/index.html">
+                    Skeletal Joints (joints orientation and other considerations)                </a>
+</li>
+<li>
+<a href="../default/index.html">
+                    Default Pose                </a>
+</li>
+<li>
+<a href="index.html">
+                    Retargeting Considerations and Materials                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

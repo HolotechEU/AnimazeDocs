@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rigging &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Rigging</h1>
+<div class="aw-page-container">
+<p></p><p>To move the avatar we need a skeleton that exerts influences on geometry. Rigging is what makes the animations posible.</p>
+<p><span>The process in which you create the skeleton is called rigging (this process can be done in a lot of programs as long as you have conventions: blender, maya, 3d max, modo etc.). Many of these programs also have authoring solutions that are not perfect, but they will make your work easier.</span></p>
+<p dir="ltr"><span>The process in which you set the influence of the bones on the geometry is called skinning. To accomplish this process there are many programs with many plug-ins that have the role of facilitating the process. You will find more information in the Skinning chapter.</span></p>
+<p><b><br/></b></p>
+<p dir="ltr"><span style="font-size: small;"><strong></strong></span></p>
+<p><span style="font-size: medium;"><strong>There are rules to be followed:</strong></span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>the </span><span><strong>Head </strong></span><span>and </span><span><strong>Eyes </strong></span><span>bones axis should be oriented with </span><span>Z</span><span> forward, </span><span>Y</span><span> horizontal, </span><span>X</span><span> vertical.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>the </span><span><strong>Eyes </strong></span><span>bone Z axis should pass through the middle of the pupil. In Animaze Editor the avatar will look directly into the camera.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span></span><span>the <strong>Camera</strong> bone will be created separated from the avatar rigging (without being subordinated to another bone in the hierarchy), you should name it <strong>Camera</strong> and its orientation must be with Z towards the avatar (placed facing the avatar). So the head and eyes of the avatar will be oriented to the Camera and the Camera to them, as in the pic below.</span></p>
+</li>
+</ul>
+<p dir="ltr"><img alt="" src="../../../assets/images/BoneOrientation-d55bc445.png"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<ul>
+<li><span>in the end you have to use the function </span><em>Freeze transform</em><span> to all bones. </span></li>
+<li><span><span></span></span>the <strong>look-at-camera</strong> function is using the following bones: <b>Camera, BipHead, BipLEye </b>and <b>BipREye.</b> If they are not named like this, the system will not be able to identify and use them, so the avatar will not work properly.</li>
+</ul>
+<p><strong>The Camera bone must be exported:</strong></p>
+<ul>
+<li>in the <strong>geometry *.fbx</strong> file of the avatar (avatarExample.fbx)</li>
+<li>in the <strong>idle1 animation</strong>. It must have an animation key</li>
+</ul>
+<p>    If the Camera bone is missing, then at import in Animaze Editor, the system will add a default camera facing the avatar.</p>
+<p dir="ltr"><span></span></p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="369" src="../../../assets/images/lily_cam_bone-34d29d55.png" title="Animaze by Facerig | 3D Avatars" width="800"/></p>
+<p dir="ltr"><span><br/></span></p>
+<div></div>
+<p dir="ltr"><strong><span style="font-size: medium;"><span style="text-decoration: underline;"></span></span></strong></p>
+<p dir="ltr"><strong><span style="font-size: medium;"><span style="text-decoration: underline;"></span></span></strong></p>
+<p dir="ltr"><strong><span style="font-size: medium;">Build the rig  </span></strong></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p>On this <a href="https://drive.google.com/drive/u/1/folders/1Mjz-zuOlCpcejA58ZNrMbR7krUpPMRvQ">link</a> we provide a simple humanoid rig, that you can use as a reference, or simply build your avatar on it, and adjust it according to your avatar design and needs. You can either delete or add bones. It contains prop bones as well, and the correct naming. </p>
+<p dir="ltr"><span>When building the rig, place a bone for each part of the avatar you want to move. Take the hand for example, you will need to place a bone for each segment of the hand: arm, forearm, palm and fingers.</span></p>
+<p dir="ltr"><span>The bone will be placed as far as possible in the center of the geometry. In the joints areas, try to keep more loops on the geometry, for smoother deformations. <br/></span></p>
+<p></p>
+<p dir="ltr"><img alt="" src="../../../assets/images/BonePlacement-da8d56e7.png"/></p>
+<p></p>
+<p>This aspect is valid for the hand and for the rest of the body, but for the face, things are slightly different. In the picture below, in Ardaly’s snout, you can see that the bones are closer to the margins, and not in the middle of the face’s geometry.</p>
+<p><img alt="Rig Your Own Avatar with Animaze" height="407" src="../../../assets/images/ArdalysSnout-5c22aa13.png" title="About Animaze by Facerig | 3D Avatars" width="500"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="485" src="../../../assets/images/utoLzjxVrUaNTaLniBDhd_BpJJEZmOCngcYcyPq9gtZC7emF51RCABKoyBlfE6AyMQh89lqa3t6S_WdpupXeqMOcq_c2ut4Lc0QRDVrgZtYGjZS743sjGRmOwu7HXCOiHLo891B7-e3329e66.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="500"/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p><span><span><span style="font-size: medium;"><strong></strong></span></span></span></p>
+<p><b><br/></b></p>
+<p dir="ltr"><span>We won’t dive deeper in details for now, but if you want even more information for the rigging process we recommend you to watch tutorials for the program you use.</span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>The rules to be followed for hands and future full-body tracking are:</b></span></p>
+<p>1. <strong>Naming of the bones and their place in the hierarchy</strong> must be the ones proposed here. The bones name should start with <strong>Bip</strong>, the left side is: <strong>BipL</strong> and the right side is <strong>BipR</strong>.</p>
+<p>For example you have Clavicle bone, you will name it <strong>BipLClavicle,</strong> and the counterpart <strong>BipRClavicle</strong>.</p>
+<p>The below skeleton is a simple base one, you may add what other bones your model needs.</p>
+<p dir="ltr"><span><img alt="Animaze Skeleton" height="591" src="../../../assets/images/Full_skel_names_and_hierarchy1-88a287b4.png" title="About Animaze by Facerig | 3D Avatars" width="600"/></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span><span style="text-decoration: underline;"></span></span></p>
+<p dir="ltr"><span><span style="text-decoration: underline;"><br/></span></span></p>
+<p data-pm-slice="1 1 []">2. <strong>Bone axis orientation</strong> &gt;&gt; X axis oriented towards the child bone, Z forward and Y side.</p>
+<p dir="ltr"><span><span style="text-decoration: underline;"><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="343" src="../../../assets/images/bone_axis-3bbd0d2b.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="190"/></span></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong></strong></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong><br/></strong></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong></strong></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong></strong></span></p>
+<p>If the naming is different than proposed, then the system will not be able to recognize and use them. When this happens, we recommend using the <strong>Bone Mapping Configurator</strong> in Animaze Editor to solve it.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="423" src="../../../assets/images/leapboneconfig_1-20ac70d6.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p dir="ltr"><span style="font-size: medium;"><strong></strong></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong><br/></strong></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong></strong></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong>Prop bones </strong></span></p>
+<p dir="ltr"><span>These</span><span> bones are used to attach items (Props) on the avatars. Consider the following rules when adding them:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>They must be exported only in the <a href="../3danimations/index.html">base animations</a>. No other animation keys are needed. </span></p>
+</li>
+<li dir="ltr">The name must contain the word <strong>Prop </strong>(e.g. BipHat_Prop)</li>
+<li dir="ltr">
+<p>The axis must convey as per the convention: Z forward, X horizontal, Y vertical.</p>
+</li>
+</ul>
+<p></p>
+<p><b><br/></b></p>
+<p><span><span><span style="text-decoration: underline;"><span style="font-size: medium;"><strong>Tips</strong></span></span><br/></span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p>If you use an automated rigging tool, you must pay extra attention to these points:</p>
+<p dir="ltr"><span></span></p>
+<ul>
+<li>bone axis orientation after working with the mirror function</li>
+<li>make sure to rename the bones as shown here, because they are used in functions such as <strong>look-at-camera</strong>, hands tracking and soon for full body tracking. When failing to do so, you can use the Leap Motion Bone Mapping Configurator within the Animaze Editor to rename them.</li>
+</ul>
+<p dir="ltr"><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="458" src="../../../assets/images/leapboneconfig_2-5adc11e0.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="530"/></span></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Bone orientation debugging</b></span></p>
+<p>We are using Bruce the Shark to show you a simple debug-process flow for bone orientation in Animaze:</p>
+<ul>
+<li>in the source program you work, add an extra bone to your rig, easy to see/find in the avatar’s geometry, parented to the geometry<b>, without any skinning/ influences over the geometry</b> (you will use it just to determine the good orientation)</li>
+</ul>
+<p><img alt="Rig Your Own Avatar with Animaze" height="369" src="../../../assets/images/1-f4a9ab1e.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="400"/></p>
+<p></p>
+<ul>
+<li>orientate this bone (we used a faulty orientation in the pictures for the scope of the demo)...</li>
+</ul>
+<p><img alt="Rig Your Own Avatar with Animaze" height="495" src="../../../assets/images/2-5a29ebf5.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="400"/></p>
+<p></p>
+<ul>
+<li>export the <strong>*.fbx</strong> geometry and the <strong>idle1</strong> animation, both containing this bone</li>
+</ul>
+<p><img alt="Rig Your Own Avatar with Animaze" height="319" src="../../../assets/images/3-03b29c41.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="400"/>    <img alt="Rig Your Own Avatar with Animaze" height="319" src="../../../assets/images/4-255d0c83.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="400"/></p>
+<p></p>
+<ul>
+<li>now import these two files, the <strong>*.fbx</strong> and the <strong>idle1</strong> animation, in the Animaze Editor the avatar (we checked out the Textures box, as we don’t need them for this debugging flow)</li>
+</ul>
+<p><img alt="Rig Your Own Avatar with Animaze" height="369" src="../../../assets/images/5-14b06ccc.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="400"/></p>
+<p></p>
+<ul>
+<li>in Animaze Editor go to <strong>Tools</strong> and select <strong>Debug Panel</strong></li>
+</ul>
+<p><strong><img alt="Rig Your Own Avatar with Animaze" height="350" src="../../../assets/images/6-6797f880.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="600"/></strong></p>
+<p><strong><br/></strong></p>
+<ul>
+<li>tick the <strong>Draw Skeleton Hierarchy</strong> option and then check the added bone’s orientation in the <strong>Viewport</strong>.</li>
+</ul>
+<p><img alt="Rig Your Own Avatar with Animaze" height="199" src="../../../assets/images/7-60dafe6f.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="600"/></p>
+<p></p>
+<ul>
+<li>notice your results and then change, if needed, the rest of the bones. Don’t forget to delete the one you added for debugging.</li>
+</ul>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      FBX Format Model - Asset Pipeline Guide        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../steps3d/index.html">
+                    Steps in creating your own 3D avatar                </a>
+</li>
+<li>
+<a href="../generatefur/index.html">
+                    How to generate fur and fur mask                </a>
+</li>
+<li>
+<a href="../furdirection/index.html">
+                    How to set Fur direction and length                 </a>
+</li>
+<li>
+<a href="../3dconcept/index.html">
+                    Concept and High-Poly                </a>
+</li>
+<li>
+<a href="../3dretopology/index.html">
+                    Retopology                </a>
+</li>
+<li>
+<a href="../3duv/index.html">
+                    UV mapping                </a>
+</li>
+<li>
+<a href="index.html">
+                    Rigging                </a>
+</li>
+<li>
+<a href="../3dskinning/index.html">
+                    Skinning                </a>
+</li>
+<li>
+<a href="../3danimations/index.html">
+                    Animations                </a>
+</li>
+<li>
+<a href="../3dphysics/index.html">
+                    Physics system                </a>
+</li>
+<li>
+<a href="../3dtextures/index.html">
+                    Textures                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

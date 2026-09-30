@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Desktop: How do I troubleshoot Animaze broadcasting? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>Animaze Desktop: How do I troubleshoot Animaze broadcasting? </h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p><span></span><span><span></span></span></p>
+<p dir="ltr"><span style="font-size: 12px;">In case the Animaze Virtual Camera does not work either because it cannot be installed or because OBS, SLOBS and similar cannot detect the Animaze Virtual Camera as an input option. In those cases, the FaceRig Virtual Camera acts as a fallback. If the FaceRig virtual camera does not install automatically, you can manually install the FaceRig Virtual Camera:</span></p>
+<p dir="ltr"><span>First, go to<span style="color: #800080;"><strong> Windows’s Device Manager</strong> </span>&gt;<span style="color: #800080;"><strong> Imaging Devices</strong> </span>&gt; <strong><span style="color: #800080;">right-click on Animaze Virtual Camera</span> </strong>and then on <span style="color: #800080;"><strong>Uninstall</strong></span>.</span></p>
+<p><img alt="Animaze Desktop: How do I troubleshoot Animaze broadcasting? " height="567" src="../../../assets/images/troubleshoot1-9a2ee30c.png" title="Animaze Desktop: How do I troubleshoot Animaze broadcasting? " width="633"/></p>
+<p dir="ltr"><span>From there, go to Steam\steamapps\common\Animaze\Bin\prerequisites\FaceRigVirtualCamDriver</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>You will see four versions of the FaceRig Virtual Camera driver.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Install the driver that matches your Windows version. For example, if you’re on Windows 8, install “FaceRigVirtualCamDriver_win8”; if you’re on Windows 10, install “FaceRigVirtualCamDriver_win10”.</span></p>
+<p dir="ltr"><span><span><img alt="Animaze Desktop: How do I troubleshoot Animaze broadcasting? " height="520" src="../../../assets/images/troubleshoot2-5f88ba87.png" title="Animaze Desktop: How do I troubleshoot Animaze broadcasting? " width="722"/></span></span></p>
+<p><span><span><br/></span></span></p>
+<p dir="ltr"><span>Once you’ve installed the driver, make sure to select FaceRig Virtual Camera as the input device in OBS, SLOBS, etc.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span style="color: #800080;"><strong>Launch Animaze</strong></span> and click on<span style="color: #800080;"><strong> Enable Virtual Camera.</strong></span></span></p>
+<p dir="ltr"><span>If the Animaze Virtual Camera appears as an input source in OBS (or similar), but your broadcast won’t start, and you see a “Cannot start broadcasting” error, make sure to click the enable virtual camera button in Animaze. If you click the virtual camera button before you set up your source in OBS, it will not work. </span></p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

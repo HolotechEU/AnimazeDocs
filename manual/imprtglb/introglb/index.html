@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intro &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Intro</h1>
+<div class="aw-page-container">
+<p></p><h1 data-renderer-start-pos="2" id="Intro"><span style="font-size: medium;">Animaze supports importing GLB/GLTF 3D model format, although it interprets it as a Ready Player Me avatar, so it needs to adhere to that standard in terms of Blendshapes/Morph Targets names, Skeletal Joints (name and orientations) and default pose.</span></h1>
+<p data-renderer-start-pos="260">Only the model’s <strong data-renderer-mark="true">blendshapes </strong>identified by specific names are used to map the face expressions, no skeletal animations are needed.</p>
+<p data-renderer-start-pos="392"><strong data-renderer-mark="true">Skeletal joints</strong> identified by specific names are used for:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="454">head and body movements (yaw, pitch, roll)</p>
+</li>
+<li>
+<p data-renderer-start-pos="500">eyes look-at movement</p>
+</li>
+<li>
+<p data-renderer-start-pos="525">a simplified idle pose</p>
+</li>
+<li>
+<p data-renderer-start-pos="551">a breathing motion</p>
+</li>
+<li>
+<p data-renderer-start-pos="573">full body tracking (through Axis Perception Neuron tracker)</p>
+</li>
+<li>
+<p data-renderer-start-pos="636">hands tracking (through Leap Motion tracking and gamepad puppeteering)</p>
+</li>
+<li>
+<p data-renderer-start-pos="710">general animations retargeting (special actions and idle animations)</p>
+</li>
+</ul>
+<div class="ak-editor-panel css-d4tzhg" data-panel-type="info">
+<div class="ak-editor-panel__icon"><span class="css-snhnyn"></span></div>
+<div class="ak-editor-panel__content">
+<p data-renderer-start-pos="783">It is recommended you also consider the standard Ready Player Me model as a source of inspiration, an already created avatar can be found <a class="css-tgpl01" data-renderer-mark="true" href="https://api.readyplayer.me/v1/avatars/630f1c1258e6877fae5e2319.glb" title="https://api.readyplayer.me/v1/avatars/630f1c1258e6877fae5e2319.glb"><span data-renderer-mark="true" style="text-decoration: underline;">here</span></a>. If you are interested in creating a new personalized avatar, you can use the <a class="css-tgpl01" data-renderer-mark="true" href="https://animaze.readyplayer.me/" title="https://animaze.readyplayer.me">https://animaze.readyplayer.me</a> creator.</p>
+</div>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing GLB/GLTF format models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="index.html">
+                    Intro                </a>
+</li>
+<li>
+<a href="../blendshapes/index.html">
+                    Model Requirements - Blendshapes                </a>
+</li>
+<li>
+<a href="../skltl-joints/index.html">
+                    Model Requirements - Skeletal Joints (expected hierarchy and naming)                </a>
+</li>
+<li>
+<a href="../orientation/index.html">
+                    Skeletal Joints (joints orientation and other considerations)                </a>
+</li>
+<li>
+<a href="../default/index.html">
+                    Default Pose                </a>
+</li>
+<li>
+<a href="../retargeting/index.html">
+                    Retargeting Considerations and Materials                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

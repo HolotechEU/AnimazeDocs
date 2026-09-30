@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animations &amp; Retargeting &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animations &amp; Retargeting</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p>Animaze features a number of Animation Standards to properly support tracking to animation mappings for differently sourced models (fbx, vrm, gltf, glb). These standards are defined by a set of skeletal animations, blendshapes (morph targets), blendshape groups (vrm specific) and skeletal joints (used for procedural animations).</p>
+<p><span>The integration of VRM models in Animaze has introduced the implementation of two Animation Standards that are most commonly used: VRoid and Perfect Sync (which uses the ARKit shapes). The difference in requirements between these two standards is the set of expression blendshapes, everything else is common.</span></p>
+<p><span>The Animaze Retargeting system uses the VRoid Animation Standard </span><span>as default</span><span> for vrm sourced models and has the current requirements:</span><span><br/></span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr"><span>Blendshape Groups</span><span> (also referred to as Expressions in VRM terms or Blendshape Proxies as mentioned by UniVRM) - used for the facial expressions mapping. </span><span><br/></span><span>Expression list is: </span><span>NEUTRAL, JOY, FUN, ANGRY, SORROW, SURPRISED, BLINK_L, BLINK_R, A, E, O, U </span><span>and</span><span> I</span><span>. More details in the Face Expression Retargeting section.</span><span><br/></span></li>
+<li dir="ltr"><span>Skeletal Joints</span><span> - used for rigid head motions, gaze retargeting, body idle motion and body idle pose. </span><span><br/></span><span>The following skeletal joints are used: </span><span>spine, chest, upperChest, neck, head, leftUpperArm, leftLowerArm, rightUpperArm, rightLowerArm, leftEye and rightEye</span><span>. More details in the following sections.</span></li>
+</ul>
+<p><span><span class="Apple-tab-span"> </span></span><span>VRoid Expressions (Blendshape Groups) aren’t atomic motions, they affect the face of the avatar/model as a whole, which means expressions will be triggered by more than one tracking input (e.g. a FUN expression will be triggered by a tracked mouth smile </span><span>and/or</span><span> eyebrows going up). In other words, Animaze will map a more granular tracked movement to single avatar predefined emotion.</span></p>
+<p dir="ltr"><span>Known Issues:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Lack of asymmetry in some expressions are a limitation of the VRoid Animation Standard and limited animations.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Procedural animations do not account for mesh clippings.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Procedural animations do not account for skinning issues (e.g. unwanted stretches).</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>All animation ranges aren’t currently configurable.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Extra Blendshape Groups (or Expressions) cannot be added to the VRoid Animation Standard.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>There is limited support for Special Actions and Poses.</span></p>
+</li>
+</ul>
+<div>
+<h2 dir="ltr"><span>VRoid Animation Standard</span></h2>
+<p dir="ltr">The VRoid Animation Standard is implemented through single predefined avatar emotions (a pose for all face sections: eyebrows, eyelids and mouth), and triggering them uses more than one tracking input, which unfortunately can overlap. Animaze deals with input overlaps by prioritizing the mapped emotions, mentioned in the Observation section of the following table.</p>
+<div align="left" dir="ltr">
+<table><colgroup><col width="172"/><col width="193"/><col width="121"/><col width="138"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr">VRM Blendshape Group Name</p>
+</td>
+<td>
+<p dir="ltr">Triggered by</p>
+</td>
+<td>
+<p dir="ltr">Asymmetry support</p>
+</td>
+<td>
+<p dir="ltr">Observations</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">NEUTRAL</p>
+</td>
+<td>
+<p dir="ltr">No other expression active</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">A</p>
+</td>
+<td>
+<p dir="ltr">Open mouth neutral</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td>
+<p dir="ltr">not triggered if JOY, SORROW or O expressions are active</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">JOY</p>
+</td>
+<td>
+<p dir="ltr">Open mouth while smiling or eyebrows up</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td>
+<p dir="ltr">JOY has priority over SORROW</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">SORROW</p>
+</td>
+<td>
+<p dir="ltr">Open mouth while frowning or eyebrows down</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td>
+<p dir="ltr">JOY has priority over SORROW</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">O</p>
+</td>
+<td>
+<p dir="ltr">Open mouth while lips are pursed (lips funnel)</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td>
+<p dir="ltr">JOY and SORROW have priority over O</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">SURPRISED</p>
+</td>
+<td>
+<p dir="ltr">Open mouth while eyes wide open</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td>
+<p dir="ltr">not triggered if JOY, SORROW or O expressions are active</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">FUN</p>
+</td>
+<td>
+<p dir="ltr">Smile with mouth closed</p>
+</td>
+<td>
+<p dir="ltr">No</p>
+</td>
+<td>
+<p dir="ltr">FUN has priority over ANGRY</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">ANGRY</p>
+</td>
+<td>
+<p dir="ltr">Frown with mouth closed</p>
+</td>
+<td>
+<p dir="ltr">No</p>
+</td>
+<td>
+<p dir="ltr">FUN has priority over ANGRY</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">U</p>
+</td>
+<td>
+<p dir="ltr">Purse lips with mouth closed</p>
+</td>
+<td>
+<p dir="ltr">No</p>
+</td>
+<td>
+<p dir="ltr">FUN and ANGRY have priority over U</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">BLINK_L</p>
+</td>
+<td>
+<p dir="ltr">Blink left eye neutral</p>
+</td>
+<td>
+<p dir="ltr">Yes</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">BLINK_R</p>
+</td>
+<td>
+<p dir="ltr">Blink right eye neutral</p>
+</td>
+<td>
+<p dir="ltr">Yes</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="4">
+<p dir="ltr">Visemes (Audio Based Lipsync)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">A</p>
+</td>
+<td>
+<p dir="ltr">Visemes AA and AH</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">I</p>
+</td>
+<td>
+<p dir="ltr">Visemes IH, Y and FV</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">U</p>
+</td>
+<td>
+<p dir="ltr">Visemes OY</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">E</p>
+</td>
+<td>
+<p dir="ltr">Visemes EY and EH</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">O</p>
+</td>
+<td>
+<p dir="ltr">Visemes AO and AW</p>
+</td>
+<td>
+<p dir="ltr">Not applicable</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="3"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr">
+<h2 dir="ltr">Perfect Sync </h2>
+<p dir="ltr"><span class="Apple-tab-span"></span></p>
+<p dir="ltr">The Perfect Sync Animation Standard aims to enhance the expressivity of the avatar with more atomic movements of various parts of the face, giving the user more control over the emotions and expressions one wants to exhibit.</p>
+<p dir="ltr">The standard uses 52 blendshapes from the iOS ARKit Face Tracking module, so it is best to follow the ARKit docs on how to build them (see: <a href="https://developer.apple.com/documentation/arkit/arblendshapelocation">https://developer.apple.com/documentation/arkit/arblendshapelocation</a> - each Blendshape is demonstrated through images). List of the 52 shapes and expected names down below.</p>
+<div align="left" dir="ltr">
+<table><colgroup><col width="160"/><col width="138"/><col width="167"/><col width="160"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr">BrowDownLeft</p>
+</td>
+<td>
+<p dir="ltr">EyeLookInRight</p>
+</td>
+<td>
+<p dir="ltr">MouthClose</p>
+</td>
+<td>
+<p dir="ltr">MouthRollLower</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">BrowDownRight</p>
+</td>
+<td>
+<p dir="ltr">EyeLookOutLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthDimpleLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthRollUpper</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">BrowInnerUp</p>
+</td>
+<td>
+<p dir="ltr">EyeLookOutRight</p>
+</td>
+<td>
+<p dir="ltr">MouthDimpleRight</p>
+</td>
+<td>
+<p dir="ltr">MouthShrugLower</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">BrowOuterUpLeft</p>
+</td>
+<td>
+<p dir="ltr">EyeLookUpLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthFrownLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthShrugUpper</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">BrowOuterUpRight</p>
+</td>
+<td>
+<p dir="ltr">EyeLookUpRight</p>
+</td>
+<td>
+<p dir="ltr">MouthFrownRight</p>
+</td>
+<td>
+<p dir="ltr">MouthSmileLeft</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">CheekPuff</p>
+</td>
+<td>
+<p dir="ltr">EyeSquintLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthFunnel</p>
+</td>
+<td>
+<p dir="ltr">MouthSmileRight</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">CheekSquintLeft</p>
+</td>
+<td>
+<p dir="ltr">EyeSquintRight</p>
+</td>
+<td>
+<p dir="ltr">MouthLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthStretchLeft</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">CheekSquintRight</p>
+</td>
+<td>
+<p dir="ltr">EyeWideLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthLowerDownLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthStretchRight</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">EyeBlinkLeft</p>
+</td>
+<td>
+<p dir="ltr">EyeWideRight</p>
+</td>
+<td>
+<p dir="ltr">MouthLowerDownRight</p>
+</td>
+<td>
+<p dir="ltr">MouthUpperUpLeft</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">EyeBlinkRight</p>
+</td>
+<td>
+<p dir="ltr">JawForward</p>
+</td>
+<td>
+<p dir="ltr">MouthPressLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthUpperUpRight</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">EyeLookDownLeft</p>
+</td>
+<td>
+<p dir="ltr">JawLeft</p>
+</td>
+<td>
+<p dir="ltr">MouthPressRight</p>
+</td>
+<td>
+<p dir="ltr">NoseSneerLeft</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">EyeLookDownRight</p>
+</td>
+<td>
+<p dir="ltr">JawOpen</p>
+</td>
+<td>
+<p dir="ltr">MouthPucker</p>
+</td>
+<td>
+<p dir="ltr">NoseSneerRight</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr">EyeLookInLeft</p>
+</td>
+<td>
+<p dir="ltr">JawRight</p>
+</td>
+<td>
+<p dir="ltr">MouthRight</p>
+</td>
+<td>
+<p dir="ltr">TongueOut</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p dir="ltr">Observations:</p>
+<ul>
+<li dir="ltr">
+<p dir="ltr">Perfect Sync Animation Standard uses Blendshape Groups rather than raw blendshapes names, same as the VRoid Standard.</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">jawForward shape isn’t mapped at all as we feel there’s no suitable tracker (not even ARKit) that can provide the consistent tracking data for this tracking input.</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">Viseme mapping is the same as VRoid Standard.</p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<h2 dir="ltr"><span>Rigid Head Motions Retargeting</span></h2>
+<p dir="ltr"><span>The standard VRM model exported from VRoid Studio has no skeletal animations, so the tracked head motions are directly retargeted on the model’s skeleton joints. The system assumes the model skeleton follows the VRM standard rules (see </span><a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#vrm-rules"><span>https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#vrm-rule</span></a><span>). It is assumed that the retargeted joints have no additional transform and the world transform has the rotation 0, 0, 0 in OpenGL style axis.</span></p>
+<p dir="ltr"><span>The set of joints/bones needed for rigid head motions retargeting is:</span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>spine</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>chest</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>upperChest</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>neck</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>head</span></p>
+</li>
+</ul>
+<p dir="ltr"><span>The table below shows the motion ranges and the affected bones/joints.</span></p>
+<div align="left" dir="ltr">
+<table><colgroup><col width="121"/><col width="222"/><col width="270"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Rigid Motion</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Mapped Motion Range (Degrees)</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Affected Bones (and weights)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Head Yaw</span></p>
+</td>
+<td>
+<p dir="ltr"><span>[-50, 50]</span></p>
+</td>
+<td>
+<p dir="ltr"><span>neck (0.2) and head (0.8)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Head Roll</span></p>
+</td>
+<td>
+<p dir="ltr"><span>[-30, 30]</span></p>
+</td>
+<td>
+<p dir="ltr"><span>neck (0.4) and head (0.6)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Head Pitch</span></p>
+</td>
+<td>
+<p dir="ltr"><span>[-30, 30]</span></p>
+</td>
+<td>
+<p dir="ltr"><span>neck (0.5) and head (0.5)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Body Yaw</span></p>
+</td>
+<td>
+<p dir="ltr"><span>[-45, 45]</span></p>
+</td>
+<td>
+<p dir="ltr"><span>spine (0.3), chest (0.3) and upperChest (0.4)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Body Roll</span></p>
+</td>
+<td>
+<p dir="ltr"><span>[-30, 30]</span></p>
+</td>
+<td>
+<p dir="ltr"><span>spine (0.3), chest (0.3) and upperChest (0.4)</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Body Pitch</span></p>
+</td>
+<td>
+<p dir="ltr"><span>[-30, 30]</span></p>
+</td>
+<td>
+<p dir="ltr"><span>spine (0.3), chest (0.3) and upperChest (0.4)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p dir="ltr"><span>These bones can be configured through the Humanoid System of the VRM extension</span></p>
+<p><span><span></span></span></p>
+<h2 dir="ltr"><span>Eye Pupil Motions</span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The eye pupil motions are retargeted in the same way as the rigid head motions, by directly manipulating the transforms of the </span><span>leftEye</span><span> and </span><span>rightEye</span><span> bones. The range of motion is [-10, 10] degrees for both rotation axis (yaw and pitch), but this may vary depending on how the model is being built. The range was determined through an empirical process done on the sample models from VRoid Studio.</span></p>
+<p><span><span></span></span></p>
+<h2 dir="ltr"><span>Procedural Behaviors</span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Animaze supports a wide range of procedural behaviors, including a ‘look at camera’ setting and natural eye movement. These behaviors are implemented through the core tracking interpretation module in Animaze, and are usually applied through skeletal animations and blendshapes that the avatar already features. In the case of VRM models, some of these behaviors need a custom implementation:</span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>VRM models import in T-Pose, although if you add the idle1 animation, it will be applied. We’ve added an Idle Pose to set the model in a usable state.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>VRM models import in a </span><span>static </span><span>T-Pose, so we’ve added a small procedural breathing animation to make the avatar more lively.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Eyes look-at-camera behavior has been added and uses the Eye Pupil Motions technique for mapping the motion.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Head look-at-camera behavior uses the Rigid Head Motion technique for mapping the motion, but overrides the tracking data.</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span>Idle Pose</span></h3>
+<p dir="ltr"><span>VRM models import in </span><span>static</span><span> T-Pose so we’ve procedurally rotated a set of bones to get the model’s hands down. The joint/bones used are: </span><span>leftUpperArm, leftLowerArm, rightUpperArm </span><span>and </span><span>rightLowerArm</span><span>. The upper arms are rotated 70 degrees around the Z Axis (roll motion), and the lower arms an additional of 10 degrees around the Z Axis.</span></p>
+<p dir="ltr"><span>Note that the procedural Idle Pose doesn’t account for mesh clipping and is currently not configurable</span></p>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span>Idle Motion (Breathing)</span></h3>
+<p dir="ltr"><span>The idle motion we’ve added is a very subtle breathing animation that affects the chest and upperChest joints/bones. The idle motion is a uniform scaling (all axis) animation in the interval 1 to 1.025, with the assumption that the joint scaling is set by default to 1, as the VRM rules state.</span></p>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span>Eyes Look-at-Camera</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span class="Apple-tab-span"> </span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The look-at-camera behavior uses the </span><span>head </span><span>joint position and orientation (so, assumed to follow the VRM rules) to compute the look angle to the render camera and is applied through the Eye Pupil Behavior retargeting technique.</span></p>
+<h3 dir="ltr"><span>Head Look-at-Camera</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span class="Apple-tab-span"> </span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The Head Look-at-Camera behavior orientates the head to the render camera and uses the same head joint position and orientation as the Eyes Look-at-Camera, while the animation mapping is done through the Rigid Head Motion technique.</span></p>
+<h2 dir="ltr"><span>Special Actions &amp; Poses</span></h2>
+<p dir="ltr"><span><span class="Apple-tab-span"> </span></span><span>Special Actions and Poses are supported on .VRM sourced models in a limited way, they need to be imported for the specific avatar in use and there is currently no support for generic animations that can be shared between two or more .VRM sourced models.</span></p>
+<p dir="ltr"><span>There are two main ways of adding special actions or poses:</span></p>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Provide animations with the .VRM model (the base .gltf format supports skeletal animation). After import these animations can be added as Special Actions or Poses through the appropriate Editor function.</span></p>
+</li>
+</ol>
+<p><span id="docs-internal-guid-64cadba6-7fff-bdde-8bee-4b9e85e756ac"><span>        2. Import the .VRM model and then import the special animations as .FBX source files which are detected by the Special Actions &amp; Poses menus in the Editor as animation sources. </span><span>Note that these FBX animation sources should match 100% the .VRM skeletal hierarchy and have animation keyframes on all joints of the skeleton.</span></span></p>
+</div>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing VRM Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../vrmgeneral/index.html">
+                    .VRM General Flow                </a>
+</li>
+<li>
+<a href="../vrmgeometry/index.html">
+                    Geometry &amp; Materials &amp; Textures                </a>
+</li>
+<li>
+<a href="index.html">
+                    Animations &amp; Retargeting                </a>
+</li>
+<li>
+<a href="../vrmphysics/index.html">
+                    Physics                </a>
+</li>
+<li>
+<a href="../vrmperfectsync/index.html">
+                    PerfectSync capabilities to .VRM sourced avatars                </a>
+</li>
+<li>
+<a href="../vrmimport/index.html">
+                    Import Your .VRM Model Into Animaze                </a>
+</li>
+<li>
+<a href="../troubleshootandsupportvrmeditor/index.html">
+                    Troubleshoot &amp; Support                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

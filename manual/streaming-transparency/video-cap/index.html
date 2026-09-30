@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chroma Key w/ OBS Video Capture Device (no subscription needed) &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Chroma Key w/ OBS Video Capture Device (no subscription needed)</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="3998">We’ll use the Animaze Virtual Camera as a Video Capture Device source (i.e. webcam source) in OBS. We’ll set the background to an unused color such as pure green and crop the green pixels using the Chroma Key filter in OBS.</p>
+<p data-renderer-start-pos="4223">This section assumes that the Animaze Virtual Camera has been properly installed on the system (part of the Animaze installation process) and assumes knowledge about using it as a webcam in other software. If not, follow these guides/faqs:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="4466"><a class="css-1xdzogm eeajecn0" data-testid="inline-card-resolved-view" href="../../../faq/tech/streamwithanimaze/index.html" tabindex="0"><span class="css-1p7ax5 e158gagu2"><span class="smart-link-title-wrapper css-0 e158gagu8">Animaze Desktop FAQ: How can I stream with Animaze?</span></span></a></p>
+</li>
+<li>
+<p data-renderer-start-pos="4472"><a class="css-1xdzogm eeajecn0" data-testid="inline-card-resolved-view" href="../../../faq/tech/virtualcameradriver/index.html" tabindex="0"><span class="css-1p7ax5 e158gagu2"><span class="smart-link-title-wrapper css-0 e158gagu8">Animaze FAQ | Learn how to use Animaze by Facerig</span></span></a></p>
+</li>
+</ul>
+<h2 data-renderer-start-pos="4478" id="Steps.2">Steps</h2>
+<p>(<strong data-renderer-mark="true">in Animaze</strong>) Let’s change the background to a greenscreen by opening the Backgrounds gallery and selecting the Green Screen backgrounds.</p>
+<p><img height="489" src="../../../assets/images/image-20220803-104340-ba6befcd.png" width="800"/></p>
+<p><strong data-renderer-mark="true">(optional)</strong><span> (</span><strong data-renderer-mark="true">in Animaze</strong><span>) If the pure green is not the color you want to crop out, you can choose another one. You can change any background into a solid color one by clicking on the background in the gallery and toggling the Solid Color option as you customize the background.</span></p>
+<p><img height="528" src="../../../assets/images/image-20220803-104651-9028f29a.png" width="800"/></p>
+<p><span>(</span><strong data-renderer-mark="true">in Animaze</strong><span>) Click on </span><strong data-renderer-mark="true">Enable Virtual Camera</strong><span> - this will start broadcasting the rendered scene (avatar+background) to the Animaze Virtual Camera</span></p>
+<p><img height="147" src="../../../assets/images/0d363ed4-4a96-4c2f-aea5-f355840ef28b-2f51ea9f.png" width="338"/></p>
+<p><span>(</span><strong data-renderer-mark="true">in OBS</strong><span>) In the Sources section, right-click&gt; Add and click on Video Capture Device. You will be prompted with a Properties dialog.</span></p>
+<p><img height="353" src="../../../assets/images/b22a9614-6ddb-484e-815b-d022ecf2b926-cd6d560d.png" width="712"/></p>
+<p><span>(</span><strong data-renderer-mark="true">in OBS</strong><span>) In the Properties dialog select Animaze Virtual Camera for the Device option in the Video Capture Device options dialog, leave everything else as default, and click Ok.</span></p>
+<p><img height="828" src="../../../assets/images/image-20220803-110903-67d2b072.png" width="729"/></p>
+<p><span>(</span><strong data-renderer-mark="true">in OBS</strong><span>) Right-click on the Video Capture Device in the Sources section and then click the Filters button from the context menu.</span></p>
+<p><img height="122" src="../../../assets/images/e02f9041-c1bd-46e0-a7fa-e10f3a4f11f1-58fc12eb.png" width="523"/></p>
+<p data-renderer-start-pos="5519">(<strong data-renderer-mark="true">in OBS</strong>) In the Filters dialog, add a Chroma Key filter</p>
+<p data-renderer-start-pos="5519"><img height="366" src="../../../assets/images/0a9142fb-9ae0-4c1a-8a6b-39548c57c3a0-205d6899.png" width="299"/></p>
+<p data-renderer-start-pos="5519"><span>(</span><strong data-renderer-mark="true">in OBS</strong><span>) Adjust the Chroma Key filter to remove the background. Note that the Key Colour Type should be set to Green. Depending on the avatar design you may want to use other Key Color Types and change the filter options to suit your needs.</span></p>
+<p data-renderer-start-pos="5519"><img height="623" src="../../../assets/images/5c06f55c-9e93-4444-84c3-2b21f726b418_1_-a5f190d4.png" width="851"/></p>
+<p data-renderer-start-pos="5519"><span>(in OBS) Now it’s time to reposition the avatar feed</span></p>
+<p data-renderer-start-pos="5519"><img height="450" src="../../../assets/images/image-20220803-112545-1df8fdb4.png" width="800"/></p>
+<p data-renderer-start-pos="5519"><span>Done and dusted!</span></p>
+<p data-renderer-start-pos="5519"><img height="453" src="../../../assets/images/image-20220803-112625-b28d55e7.png" width="800"/></p>
+<div></div>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1gqjtpt" data-layout="center" data-node-type="mediaSingle">
+<div class="css-1c3oxni">
+<div data-alt="" data-collection="contentId-91815937" data-context-id="91815937" data-file-mime-type="image/png" data-file-name="image-20220803-111829.png" data-file-size="9771" data-height="366" data-id="8f22318d-8f9a-4b69-beaa-849449cf1d9e" data-node-type="media" data-type="file" data-width="299">
+<div class="media-card-viewport-anchor"></div>
+<div class="new-file-experience-wrapper css-u8qnmk" data-testid="media-card-view" id="newFileExperienceWrapper"></div>
+</div>
+</div>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Streaming with a transparent background        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../transp-intro/index.html">
+                    Intro                </a>
+</li>
+<li>
+<a href="../spout/index.html">
+                    Alpha Transparency w/ OBS Spout2 Plugin (recommended)                </a>
+</li>
+<li>
+<a href="../alpha-transp/index.html">
+                    Alpha Transparency w/ OBS Game Capture                </a>
+</li>
+<li>
+<a href="index.html">
+                    Chroma Key w/ OBS Video Capture Device (no subscription needed)                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

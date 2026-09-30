@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using (alpha) Maxine AR Face Tracking in Animaze &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Using (alpha) Maxine AR Face Tracking in Animaze</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="1"><span>Animaze has added support for Maxine AR SDK with Face &amp; Shoulders Tracking capabilities. Integration is still alpha version so there are things missing from the normal embodiment experience and UX (e.g. advanced tracking configurations).</span></p>
+<p data-renderer-start-pos="240">There are two major requirements for this tracker to work:</p>
+<ol class="ak-ol" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="302">hardware requirement: RTX series NVIDIA graphics card</p>
+</li>
+<li>
+<p data-renderer-start-pos="359">software requirement: the NVIDIA AR SDK installed from <span><a class="css-1t2aoot e92dmmh0" data-testid="inline-card-resolved-view" href="https://www.nvidia.com/en-gb/geforce/broadcasting/broadcast-sdk/resources/" tabindex="0"><span class="css-1awfwlv e14lsucj2"><span class="smart-link-title-wrapper css-0 e14lsucj8">NVIDIA Broadcast Software Integrations: Download Resources</span></span></a></span></p>
+</li>
+</ol>
+<h3 data-renderer-start-pos="420" id="Usage-steps:">Usage steps:<span class="heading-anchor-wrapper"></span></h3>
+<ol class="ak-ol" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="436">make sure you have the NVIDIA AR SDK installed appropriate to your graphics card. Installer here: <span><a class="css-1t2aoot e92dmmh0" data-testid="inline-card-resolved-view" href="https://www.nvidia.com/en-gb/geforce/broadcasting/broadcast-sdk/resources/" tabindex="0"><span class="css-1awfwlv e14lsucj2"><span class="smart-link-title-wrapper css-0 e14lsucj8">NVIDIA Broadcast Software Integrations: Download Resources</span></span></a></span></p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-5u9uc1" data-layout="center" data-node-type="mediaSingle">
+<div class="css-1mlists">
+<div data-alt="" data-collection="contentId-110526465" data-context-id="110526465" data-file-mime-type="image/png" data-file-name="image-20220928-132529.png" data-file-size="19576" data-height="430" data-id="6e6d7996-3833-4723-92ee-e8bb23ee52b4" data-node-type="media" data-type="file" data-width="431">
+<div class="new-file-experience-wrapper css-1euwaxd" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20220928-132529.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="Using Maxine AR Face tracking in Animaze" height="430" src="../../../assets/images/image-20220928-132529-b633ca32.png" title="Using Maxine AR Face tracking in Animaze" width="431"/><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/e8c5fe25-2957-4add-a253-34e6bcdea195#media-blob-url=true&amp;id=6e6d7996-3833-4723-92ee-e8bb23ee52b4&amp;collection=contentId-110526465&amp;contextId=110526465&amp;height=430&amp;width=431&amp;alt="/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="542">Open Animaze</p>
+</li>
+<li>
+<p data-renderer-start-pos="558">Go to Settings &gt; Advanced Tracking Configurations &gt; Select Trackers</p>
+</li>
+<li>
+<p data-renderer-start-pos="629">Toggle off the Default Tracker</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1ubd0s6" data-layout="center" data-node-type="mediaSingle">
+<div class="css-p0elyn">
+<div data-alt="" data-collection="contentId-110526465" data-context-id="110526465" data-file-mime-type="image/png" data-file-name="image-20220928-133010.png" data-file-size="25216" data-height="100" data-id="3593d22c-504a-40dd-bfad-23b11f96840e" data-node-type="media" data-type="file" data-width="322">
+<div class="new-file-experience-wrapper css-aj6yv4" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20220928-133010.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="Using Maxine AR Face tracking in Animaze" height="100" src="../../../assets/images/image-20220928-133010-77b58d82.png" title="Using Maxine AR Face tracking in Animaze" width="322"/><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/be59b013-2a39-4af0-869c-ac3267a4f7aa#media-blob-url=true&amp;id=3593d22c-504a-40dd-bfad-23b11f96840e&amp;collection=contentId-110526465&amp;contextId=110526465&amp;height=100&amp;width=322&amp;alt="/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="666">Toggle on the (alpha) NVIDIA Maxine Face Tracker</p>
+</li>
+<li>
+<p data-renderer-start-pos="718">(optional) Toggle the Body Module for shoulder’s tracking</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1ubd0s6" data-layout="center" data-node-type="mediaSingle">
+<div class="css-zlsl3n">
+<div data-alt="" data-collection="contentId-110526465" data-context-id="110526465" data-file-mime-type="image/png" data-file-name="image-20221018-140753.png" data-file-size="85838" data-height="339" data-id="63303be0-000d-40be-9b70-72456e1e8a23" data-node-type="media" data-type="file" data-width="322">
+<div class="new-file-experience-wrapper css-ma6pen" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20221018-140753.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/80804182-850b-455f-afc2-3c7d4ebd51a4#media-blob-url=true&amp;id=63303be0-000d-40be-9b70-72456e1e8a23&amp;collection=contentId-110526465&amp;contextId=110526465&amp;height=339&amp;width=322&amp;alt="/><img alt="Using Maxine AR Face tracking in Animaze" height="339" src="../../../assets/images/image-20221018-140753-1f769602.png" title="Using Maxine AR Face tracking in Animaze" width="322"/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="782">Calibrate using the button on the webcam feed or using the hotkey Ctrl + C</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1w47enc" data-layout="center" data-node-type="mediaSingle">
+<div class="css-4xkgrk">
+<div data-alt="" data-collection="contentId-110526465" data-context-id="110526465" data-file-mime-type="image/png" data-file-name="image-20220928-133048.png" data-file-size="26927" data-height="63" data-id="1ab72f2e-d590-473a-99fe-43e5cc767964" data-node-type="media" data-type="file" data-width="383">
+<div class="new-file-experience-wrapper css-1fwwp6o" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20220928-133048.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/e72954a8-73d1-4e9e-9aee-92125096f72f#media-blob-url=true&amp;id=1ab72f2e-d590-473a-99fe-43e5cc767964&amp;collection=contentId-110526465&amp;contextId=110526465&amp;height=63&amp;width=383&amp;alt="/><img alt="Using Maxine AR Face tracking in Animaze" height="63" src="../../../assets/images/image-20220928-133048-131668d7.png" title="Using Maxine AR Face tracking in Animaze" width="383"/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="863">Done</p>
+</li>
+</ol>
+<h3 data-renderer-start-pos="871" id="Known-limitations:">Known limitations:</h3>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="893">body forward/backward movement is currently disabled as it is not stable enough.</p>
+</li>
+<li>
+<p data-renderer-start-pos="977">advanced configurations (smoothing values and expression ranges) are not available, although they can be manually altered by modifying the MaxineFilterConfigDefault.json file from &lt;AnimazeInstallFolder&gt;/Data/ folder.</p>
+</li>
+<li>
+<p data-renderer-start-pos="1197">sad eyebrows are currently disabled as there’s no consistent method to determine them.</p>
+</li>
+<li>
+<p data-renderer-start-pos="1287">dropping the jaw while lips are still sealed, the avatar will open the mouth. Done to enhance normal speech movement, as accounting for both tracking units will make normal speech undetectable.</p>
+</li>
+</ul>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Desktop Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../appintro/index.html">
+                    Introduction                </a>
+</li>
+<li>
+<a href="../avatars/index.html">
+                    Avatar Customization and Retexturing                </a>
+</li>
+<li>
+<a href="../appbackgrounds/index.html">
+                    Background types, importing and customization                </a>
+</li>
+<li>
+<a href="../appvoiceeffects/index.html">
+                    Voice Effects                </a>
+</li>
+<li>
+<a href="../appemotes/index.html">
+                    Emotes                </a>
+</li>
+<li>
+<a href="../appprops/index.html">
+                    Props types and customization                </a>
+</li>
+<li>
+<a href="../spout2/index.html">
+                    Using Spout2 sources in Animaze                </a>
+</li>
+<li>
+<a href="../appanimations/index.html">
+                    Avatar Animations and special actions                </a>
+</li>
+<li>
+<a href="../quickscenes/index.html">
+                    Quick Scenes                </a>
+</li>
+<li>
+<a href="../dedwind/index.html">
+                    Dedicated Capture Window                </a>
+</li>
+<li>
+<a href="../voicemod/index.html">
+                    Leveraging Voicemod controls in Animaze                </a>
+</li>
+<li>
+<a href="../virtualcam/index.html">
+                    Animaze Virtual Camera                </a>
+</li>
+<li>
+<a href="../import3dh/index.html">
+                    Importing 3D avatars and hybrid avatars                </a>
+</li>
+<li>
+<a href="../import2d/index.html">
+                    Importing 2D avatars                </a>
+</li>
+<li>
+<a href="../vrmimp/index.html">
+                    Importing .VRM avatars                </a>
+</li>
+<li>
+<a href="../importrpms/index.html">
+                    Importing Ready Player Me avatars                </a>
+</li>
+<li>
+<a href="../trackers/index.html">
+                    Select Trackers                </a>
+</li>
+<li>
+<a href="../iphonetrack/index.html">
+                    iPhone tracking                </a>
+</li>
+<li>
+<a href="../webcamtracker/index.html">
+                    Webcam Tracker                </a>
+</li>
+<li>
+<a href="../tobii/index.html">
+                    Tobii Eye tracker                </a>
+</li>
+<li>
+<a href="../ultra/index.html">
+                    Ultraleap tracker                </a>
+</li>
+<li>
+<a href="../audiosync/index.html">
+                    Audio Based Lip sync                </a>
+</li>
+<li>
+<a href="../advtrack/index.html">
+                    Advanced Tracking Configuration                </a>
+</li>
+<li>
+<a href="index.html">
+                    Using (alpha) Maxine AR Face Tracking in Animaze                </a>
+</li>
+<li>
+<a href="../subs/index.html">
+                    Subscriptions                </a>
+</li>
+<li>
+<a href="../requir/index.html">
+                    Minimum Requirements for PCs                </a>
+</li>
+<li>
+<a href="../keybinds/index.html">
+                    Keybinds controls                </a>
+</li>
+<li>
+<a href="../optwebcam/index.html">
+                    Optimizing Web Camera Tracking with Camera Angle and Ambient Light                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

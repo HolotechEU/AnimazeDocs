@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Features &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Advanced Features</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="6053">Advanced features are meant for tinkerers and developers, so that means there’s a bit of a technical background requirement to access them. Advanced features are a way of further configure and customize the Animaze ChatPal experience, including prompt system messages, animation smoothing options, emotions/gestures mapping and even avatar model requirements.</p>
+<h2 data-renderer-start-pos="6053">Skip to</h2>
+<ul>
+<li><a href="#advancedprompts">Advanced Command Prompts</a></li>
+<li><a href="#api">Animaze API</a></li>
+<li><a href="#advanced-config">AI Advanced Configuration</a></li>
+<li><a href="#avatar-config">AI Avatar Advanced Configuration</a></li>
+<li><a href="#assets-considerations">Avatar Assets Considerations</a></li>
+</ul>
+<h2 data-renderer-start-pos="6414"><a name="advancedprompts"></a></h2>
+<hr/>
+<h2 data-renderer-start-pos="6414" id="Advanced-Command-Prompts">Advanced Command Prompts<span class="heading-anchor-wrapper"></span></h2>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="6442">-echo &lt;text&gt; - echo function that will circumvent the conversational AI (the LLM) and will only use the text-to-speech function with all the magic Animaze adds to the rendered avatar. Basically, the avatar will speak out the &lt;text&gt; part.</p>
+</li>
+<li>
+<p data-renderer-start-pos="6683">-chatConfig &lt;prompt&gt; - will send the &lt;prompt&gt; to OpenAI API as a system message for the conversational AI. Useful, to rewire the conversation into another context.</p>
+</li>
+</ul>
+<h2 data-renderer-start-pos="6850"><a name="api"></a></h2>
+<hr/>
+<h2 data-renderer-start-pos="6850" id="Animaze-API">Animaze API<span class="heading-anchor-wrapper"></span></h2>
+<p data-renderer-start-pos="6863">The command “ChatbotSendMessage“ with the parameter “message“ is available through the Animaze API. More info in the <strong><a class="css-tgpl01" data-renderer-mark="true" data-testid="link-with-safety" href="https://holotechconfluence.atlassian.net/wiki/spaces/HD/pages/157941761" title="/wiki/spaces/HD/pages/157941761">Animaze API Docs</a></strong>.</p>
+<h2 data-renderer-start-pos="6999"><a name="advanced-config"></a></h2>
+<hr/>
+<h2 data-renderer-start-pos="6999" id="AI-Advanced-Configuration">AI Advanced Configuration<span class="heading-anchor-wrapper"></span></h2>
+<p data-renderer-start-pos="7026">Animaze ChatPal has a general configuration file that resides in the Animaze installation folder: <strong data-renderer-mark="true">&lt;AnimazeInstallDir&gt;/Data/OpenAITracker.json</strong>.</p>
+<p data-renderer-start-pos="7170">You can load your own config file in Animaze from <strong data-renderer-mark="true">Settings &gt; Animaze ChatPal &gt; Load Configuration File</strong>.</p>
+<p data-renderer-start-pos="7275">The configuration file allows changing a few options:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="7332">"SystemMessage" - string sent as a system message to the conversational AI. Allows you to add context to the current interaction.<br/><br/></p>
+</li>
+<li>
+<p data-renderer-start-pos="7466">"StringToEmotion" - string to emotions map. Animaze ChatPal maps certain strings from the conversational AI response to an internal avatar emotional state. This works with custom tags (e.g. [string_trigger]) that are detected and even removed from the response, then sent to Animaze’s emotions and animation systems. You can add or remove mappings.<br/><br/>"StringToEmotion" : {<br/> "[trigger_string]" : {<br/> "emotion" : "AFFECTION",<br/> "removeStringOnDetect" : true<br/> }<br/>}<br/><br/>The “emotion“ values are listed in the OpenAITracker.json under Info &gt; EmotionPossibleValues array of strings.</p>
+<p data-renderer-start-pos="8063"> </p>
+</li>
+<li>
+<p data-renderer-start-pos="8067">“StringToGesture“ - string to gestures map. Animaze ChatPal maps certain strings from the conversational AI response to triggerable animations (like special actions), such as hello, nodding positively or negatively. This works with custom tags (e.g. [string_trigger]) that are detected and even removed from the response, then sent to Animaze’s animation system. You can add or remove mappings.<br/><br/>"StringToGesture" : {<br/> "[trigger_string]" : {<br/> "gesture" : "GREETING",<br/> "removeStringOnDetect" : false<br/> }<br/>}<br/><br/>The “gesture“ values are listed in the OpenAITracker.json under Info &gt; GesturePossibleValues array of strings.<br/><br/></p>
+</li>
+<li>
+<p data-renderer-start-pos="8713">“AutoPromptList” - is a list of strings used as random cyclic prompts send to the conversational AI. This option is used to avoid the long silent pauses of a twitch stream. A new random prompt is selected every “AutoPromptCooldown“ seconds and there is a kill switch for it through the “AutoPromptEnabled“ property. The cooldown starts after a response from the conversational AI has been received, so, in a lively conversation, the cyclic prompts do not start randomly in the heat of the interaction. We recommend tuning the “AutoPromptCooldown“ to a value that doesn’t make the autoprompts exceed the conversational AI requests per minute limit.<br/><br/></p>
+</li>
+</ul>
+<h2 data-renderer-start-pos="9365"><a name="avatar-config"></a></h2>
+<hr/>
+<h2 data-renderer-start-pos="9365" id="AI-Avatar-Advanced-Configuration">AI Avatar Advanced Configuration<span class="heading-anchor-wrapper"></span></h2>
+<p data-renderer-start-pos="9399">Animaze ChatPal allows configuring some animation response values for each avatar, in the context of the AI Brain or AI Sidekick. All avatars are configured by default by the AvatarDefault.aicfg file that resides in <strong data-renderer-mark="true">&lt;AnimazeInstallDir&gt;/Data/</strong> folder.</p>
+<p data-renderer-start-pos="9650">You can have a specific config for your own avatar by creating a file called AvatarName.aicfg that you place in <strong data-renderer-mark="true">&lt;AnimazeInstallDir&gt;/Data/</strong> folder. The config file will be loaded or reloaded every time you load/reload the avatar.</p>
+<p data-renderer-start-pos="9879">The Avatar AI Config has the current following options:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="9938">"vowelsSmoothing" - float value representing smoothing of the vowels animations.</p>
+</li>
+<li>
+<p data-renderer-start-pos="10022">"consonantsSmoothing" - float value representing smoothing of the consonants animations.</p>
+</li>
+<li>
+<p data-renderer-start-pos="10114">"browDownClamp" - float value [0,1] representing the maximum value the brow down action unit can take</p>
+</li>
+<li>
+<p data-renderer-start-pos="10219">"pitchSmoothing" - float value representing the smoothing of the head pitch action unit</p>
+</li>
+<li>
+<p data-renderer-start-pos="10310">"pitchWeight" - float value [0,1] representing the weight of the pitch animation on head when avatar is speaking</p>
+</li>
+<li>
+<p data-renderer-start-pos="10426">"rollSmoothing" - float value representing the smoothing of the head and body roll action units</p>
+</li>
+<li>
+<p data-renderer-start-pos="10525">"rollWeight" - float value [0,1] representing the weight of the roll animation on head and body</p>
+</li>
+<li>
+<p data-renderer-start-pos="10625">"yawSmoothing"- float value representing the smoothing of the head yaw action units</p>
+</li>
+<li>
+<p data-renderer-start-pos="10712">"yawWeight"- float value [0,1] representing the weight of the yaw animation on head</p>
+</li>
+</ul>
+<h2 data-renderer-start-pos="10800"><a name="assets-considerations"></a></h2>
+<hr/>
+<h2 data-renderer-start-pos="10800" id="Avatars-Assets-Considerations">Avatars Assets Considerations<span class="heading-anchor-wrapper"></span></h2>
+<p data-renderer-start-pos="10831"><span>Animaze ChatPal does use a few additional idle animations and special actions, to make the avatar more lively and approachable. In terms of face expressions and head movement, Animaze uses the set of animations and blendshapes of the regular VTuber-ready models.</span></p>
+<p data-renderer-start-pos="11095">Animaze ChatPal uses the following additional animations:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="11156">idle animations where the avatar explains something (we use a few that are randomly selected)</p>
+</li>
+<li>
+<p data-renderer-start-pos="11253">idle animation where the avatar is standing still, in a neutral pose, and it’s not talking</p>
+</li>
+<li>
+<p data-renderer-start-pos="11347">head nodding negatively and positively</p>
+</li>
+<li>
+<p data-renderer-start-pos="11389">greeting animation</p>
+</li>
+<li>
+<p data-renderer-start-pos="11389">atomic face expressions animations for specific emotions</p>
+</li>
+</ul>
+<p data-renderer-start-pos="11411">By default, VRM, Ready Player me, Personas and all Humanoid Holotech Avatars already have these animations through the generic animation system (the mannequin).</p>
+<p data-renderer-start-pos="11574">Avatars that don’t retarget the generic animation system or are Live2D models, would require the mentioned anims added manually in the .item file of the avatar. Here is an example of adding your custom animations:</p>
+<p><strong><em>use a JSon linter service to properly visualize</em></strong></p>
+<p>"ChatPalEmotionsConfigs": [{<br/> "Emotion": "ANGER",<br/> "AIIdleExplainingAnimations": ["idle1_anger_explain", "idle2_anger_explain", "idle_anger_explain"],<br/> "AIIdleNeutralAnimations": ["idle1_anger_neutral", "idle2_anger_neutral"],<br/> "AIGreetingAnimations": ["greeting1_anger", "hello2"],<br/> "AIIHeadNoddingApprovalAnimations": ["head_nodding"],<br/> "AIIHeadNegatingAnimations": ["head_negating"],<br/> "AIActiveAnimationsOnEmotion": [{<br/>  "Name": "browDownL_anim",<br/>  "Value": 1<br/> }, {<br/>  "Name": "browDownR_anim",<br/>  "Value": 1<br/> }],<br/> "AIActiveBlendshapesOnEmotion": [{<br/>  "Name": "browDownL_blendshape",<br/>  "Value": 1<br/> }, {<br/>  "Name": "browDownR_blendshape",<br/>  "Value": 1<br/> }],<br/> "AILive2DParamsOnEmotion": [{<br/>  "Name": "ParamMouthForm",<br/>  "Value": -1<br/> }, {<br/>  "Name": "ParamBrowLAngle",<br/>  "Value": -1<br/> }, {<br/>  "Name": "ParamBrowRAngle",<br/>  "Value": -1<br/> }]<br/>}]</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="13222"><code class="code css-z5oxh7" data-renderer-mark="true">Emotion</code> parameter can take the following values: NEUTRAL, DISGUST, CONTEMPT, BELLIGERENCE, DOMINEERING, CRITICISM, ANGER, TENSION, TENSE_HUMOR, DEFENSIVENESS, WHINING, SADNESS, STONEWALLING, INTEREST, VALIDATION, AFFECTION, HUMOR, SURPRISE, JOY.</p>
+</li>
+<li>
+<p data-renderer-start-pos="13471"><code class="code css-z5oxh7" data-renderer-mark="true">AIIdleExplainingAnimations</code> parameter is a list of animations randomly used while the avatar is talking, used only when the current <code class="code css-z5oxh7" data-renderer-mark="true">Emotion</code> is active. All these animations must be also configured as Idle animations in the avatar’s .item file.</p>
+</li>
+<li>
+<p data-renderer-start-pos="13716"><code class="code css-z5oxh7" data-renderer-mark="true">AIIdleNeutralAnimations</code> parameter is a list of animations randomly used while the avatar is <strong data-renderer-mark="true">not </strong>talking, used only when the current <code class="code css-z5oxh7" data-renderer-mark="true">Emotion</code> is active. All these animations must be also configured as Idle animations in the avatar’s .item file.</p>
+</li>
+<li>
+<p data-renderer-start-pos="13962"><code class="code css-z5oxh7" data-renderer-mark="true">AIGreetingAnimations</code> parameter is a list of animations randomly used when the avatar responds with a greeting (examples: “Hey“, “hi“, “good morning/afternoon/evening“, “bye“). All these animations must be also configured as Special Actions animations in the avatar’s .item file.</p>
+</li>
+<li>
+<p data-renderer-start-pos="14244"><code class="code css-z5oxh7" data-renderer-mark="true">AIIHeadNoddingApprovalAnimations</code> parameter is a list of animations randomly used when the avatar responds with an approval (examples: “Yes“, “Absolutely“). All these animations must be also configured as Special Actions animations in the avatar’s .item file.</p>
+</li>
+<li>
+<p data-renderer-start-pos="14507"><code class="code css-z5oxh7" data-renderer-mark="true">AIIHeadNegatingAnimations</code> parameter is a list of animations randomly used when the avatar responds with a negation (examples: “No“). All these animations must be also configured as Special Actions animations in the avatar’s .item file.</p>
+</li>
+<li>
+<p data-renderer-start-pos="14747"><code class="code css-z5oxh7" data-renderer-mark="true">AIActiveAnimationsOnEmotion</code> parameter is a list of additive skeletal animations that will <strong data-renderer-mark="true">override </strong>the default ones activated on current <code class="code css-z5oxh7" data-renderer-mark="true">Emotion</code> . The <code class="code css-z5oxh7" data-renderer-mark="true">Value</code> parameter takes float values from 0..1.</p>
+</li>
+<li>
+<p data-renderer-start-pos="14947"><code class="code css-z5oxh7" data-renderer-mark="true">AIActiveBlendshapesOnEmotion</code>parameter is a list of additive blendshape animations that will <strong data-renderer-mark="true">override </strong>the default ones activated on current <code class="code css-z5oxh7" data-renderer-mark="true">Emotion</code> . The <code class="code css-z5oxh7" data-renderer-mark="true">Value</code> parameter takes float values from 0..1.</p>
+</li>
+<li>
+<p data-renderer-start-pos="15149"><code class="code css-z5oxh7" data-renderer-mark="true">AILive2DParamsOnEmotion</code> parameters is a list of Live2D parameters that will <strong data-renderer-mark="true">override </strong>the default ones activated on current <code class="code css-z5oxh7" data-renderer-mark="true">Emotion</code> . The <code class="code css-z5oxh7" data-renderer-mark="true">Value</code> parameter takes float values from 0..1.</p>
+</li>
+</ul>
+<div><span>All the above parameters are optional. Animaze will use the default values if these parameters are not defined in the .item file with custom values.</span></div>
+<p data-renderer-start-pos="11574">Please note that the animations labeled as <code class="code css-z5oxh7" data-renderer-mark="true">AIIdleExplainingAnimations</code> and <code class="code css-z5oxh7" data-renderer-mark="true">AIIdleNeutralAnimations</code> must be configured as Idle animations, while the animations labeled as <code class="code css-z5oxh7" data-renderer-mark="true">AIIdleGreetingAnimations</code>, <code class="code css-z5oxh7" data-renderer-mark="true">AIIHeadNoddingApprovalAnimations</code>, <code class="code css-z5oxh7" data-renderer-mark="true">AIIHeadNegatingAnimations</code> must be configured as Special Actions animations in the avatar’s .item file.</p>
+<p data-renderer-start-pos="11574">Here is another example of adding your custom animations for a Live 2d Avatar:</p>
+<p data-renderer-start-pos="11574"><strong><em>use a JSon linter service to properly visualize</em></strong></p>
+<p>"ChatPalEmotionsConfigs": [{<br/> "Emotion": "NEUTRAL",<br/> "AIIdleExplainingAnimations": ["haru_g_m07", "haru_g_m15"],<br/> "AIIdleNeutralAnimations": ["haru_g_Idle"],<br/> "AIGreetingAnimations": ["haru_g_m08"],<br/> "AIIHeadNoddingApprovalAnimations": ["haru_g_m01"],<br/> "AIIHeadNegatingAnimations": ["haru_g_m11"]<br/> },<br/> {<br/> "Emotion": "ANGER",<br/> "AILive2DParamsOnEmotion": [{<br/>  "Name": "ParamMouthForm",<br/>  "Value": -1<br/> }, {<br/>  "Name": "ParamBrowLAngle",<br/>  "Value": -1<br/> }, {<br/>  "Name": "ParamBrowRAngle",<br/>  "Value": -1<br/> }]<br/> }<br/>]</p>
+<p data-renderer-start-pos="12372">Need help to configure animations as Special Actions? Click <strong><a class="css-tgpl01" data-renderer-mark="true" data-testid="link-with-safety" href="../../gettingstarted3d/avatarspecialactions/index.html" title="https://www.animaze.us/manual/gettingstarted3d/avatarspecialactions">here</a> </strong>to learn how to do it on 3d avatars, and <strong><a class="css-tgpl01" data-renderer-mark="true" data-testid="link-with-safety" href="../../gettingstarted2d/specialactions/index.html" title="https://www.animaze.us/manual/gettingstarted2d/specialactions">here</a> </strong>for 2d avatars.</p>
+<hr/>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze ChatPal - the conversational AI        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../chatpal-basic-usage/index.html">
+                    Basic Usage - Chat with the Animaze AI Avatar                </a>
+</li>
+<li>
+<a href="../chatpal-twitch-actions/index.html">
+                    Twitch Actions Usage - Let Twitch Chat talk to your Avatar                </a>
+</li>
+<li>
+<a href="../chatpal-echo/index.html">
+                    Actor Usage - The Echo function                </a>
+</li>
+<li>
+<a href="index.html">
+                    Advanced Features                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

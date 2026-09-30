@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Physics &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animaze Physics</h1>
+<div class="aw-page-container">
+<p></p><p>The physics engine in Animaze was introduced to enable Content Creators to add physical simulation to their own characters. As such, the physics simulation will be available to add to avatars via the Animaze Editor, by using Colliders and Constraints.</p>
+<p>The Animaze physics engine is based on the open-source Bullet Physics SDK v2.83 and makes use of rigid bodies, colliders, and constraints.</p>
+<p></p>
+<p><span style="font-size: medium;"><b></b></span></p>
+<p><span style="font-size: medium;"><b></b></span></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Rigid bodies and Colliders</b></span></p>
+<p><b>Rigid Body <b>–</b> </b>Simulates single 6-degree of freedom moving objects. It has a world transform, friction, restitution, linear and angular velocity or damping. Each rigid body is attached to a skinned bone.</p>
+<p>A common rigid body is dynamic because it has a specified mass and is thus affected by gravity (the bone follows the rigid body), but it can also have a mass of 0.0, which makes it kinematic, meaning that it’s not affected by gravity (the rigid body follows the bone).</p>
+<p><b>Collider – </b>describes the collision shape of a Rigid Body, such as box, sphere, convex hull, or triangle mesh. In our use case all rigid bodies will have a collision shape attached to them, even if we want the Rigid Body to have no collisions with any other rigid body. Since we have a 1 to 1 relationship between rigid bodies and colliders, we can use the name interchangeably.</p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Constraints</b></span></p>
+<p>Constraints are Bullet’s way of tying two Rigid Bodies together to create various kinds of behavior between the two constraint bodies (ex. Springs, Hinges, Cone twist etc.). They are very powerful in terms of possibilities with lots of parameters and can be quite difficult to grasp.</p>
+<p>Currently, we support two of the most powerful type of constraints implemented, the <b>Cone Twist Constraint</b> as well as the <b>6 Degrees of Freedom Constraint</b>, which is the most versatile one.</p>
+<p> </p>
+<p>Please read the<a href="../../editorusermanual/animazephysics/index.html" title="https://www.animaze.us/manual/editorusermanual/animazephysics"> <b>Animaze Editor User Manual</b></a><b> </b>to further see examples, how the Animaze physics engine works and how it can be applied on your character.</p>
+<p> </p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      .avatar format Technical Reference        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../avatarformat/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../complexitytiers/index.html">
+                    Avatar complexity tiers                </a>
+</li>
+<li>
+<a href="../geometryandrules/index.html">
+                    Geometry and Rules                </a>
+</li>
+<li>
+<a href="../texturesandmaterials/index.html">
+                    Textures and Materials                </a>
+</li>
+<li>
+<a href="../uvmapping/index.html">
+                    UV Mapping                </a>
+</li>
+<li>
+<a href="../particlesystem/index.html">
+                    Particle System                </a>
+</li>
+<li>
+<a href="../soundeffects/index.html">
+                    Sound Effects                </a>
+</li>
+<li>
+<a href="../camera/index.html">
+                    Camera                </a>
+</li>
+<li>
+<a href="../live2davatars/index.html">
+                    Live2D Avatars                </a>
+</li>
+<li>
+<a href="../animation/index.html">
+                    Animation                </a>
+</li>
+<li>
+<a href="../animationposes/index.html">
+                    Visemes Animations &amp; Expression Poses                </a>
+</li>
+<li>
+<a href="../specialaction/index.html">
+                    Special Actions                </a>
+</li>
+<li>
+<a href="../deformation/index.html">
+                    Deformation                </a>
+</li>
+<li>
+<a href="../modifyproportions/index.html">
+                    Modify Proportions                </a>
+</li>
+<li>
+<a href="../skeleton/index.html">
+                    Skeleton                </a>
+</li>
+<li>
+<a href="../fullbodytracking/index.html">
+                    Full Body Motion Tracking                </a>
+</li>
+<li>
+<a href="index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../props/index.html">
+                    Props                </a>
+</li>
+<li>
+<a href="../backgrounds/index.html">
+                    Backgrounds                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

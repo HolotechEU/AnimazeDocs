@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skeletal Joints (joints orientation and other considerations) &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Skeletal Joints (joints orientation and other considerations)</h1>
+<div class="aw-page-container">
+<p></p><p><span>Head, LeftEye and RightEye joints need to be with Z Axis orientated forward, Y Axis is up, X Axis to the side.</span></p>
+<p><img alt="Skeletal Joints " height="273" src="../../../assets/images/1-41f71887.png" title="Import a GLB/GLTF 3D model" width="369"/></p>
+<p data-renderer-start-pos="5673">All joints in the Shoulder to Hand chain need to have the axis as follows:</p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="5751">Z Axis looking down relative to the avatar</p>
+</li>
+<li>
+<p data-renderer-start-pos="5797">X Axis looking back relative to the avatar</p>
+</li>
+<li>
+<p data-renderer-start-pos="5843">Y Axis looking towards the hand/fingers</p>
+</li>
+</ul>
+<p><img alt="Skeletal Joints " height="192" src="../../../assets/images/2-03796a23.png" title="Import a GLB/GLTF 3D model" width="345"/></p>
+<p><span>LeftEye and RightEye joints forward axis (Z axis) need to go through the center of the eyes' pupil and be placed in the center of the eyes' geometry.</span></p>
+<p><img alt="Skeletal Joints" height="376" src="../../../assets/images/3-a4189648.png" title="Import a GLB/GLTF 3D model" width="498"/></p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-10bp3ii" data-layout="center" data-node-type="mediaSingle">
+<div class="css-lmzmsq" data-media-caption="true" data-renderer-start-pos="6044" data-testid="media-caption"><em data-renderer-mark="true"><em data-renderer-mark="true">                     </em><em data-renderer-mark="true">                     </em><em data-renderer-mark="true">         </em><em data-renderer-mark="true">    </em>left eye joint</em></div>
+</div>
+<p data-renderer-start-pos="6061">The size of the avatar should be in meters and should follow a relatively correct scale, 1.5-2.0m height.</p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing GLB/GLTF format models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../introglb/index.html">
+                    Intro                </a>
+</li>
+<li>
+<a href="../blendshapes/index.html">
+                    Model Requirements - Blendshapes                </a>
+</li>
+<li>
+<a href="../skltl-joints/index.html">
+                    Model Requirements - Skeletal Joints (expected hierarchy and naming)                </a>
+</li>
+<li>
+<a href="index.html">
+                    Skeletal Joints (joints orientation and other considerations)                </a>
+</li>
+<li>
+<a href="../default/index.html">
+                    Default Pose                </a>
+</li>
+<li>
+<a href="../retargeting/index.html">
+                    Retargeting Considerations and Materials                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

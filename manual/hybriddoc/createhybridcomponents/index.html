@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create the 2D and 3D components for your hybrid avatar &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Create the 2D and 3D components for your hybrid avatar </h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span>In order to make a hybrid avatar, you will need to build a 3D body (3D Max, Maya, Modo, Blender, Cinema 4D, Zbrush, etc.) and a 2D face (Photoshop, Cubism). </span></p>
+<p dir="ltr"><span>We recommend following these steps for building the 3D body:</span></p>
+<p><span><span></span></span></p>
+<h4 dir="ltr"><strong><span style="text-decoration: underline; font-size: medium;">Concept and high poly</span></strong></h4>
+<h4><strong><span style="text-decoration: underline; font-size: medium;"></span></strong></h4>
+<h4 dir="ltr"><strong><span style="text-decoration: underline; font-size: medium;">Retopology</span></strong></h4>
+<h4 dir="ltr"><strong><span style="text-decoration: underline; font-size: medium;">UV mapping </span></strong></h4>
+<h4><strong><span style="text-decoration: underline; font-size: medium;"></span></strong></h4>
+<h4 dir="ltr"><strong><span style="text-decoration: underline; font-size: medium;">Following textures conventions </span></strong></h4>
+<h4><strong><span style="text-decoration: underline; font-size: medium;"></span></strong></h4>
+<h4 dir="ltr"><strong><span style="text-decoration: underline; font-size: medium;">Rigging </span></strong></h4>
+<h4><strong><span style="text-decoration: underline; font-size: medium;"></span></strong></h4>
+<h4 dir="ltr"><strong><span style="text-decoration: underline; font-size: medium;">Skinning</span></strong></h4>
+<h4><strong><span style="text-decoration: underline; font-size: medium;"></span></strong></h4>
+<h4 dir="ltr"><strong><span style="text-decoration: underline; font-size: medium;">Animating</span></strong></h4>
+<h3><span><span><br/></span></span>1 Concept and high poly<span><span><br/></span></span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Once you have a concept for the avatar, what you want it to represent and what it should look like, you can start working on the design of the avatar. </span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span style="text-decoration: underline;">Design pro tip</span><span>:</span><span> when you design your avatar, take into consideration the design in relation to the animations and the accessories/elements of the avatar and how these will move.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Make</span><span> </span><span>sure that the area where the 2D component will be placed will remain clear and it will not stretch any additional animation. For example, make sure that the accessories/clothes will move/rotate without clipping other parts of the avatar. </span></p>
+<h3 dir="ltr"><span>2 </span><span>Retopology</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>This process is meant to prepare your model to be used in gaming or in an animated environment creating another mesh that simplifies the original HD asset at a smaller file size that’s easier to use in animations and rendering. </span></p>
+<p dir="ltr"><span><span style="text-decoration: underline;">The Animaze Editor</span> does not support </span><span>ngons</span><span> (a face or polygon that is made up of five or more sides or edges connected by five or more vertices). After you have built the topology you can optimize the model (reducing the number of polygons). Read the entire process in our 3D documentation.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>You can execute this process in which program you mastered (Blender, 3D max, Modo, etc.)</span></p>
+<p dir="ltr"><img height="342" src="../../../assets/images/hybrid-88f41aa9.png" width="800"/></p>
+<h3 dir="ltr"><span>3 </span><span>UV mapping</span><span> </span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>This step aims to transform a 3D mesh with all its sculpted details into 2D information, so that a 2D texture can be wrapped around the low poly mesh. </span></p>
+<p dir="ltr"><span>The model should have normalized mapping in 0-1 UV space.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Create unique mapped models (with no overlapping), because there are material types that need this kind of mapping. All polygons must have mapping coordinates.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>These rules also apply for the mobile platform.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Try to allocate more space to your mapping in order to use more pixels from the texture. </span></p>
+<p dir="ltr"><img height="389" src="../../../assets/images/hybrid2-40d7b64d.png" width="800"/></p>
+<h3 dir="ltr"><span>4 </span><span>Following textures conventions</span><span>  </span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>This step refers to the channel attribution needed for the particularities of the avatar. We recommend building the textures according to our documentation, which can be found</span><a href="../../technicalreference/texturesandmaterials/index.html"><span><strong> IN THIS DOCUMENTATION</strong>.</span></a></p>
+<p><span><span><br/></span></span></p>
+<h3 dir="ltr"><span>5 </span><span>Rigging </span></h3>
+<p dir="ltr"><span>The process in which you create the skeleton and its influence on the geometry is called </span><span>rigging</span><span> and it can be done in a lot of programs as long as you have conventions: blender, maya, 3d max, modo, etc taking into consideration that BipHead, BipRoot (optional), BipLEye, BipREye are mandatory in building your 3D model.</span></p>
+<p dir="ltr"><span>The Head bone and eyes bone axes should be oriented with Z  in front and Y to the left.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The Eye bone Z axis should pass through the middle of the pupil. Once imported into the Animaze Editor, this feature will make the avatar look directly into the camera.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The Camera bone will be created separated from the avatar rigging, you should name it “Camera” and its orientation should be with Z facing the avatar. So the head and eyes will be oriented to the Camera and the Camera to them. See the pic below.</span></p>
+<p><span><span><img height="376" src="../../../assets/images/pasted_image_0_1_-d3aed8ed.png" width="800"/></span></span></p>
+<h3 dir="ltr"><span>6 </span><span>Skinning</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The process in which you set the influence of the bones on the geometry is called </span><span>skinning</span><span>. The maximum limit of influences per vertex is 4, and then you can start painting influences.</span></p>
+<p><span><span><img height="421" src="../../../assets/images/pasted_image_0_2_-59381323.png" width="428"/></span></span></p>
+<h3 dir="ltr"><span>7 </span><span>Animations</span><span> </span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Animations should be exported in .</span><span>fbx </span><span>format, in the </span><span>\Animations </span><span>folder of the avatar.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The mandatory animations for the 3D component are the following general movement ones (body motions):</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Idle1</span><span> - is the base animation in which the avatar has micro-movements and breathes, the arms are near the body</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Idle_pose</span><span> - this is the first key from idle1 and from this position all the animations will </span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Check the Animaze </span><span style="font-size: medium;"><strong><a href="../../animationappendix/index.html">animation appendix first</a></strong></span><span>, which contains the names conventions of animations and blendshapes.</span></p>
+<h3>Once you build your 3D body, you can move on to building your<span style="text-decoration: underline;"> 2D face/animation. </span></h3>
+<p dir="ltr">You will build the facial animation inputs in Live2D and going forward the head rotation needed for the avatar will be taken over by the 3D geometry of the body. This means you can just build simple facial animations, like smiling, sad face, or eye closed, simplifying the avatar building process. The entire process can be found in<span style="font-size: medium;"><strong><a href="../../gettingstarted2d/importlive2d/index.html"> the 2D avatar documentation</a></strong></span>.</p>
+<p dir="ltr"><span style="text-decoration: underline;">You can create your 2D assets in an editing software like Photoshop that exports .psd files.</span></p>
+<p dir="ltr"><span>After you finished this, import the file into Cubism and create the animations using the parameters specified in the 2d documentation. Export the final project and import it in the editor using the diffuse texture slot. </span></p>
+<p dir="ltr"><span style="text-decoration: underline;">Protip</span>:</p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>To create the normal map and specular you need to modify the initial 2D elements created in Photoshop and re-import them in Cubism, overwriting the diffuse texture, but saving it as a different file. This way you keep the animations and change only the source 2D elements.</span></p>
+<p dir="ltr"><span>Once this is done you can move on to merging the 3D body with the 2D face.</span></p>
+<p><span><span><br/><br/></span></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Creating Hybrid Avatars - 3D FBX models with Live2D models faces        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../hybridanimaze/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../startwithhybrid/index.html">
+                    Getting started with hybrid avatars                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Create the 2D and 3D components for your hybrid avatar                 </a>
+</li>
+<li>
+<a href="../animatedtextures/index.html">
+                    Animated Textures (via Live2D Cubism textures)                 </a>
+</li>
+<li>
+<a href="../assemblehybrid/index.html">
+                    Assemble your avatar in the Animaze editor                </a>
+</li>
+<li>
+<a href="../hybridchangedetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../framehybrid/index.html">
+                     How to frame the avatar                 </a>
+</li>
+<li>
+<a href="../hybridcustomization/index.html">
+                    Add customization options on an avatar                </a>
+</li>
+<li>
+<a href="../hybridspecialactions/index.html">
+                    Configure avatar Special Actions                </a>
+</li>
+<li>
+<a href="../hybriddebugging/index.html">
+                    Use Avatar Puppeteering - Expressions debugging                </a>
+</li>
+<li>
+<a href="../hybridwindows/index.html">
+                    Import your hybrid avatar in the Animaze Windows app                 </a>
+</li>
+<li>
+<a href="../hybridiositunes/index.html">
+                    Send your hybrid avatar to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../hybridiosfinder/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../hybridioswindows/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="../hybriddive/index.html">
+                    Dive Into Documentation                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

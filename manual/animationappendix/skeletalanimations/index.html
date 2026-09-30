@@ -1,0 +1,1570 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skeletal Animations &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Skeletal Animations</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr" style="text-align: center;"></p>
+<p style="text-align: center;"><span style="font-size: medium;"></span></p>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="115"/><col width="353"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span style="text-decoration: underline; font-size: medium;">BASE ANIMATION</span></p>
+</td>
+<td><br/>
+<p dir="ltr"><span style="text-decoration: underline; font-size: medium;">ANIMATION POSE</span></p>
+</td>
+<td><br/>
+<p dir="ltr" style="text-align: center;"><span style="text-decoration: underline; font-size: medium;">NAME &amp; DESCRIPTION</span></p>
+</td>
+</tr>
+<tr>
+<td valign="middle"><br/>-</td>
+<td>
+<p dir="ltr"><span><span><img alt="Skeletal Animations" height="420" src="../../../assets/images/image003-515c901b.png" title="Learn how to use Animaze by Facerig " width="420"/></span></span></p>
+</td>
+<td>
+<p dir="ltr"><span>idle1</span></p>
+<p></p>
+<p dir="ltr"><span>The <strong>base animation</strong> that most additive animations use as reference. It keeps the avatar in a neutral position. </span></p>
+<p dir="ltr"><span>It can contain movement but it should be very subtle, as it will play over and over and could interfere with expressions. If idle1 contains movement, then it should be loopable in order to avoid snapping at the end of the animation cycle.</span></p>
+<p dir="ltr"><span></span></p>
+<p>From this animation, extract the first frame and export it in a <b>*.fbx</b> file together with the skeleton containing keys on every bone - this is now the <strong>idlePose</strong>.</p>
+<p>From this position on, create all the other animations.</p>
+<p><span><b><i>*Base animation. Must be exported on all bones.</i></b></span></p>
+</td>
+</tr>
+<tr>
+<td valign="middle"><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Learn how to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image006-fc8e8b15.png" title="Learn how to use Animaze by Facerig " width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Avatar_F</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then it leans forward from the waist</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="95"/><col width="381"/><col width="316"/></colgroup>
+<tbody>
+<tr>
+<td valign="middle"><span>idle1</span></td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image007-9740d613.png" title="Learn how to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Avatar_B</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then it bends backwards.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image008-8f7f3580.jpg" title="Learn how to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Avatar_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then it twists left from the waist</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="109"/><col width="373"/><col width="311"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image009-2f8bfe0f.jpg" title="Learn how to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Avatar_R</span></h1>
+<br/>
+<p dir="ltr"><span>Starts in idlePose, then it leans right from the waist.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image010-c71b4f65.jpg" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Avatar_Twist_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then it twists left from the waist, keeping the head straight.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="110"/><col width="369"/><col width="313"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image011-2bfcd151.jpg" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>Avatar_Twist_R</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then it twists right from the waist, keeping the head straight.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image012_2-4665fc97.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Avatar_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's upper-body raises from the waist.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="109"/><col width="373"/><col width="309"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image013_2-ae72dd40.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Avatar_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's upper-body goes down from the neck.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image014-2e4d44ae.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Head_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's head leans to the left.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="110"/><col width="369"/><col width="313"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image015-d66efe17.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Head_R</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's head leans to the right.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image016-116d783f.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>Head_Twist_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's head turns to the left.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="354"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image017-201f00ef.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr">Head_Twist_R</h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's head turns to the right.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image018-ff2c48f8.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Head_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar (only head and neck bones) looks up while the head falls back.</span></p>
+<br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image019-86fb9972.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Head_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar (only head and neck bones) looks down while the head falls forward.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image020-a405079c.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftEye_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's left eye looks left.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image021-5f79d56c.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftEye_R</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's left eye looks right.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image022-1e43b5ec.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftEye_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's left eye looks left.</span></p>
+<br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image023-7563bd30.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftEye_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's left eye looks down.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image024-90ef6e4a.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftEyeClosed</span></h1>
+<br/>
+<p dir="ltr"><span>The upper left eyelid starts in idle, then becomes fully closed.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="354"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image025-651c9737.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>LeftEyeSquint</span></h1>
+<br/>
+<p dir="ltr"><span>The lower left eyelid closes slightly, leading to a squint.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image026-e3cbbb2f.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftEyeWideOpen</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The left eye opens fully, moving the eyelids at the maximum distance apart.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image027-de0591af.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>RightEye_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The right eye is in idlePose, then it looks left.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image028-317dd2ec.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>RightEye_R</span></h1>
+<br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's right eye looks right.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image029-6af16404.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>RightEye_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's right eye looks up.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image030-f51f27ec.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>RightEye_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the avatar's right eye looks down.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="Avatar Skeletal Animations" height="420" src="../../../assets/images/image031-3ab4eb99.png" title="How to use Animaze by Facerig Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>RightEyeClosed</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The upper right eyelid starts in idlePose, and becomes fully closed.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image032-844a36fb.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>RightEyeSquint</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The right eye opens fully, moving the eyelids at the maximum distance apart.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image033-00de9474.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>RightEyeWideOpen</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The upper right eyelid starts in idlePose, and becomes fully closed.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image034_1-e749ec81.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftBrowUp</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The left eyebrow goes up, as in a wonder expression</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image035-8daf7cc6.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>LeftBrowDown</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The inner side of left eyebrow goes down, as in a frown expression.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image036-0d462bc9.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>RightBrowUp</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The right eyebrow goes up, as in a wonder expression.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image037-497aa8db.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>RightBrowDown</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The inner side of right eyebrow goes down, as in a frown expression.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="413" src="../../../assets/images/LeftBrowSqueezeIn-418bbf89.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>LeftBrowSqueezeIn</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The inner side of left eyebrow goes up, to build a sad expression.</span></p>
+<br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="413" src="../../../assets/images/RightBrowSqueezeIn-ec85e700.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>RightBrowSqueezeIn</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The inner side of right eyebrow goes up, to build a sad expression.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image038-f2fac7bf.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>CheekPuff_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The left cheek inflates. </span></p>
+<br/><br/>
+<p dir="ltr"><span>Note that this animation, when triggered with Animaze SDK will be combined with the blended result of the following 3 extra animations: Mouth_pursedLips_L, Mouth_pursedLips_Mid, Mouth_pursedLips_R</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image039_1-d6e0b1e3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>CheekPuff_R</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The right cheek inflates. </span></p>
+<br/><br/>
+<p dir="ltr"><span>Note that this animation, when triggered with Animaze SDK will be combined with the blended result of the following 3 extra animations: Mouth_pursedLips_L, Mouth_pursedLips_Mid, Mouth_pursedLips_R</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image040-a8ba177f.png" title="Avatar Skeletal Animations" width="420"/><br/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Mouth_pursedLips_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The lips maintain a pursed position throughout the animation. They are in a center position, then they turn left.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="114"/><col width="355"/><col width="324"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image041-33076367.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>Mouth_pursedLips_Mid</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in an idle position, then the lips purse to center.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image042-9a5ad4cf.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Mouth_pursedLips_R</span></h1>
+<br/>
+<p dir="ltr"><span>The lips maintain a pursed position throughout the animation. They are in a center position, then they turn right.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="112"/><col width="359"/><col width="321"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image043-76ad47ba.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>Mouth_unveilledTeeth_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the upper lip moves down, revealing the bottom teeth.</span></p>
+<br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image044-15f71b7d.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>Mouth_unveilledTeeth_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the upper lip moves up, revealing the upper teeth in a slight smile expression.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="112"/><col width="359"/><col width="321"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><br/></span></span></p>
+<img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image045-1b6084db.png" title="Avatar Skeletal Animations" width="420"/></td>
+<td><br/><br/>
+<h1 dir="ltr"><span>MouthClosedLeft_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the mouth corner moves down.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image046-1e53b401.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/>
+<h1 dir="ltr"><span>MouthClosedLeft_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Starts in idlePose, then the left mouth corner moves up revealing teeth, as in a smile expression. </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="111"/><col width="360"/><col width="322"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image047-18231a5d.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>MouthClosedLeft_teethCovered_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The left mouth corner moves up while keeping the lips close together, leading to a less pronounced smile.</span></p>
+<br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="442" src="../../../assets/images/image048-b0ec31a5.jpg" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>MouthClosedRight_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The closed right mouth corner moves down, as in a sad expression.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="center" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="110"/><col width="360"/><col width="322"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image049-92ad748e.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>MouthClosedRight_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The closed right mouth corner moves up, uncovering teeth as in a smile expression.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image050_1-4f839980.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>MouthClosedRight_teethCovered_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The right mouth corner moves up while keeping the lips close together, leading to a less pronounced smile.</span></p>
+<br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>MouthOpen</span></h1>
+<br/><br/>
+<p dir="ltr"><span></span></p>
+<p>The mouth starts from the idlePose and becomes fully open in the last frame of the animation. <strong>This is the base for all other mouth-open animations.</strong></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span><br/></span></p>
+<span><b><i>*Base animation. Must be exported on all bones.</i></b></span><br/><br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpen_pursedLips_L</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image052-eefe7ede.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the left mouth corner moves up while keeping the mouth open.</span></p>
+<br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpen_pursedLips_Mid</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image053-30599cf3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the lips purse in the middle while keeping the mouth open.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpen_pursedLips_R</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image054-9b814558.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the right mouth corner moves up while keeping it open.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="111"/><col width="373"/><col width="308"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpenLeft_D</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="421" src="../../../assets/images/moOpLeftD_1-cfe9cf12.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the left mouth corner moves down while keeping it open.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="111"/><col width="373"/><col width="308"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpenLeft_U</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image056-2405c976.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the left mouth corner moves up while keeping it open, leading to a wide smile expression.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="111"/><col width="375"/><col width="306"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td valign="bottom">
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpenRight_D</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="421" src="../../../assets/images/moOpRightD-6c239d34.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the right mouth corner moves down while keeping it open.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="111"/><col width="375"/><col width="306"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td valign="bottom">
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpenRight_U</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image058-7a12d2b7.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the right mouth corner moves up while keeping it open, leading to a wide smile expression.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="356"/><col width="323"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image059-4573a7a4.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthJaw_L</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The jaw slightly moves to the left side.</span></p>
+<br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image060-07e0d19d.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>MouthJaw_R</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The jaw slightly moves to the right side.</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="357"/><col width="322"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image061-039e2067.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>Nose_D</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The avatar moves the nostrils slightly down, flattening the nostrils.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image062-276711c6.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>Nose_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The avatar moves the nostrils slightly up, enlarging the nostrils.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="113"/><col width="357"/><col width="322"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image063-d03e626a.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/>
+<h1 dir="ltr"><span>TongueIdle</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The idle animation for the tongue consists of subtle movements that makes it look more natural than in a rigid position. It starts and ends in idle1 pose.</span></p>
+<br/><br/>
+<p dir="ltr"><span>This animation must be exported </span><span>only</span><span> on tongue bones, not on the mouth ones.  </span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>MouthOpen</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image064-0e5d8e76.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+</td>
+<td>
+<p><br/><br/><br/></p>
+<h1 dir="ltr"><span>MouthOpen_TongueOut</span></h1>
+<p><br/><br/></p>
+<p dir="ltr"><span>Starts from 100% of MouthOpen pose and sticks the tongue out.</span></p>
+<p dir="ltr"><span></span></p>
+<p><span><b><i>*Base animation. Must be exported on all bones.</i></b></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="center" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="220"/><col width="305"/><col width="262"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td valign="bottom">
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span></span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image065-ce5a8d8c.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/>
+<p dir="ltr"><span>MouthOpen_TongueOut </span></p>
+<br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image064-0e5d8e76.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+</td>
+<td><br/><br/>
+<h1 dir="ltr"><span>MouthOpen_TongueOut_LR</span></h1>
+<br/><br/>
+<p dir="ltr"><span>It starts with tongue out in the left, then 100% of</span><span> </span><span>MouthOpen_ TongueOut in the middle, and goes to the right in the end.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image066-f5678641.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td valign="bottom"><hr/>
+<p><span><span></span></span></p>
+<p><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image067-96063bde.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>MouthOpen_TongueOut </span></p>
+<br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image064-0e5d8e76.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>MouthOpen_TongueOut_UD</span></h1>
+<br/><br/>
+<p dir="ltr"><span>It starts with tongue out up, then 100% of MouthOpen_TongueOut </span></p>
+<p dir="ltr"><span>in the middle, and goes down in the end.</span></p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="393" src="../../../assets/images/image068-949ff5df.png" title="Avatar Skeletal Animations" width="393"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="85"/><col width="422"/><col width="285"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image069-7f9ad619.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span> MouthClosed_TongueOut</span></h1>
+<br/><br/>
+<p dir="ltr"><span>Only the tip of the tongue sticks out.</span></p>
+<br/><span><b><i>*Base animation. Must be exported on all bones.</i></b></span><br/>
+<p dir="ltr"><span> </span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image070_1-4108b878.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>Mouth_U</span></h1>
+<br/><br/>
+<p dir="ltr"><span>The mouth goes up while it’s closed.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="text-align: center;"><span><span><br/><br/><br/></span></span></p>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="102"/><col width="378"/><col width="303"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td valign="bottom"><hr/>
+<p><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td valign="bottom"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1 dir="ltr"><span>  MouthOpenLeft_teethCovered_U</span></h1>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image071_1-134cbb30.png" title="Avatar Skeletal Animations" width="419"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top"><br/><br/>
+<p dir="ltr"><span>Starts at 100% of the MouthOpen animation, then the left mouth corner moves up while the mouth is open.</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td valign="top">
+<p dir="ltr"><span><span></span></span></p>
+<hr/>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image051-ea1b29b3.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td valign="bottom">
+<p><br/><br/><br/><br/><br/><br/><br/></p>
+<h1 dir="ltr"><span>MouthOpenRight_teethCovered_U</span></h1>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p dir="ltr"><span>MouthOpen</span></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image072_1-071c39bb.png" title="Avatar Skeletal Animations" width="420"/></span></span></p>
+<hr/>
+<p dir="ltr"><span><span></span></span></p>
+</td>
+<td valign="top">
+<p dir="ltr"><span><span>Starts at 100% of the MouthOpen animation, then the right mouth corner moves up while the mouth is open.</span></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table><colgroup><col width="193"/><col width="305"/><col width="253"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td><hr/>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image073-9c06ab2b.png" title="Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/>
+<p dir="ltr">MouthClosed_TongueOut</p>
+<br/><br/></td>
+<td>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image069-7f9ad619.png" title="Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr">MouthClosed_TongueOut_LR</h1>
+<br/><br/>
+<p dir="ltr">It starts with tongue out left, then 100% of MouthClosed_TongueOut in the middle, and goes right in the end.</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image074-e8b43a83.png" title="Avatar Skeletal Animations" width="420"/></p>
+<hr/>
+<p dir="ltr"></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+<td valign="bottom"><hr/>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image075-7070e48d.png" title="Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/>
+<p dir="ltr">MouthClosed_TongueOut</p>
+<br/><br/><br/></td>
+<td valign="middle">
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image069-7f9ad619.png" title="Avatar by Facerig Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr">MouthClosed_TongueOut_UD</h1>
+<br/><br/>
+<p dir="ltr">It starts with tongue out up, then 100% of MouthClosed_TongueOut in the middle, and goes down in the end.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;" valign="top">
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="420" src="../../../assets/images/image076-1cd20279.png" title="Avatar Skeletal Animations" width="420"/></p>
+<hr/>
+<p dir="ltr"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><span><span><br/><br/><br/></span></span></p>
+<div align="left" dir="ltr" style="text-align: center;">
+<table><colgroup><col width="137"/><col width="373"/><col width="210"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="390" src="../../../assets/images/image077-b61b3052.jpg" title="Furry Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>LeftEar_U</span></h1>
+<br/>
+<p dir="ltr"><span>avatar’s left ear goes up</span></p>
+<br/><br/>
+<p dir="ltr"><span>Ears animations are successfully used for animal avatars usually, adding even more expression to their character.</span></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr"><span>idle1</span></p>
+</td>
+<td>
+<p dir="ltr"><span><span><img alt="How to use Animaze by Facerig Skeletal Animations" height="390" src="../../../assets/images/image078-3f0ce477.jpg" title="Furry Avatar Skeletal Animations" width="420"/></span></span></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr"><span>LeftEar_D</span></h1>
+<br/>
+<p dir="ltr"><span>avatar’s left ear goes down</span></p>
+<br/><br/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table style="text-align: center;"><colgroup><col width="136"/><col width="373"/><col width="211"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr">idle1</p>
+</td>
+<td>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="390" src="../../../assets/images/image079-ddb08818.jpg" title="Furry Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr">RightEar_U</h1>
+<br/><br/>
+<p dir="ltr">avatar’s right ear goes up</p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr">idle1</p>
+</td>
+<td>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="390" src="../../../assets/images/image080-4bd8eb64.jpg" title="Furry Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr">RightEar_D</h1>
+<br/><br/>
+<p dir="ltr">avatar’s right ear goes down </p>
+<br/><br/></td>
+</tr>
+</tbody>
+</table>
+<table style="text-align: center;"><colgroup><col width="136"/><col width="373"/><col width="211"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr">idle1</p>
+</td>
+<td>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="390" src="../../../assets/images/image081-2b18e21c.jpg" title="Furry Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr">IdleEar_L</h1>
+<br/><br/>
+<p dir="ltr">avatar’s left ear is idle, slightly animated in a resting pose.</p>
+<p dir="ltr"></p>
+<p align="center"><i>This animation is the idle1 animation broken into 2 separate ears animations.</i></p>
+</td>
+</tr>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr">idle1</p>
+</td>
+<td>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="390" src="../../../assets/images/image082-c6fdc0c1.jpg" title="Furry Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td><br/><br/><br/>
+<h1 dir="ltr">IdleEar_R</h1>
+<br/><br/>
+<p align="center">avatar’s right ear is idle, slightly animated in a resting pose.</p>
+<p dir="ltr"> </p>
+<br/><br/></td>
+</tr>
+</tbody>
+</table>
+<table style="text-align: center;"><colgroup><col width="136"/><col width="373"/><col width="211"/></colgroup>
+<tbody>
+<tr>
+<td><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<p dir="ltr">idle1</p>
+</td>
+<td>
+<p dir="ltr"><img alt="How to use Animaze by Facerig Skeletal Animations" height="384" src="../../../assets/images/image083-48ebe027.png" title="Furry Avatar Skeletal Animations" width="420"/></p>
+</td>
+<td>
+<p><br/><br/></p>
+<h1 dir="ltr">Tpose</h1>
+<p><br/><br/></p>
+<p align="center">avatar is in T position with palms facing down</p>
+<p align="center"> </p>
+<p align="center"> </p>
+<p align="center"><i>This animation is a technical one, used for Full Body retargeting  and it doesn’t blend with any other animation.</i></p>
+<p align="center"><i></i></p>
+<p><span><b><i>*Base animation. Must be exported on all bones.</i></b></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      FBX Format Model - Animations &amp; Blendshapes Appendix        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../appendixabout/index.html">
+                    About                </a>
+</li>
+<li>
+<a href="index.html">
+                    Skeletal Animations                </a>
+</li>
+<li>
+<a href="../blendshapeanimations/index.html">
+                    Blendshape animations                </a>
+</li>
+<li>
+<a href="../visemes/index.html">
+                    Visemes                </a>
+</li>
+<li>
+<a href="../animazebones/index.html">
+                    Bones                </a>
+</li>
+<li>
+<a href="../arkitfacialanimations/index.html">
+                    ARKit Facial Animations                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

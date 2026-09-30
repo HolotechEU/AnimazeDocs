@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alpha Transparency w/ OBS Game Capture &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Alpha Transparency w/ OBS Game Capture</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="2982">We’ll use the Dedicated Capture Window from Animaze with the Alpha Transparency option active, while OBS will capture the window with the use of the Game Capture source.</p>
+<h2 data-renderer-start-pos="3153" id="Steps.1">Steps</h2>
+<p>(<strong data-renderer-mark="true">in Animaze</strong>) Open the Dedicated Capture Window (hotkey Ctrl+S)<br/>(<strong data-renderer-mark="true">in Animaze</strong>) Right-click on the Dedicated Capture Window and select the Alpha Transparency option.</p>
+<p><span class="heading-anchor-wrapper"></span></p>
+<p><img alt="Alpha Transparency w/ OBS Game Capture" height="418" src="../../../assets/images/ed722579-0925-4bf4-b0ce-9f18ad78e8cf-2c85ee8a.png" title="Alpha Transparency w/ OBS Game Capture" width="621"/></p>
+<p><span>(</span><strong data-renderer-mark="true">in OBS</strong><span>) In the Sources section, right-click &gt; Add and click the Game Capture. You will be prompted with a Properties dialog.</span></p>
+<p><img alt="Alpha Transparency w/ OBS Game Capture" height="349" src="../../../assets/images/82db81df-4943-4ec9-bbae-3b4ac4dc333a-99027eaa.png" title="Alpha Transparency w/ OBS Game Capture" width="766"/></p>
+<p data-renderer-start-pos="3466">(<strong data-renderer-mark="true">in OBS</strong>) Make sure you set the following options for the Game Capture source Properties page:</p>
+<ol class="ak-ol" data-indent-level="2">
+<li>
+<p data-renderer-start-pos="3563">Mode: Capture specific window</p>
+</li>
+<li>
+<p data-renderer-start-pos="3596">Window: [AnimazeDesktop.exe]: AnimazeRenderWindow</p>
+</li>
+<li>
+<p data-renderer-start-pos="3649">Allow Transparency option toggled ON</p>
+</li>
+</ol>
+<p><img alt=" Streaming with a transparent background" height="349" src="../../../assets/images/82db81df-4943-4ec9-bbae-3b4ac4dc333a-99027eaa.png" title=" Streaming with a transparent background" width="766"/></p>
+<p>(<strong data-renderer-mark="true">in OBS</strong>) You are done with the transparency, it’s now time to move the avatar where you need it in your stream.<br/>Done and dusted!</p>
+<p><img alt=" Streaming with a transparent background" height="449" src="../../../assets/images/175dfc5d-3abf-49a1-894a-52b7d1b57b32-a90bd47f.png" title=" Streaming with a transparent background" width="800"/><br/><br/></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Streaming with a transparent background        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../transp-intro/index.html">
+                    Intro                </a>
+</li>
+<li>
+<a href="../spout/index.html">
+                    Alpha Transparency w/ OBS Spout2 Plugin (recommended)                </a>
+</li>
+<li>
+<a href="index.html">
+                    Alpha Transparency w/ OBS Game Capture                </a>
+</li>
+<li>
+<a href="../video-cap/index.html">
+                    Chroma Key w/ OBS Video Capture Device (no subscription needed)                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

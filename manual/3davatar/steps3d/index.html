@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steps in creating your own 3D avatar &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Steps in creating your own 3D avatar</h1>
+<div class="aw-page-container">
+<p></p><p>The purpose of this guide is to provide the path you need to follow in order to create your own 3D model, using our site documentation. Open the links of each section for better understanding the necessary steps in building an avatar.</p>
+<p>The info in each link is subject to future amendments, as we further develop the Animaze apps and systems.</p>
+<p></p>
+<p><b><span style="text-decoration: underline;">Step 1</span></b></p>
+<p><span style="font-size: medium;"><b>Concept &amp; high-poly <br/></b></span></p>
+<p>General info about the concept process flow, what should be considered when building an avatar &gt;&gt; <span style="text-decoration: underline;"><a href="../3dconcept/index.html" title="https://www.animaze.us/manual/3davatar/3dconcept"><b>here</b></a>.</span></p>
+<p>Note that this files folder structure is mandatory for importing your creation in the Animaze Editor, and then further in Animaze apps:</p>
+<ol start="1">
+<li><b>*.fbx</b> geometry name the same as the folder name</li>
+<li><b>Textures</b> (.tga, .png, .jpg files) go in Textures/ folder</li>
+<li><b>Animations </b>(skeletal animations exported as solo<b> .fbx</b> files) go in Animations/ folder</li>
+</ol>
+<div></div>
+<p><b><b><span style="text-decoration: underline;"></span></b></b></p>
+<p><b><span style="text-decoration: underline;">Step 2</span></b></p>
+<p><span style="font-size: medium;"><b>Retopology</b></span></p>
+<p>General info about the process of retopology, points that you need to consider in the making, visual examples are <span style="text-decoration: underline;"><a href="../3dretopology/index.html" title="https://www.animaze.us/manual/3davatar/3dretopology"><b>here</b></a>.</span></p>
+<p>The more detailed the object is (highpoly-model), the more computational power it will need to be displayed and animated &gt;&gt;<span style="text-decoration: underline;"><b> </b></span><a href="../../technicalreference/complexitytiers/index.html" title="https://www.animaze.us/manual/technicalreference/complexitytiers"><b><span style="text-decoration: underline;">Check and consider the complexity tiers</span> </b></a>(by features, by performance, by download size).</p>
+<p><b><br/></b></p>
+<p><b><span style="text-decoration: underline;">Step 3</span></b></p>
+<p><span style="font-size: medium;"><b>UV mapping</b></span></p>
+<p>General info about UV space &gt;&gt; <span style="text-decoration: underline;"><a href="../../technicalreference/uvmapping/index.html" title="https://www.animaze.us/manual/technicalreference/uvmapping"><b>here</b></a>.</span></p>
+<p>Detailed info, visual examples and tips &gt;&gt; <span style="text-decoration: underline;"><a href="../3duv/index.html" title="https://www.animaze.us/manual/3davatar/3duv"><b>here</b></a>.</span></p>
+<p> </p>
+<p><b><span style="text-decoration: underline;">Step 4</span></b></p>
+<p><span style="font-size: medium;"><b></b></span></p>
+<p><span style="font-size: medium;"><b>Textures &amp; Materials <br/></b></span></p>
+<p><b>Textures</b> (.tga, .png, .jpg files) go in <strong>Textures/</strong> folder.</p>
+<p><span style="text-decoration: underline;">G</span>eneral info in technical documentation about <b>materials</b>, <b>supported features</b> table,<b> render queues</b> explained, supported <b>material components</b> can be found <span style="text-decoration: underline;"><strong><a href="../../technicalreference/texturesandmaterials/index.html" title="https://www.animaze.us/manual/technicalreference/texturesandmaterials">here</a>.</strong></span></p>
+<p>Detailed info on Materials with example pictures can be read <span style="text-decoration: underline;"><a href="../3dtextures/index.html" title="https://www.animaze.us/manual/3davatar/3dtextures"><b>here</b></a>.</span></p>
+<p>See how Material components are displayed in Animaze Editor <span style="text-decoration: underline;"><a href="../../editorusermanual/editormaterialcomponents/index.html" title="https://www.animaze.us/manual/editorusermanual/editormaterialcomponents"><b>here</b></a>.</span></p>
+<p>For <b>Animated Textures and their creation steps</b>, we provide the <b>sources to hybrid AvatarLily</b> (contains rig with correct naming and bone axis, skeletal &amp; blendshape animations, animated textures), as teaching resource. Find them <span style="text-decoration: underline;"><strong><a href="../../hybriddoc/animatedtextures/index.html" title="https://www.animaze.us/manual/hybriddoc/animatedtextures">here</a>.</strong></span></p>
+<p></p>
+<p><span style="font-size: medium;"><b></b></span></p>
+<p><span style="font-size: medium;"><b></b></span></p>
+<p><b><br/></b></p>
+<p><b><span style="text-decoration: underline;">Step 5<br/></span></b></p>
+<p><span style="font-size: medium;"><b>Rigging</b></span></p>
+<p>The process in which you create the skeleton is called rigging. Tthis process can be done in a lot of programs (Blender, Maya, 3dMax, Modo etc.), as long as you consider the Animaze conventions.</p>
+<p>General info about the Skeleton, base rig and Prop bones &gt;&gt; <span style="text-decoration: underline;"><a href="../../technicalreference/skeleton/index.html" title="https://www.animaze.us/manual/technicalreference/skeleton"><b>here</b></a>.</span></p>
+<p><b>Rig example</b> that you can use as reference, or build your avatar on it is <a href="../../animationappendix/animazebones/index.html" title="https://www.animaze.us/manual/animationappendix/animazebones"><b>here</b></a>. Contains prop bones and the correct bone naming.</p>
+<p>Also info about Head, Eyes and Camera axis, bones names list available, bone remapping examples - <i>lower part of page.</i></p>
+<p>On <span style="text-decoration: underline;"><a href="../3drigging/index.html" title="https://www.animaze.us/manual/3davatar/3drigging"><b>this link</b></a></span><b> </b>you can find:</p>
+<ul>
+<li><b>Rules for the Head, Eyes, Camera</b> (bones axis, naming, camera) - <i>upper part of page </i></li>
+<li><b>Pointers on how to build the rig</b></li>
+<li><b>Rules for hands and full-body tracking (naming, position, axis)</b> - <i>mid of page </i></li>
+<li><b>Tips about the rigging process </b></li>
+<li><b>Method of Debugging the bone orientation in Animaze Editor</b> - <i>low on page </i></li>
+<li><b>Info on Prop bones </b></li>
+</ul>
+<p> </p>
+<p><b><span style="text-decoration: underline;">Step 6<br/></span></b></p>
+<p><span style="font-size: medium;"><b>Skinning</b></span></p>
+<p><strong><span style="text-decoration: underline;"><a href="../../technicalreference/deformation/index.html" title="https://www.animaze.us/manual/technicalreference/deformation">Limitations </a></span></strong></p>
+<ul>
+<li>Max #bones</li>
+<li><strong><span style="text-decoration: underline;"><a href="../3dskinning/index.html" title="https://www.animaze.us/manual/3davatar/3dskinning">Max #influence on vertex</a></span></strong></li>
+</ul>
+<p> </p>
+<p><b><span style="text-decoration: underline;">Step 7<br/></span></b></p>
+<p><span style="font-size: medium;"><b>Animations <br/></b></span></p>
+<p><b>Animations </b>(skeletal animations exported as solo<b> .fbx</b> files) go in <strong>Animations/</strong> folder.</p>
+<p>Avatars can be animated through two methods. Read about the<b> types of animation methods</b> in our technical documentation, <span style="text-decoration: underline;"><a href="../../technicalreference/animation/index.html" title="https://www.animaze.us/manual/technicalreference/animation"><b>here</b></a>.</span></p>
+<p>Info about base animations, system directory structure, skeletal animations, joint-based animations combined with blendshape animations, 6 emotions (animations combos) can be read <span style="text-decoration: underline;"><a href="../3danimations/index.html" title="https://www.animaze.us/manual/3davatar/3danimations"><b>here</b></a>.</span></p>
+<p>General info about <span style="text-decoration: underline;"><a href="../../technicalreference/fullbodytracking/index.html" title="https://www.animaze.us/manual/technicalreference/fullbodytracking"><b>Tpose animation</b></a></span><b> </b>for full body tracking in the technical documentation.</p>
+<p>Animations for customizing the model &gt;&gt; modify its proportions, general info can be read <span style="text-decoration: underline;"><a href="../../technicalreference/modifyproportions/index.html" title="https://www.animaze.us/manual/technicalreference/modifyproportions"><b>here</b></a>.</span></p>
+<p>General info on <b>Visemes animations</b> and <b>Expression Poses</b> is <span style="text-decoration: underline;"><a href="../../technicalreference/animationposes/index.html" title="https://www.animaze.us/manual/technicalreference/animationposes"><b>here</b></a></span> in the avatar technical document.</p>
+<p>All skeletal, blendshapes &amp; visemes animations displayed and explained in the <span style="text-decoration: underline;"><a href="../../animationappendix/index.html" title="https://www.animaze.us/manual/animationappendix"><b><span style="text-decoration: underline;">Animation</span> </b></a><a href="../../animationappendix/index.html" title="https://www.animaze.us/manual/animationappendix"><b>Appendix</b></a></span>.</p>
+<p><b>Special Actions</b> &amp; <span style="text-decoration: underline;"><a href="../../gettingstarted3d/avatarspecialactions/index.html" title="https://www.animaze.us/manual/gettingstarted3d/avatarspecialactions"><b>how to configure them</b></a></span> are detailed <span style="text-decoration: underline;"><a href="../../technicalreference/specialaction/index.html" title="https://www.animaze.us/manual/technicalreference/specialaction"><b>here</b></a></span>.</p>
+<p> </p>
+<p><b><span style="text-decoration: underline;">Extra<br/></span></b></p>
+<p><span style="font-size: medium;"><b>Physics</b></span></p>
+<p>General info on <b>physics </b>in technical doc is <span style="text-decoration: underline;"><a href="../../technicalreference/animazephysic/index.html" title="https://www.animaze.us/manual/technicalreference/animazephysic"><b>here</b></a></span>. Read about Rigid Body, Collider and Constraints.</p>
+<p><span style="text-decoration: underline;"><a href="../../editorusermanual/animazephysics/index.html" title="https://www.animaze.us/manual/editorusermanual/animazephysics"><b>Detailed physics info</b></a></span> in Animaze Editor, with graphic support.</p>
+<p>An example of configuring physics in Animaze Editor, plus Tips, can be seen <span style="text-decoration: underline;"><a href="../3dphysics/index.html" title="https://www.animaze.us/manual/3davatar/3dphysics"><b>here</b></a>. </span></p>
+<p><br/> <span style="text-decoration: underline;"><span style="font-size: medium;"><a href="../../gettingstarted3d/importavatar3d/index.html" title="https://www.animaze.us/manual/gettingstarted3d/importavatar3d"><b>Import your 3D in Animaze Editor. </b></a></span></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      FBX Format Model - Asset Pipeline Guide        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="index.html">
+                    Steps in creating your own 3D avatar                </a>
+</li>
+<li>
+<a href="../generatefur/index.html">
+                    How to generate fur and fur mask                </a>
+</li>
+<li>
+<a href="../furdirection/index.html">
+                    How to set Fur direction and length                 </a>
+</li>
+<li>
+<a href="../3dconcept/index.html">
+                    Concept and High-Poly                </a>
+</li>
+<li>
+<a href="../3dretopology/index.html">
+                    Retopology                </a>
+</li>
+<li>
+<a href="../3duv/index.html">
+                    UV mapping                </a>
+</li>
+<li>
+<a href="../3drigging/index.html">
+                    Rigging                </a>
+</li>
+<li>
+<a href="../3dskinning/index.html">
+                    Skinning                </a>
+</li>
+<li>
+<a href="../3danimations/index.html">
+                    Animations                </a>
+</li>
+<li>
+<a href="../3dphysics/index.html">
+                    Physics system                </a>
+</li>
+<li>
+<a href="../3dtextures/index.html">
+                    Textures                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

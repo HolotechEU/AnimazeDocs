@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dive Into Documentation &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Dive Into Documentation</h1>
+<div class="aw-page-container">
+<p></p><p></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr">Cubism 3+ format<b></b></p>
+<p dir="ltr"><span>The Animaze platform supports Live2D avatars that are exported for the runtime Cubism 3+ (tested with 3.0, 3.1, 3.2 and 3.3 models). The reason behind adding Cubism models in Animaze is to use as much information exported with the Cubism Editor as possible, including:</span></p>
+<p dir="ltr"><span>➢ </span><span>special actions </span><span>(full animations that override tracking remapping) – the system will look for *</span><span>.motion3.json</span><span> files in the </span><span>motions/</span><span> folder of the avatar</span></p>
+<p dir="ltr"><span><span><br/></span></span></p>
+<p dir="ltr"><span>➢ </span><span>special poses</span><span> (certain animation inputs that need to have specific values, without any influence from tracking remapping) - the system will look for *</span><span>.exp3.json</span><span> files in </span><span>expressions/ </span><span>folder of the avatar</span></p>
+<p dir="ltr"><span><span><br/></span></span></p>
+<p dir="ltr"><span>➢ </span><span>default idle pose </span><span>(hide certain parts for the default pose) - *</span><span>.pose3.json</span><span> file</span></p>
+<p dir="ltr"><span><span><br/></span></span></p>
+<p dir="ltr"><span>➢ </span><span>physics </span><span>- *</span><span>.physics.json</span><span> file</span></p>
+<p dir="ltr"><span><span><br/></span></span></p>
+<p><span style="font-size: medium;">➢ </span>other model info (finding the files mentioned above and also the .moc3, textures etc.) - *<b>.model3.json</b> file</p>
+<p dir="ltr"><span style="font-size: medium;"></span></p>
+<p> </p>
+<p dir="ltr"><span style="font-size: medium;"></span></p>
+<p><strong><span style="font-size: medium;">Live2D Special Actions</span></strong><b></b></p>
+<p dir="ltr"><span style="font-size: medium;"><strong></strong></span></p>
+<p dir="ltr"><span>The special actions and the special poses have no restrictions, just that one needs to consider the following behaviors:</span></p>
+<p dir="ltr"><span>• special animations need to end in idle pose, if the character needs to go back to idle pose; if not, it's left in the state of the last frame of animation.</span></p>
+<p dir="ltr"><span>• special poses animation inputs are overwritten by tracking retargeting</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>i.e. if a special pose changes ParamEyeLOpen input to 0 (eye shut), it will be overridden by face tracking. It is recommended to use inputs that are not mapped by the Animaze tracking system.</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p></p>
+<p>To create an <b>idle animation</b> for the 2D avatar, you must create a loopable animation by moving the selected parameters, where the avatar is in a generic position (usually it’s a breathing animation). The first and last animation frames must be identical.  </p>
+<p dir="ltr"><span><span></span></span></p>
+<p> </p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong>Motion Parameters </strong></span><b></b></p>
+<p dir="ltr"><span>The animation inputs list controlled by Animaze tracking mapping is as follows:</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p><b>Head movement:</b></p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamAngleX - for right to left twist movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamAngleY - for down to up movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamAngleZ - for right to left lean movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p><b><br/></b></p>
+<p><b>Body movement:</b></p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBodyAngleX - for right to left twist movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBodyAngleY - for down to up movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBodyAngleZ - for right to left lean movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBreath - for breathing movement.</p>
+<p><b><br/></b></p>
+<p><b>Eyes movement:</b></p>
+<p>• ParamEyeBallX - for right to left movement.</p>
+<p>• ParamEyeBallY - for down to up movement.</p>
+<p>• ParamEyeLOpen - for closed to open left eye movement. The default value for this input is used as eye completely open; going to max value, the eye wide open expression is remapped, while min value to default value is the normal eye close motion.</p>
+<p>• ParamEyeROpen - for closed to open right eye movement. The default value for this input is used as eye completely open; going to max value the eye wide open expression is remapped, while min value to default value is the normal eye close motion.</p>
+<p>• ParamEyeBallForm - bends eyes contour to complement frown expression.</p>
+<p dir="ltr"><span><span><br/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p><b>Eyebrows movement:</b></p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBrowLY - for left eyebrow down to up movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBrowRX - for right eyebrow down to up movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBrowLAngle - for left eyebrow tilting movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBrowLForm - for left eyebrow changing shape movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBrowRAngle - for right eyebrow tilting movement.</p>
+<p dir="ltr"><span><span></span></span></p>
+<p>• ParamBrowRForm - for right eyebrow changing shape movement.</p>
+<p dir="ltr"></p>
+<p dir="ltr"><span><span></span></span></p>
+<p><b>Mouth movement:</b></p>
+<p>• ParamMouthOpenY - for mouth closed to open movement.</p>
+<p>• ParamMouthForm - for sad to smile movement.</p>
+<p dir="ltr">• ParamMouthSize - for pursed lips movement</p>
+<p></p>
+<p> </p>
+<p><b>ParamMouthSize</b> is a non-standard Live2D parameter that is optionally used by Animaze for puckered lips movement. </p>
+<p>The default size of the mouth is considered at the middle of the parameter range, shrinking the mouth when going down to the lowest end, and growing the mouth when going to the highest end. </p>
+<p>Animaze only uses the first half of the interval, low to middle. Concrete values for the interval are suggested, but not mandatory, to be -1 and 1, where 0 means default mouth size.</p>
+<p> </p>
+<p>The Animaze Retargeting System normalizes all values (interval 0-1) before applying the Live2D parameters so that the parameter ranges can be of any values. E.G. ParamMouthOpenY can be defined from -10 to 10 with default value 0, so when Animaze sets 0.75 - which is a half smile -, it will apply the value 5 to the ParamMouthOpenY parameter.</p>
+<p> </p>
+<p>Having this said, we do suggest following ranges for the Live2D Parameters:</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td valign="bottom">
+<p align="center"><b>Item</b></p>
+</td>
+<td valign="bottom">
+<p align="center"><b>Minimum values</b></p>
+</td>
+<td valign="bottom">
+<p align="center"><b>Default values</b></p>
+</td>
+<td valign="bottom">
+<p align="center"><b>Maximum values</b></p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamEyeLOpen</p>
+<p>ParamEyeROpen</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">0.75</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamEyeBallX</p>
+<p>ParamEyeBallY</p>
+</td>
+<td valign="bottom">
+<p align="center">-1</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamBrowLY </p>
+</td>
+<td valign="bottom">
+<p align="center">-1</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamBrowLX</p>
+</td>
+<td valign="bottom">
+<p align="center">-1</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamBrowLAngle</p>
+<p>ParamBrowRAngle</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">0.5</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>(<b>*</b>)ParamBrowLForm</p>
+<p>(<b>*</b>)ParamBrowRForm</p>
+</td>
+<td valign="bottom">
+<p align="center">0.2</p>
+</td>
+<td valign="bottom">
+<p align="center">0.5</p>
+</td>
+<td valign="bottom">
+<p align="center">0.8</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamMouthForm</p>
+</td>
+<td valign="bottom">
+<p align="center">-1</p>
+</td>
+<td valign="bottom">
+<p align="center">0.5</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamMouthOpenY</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+<p>ParamMouthSize</p>
+</td>
+<td valign="bottom">
+<p align="center">-1</p>
+</td>
+<td valign="bottom">
+<p align="center">0</p>
+</td>
+<td valign="bottom">
+<p align="center">1</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p dir="ltr"><span><span><br/><img height="90" src="../../../assets/images/Getting_started_with_2D_Avatars-9b13fc2e.png" style="display: block; margin-left: auto; margin-right: auto;" width="350"/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p>(*)The values for <b>ParamBrowLForm </b>&amp; <b>ParamBrowRForm </b>in the table make the eyebrows deform as intended with the current tracking system.</p>
+<p dir="ltr"><span><span><img height="328" src="../../../assets/images/pasted_image_0-94032b5a.png" width="500"/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p>Additionally, you can check the standard cubism parameter list <a href="https://docs.live2d.com/cubism-editor-manual/standard-parametor-list/?locale=en_us"><b>here</b></a> and <a href="https://docs.live2d.com/cubism-editor-manual/facial-expression-system/?locale=en_us"><b>here</b></a>.</p>
+<p dir="ltr"><span><span><br/><br/><br/></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Creating Hybrid Avatars - 3D FBX models with Live2D models faces        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../hybridanimaze/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../startwithhybrid/index.html">
+                    Getting started with hybrid avatars                 </a>
+</li>
+<li>
+<a href="../createhybridcomponents/index.html">
+                    Create the 2D and 3D components for your hybrid avatar                 </a>
+</li>
+<li>
+<a href="../animatedtextures/index.html">
+                    Animated Textures (via Live2D Cubism textures)                 </a>
+</li>
+<li>
+<a href="../assemblehybrid/index.html">
+                    Assemble your avatar in the Animaze editor                </a>
+</li>
+<li>
+<a href="../hybridchangedetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../framehybrid/index.html">
+                     How to frame the avatar                 </a>
+</li>
+<li>
+<a href="../hybridcustomization/index.html">
+                    Add customization options on an avatar                </a>
+</li>
+<li>
+<a href="../hybridspecialactions/index.html">
+                    Configure avatar Special Actions                </a>
+</li>
+<li>
+<a href="../hybriddebugging/index.html">
+                    Use Avatar Puppeteering - Expressions debugging                </a>
+</li>
+<li>
+<a href="../hybridwindows/index.html">
+                    Import your hybrid avatar in the Animaze Windows app                 </a>
+</li>
+<li>
+<a href="../hybridiositunes/index.html">
+                    Send your hybrid avatar to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../hybridiosfinder/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../hybridioswindows/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="index.html">
+                    Dive Into Documentation                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

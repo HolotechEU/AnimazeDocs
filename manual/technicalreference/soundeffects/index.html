@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sound Effects &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Sound Effects</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span style="font-size: 12px;">The Animaze Sound System supports 3D sounds and various effects. It contains a collection of Audio Sources that produce sound data, a single Audio Listener, equivalent to a microphone, and a single Audio Input component, a source that takes data from a physical microphone.</span></p>
+<h2 dir="ltr"><span>Audio Source</span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The Audio Source is a 3D item that has audio data. Audio data is acquired from a sound file. The source also features a configuration and a collection of sound effects, which tell the system how the sound data should be played back. Sound sources can be placed in the environment and can also be attached to any prop or 3D avatar.</span></p>
+<h2 dir="ltr"><span>Audio Listener</span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Audio Listener is attached to the camera and it simulates a virtual microphone in the 3D environment. Audio data received by the listener is what the end user hears.</span></p>
+<h3><span style="font-size: 1.5em;">Audio Input</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The Audio Input is used in capturing microphone data.</span></p>
+<h3 dir="ltr"><span>Supported sound files (Windows):</span></h3>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Ogg vorbis (.OGG)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Microsoft WAV(.WAV)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>FLAC lossless codec (.FLAC)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Musical Instrument Digital Interface(.MIDI)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>MP2/MP3 MPEG (.MP2/.MP3)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Audio Interchange File Format (.AIFF)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Microsoft Advanced Systems Format (.WMA/.ASF/.WMV)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>MPEG-2 Advanced Audio Coding (.AAC)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Apple Lossless (.ALAC)</span></p>
+</li>
+</ul>
+<p><span><span><br/></span></span></p>
+<h3 dir="ltr"><span>Supported configs:</span></h3>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>3D Mode </span><span>– specifies if a sound volume should be altered by the position of the Audio Source and Audio Listener (example for an ambient sound it should be turned off)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Autoplay </span><span>– specifies if a sound should be played automatically when the system starts</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Bypass effects </span><span>– specifies if the sound should ignore the effects attached to the Audio Source</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Loop </span><span>– specifies if a sound should replay automatically when it ends</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Volume </span><span>– specifies the sound volume</span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span>Supported effects:</span></h3>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Low-pass filter </span><span>– passes signals with a frequency lower than a selected cutoff frequency</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>High-pass filter </span><span>– passes signals with a frequency higher than a selected cutoff frequency</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Echo </span><span>– echo effect</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Flange </span><span>– the sound is played twice at the same time, but the copied signal slides, creating a flanging effect</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Distortion </span><span>– distortion effect specified by a distortion level</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Normalize </span><span>– the sound signal is amplified towards its maximum peaks</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Pitch Shift </span><span>– changes the pitch of a sound without speeding it up or slowing it down</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Chorus </span><span>– creates and plays the same sound multiple times creating a chorus effect</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Compressor </span><span>– reduces the volume of loud sounds or amplifies quiet sounds, thus reducing or compressing an audio signal's dynamic range</span></p>
+</li>
+</ul>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      .avatar format Technical Reference        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../avatarformat/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../complexitytiers/index.html">
+                    Avatar complexity tiers                </a>
+</li>
+<li>
+<a href="../geometryandrules/index.html">
+                    Geometry and Rules                </a>
+</li>
+<li>
+<a href="../texturesandmaterials/index.html">
+                    Textures and Materials                </a>
+</li>
+<li>
+<a href="../uvmapping/index.html">
+                    UV Mapping                </a>
+</li>
+<li>
+<a href="../particlesystem/index.html">
+                    Particle System                </a>
+</li>
+<li>
+<a href="index.html">
+                    Sound Effects                </a>
+</li>
+<li>
+<a href="../camera/index.html">
+                    Camera                </a>
+</li>
+<li>
+<a href="../live2davatars/index.html">
+                    Live2D Avatars                </a>
+</li>
+<li>
+<a href="../animation/index.html">
+                    Animation                </a>
+</li>
+<li>
+<a href="../animationposes/index.html">
+                    Visemes Animations &amp; Expression Poses                </a>
+</li>
+<li>
+<a href="../specialaction/index.html">
+                    Special Actions                </a>
+</li>
+<li>
+<a href="../deformation/index.html">
+                    Deformation                </a>
+</li>
+<li>
+<a href="../modifyproportions/index.html">
+                    Modify Proportions                </a>
+</li>
+<li>
+<a href="../skeleton/index.html">
+                    Skeleton                </a>
+</li>
+<li>
+<a href="../fullbodytracking/index.html">
+                    Full Body Motion Tracking                </a>
+</li>
+<li>
+<a href="../animazephysic/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../props/index.html">
+                    Props                </a>
+</li>
+<li>
+<a href="../backgrounds/index.html">
+                    Backgrounds                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

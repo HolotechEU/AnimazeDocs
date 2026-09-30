@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assemble your avatar in the Animaze editor &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Assemble your avatar in the Animaze editor</h1>
+<div class="aw-page-container">
+<p></p><p>In this guide, we will import from scratch one of our hybrid avatars, namely Abel Gene.</p>
+<p>Note that this files folder structure is mandatory for the import process of 3D and hybrid avatars:</p>
+<p>1. <b>*.fbx</b> geometry file name the same as the folder name</p>
+<p>2. <b>Textures</b> (.tga, .png, .jpg files) go in Textures/ folder</p>
+<p>3. <b>Animations</b> (exported as solo .fbx files) go in the Animations/ folder</p>
+<p>What is different about hybrid avatars compared to 3D ones, is that they benefit from animated cubism textures. <b>Make sure the cubism textures are placed in the Resource folder of the Animaze Editor.</b></p>
+<p>Now follow these steps to begin importing your model:</p>
+<p>1. Open the <strong>Animaze Editor</strong>, navigate to <strong>Assets</strong> and select<strong> Import 3D Object</strong>.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="427" src="../../../assets/images/1q-42da617d.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>2. Select the model's geometry file, the <b>.fbx</b> file, from your PC.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="425" src="../../../assets/images/2q-e7e1af73.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>3. The following window prompts you to select the files you want to import. If this is your first time importing a specific model, make sure <b>all</b> the files are marked and select the item type from the dropdown list before clicking <b>Import.</b> </p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="427" src="../../../assets/images/3q-87d445dc.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>4. An <b>Import Log</b> will be displayed after the Animaze Editor checks the files for issues. The warning system checks for skeletal animations. Hit the <b>Ok </b>button to dismiss. As you work on more complicated models, these logs will surface errors and help you with debugging.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="427" src="../../../assets/images/4q-83e2f482.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>For the avatars to be usable and rendered correctly, it is required for them to have a certain size. The imported geometry sometimes comes in way too large or way too small from the 3D editing software, so we need to scale it to an appropriate value. A grid unit is equal to a unit in the metric system.</p>
+<p>5. In the <strong>Editor Panel</strong>, change the size of the avatar by adjusting the value of <strong>Item scale</strong>. In this case, the imported avatar is too large, therefore we have reduced the size from 1.00000 to 0.018000, so that the end-result is correct. Now it’s too small to see it, so we need to adjust our camera view. Go to the <strong>Hierarchy Panel</strong> and right click on the avatar, then select <strong>Reset camera</strong>. </p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="426" src="../../../assets/images/6q-d79e6436.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>Start adding components &amp; textures on meshes.</p>
+<p>First, we'll need to select the mesh material by either expanding the avatar in the <b>Hierarchy Panel</b>, then selecting the mesh under the <strong>Mesh</strong> section, or by simply clicking the desired mesh in the viewport. All properties will show up in the <b>Editor Panel</b> on the right.</p>
+<p>6. Select the mesh named <b>Body</b> in the <b>Hierarchy Panel </b>and then move your attention to the <b>Editor Panel</b> in the right. Scroll down and push the <b>Add Component</b> button. We have prepared the following textures for this avatar’s mesh: diffuse, normal map, specular, environment mapping, subsurface scaterring and the <b>cubism diffuse, normal &amp; specular textures,</b> so we will therefore add the components corresponding to these textures. Hit <b>Ok</b> after you marked them in the Add Component window.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="425" src="../../../assets/images/7q-29cf76cd.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>7. In the <b>Editor Panel</b>, expand the <b>Diffuse Texture</b> tab to expand it. Click on the <b>texture box </b>and choose the<b> </b>texture your prepared for this material in the <strong>Select texture</strong> window that opened.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="426" src="../../../assets/images/8q-a100b6a8.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>8. Repeat the action for the Cubism textures. It will prompt you to select the <strong>*.json</strong> file, pick it up from the <strong>Resource</strong> folder where you placed it.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars " height="426" src="../../../assets/images/9q-00116eaf.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>9. This is how the cubism textures will be displayed on the avatar. Let’s adjust their details in the next step.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars " height="426" src="../../../assets/images/10q-88b1875b.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>10. Adjust the <strong>Texture Tiling</strong> to change the dimension of the 2D face reported to the 3D geometry. Adjust further the <strong>Texture Size</strong> and the <strong>Texture Offset</strong> to obtain the look you need on your avatar. Note that the values must be identitcal across the cubism textures, in this case, in order to match.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="428" src="../../../assets/images/11q-c6d7f4a5.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>11. Save each Live2D extension by right-clicking them in the <b>Hierarchy Panel</b> and choosing <b>Save item</b>.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="426" src="../../../assets/images/12qq-467918c6.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p>12. Go through every mesh and assign your textures accordingly and modify what component values you see fit. When you are happy with your results, go to<strong> Hierarchy Panel</strong>, right-click the avatar and select <b>Save all materials</b>,<b> </b>afterwich repeat the action and select <b>Save item</b>.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="426" src="../../../assets/images/12q-9ebded55.png" title="Learn how to use" width="800"/></p>
+<p><img alt="About Animaze by Facerig | 3D Avatars" height="425" src="../../../assets/images/13q-5b47d76a.png" title="Learn how to use" width="800"/></p>
+<p></p>
+<p><span style="font-size: medium;"><b>Note</b></span></p>
+<ul>
+<li>The model will work with only 1 animated texture, it is not mandatory to have all 3 of them (ex: use just the diffuse texture)</li>
+</ul>
+<p>Starting with the end of March, Animaze supports more uses for animated textures created using Live2D Cubism technology for hybrid avatars. In addition to Animated Diffuse Maps (that were possible before) you can now also have:</p>
+<ul>
+<li>Animated Normal Maps</li>
+<li>Animated Emissive Maps</li>
+</ul>
+<p>As a teaching resource for creating these kinds of assets, here is a link to all the source data for Avatar Lily. These include:</p>
+<ul>
+<li><a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_FbxSourceFiles.zip">FBX source files for the 3D part of the model</a></li>
+<li><a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_TextureSourceFiles.zip">Texture sources in uncompressed format</a></li>
+<li><a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_CubismProjectSource.zip">Cubism Project (Sources, loadable in Cubism) for the Animated Textures</a></li>
+<li><a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_CubismRuntimeFiles.zip">Cubism Runtime files for the Animated Textures</a></li>
+</ul>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Creating Hybrid Avatars - 3D FBX models with Live2D models faces        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../hybridanimaze/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../startwithhybrid/index.html">
+                    Getting started with hybrid avatars                 </a>
+</li>
+<li>
+<a href="../createhybridcomponents/index.html">
+                    Create the 2D and 3D components for your hybrid avatar                 </a>
+</li>
+<li>
+<a href="../animatedtextures/index.html">
+                    Animated Textures (via Live2D Cubism textures)                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Assemble your avatar in the Animaze editor                </a>
+</li>
+<li>
+<a href="../hybridchangedetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../framehybrid/index.html">
+                     How to frame the avatar                 </a>
+</li>
+<li>
+<a href="../hybridcustomization/index.html">
+                    Add customization options on an avatar                </a>
+</li>
+<li>
+<a href="../hybridspecialactions/index.html">
+                    Configure avatar Special Actions                </a>
+</li>
+<li>
+<a href="../hybriddebugging/index.html">
+                    Use Avatar Puppeteering - Expressions debugging                </a>
+</li>
+<li>
+<a href="../hybridwindows/index.html">
+                    Import your hybrid avatar in the Animaze Windows app                 </a>
+</li>
+<li>
+<a href="../hybridiositunes/index.html">
+                    Send your hybrid avatar to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../hybridiosfinder/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../hybridioswindows/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="../hybriddive/index.html">
+                    Dive Into Documentation                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

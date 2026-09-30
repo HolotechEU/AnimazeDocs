@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offline video export &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Offline video export</h1>
+<div class="aw-page-container">
+<p></p><h2 data-renderer-start-pos="1125" id="Offline-video-export-(recommended)"></h2>
+<p data-renderer-start-pos="1161">The offline video export is currently the best option for video content creation in Animaze as it allows configuring common parameters like resolution and framerate. Also, three additional features set this option apart from the other recording solutions:</p>
+<ol class="ak-ol" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="1420">Cinematic motion blur through Frame Blending - Animaze will render a number of subframes between two main frames and blend the subframes together to create a motion blur effect.</p>
+</li>
+<li>
+<p data-renderer-start-pos="1601">Visemes track time offset - synchronize the audio-based lipsync with face tracking and the actual audio.</p>
+</li>
+<li>
+<p data-renderer-start-pos="1709">Ability to export the same movement on different avatars with help of the two-step creation pipeline, first you record mocap data, then export a video with that data applied on whatever avatar is needed. The second step can be repeated with the same mocap data file recording in the first step.</p>
+</li>
+</ol>
+<div>
+<table border="0" cellpadding="4" style="background-color: #ffffcc; border-color: #ffcc33; border-width: 0px; border-style: solid;">
+<tbody>
+<tr>
+<td>
+<p></p>
+<p></p>
+<p><strong>Note!</strong></p>
+<p><span>The output video may exhibit an audio video desynchronization. While we are working on finding a suitable solution for this issue, you can manually synchronize the audio in a video editing tool. The export also provides the audio (wav format) in clean form and with voice effects (if selected) so you can use either audio on a separate track.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 data-renderer-start-pos="2007" id="Overview">Overview<span class="heading-anchor-wrapper"></span></h4>
+<p data-renderer-start-pos="2017">The offline video export is a two-step video creation process, firstly you record mocap data, which means you record the avatar movement in an avatar-agnostic format (.anmz file format), then export the video with the mocap data previously recorded.</p>
+<h4 data-renderer-start-pos="2268" id="Steps">Steps<span class="heading-anchor-wrapper"></span></h4>
+<p>1. Open “Screen Capture &amp; Record” panel from the burger button on the “Enable Virtual Camera” button<br/><img alt="Getting the best video content out of Animaze" height="172" src="../../../assets/images/1-fbb82077.png" title="Getting the best video content out of Animaze" width="443"/></p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-viztbg" data-layout="center" data-node-type="mediaSingle" style="display: inline !important;">
+<div class="css-2ju0ew" style="display: inline !important;">
+<div data-alt="" data-collection="contentId-74842120" data-context-id="74842120" data-file-mime-type="image/png" data-file-name="image-20220429-122506.png" data-file-size="82492" data-height="172" data-id="81883756-5383-48ef-b10e-a071d3055910" data-node-type="media" data-type="file" data-width="443" style="display: inline !important;">
+<div class="media-card-viewport-anchor" style="display: inline !important;"></div>
+</div>
+</div>
+</div>
+<p data-renderer-start-pos="2381">2. Start recording the mocap data by clicking the “Record Mocap Data” button on the newly opened panel</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-9huv9e" data-layout="center" data-node-type="mediaSingle" style="display: inline !important;">
+<div class="css-1d9dd3" style="display: inline !important;">
+<div data-alt="" data-collection="contentId-74842120" data-context-id="74842120" data-file-mime-type="image/png" data-file-name="image-20220429-122558.png" data-file-size="24200" data-height="57" data-id="14a2aec9-7b3f-4d7e-87c4-4b4c2c1458f6" data-node-type="media" data-type="file" data-width="674" style="display: inline !important;">
+<div class="media-card-viewport-anchor" style="display: inline !important;"><img alt="Getting the best video content out of Animaze" height="57" src="../../../assets/images/2-e66f0ad3.png" title="Getting the best video content out of Animaze" width="674"/></div>
+<div class="new-file-experience-wrapper sc-ksYbfQ cGSeZd" data-testid="media-card-view">
+<div class="media-file-card-view sc-hmzhuo gBEcqY" data-test-media-name="image-20220429-122558.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/1efa00bb-618d-48df-b691-6364be309328#media-blob-url=true&amp;id=14a2aec9-7b3f-4d7e-87c4-4b4c2c1458f6&amp;collection=contentId-74842120&amp;contextId=74842120&amp;mimeType=image%2Fpng&amp;name=image-20220429-122558.png&amp;size=24200&amp;height=57&amp;width=674&amp;alt="/></div>
+</div>
+<div class="media-card-viewport-anchor"></div>
+</div>
+</div>
+</div>
+<p data-renderer-start-pos="2487">3. Stop recording the mocap data when done by clicking the “Stop” button</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1n4v76p" data-layout="center" data-node-type="mediaSingle" style="display: inline !important;">
+<div class="css-1aa1n25" style="display: inline !important;">
+<div data-alt="" data-collection="contentId-74842120" data-context-id="74842120" data-file-mime-type="image/png" data-file-name="image-20220429-122650.png" data-file-size="18018" data-height="55" data-id="0e89e4d7-61b5-4bd2-ab23-8453769237ac" data-node-type="media" data-type="file" data-width="619" style="display: inline !important;">
+<div class="media-card-viewport-anchor" style="display: inline !important;"><img alt="Getting the best video content out of Animaze" height="55" src="../../../assets/images/3-597a9516.png" title="Getting the best video content out of Animaze" width="619"/></div>
+<div class="new-file-experience-wrapper sc-ksYbfQ lmEUnt" data-testid="media-card-view">
+<div class="media-file-card-view sc-hmzhuo gBEcqY" data-test-media-name="image-20220429-122650.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/7c1f3a1e-66d4-4e73-955e-0a3c2f585938#media-blob-url=true&amp;id=0e89e4d7-61b5-4bd2-ab23-8453769237ac&amp;collection=contentId-74842120&amp;contextId=74842120&amp;mimeType=image%2Fpng&amp;name=image-20220429-122650.png&amp;size=18018&amp;height=55&amp;width=619&amp;alt="/></div>
+</div>
+<div class="media-card-viewport-anchor"></div>
+</div>
+</div>
+</div>
+<p data-renderer-start-pos="2563">4. Now, you are prompted to save the recording data (that can be exported later) or directly go to the video exporter. For simplicity, we’ll go with the “Export as video” option, which will open the Animaze Video Exporter dialog.</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1cw9hy3" data-layout="center" data-node-type="mediaSingle" style="display: inline !important;">
+<div class="css-1kazl8s" style="display: inline !important;">
+<div data-alt="" data-collection="contentId-74842120" data-context-id="74842120" data-file-mime-type="image/png" data-file-name="image-20220429-122914.png" data-file-size="40392" data-height="484" data-id="89adc412-a573-4fde-be96-d7fc9ffb9e8b" data-node-type="media" data-type="file" data-width="360" style="display: inline !important;">
+<div class="media-card-viewport-anchor" style="display: inline !important;"><img alt="Getting the best video content out of Animaze" height="484" src="../../../assets/images/4-9be44a01.png" title="Getting the best video content out of Animaze" width="360"/></div>
+<div class="new-file-experience-wrapper sc-ksYbfQ iTBrOz" data-testid="media-card-view">
+<div class="media-file-card-view sc-hmzhuo gBEcqY" data-test-media-name="image-20220429-122914.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/5d6acc2c-21f1-49f5-9014-49d0430152ec#media-blob-url=true&amp;id=89adc412-a573-4fde-be96-d7fc9ffb9e8b&amp;collection=contentId-74842120&amp;contextId=74842120&amp;mimeType=image%2Fpng&amp;name=image-20220429-122914.png&amp;size=40392&amp;height=484&amp;width=360&amp;alt="/></div>
+</div>
+<div class="media-card-viewport-anchor"></div>
+</div>
+</div>
+</div>
+<p data-renderer-start-pos="2796">5. Clicking “<strong>Export as video</strong>” will prompt a file dialog where to save the current mocap data recording.</p>
+<p data-renderer-start-pos="2900" style="display: inline !important;">6. Now we should be in the Animaze Video Exporter dialog in which we can control a few important parameters.</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1mzi1es" data-layout="center" data-node-type="mediaSingle">
+<div class="css-6b7byw">
+<div data-alt="" data-collection="contentId-74842120" data-context-id="74842120" data-file-mime-type="image/png" data-file-name="image-20220429-124102.png" data-file-size="203688" data-height="666" data-id="79025963-965c-4ad8-b4b2-89c922e07bb2" data-node-type="media" data-type="file" data-width="710">
+<div class="media-card-viewport-anchor"></div>
+<div class="new-file-experience-wrapper sc-ksYbfQ fKZJQs" data-testid="media-card-view">
+<div class="media-file-card-view sc-hmzhuo gBEcqY" data-test-media-name="image-20220429-124102.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="Getting the best video content out of Animaze" height="666" src="../../../assets/images/5-6488a4c4.png" title="Getting the best video content out of Animaze" width="710"/><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/99579784-a0db-4756-be7a-0cabce25ebe9#media-blob-url=true&amp;id=79025963-965c-4ad8-b4b2-89c922e07bb2&amp;collection=contentId-74842120&amp;contextId=74842120&amp;mimeType=image%2Fpng&amp;name=image-20220429-124102.png&amp;size=203688&amp;height=666&amp;width=710&amp;alt="/></div>
+</div>
+<div class="media-card-viewport-anchor"></div>
+</div>
+</div>
+</div>
+<p>7. Change the options to these recommended ones:</p>
+<ol></ol>
+<p>a. Encoder Type set to “mp4“</p>
+<ol></ol>
+<p>b. Resolution can go up to the maximum resolution the GPU supports, on modern hardware, we should be able to go up to 4K (3840x2160). A higher resolution means a larger video file.</p>
+<ol></ol>
+<p>c. Framerate set to 60 (can go up to 240). A higher refresh rate means a larger video file.</p>
+<ol></ol>
+<p>d. Frame Blending set to 4 or 8 is a nice balance between quality and export time. This process is very time costly.</p>
+<ol></ol>
+<p>e. for simplicity, we’ll leave the other options to their default values</p>
+<p><br/>8.Hit the “<strong>Export</strong>” button. This will prompt a file dialog where to save the video and then the video export process begins. Note, this may take a while.<br/>9.Video export is done when the “Cancel“ button turns into “Export” again and the progress bar fill completely<br/><br/><img alt="Getting the best video content out of Animaze" height="96" src="../../../assets/images/6-9caf42aa.png" title="Getting the best video content out of Animaze" width="344"/><br/><em data-renderer-mark="true">the cancel button</em><br/><br/><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/21e03dba-ec73-4aac-9287-c0b3706defc0#media-blob-url=true&amp;id=b726a38e-9ed7-48c7-920f-e92975303b69&amp;collection=contentId-74842120&amp;contextId=74842120&amp;mimeType=image%2Fpng&amp;name=image-20220429-125548.png&amp;size=18648&amp;height=49&amp;width=408&amp;alt="/><img alt="Getting the best video content out of Animaze" height="49" src="../../../assets/images/7-962223e9.png" title="Getting the best video content out of Animaze" width="408"/><br/><br/><em data-renderer-mark="true">the progress bar</em></p>
+<p><em data-renderer-mark="true"></em><br/>The video should now be saved in the location set at Step 8.</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-5hjtpp" data-layout="center" data-node-type="mediaSingle">
+<div class="css-1dt4rsf">
+<div data-alt="" data-collection="contentId-74842120" data-context-id="74842120" data-file-mime-type="image/png" data-file-name="image-20220429-125517.png" data-file-size="3301" data-height="96" data-id="47da72a6-c343-4bc1-a558-60588957b32c" data-node-type="media" data-type="file" data-width="344">
+<div class="media-card-viewport-anchor"></div>
+<div class="new-file-experience-wrapper sc-ksYbfQ bQrcAa" data-testid="media-card-view"></div>
+</div>
+</div>
+</div>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-me6ot5" data-layout="center" data-node-type="mediaSingle">
+<div class="css-1en4x8p">
+<div data-alt="" data-collection="contentId-74842120" data-context-id="74842120" data-file-mime-type="image/png" data-file-name="image-20220429-125548.png" data-file-size="18648" data-height="49" data-id="b726a38e-9ed7-48c7-920f-e92975303b69" data-node-type="media" data-type="file" data-width="408">
+<div class="new-file-experience-wrapper sc-ksYbfQ kykDHQ" data-testid="media-card-view"></div>
+</div>
+</div>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Getting the best video content out of Animaze        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../intro/index.html">
+                    Intro                </a>
+</li>
+<li>
+<a href="../ded-window/index.html">
+                    Recording Dedicated Capture Window with OBS (recommended)                </a>
+</li>
+<li>
+<a href="index.html">
+                    Offline video export                </a>
+</li>
+<li>
+<a href="../realtime-recording/index.html">
+                    Realtime video recording                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create a looping animation Background &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Create a looping animation Background</h1>
+<div class="aw-page-container">
+<p></p><p data-pm-slice="1 1 []">Importing an animated backdrop has the same process as importing a <a href="../2doverlay/index.html"><span style="text-decoration: underline;">static 2D background</span></a>, except that instead of loading a 2D image in the <strong>Import SkyBox 2D</strong> window, you can select a Live2D model (<strong>*.model3.json </strong>file) that has the animation you want to loop set as the first animation in the Idle group of the Live2D model.</p>
+<p data-pm-slice="1 1 []">If these terms seem unfamiliar, please visit the <a href="https://docs.live2d.com/?locale=en_us#"><span style="text-decoration: underline;">Live2D documentation website</span></a>.</p>
+<p dir="ltr"><span style="font-size: 12px;"></span></p>
+<p></p>
+<p dir="ltr"><img alt="Import json background 2D" height="509" src="../../../assets/images/0z-05e002b7.png" title="Animaze Editor" width="800"/></p>
+<p></p>
+<p>Everything else stays the same.</p>
+<p>Remember to hit <strong>Play </strong>in the top bar of the Animaze editor, to see the animation playing on the Live2D models in the editor. </p>
+<p>For any Live2D model that you will load as an image, a <strong>Live2D Extension</strong> sub-item will appear in the <strong>Hierarchy Panel</strong>.</p>
+<p></p>
+<p><span style="text-decoration: underline;"></span></p>
+<p><img alt="Animaze Editor " height="425" src="../../../assets/images/00z-3f4705e5.png" title="Animaze Editor " width="800"/></p>
+<p dir="ltr"></p>
+<p>The properties of this sub-item will allow you to configure the Live2D model just like a full Live2D avatar. For more information on configuring Live2D avatars please see our documentation <a href="../../gettingstarted2d/createyourown/index.html">here</a>.</p>
+<p><b><br/></b></p>
+<p>To make the idle animation from cubism work properly in Animaze backgrounds (as a loopable animation to be imported with the background), the following operations are also necessary:</p>
+<p>1. Open the <strong>model3.json</strong> file in Cubism Viewer and pull over the <strong>motion3.json</strong> file (it is necessary to have these 2 files in the same folder).</p>
+<p><img alt="File Structure " height="168" src="../../../assets/images/1z-9a42b087.png" title="Cubism Animation" width="400"/></p>
+<p><img alt="Animation in Cubism" height="501" src="../../../assets/images/2z-a0277f3f.png" title="Cubism Animation" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p>2. Expand the <strong>motions</strong> directory from the left menu</p>
+<p><img alt="Animation in Cubism" height="500" src="../../../assets/images/3z-151d1ba9.png" title="Cubism Animation" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p>3. Select <strong data-renderer-mark="true">*.motion3. json</strong>, check <strong data-renderer-mark="true">Overwrite Fade-in </strong>and <strong data-renderer-mark="true">Fade-out</strong> &gt; assign them the <strong data-renderer-mark="true">value 0</strong>, and change the <strong data-renderer-mark="true">Group name</strong> to <strong data-renderer-mark="true">Idle</strong></p>
+<p><strong data-renderer-mark="true"><img alt="Animation in Cubism" height="503" src="../../../assets/images/4z-c5953284.png" title="Cubism Animation" width="800"/></strong></p>
+<p><strong data-renderer-mark="true"><br/></strong></p>
+<p>4. Re-export the <strong>*.model3.json</strong> file <strong data-renderer-mark="true"></strong></p>
+<p><strong data-renderer-mark="true"><img alt="Export Animation " height="199" src="../../../assets/images/5z-e9bc7f66.png" title="Cubism Animation" width="390"/></strong></p>
+<p><strong data-renderer-mark="true"><br/></strong></p>
+<p><strong data-renderer-mark="true"></strong></p>
+<p>If you want to load a Live2D <strong>*.model3.json</strong> as an overlay (instead of a static 2D image) the steps <a href="../2doverlay/index.html">here </a>remain the same, except that when you edit the <strong>2D overlay</strong> item, you need to browse and load the Live2D model, instead of the static 2D image. </p>
+<p><strong>Tip:</strong> As best practice, you can set extra 2-3 frames after the last animation key, for a smoother loop.</p>
+<p>When having physics on your model, mind that, in Animaze the physics will overwrite the animations of the avatars/imported assets.</p>
+<p>To learn more about such Live2D assets, here is the <a href="https://s3.amazonaws.com/animaze.us/Animated+Backgrounds+and+Overlays+Sources.zip">link to our sample models</a>. </p>
+<p><strong data-renderer-mark="true"><br/></strong></p>
+<p dir="ltr"><span style="text-decoration: underline;"><a href="https://s3.amazonaws.com/animaze.us/Animated+Backgrounds+and+Overlays+Sources.zip"></a></span></p>
+<p dir="ltr"><span style="text-decoration: underline;"><a href="https://s3.amazonaws.com/animaze.us/Animated+Backgrounds+and+Overlays+Sources.zip"></a></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Creating Backgrounds &amp; Scenes for Animaze        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../backgroundwoverlays/index.html">
+                    Getting started with backgrounds with overlays (2D)                </a>
+</li>
+<li>
+<a href="../2doverlay/index.html">
+                    Create a simple, static 2D background with an overlay                </a>
+</li>
+<li>
+<a href="index.html">
+                    Create a looping animation Background                </a>
+</li>
+<li>
+<a href="../trackingdatabackground/index.html">
+                    Create a backdrop with animated elements that are linked to Tracking Data                </a>
+</li>
+<li>
+<a href="../backgroundtrigger/index.html">
+                    Create a backdrop with animated elements triggered by key-binds                </a>
+</li>
+<li>
+<a href="../importbackground/index.html">
+                    Import a background (skybox)                </a>
+</li>
+<li>
+<a href="../sendbackgroundf/index.html">
+                    Send your background .avatar file to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../sendbackgroundw/index.html">
+                    Send your background .avatar file to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../sendbackground/index.html">
+                    Send a background .avatar file to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="../troubleshootandsupportbackgroundsoverlayeditor/index.html">
+                    Troubleshoot &amp; Support                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

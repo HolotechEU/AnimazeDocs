@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motion Output Parameter List &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Motion Output Parameter List </h1>
+<div class="aw-page-container">
+<p></p><p data-pm-slice="1 1 []">last revision on Sept 29 2021 </p>
+<p>This document is a detailed list of the motion output parameters available to you, the avatar creator for custom-animating your avatars in Animaze. You will likely want to refer to this list to custom-map aspects like Hand Motion from Ultraleap (Leap Motion) on your custom Live2D avatar (and more). </p>
+<p>Depending on the animation standard and avatar technology you use, all (or just some) of the output parameters listed below will be auto-mapped to your avatar’s available motion inputs - the inputs that you have built and surfaced in your avatar.  </p>
+<p>If you want more control and do not want to use the automatic mapping, you’ll want to use the list below and the <a href="../live2dretargetingoverrides/index.html"><span style="text-decoration: underline;">Retargeting Overrides</span></a> in the <a href="https://www.animaze.us/editor"><span style="text-decoration: underline;">Animaze Editor</span></a> to make your own custom choices. </p>
+<p>Please note that the motion output parameter list below (long as it may be), is a simplification of all the total data Animaze normally gets from the tracker modules. This is why more complex aspects (especially the ones related to full-body motion capture retargeting on full 3D avatars) will only be achievable with high accuracy with automatic mapping.</p>
+<p>The current auto-presets per type of avatar technology are:</p>
+<p><strong>For </strong><a href="../paramlist/index.html"><strong><span style="text-decoration: underline;">Live2d avatars in Animaze </span></strong></a></p>
+<ul class="ak-ul">
+<li>
+<p>Default Animation Standard (simpler, most used currently)</p>
+</li>
+<li>
+<p>Extended Animation Standard (more complex)</p>
+</li>
+</ul>
+<p><strong>For </strong><a href="../../vrmavatar/vrmanimations/index.html"><strong><span style="text-decoration: underline;">VRM avatars in Animaze</span></strong></a> you have</p>
+<ul class="ak-ul">
+<li>
+<p>VRoid VRM Animation Standard (simpler)</p>
+</li>
+<li>
+<p>Perfect Sync Animation standard (more complex) </p>
+</li>
+</ul>
+<p><strong>For </strong><a href="../../readyplayerme/readyplayermeeditor/index.html"><strong><span style="text-decoration: underline;">Ready Player Me</span></strong></a> you have the </p>
+<ul class="ak-ul">
+<li>
+<p>Ready Player Me Animation Standard (a lot like PerfectSync) </p>
+</li>
+</ul>
+<p><strong>For </strong><a href="../../animationappendix/index.html"><strong><span style="text-decoration: underline;">Animaze-native</span></strong></a><strong> </strong>you have the </p>
+<ul class="ak-ul">
+<li>
+<p>Native Animaze Standard  (arguably the most complex, but produces the most nuanced results). </p>
+</li>
+</ul>
+<p><strong>Note:</strong> Right now Retargeting Overrides have been enabled only for Live2D avatars.  We’re working on surfacing this functionality for all types of avatars at a later date.</p>
+<h2><strong>Mapping Premises </strong></h2>
+<p>Most of these motion output parameters are on a simple linear intensity scale that goes from </p>
+<ul class="ak-ul">
+<li>
+<p>0% (corresponding to the neutral position)  to </p>
+</li>
+<li>
+<p>100% (max intensity).</p>
+</li>
+</ul>
+<p>A sub-set of them are “<strong>centered range</strong>” type parameters: linear intensity but whose neutral value is in the middle of the range  (50% of the way)  and they can go to max “left” or max “right” as they go to 0% or 100% from the center.</p>
+<p>Some of these are tracked by one tracker (like the webcam face tracker or iPhone Arkit), some by a combination of trackers (video plus audio), and some are sourced from various computer peripherals (keyboard, mouse, controller etc).  Some are tracked from more exotic sensors like the Ultraleap (formerly Leap Motion) hand tracker. Some, like ears, are inferred from the behavior of other tracking inputs.</p>
+<p>Below we list the names by which you will see them in the drop-down list from the Animaze Editor, in the Retargeting Overrides section. These names may appear a bit cryptic at first sight, but they will make a lot more sense if you keep in mind:</p>
+<ul class="ak-ul">
+<li>
+<p>L- usually means Left</p>
+</li>
+<li>
+<p>R- usually means Right</p>
+</li>
+<li>
+<p>U- usually means Up</p>
+</li>
+<li>
+<p>D- usually means Down</p>
+</li>
+<li>
+<p>LR: usually means a “centered range” type parameter covering Left to Right. </p>
+</li>
+<li>
+<p>UD: usually means a “centered range” type parameter covering Up to Down. </p>
+</li>
+</ul>
+<p>This documentation will evolve base on feedback from you, the creators. A lot of the names in this list we consider self-explanatory but, if they are not, then for sure we will add more explanations.  For any clarification don’t hesitate to reach out to support via email or Discord, </p>
+<h2><strong>Available “Retargeting Overrides” Parameter List</strong></h2>
+<p><strong style="font-size: 1em;">Head Rotations  </strong></p>
+<ul class="ak-ul">
+<li>
+<p>HeadPitch -Head pitch rotation, centered range parameter. </p>
+</li>
+<li>
+<p>HeadYaw, - Head yaw rotation, centered range parameter. </p>
+</li>
+<li>
+<p>HeadRoll  -  Head roll rotation, centered range parameter. </p>
+</li>
+</ul>
+<h4><strong>Upper Body Rotations &amp; up/down Stretch</strong> (inferred from head 3D position)</h4>
+<ul class="ak-ul">
+<li>
+<p>BodyPitch -Upper Body pitch rotation, centered range parameter. </p>
+</li>
+<li>
+<p>BodyYaw - Upper Body yaw rotation, centered range parameter.</p>
+</li>
+<li>
+<p>BodyRoll - Upper Body roll rotation, centered range parameter.</p>
+</li>
+<li>
+<p>BodyUpDown - for hunching down or straightening the spine to make the head go higher or lower.</p>
+</li>
+</ul>
+<p><em>Note that additional whole body translation motions can be generated on the avatar’s body via the Enhanced Body Motions Option in the App’s Overrides Settings. </em><br/><em>These bespoke translation options are not available as inputs in Retargeting Overrides (at least for now) </em></p>
+<h4><strong>Mouth</strong></h4>
+<ul class="ak-ul">
+<li>
+<p>MouthSmileUnsure - mouth stretches to the sides, corners go slightly down, like a mouth frown </p>
+</li>
+<li>
+<p>MouthStretch, - this is in for legacy reasons/prototyping reasons</p>
+</li>
+<li>
+<p>MouthSmileL, - half-smile, left.</p>
+</li>
+<li>
+<p>MouthSmileR - half-smile, right.</p>
+</li>
+<li>
+<p>MouthUnsureL - mouth frown left</p>
+</li>
+<li>
+<p>MouthUnsureR - mouth frown right</p>
+</li>
+<li>
+<p>MouthMoveUp, - mouth moves “up” on the face (typically pushed up by a stiffened lower lip)</p>
+</li>
+<li>
+<p>MouthOpen, - the degree of openness of the inner lip contour. Legacy input, use JawDrop.</p>
+</li>
+<li>
+<p>JawDrop - The degree to which the jaw is moving down from the shut position. </p>
+</li>
+<li>
+<p>PursedLips, - the amount of pursed/puckered lips </p>
+</li>
+<li>
+<p>PursedLipsLR, - asymmetric pursed/puckered lips offset to left or right - centered range parameter </p>
+</li>
+<li>
+<p>MouthUnveiledTeeth, - upper teeth being unveiled by a retracted upper lip </p>
+</li>
+<li>
+<p>MouthUnveiledTeethDown, - lower teeth being unveiled by a retracted lower lip.</p>
+</li>
+<li>
+<p>MouthUpperLipMBP, - lips pressed together.</p>
+</li>
+<li>
+<p>MouthSmileWithTeethCovered - self explanatory</p>
+</li>
+<li>
+<p>JawLR, - Jaw movement left-right; centered range parameter.</p>
+</li>
+<li>
+<p>JawF, - Jaw being driven forward/ protruding jaw.</p>
+</li>
+<li>
+<p>NoseWrinklerU, -  typically like a “snarl”</p>
+</li>
+<li>
+<p>NoseWrinklerD, - trying to stretch the lower part of the nose down by moving the upper lip as low as it can go. </p>
+</li>
+</ul>
+<h4><strong>Eyebrows</strong></h4>
+<ul class="ak-ul">
+<li>
+<p>BrowIntLeftU  - interior of the left eyebrow, up intensity</p>
+</li>
+<li>
+<p>BrowIntLeftD,  - interior of the left eyebrow, up intensity</p>
+</li>
+<li>
+<p>BrowIntRightU,  - iInterior of the right eyebrow, up intensity</p>
+</li>
+<li>
+<p>BrowIntRightD,  - interior of the right eyebrow,  down intensity</p>
+</li>
+<li>
+<p>BrowExtLeftU, - exterior of the left eyebrow, up intensity</p>
+</li>
+<li>
+<p>BrowExtLeftD,  - exterior of the left eyebrow, down intensity</p>
+</li>
+<li>
+<p>BrowExtRightU,  - exterior of the right eyebrow, up intensity</p>
+</li>
+<li>
+<p>BrowExtRightD,  - exterior of the right eyebrow, up intensity</p>
+</li>
+<li>
+<p>BrowCenterLeftUp  - Middle of the left eyebrow, down intensity. </p>
+</li>
+<li>
+<p>BrowCenterLeftDow  - Middle of the left eyebrow, down intensity.</p>
+</li>
+<li>
+<p>BrowCenterRightUp - Middle of the right eyebrow, up intensity.</p>
+</li>
+<li>
+<p>BrowCenterRightDown, - Middle of the Right eyebrow, down  intensity</p>
+</li>
+<li>
+<p>BrowSqueezeInLeft, - Left eyebrow squeezing in towards the center of the face.</p>
+</li>
+<li>
+<p>BrowSqueezeInRight,  - Left eyebrow squeezing in towards the center of the face. </p>
+</li>
+<li>
+<p>BrowStrechOut - legacy parameter (equivalent to symmetrical squeeze)</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Eyes and Eyelids</strong></p>
+<ul class="ak-ul">
+<li>
+<p>EyeLClosed  - the degree to which the left eye is closed </p>
+</li>
+<li>
+<p>EyeRClosed, - the degree to which the right eye is closed</p>
+</li>
+<li>
+<p>EyeLSize - the degree to which the left eye appears larger due to eyelids being very open (like when the person is surprised or afraid)</p>
+</li>
+<li>
+<p>EyeRSize, - the degree to which the right eye appears larger due to eyelids being very open (like when the person is surprised or afraid)</p>
+</li>
+<li>
+<p>EyeLSquint, - degree of squint on the left eye  (also engaging the lower eyelid)</p>
+</li>
+<li>
+<p>EyeRSquint, - degree of squint on the right eye  (also engaging the lower eyelid)</p>
+</li>
+<li>
+<p>EyeLPupPosX, - left eye pupil/iris position on the X axis (horizontal). Centered range</p>
+</li>
+<li>
+<p>EyeLPupPosY, - left eye pupil/iris position on the Y axis (vertical). Centered range </p>
+</li>
+<li>
+<p>EyeRPupPosX,- right  eye pupil/iris  position on the X axis (horizontal). Centered range</p>
+</li>
+<li>
+<p>EyeRPupPosY, - right eye pupil/iris position on the Y axis (vertical). Centered range</p>
+</li>
+<li>
+<p>EyePupilDilate, - Eye pupil size</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Tongue</strong></p>
+<ul class="ak-ul">
+<li>
+<p>TongueOut - Degree to which the tongue is sticking out.</p>
+</li>
+<li>
+<p>TongueLR, -  Centered range param.</p>
+</li>
+<li>
+<p>TongueUD, - Centered range param.</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Cheeks</strong></p>
+<ul class="ak-ul">
+<li>
+<p>PuffCheekL </p>
+</li>
+<li>
+<p>PuffCheekR</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Arms </strong></p>
+<p>The arms, hands, and fingers parameters had to be simplified a lot when compared to the raw data coming from the tracker. Note the parameters that move the arms still have the sub-string “hand” in them, but these still do refer largely to arms. The reason they contain the word ”hands” is that the end position of the palm is what is driving most of the arm motion in 3D space via Inverse Kinematics.<br/>Motions (up down left right) here are relative to the shoulder joint.</p>
+<ul class="ak-ul">
+<li>
+<p>HandR_LR</p>
+</li>
+<li>
+<p>HandR_UD,</p>
+</li>
+<li>
+<p>HandR_CloseFront, - Centered range parameter, back to front.</p>
+</li>
+<li>
+<p>HandR_NaturalPose, - Right arm alongside the body with the elbow bent at 90 degrees  and forearms pointing forward at 0%, and straight arms alongside the body at 100% </p>
+</li>
+<li>
+<p>HandL_LR,</p>
+</li>
+<li>
+<p>HandL_UD,</p>
+</li>
+<li>
+<p>HandL_CloseFront,  - Centered range parameter, back to front.</p>
+</li>
+<li>
+<p>HandL_NaturalPose,- Right arm alongside the body with the elbow bent at 90 degrees  and forearms pointing forward at 0%, and straight arms alongside the body at 100% </p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Hands</strong></p>
+<p>Palm of the hand, beyond the wrist. </p>
+<p>Most motions are relative to the wrist. </p>
+<ul class="ak-ul">
+<li>
+<p>HandR_SoloLR  - r hand rotating left-right around the wrist. centered range parameter</p>
+</li>
+<li>
+<p>HandR_SoloUD, - r hand rotating up down around the wrist. centered range parameter</p>
+</li>
+<li>
+<p>HandR_SoloTwist, - Rotating the forearm and hand (rotating the wrist)</p>
+</li>
+<li>
+<p>HandL_SoloLR,  - left hand rotating left-right around the wrist. centered range parameter</p>
+</li>
+<li>
+<p>HandL_SoloUD, - left hand rotating up down around the wrist. centered range parameter</p>
+</li>
+<li>
+<p>HandL_SoloTwist - Rotating the forearm and hand (rotating the wrist)</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Fingers</strong></p>
+<p>This is the degree to which the fingers are curled. Not curled at all means extended.</p>
+<p>The count starts from the thumb moving through the finger in order till the pinkie.</p>
+<ul class="ak-ul">
+<li>
+<p>HandR_Finger1</p>
+</li>
+<li>
+<p>HandR_Finger2,</p>
+</li>
+<li>
+<p>HandR_Finger3,</p>
+</li>
+<li>
+<p>HandR_Finger4,</p>
+</li>
+<li>
+<p>HandR_Finger5,</p>
+</li>
+<li>
+<p>HandL_Finger1,</p>
+</li>
+<li>
+<p>HandL_Finger2,</p>
+</li>
+<li>
+<p>HandL_Finger3,</p>
+</li>
+<li>
+<p>HandL_Finger4,</p>
+</li>
+<li>
+<p>HandL_Finger5,</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Visimes</strong></p>
+<p><a href="../../animationappendix/visemes/index.html"><span style="text-decoration: underline;">Standard visime shapes</span></a>, </p>
+<ul class="ak-ul">
+<li>
+<p>Viseme_AA </p>
+</li>
+<li>
+<p>Viseme_AH,</p>
+</li>
+<li>
+<p>Viseme_AO,</p>
+</li>
+<li>
+<p>Viseme_AW,</p>
+</li>
+<li>
+<p>Viseme_OY,</p>
+</li>
+<li>
+<p>Viseme_EH,</p>
+</li>
+<li>
+<p>Viseme_IH,</p>
+</li>
+<li>
+<p>Viseme_EY,</p>
+</li>
+<li>
+<p>Viseme_Y,</p>
+</li>
+<li>
+<p>Viseme_R,</p>
+</li>
+<li>
+<p>Viseme_L,</p>
+</li>
+<li>
+<p>Viseme_W,</p>
+</li>
+<li>
+<p>Viseme_M,</p>
+</li>
+<li>
+<p>Viseme_N,</p>
+</li>
+<li>
+<p>Viseme_CH,</p>
+</li>
+<li>
+<p>Viseme_FV,</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Ears</strong></p>
+<p>These are not tracked directly.</p>
+<ul class="ak-ul">
+<li>
+<p>EarLeft_U</p>
+</li>
+<li>
+<p>EarLeft_D,</p>
+</li>
+<li>
+<p>EarRight_U,</p>
+</li>
+<li>
+<p>EarRight_D,</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Windows Pointer Device</strong><span style="font-size: 1em;"> (Mouse and Stylus)</span></p>
+<ul class="ak-ul">
+<li>
+<p>MouseAndStylus_X  - horizontal position on screen.</p>
+</li>
+<li>
+<p>MouseAndStylus_Y, - vertical position on screen.</p>
+</li>
+<li>
+<p>MouseAndStylus_LeftClick,</p>
+</li>
+<li>
+<p>MouseAndStylus_RightClick,</p>
+</li>
+<li>
+<p>MouseAndStylus_Scroll,</p>
+</li>
+<li>
+<p>MouseAndStylus_Inclination, - reserved, but not yet implemented</p>
+</li>
+<li>
+<p>MouseAndStylus_Pressure,   - reserved, but not yet implemented.</p>
+</li>
+</ul>
+<p><strong>Keys on the Keyboard</strong></p>
+<p>These are values meant to be driven by tracking keyboard activity, to simulate avatar typing.</p>
+<ul class="ak-ul">
+<li>
+<p>Keyboard_LHand_X  - Left hand position on the surface of the keyboard - horizontal</p>
+</li>
+<li>
+<p>Keyboard_LHand_Y, - Left hand position on the surface of the keyboard - vertical</p>
+</li>
+<li>
+<p>Keyboard_RHand_X, - Right hand position on the surface of the keyboard - horizontal</p>
+</li>
+<li>
+<p>Keyboard_RHand_Y,- Right hand position on the surface of the keyboard - vertical</p>
+</li>
+<li>
+<p>Keyboard_HandR_Finger1, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandR_Finger2, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandR_Finger3, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandR_Finger4, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandR_Finger5, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandL_Finger1, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandL_Finger2, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandL_Finger3, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandL_Finger4, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+<li>
+<p>Keyboard_HandL_Finger5, - Finger from “ relaxed”  to “ pushing the key right below”</p>
+</li>
+</ul>
+<p><strong style="font-size: 1em;">Gamepad Input</strong></p>
+<ul class="ak-ul">
+<li>
+<p>Gamepad_Button_A </p>
+</li>
+<li>
+<p>Gamepad_Button_B,</p>
+</li>
+<li>
+<p>Gamepad_Button_X,</p>
+</li>
+<li>
+<p>Gamepad_Button_Y,</p>
+</li>
+<li>
+<p>Gamepad_Button_BACK,</p>
+</li>
+<li>
+<p>Gamepad_Button_GUIDE,</p>
+</li>
+<li>
+<p>Gamepad_Button_START,</p>
+</li>
+<li>
+<p>Gamepad_Button_LEFTSTICK,</p>
+</li>
+<li>
+<p>Gamepad_Button_RIGHTSTICK,</p>
+</li>
+<li>
+<p>Gamepad_Button_LEFTSHOULDER,</p>
+</li>
+<li>
+<p>Gamepad_Button_RIGHTSHOULDER,</p>
+</li>
+<li>
+<p>Gamepad_Button_DPAD_UP,</p>
+</li>
+<li>
+<p>Gamepad_Button_DPAD_DOWN,</p>
+</li>
+<li>
+<p>Gamepad_Button_DPAD_LEFT,</p>
+</li>
+<li>
+<p>Gamepad_Button_DPAD_RIGHT,</p>
+</li>
+<li>
+<p>Gamepad_Button_MISC1,    /* Xbox Series X share button, PS5 microphone button, Nintendo Switch Pro capture button */</p>
+</li>
+<li>
+<p>Gamepad_Button_PADDLE1,  /* Xbox Elite paddle P1 */</p>
+</li>
+<li>
+<p>Gamepad_Button_PADDLE2,  /* Xbox Elite paddle P3 */</p>
+</li>
+<li>
+<p>Gamepad_Button_PADDLE3,  /* Xbox Elite paddle P2 */</p>
+</li>
+<li>
+<p>Gamepad_Button_PADDLE4,  /* Xbox Elite paddle P4 */</p>
+</li>
+<li>
+<p>Gamepad_Button_TOUCHPAD, /* PS4/PS5 touchpad button */</p>
+</li>
+</ul>
+<p></p>
+<p>That’s the whole list for now!</p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing Live2D Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../stepsincreatingyourown2davatar/index.html">
+                    Steps in creating your own 2D avatar                </a>
+</li>
+<li>
+<a href="../animazeintro/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../paramlist/index.html">
+                    Live2D Model Requirements &amp; Animation Standards                </a>
+</li>
+<li>
+<a href="index.html">
+                    Motion Output Parameter List                 </a>
+</li>
+<li>
+<a href="../complexparam/index.html">
+                    Live 2D Model Creation Process for Complex Mouth Geometries                </a>
+</li>
+<li>
+<a href="../gettingstarted/index.html">
+                    Getting started - Import Live2D model in Animaze Editor                </a>
+</li>
+<li>
+<a href="../changeavatardetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../changerendering/index.html">
+                    Change the rendering options                </a>
+</li>
+<li>
+<a href="../remapanimations/index.html">
+                    Remap avatar animation inputs                </a>
+</li>
+<li>
+<a href="../live2dretargetingoverrides/index.html">
+                    Live2D Retargeting Overrides                 </a>
+</li>
+<li>
+<a href="../specialactions/index.html">
+                    Configure avatar Special Actions &amp; Special Poses                </a>
+</li>
+<li>
+<a href="../frameavatar/index.html">
+                    Frame the avatar                </a>
+</li>
+<li>
+<a href="../modifytexture/index.html">
+                    Quickly modify a texture on your avatar                </a>
+</li>
+<li>
+<a href="../expressiondebugging/index.html">
+                    Expressions debugging - Avatar Puppeteering                </a>
+</li>
+<li>
+<a href="../createavatarbundle/index.html">
+                    Create an *.avatar bundle                 </a>
+</li>
+<li>
+<a href="../importbundle/index.html">
+                    Import an *.avatar bundle in Animaze PC app                </a>
+</li>
+<li>
+<a href="../importlive2d/index.html">
+                    Import Your Live2D Models in Animaze PC                </a>
+</li>
+<li>
+<a href="../sendavatar/index.html">
+                    Send your avatar to Animaze Avatar iOS app                </a>
+</li>
+<li>
+<a href="../leaplive2d/index.html">
+                    Leap Motion Hand Sensors with Live2D avatars                </a>
+</li>
+<li>
+<a href="../diveinto/index.html">
+                    Dive into Documentation                </a>
+</li>
+<li>
+<a href="../createyourown/index.html">
+                    Create your own 2D avatar                </a>
+</li>
+<li>
+<a href="../troubleshootandsupport2deditor/index.html">
+                    Troubleshoot &amp; Support                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

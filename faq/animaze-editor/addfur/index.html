@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How can I add fur on an Avatar in the Animaze Editor? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>How can I add fur on an Avatar in the Animaze Editor?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p>The Fur shading component renders the model in layers, creating the effect of a furry surface; it can be attained for short fur effects only.</p>
+<p>The component makes use of the Normals and vertex color geometry info to compute a general fur direction, where the vertex Red and Green channels give the direction in the Tangent and Binormal space, and the Alpha channel is used as a factor for the fur length.</p>
+<p>Fur rendering is expensive resource-wise as, in theory, the model is rendered several times (number of fur layers) per frame to create the effect. Performance-wise, lowering the mesh fur layers helps, although it causes a drop of quality.</p>
+<p>Import your model in Animaze Editor and follow the steps below to add fur on your avatar:</p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>Diffuse texture</li>
+<li>Fur mask, where:
+
+<ul>
+<li>
+<p><i>Red channel</i> controls the mix between normal specular and aniso specular, where 0 is normal and 255 is specular</p>
+</li>
+<li>
+<p><i>Green channel</i> is an additional layer alpha control. Alpha is the length, all lower value pixels are discarded, everything above will render at a calculated opacity, the green channel adds an additional transparency control.</p>
+</li>
+<li>
+<p><i>Blue channel</i><i> </i>is the fur aniso specular intensity</p>
+</li>
+<li>
+<p><i>Alpha Channel</i> is used as fur length, controlling a smoother blend between fur areas (values closer to 255) and fur-less areas (values closer to 0) of the rendered surface</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>- In the <b>Hierarchy Panel</b> select the mesh that needs fur </p>
+<p><img height="416" src="../../../assets/images/fur_1-3950f6d0.png" width="301"/></p>
+<p></p>
+<p>- In the <b>Editor Panel</b> set the <b>Render Queue</b> on <b>Fur</b> to have it sorted back to front</p>
+<p><img height="396" src="../../../assets/images/fur_2-c91d0d68.png" width="523"/></p>
+<p></p>
+<p>- Push the <b>Add Component</b> button and select <b>Fur</b> from the components list </p>
+<p>- Adjust the <b>number of mesh layers</b> of the avatar; by default, it comes with 1 layer and needs adjustment in order to be visible</p>
+<p>- Load the fur mask texture and also check that the other necessary components are added, where applicable</p>
+<p>- Adjust the <b>Fur</b> <b>Direction Multiplier</b> (fur direction), <b>Fur</b> Length and the <b>Fur Glossiness</b> of the fur in real-time by tuning the adjacent buttons</p>
+<p><img height="406" src="../../../assets/images/fur_3-9ff8b580.png" width="502"/></p>
+<p></p>
+<p>- In the <strong>Editor Panel</strong> push the <b>Save material </b>button when all of your changes are done</p>
+<p><img height="533" src="../../../assets/images/fur_4-8463cb75.PNG" width="479"/></p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Debugging your Live2D avatar in the Animaze Editor &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Debugging your Live2D avatar in the Animaze Editor</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p><span>If you’ve imported your Live2D avatar into Animaze and you are encountering any of the following errors:</span></p>
+<ul>
+<li dir="ltr"><span>Parts of the avatar are not responding to tracking input</span></li>
+<li dir="ltr"><span>The avatar appears pixelated/blurry</span></li>
+</ul>
+<p dir="ltr"><span>Read the below steps to fix these issues and re-import your Live2D model using the Animaze Editor!</span></p>
+<h3 dir="ltr"><span>Step 1: Import Your Live2D Model in the Animaze Editor</span></h3>
+<p><span>To get started, download the free Animaze Editor from Steam. To do this, go to your Steam library, make sure the ‘tools’ box is checked from your library dropdown, then select and install Animaze Editor:</span></p>
+<p><span><span><img height="786" src="../../../assets/images/jB0EB5N-95pDiO_wwD6T_lRInKEHnc_q4iaGH_wN1nhm_UpIqNkqEADs_6xrDmfEUs7jCHZBEvWqSXGlPToZJWR0QYkA2D94-zlqArsMrw3PmtwEfGKEn2XdgMRjmHO3n46TsTgr-dc37a2bc.png" width="400"/></span></span></p>
+<p>Open the Editor and Import your Live2D avatar. <a href="../../gettingstarted2d/gettingstarted/index.html">Follow the instructions at this link</a> to import your Live2D avatar into the Editor.</p>
+<p>Or follow these short instructions:</p>
+<ul>
+<li dir="ltr"><span>Open the Editor, Click the “assets” menu and select “Import Live2D avatar”</span></li>
+<li dir="ltr"><span>Select your model’s .JSON file and click Open</span></li>
+<li dir="ltr"><span>Check all boxes in the import list to make sure all of your model files are being imported</span></li>
+<li dir="ltr"><span>Dismiss the import log and view your avatar in the Editor’s Viewport</span></li>
+</ul>
+<p><span><span><br/></span></span></p>
+<h3 dir="ltr"><span>Step 2: Debug Your Live2D Model in the Animaze Editor</span></h3>
+<p dir="ltr"><span style="text-decoration: underline;">Fixing Blurriness by Increasing Render Size:</span></p>
+<p>If your model looks Blurry, you need to change the Render Size. </p>
+<p><span>First, click on the avatar’s name in the hierarchy panel on the left side of the screen to view the Avatar Inspector on the right. Scroll down and click the “Live2D Options” button. You will see an option called </span><span>Render Size</span><span>.</span></p>
+<p><span><span><img height="450" src="../../../assets/images/dtBcPmxg9vCaHB9R451iioC3__l5Bldla8vbdCE6DEKmiTfG6NNmNqAhHO5Zjpm6gstvmSJdZk-nF0FHIyDFXx6ubAQopat52I2dukRpymj5fUc844YekUwKG29L3pQJWQ2psuRg-c20c8f97.png" width="700"/></span></span></p>
+<p><span id="docs-internal-guid-dafce98e-7fff-a20d-be51-1f144d296819"><span>To increase the visual fidelity of your avatar, increase the Render Size number. Animaze supports a maximum render size of 16384 x 16384 px and a minimum of 64 x 64 px. Note that the Animaze PC app will by default display your Live2D model at the render size you set in the model files or in the Animaze Editor. You can also modify the resolution of your avatar within Animaze by changing the “2D Avatar Render Scale” setting in the Animaze PC App, but no setting will enable a render scale beyond 16384.</span></span></p>
+<p><span><span><br/></span></span></p>
+<h3 dir="ltr"><span>Step 3: Fixing Avatar Motions with Parameter Remapping:</span></h3>
+<p><span>Next, we will check to make sure your model’s parameters are mapped correctly. If parts of your avatar are not responding to tracking input in Animaze, you likely need to update your Parameter Mapping in the Editor. </span></p>
+<p><span>If all of your Live2D Model’s Parameters are named according to Live2D’s standard Parameter names, Animaze should automatically import all of them. However, if you use custom parameter names in your model, you’ll need to map each custom parameter name to its corresponding default parameter name. This will make sure Animaze knows how to animate your model in response to tracking input. </span></p>
+<p><span>In the avatar inspector panel on the right, scroll down to “Parameter Remapper” and click on it to expand the tool.</span></p>
+<p><span><span><img height="456" src="../../../assets/images/eR1xcsi-kwr3-6K6djTl2qWTBdaMaetaJkTW67GIhb7ySL1L62Fkv1U9Q7YO51XkyCH_MLK687Qisyu3LPIgs8VBsaIpWnniDXadMGyCkQiI0fe9VnDTADHkb65g8-c8fuzEm5Fw-e2b2c3c7.png" width="700"/></span></span></p>
+<p><span>You will see a list of every <span style="text-decoration: underline;">Default Parameter s</span>upported by Animaze under “Default Parameter Name.” Make sure each of these parameters is matched to the correct custom parameter name for your avatar. If a parameter is undefined, it will not be recognized by Animaze, and will be unaffected by tracking input.</span></p>
+<p><span>Go through the parameter list and make sure all of the parameters your model uses are mapped correctly.</span></p>
+<p><span><span><br/></span></span></p>
+<p><span><span style="text-decoration: underline;">Congratulations!</span> Now that you’ve fixed your avatar, you’re ready to save your changes and export your .avatar bundle from the Editor.  </span></p>
+<p><span><span><br/></span></span></p>
+<h3 dir="ltr"><span>Step 4: Export your Live2D Model as a .avatar file</span></h3>
+<p><span>Follow steps 1-4 of this guide “Create the Avatar Bundle”: </span><a href="../../gettingstarted2d/importtowindows/index.html"><span>https://www.animaze.us/manual/gettingstarted2d/importtowindows</span></a></p>
+<p><span style="text-decoration: underline;">Note</span>: The name of .avatar file has to be the same as your model3.json file or you will get flagged as a new import. The Editor automatically assigns this filename to your .avatar file - just don’t change it.</p>
+<p><span><span><br/></span></span></p>
+<h3 dir="ltr"><span>Step 5: Import your Updated .avatar into Animaze</span></h3>
+<p><span>Follow Steps 1-4 here under “import the avatar bundle” </span><span><a href="../../gettingstarted2d/importtowindows/index.html">https://www.animaze.us/manual/gettingstarted2d/importtowindows</a></span></p>
+<p><span><span style="text-decoration: underline;">Note</span>: if you are not an Animaze subscriber and you have already paid for a direct Live2D import, you will not have to pay again for this import. Just make sure your .avatar filename is the same as your model3.json filename.</span></p>
+<p><span><span><br/></span></span></p>
+<h4 dir="ltr"><span>You’re all finished!</span></h4>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Converting Avatars from Facerig to Animaze        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../convert2davatar/index.html">
+                    Converting Live2D Avatars from Facerig to Animaze                </a>
+</li>
+<li>
+<a href="../convert3davatar/index.html">
+                    Converting 3D Avatars from Facerig to Animaze                </a>
+</li>
+<li>
+<a href="index.html">
+                    Debugging your Live2D avatar in the Animaze Editor                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

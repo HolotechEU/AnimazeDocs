@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Particle System &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Particle System</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span style="text-decoration: underline;">Animaze </span><span>empowers you to create smoke effects, flames, clouds, magic spells and almost anything you can imagine, by adding <span style="text-decoration: underline;">Particle</span></span><span style="text-decoration: underline;"> Systems </span><span>in your scene, or on your model.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span style="text-decoration: underline;">The </span><span><span style="text-decoration: underline;">Particle System Editor</span> </span><span>allows the creation of new particle systems and the editing of existing ones. Each particle system can be positioned statically in the scene or can be attached to any bone of any avatar or prop.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>If the system is attached, it will follow the bone as it moves. An offset to the bone position can be added if the system needs to follow the bone at a certain distance.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Particles can use textures and 3D models as individual particles, but have a cube mesh as default so the user can focus on generation and movement straight from the beginning. When using textures, each particle behaves as a spherical billboard, facing the camera wherever it may be.</span></p>
+<p>Additionally, Animaze supports binding animated textures/sprites to the particle system to give the user more artistic freedom. Each particle can also change colors dynamically, using a <span style="text-decoration: underline;">Color  Modifier.</span></p>
+<h3 dir="ltr"><span>**Generation and Lifetime of Particles**</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The Particle System has an Emitter that generates individual particles or bursts of particles and can be configured in many ways.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Features:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Individual particles have a lifetime after which they fade away and also, the entire particle system can be set to run indefinitely or for a certain amount of time.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The generation time between each particle and the generation of bursts is configurable. (for example, we can generate 10 individual particles per second and one burst of 20 particles every 5 seconds)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The bursts can be further customized using the Burst Editor, which can set random bursts or bursts at designated times.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Each Particle System can have only one emitter which has a selectable type. The Emitter type describes the volume or surface on which the particles are generated. The generation can be done from a point, line segment, circle, cone or from the surface or volume of a cube, sphere etc.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>According to the chosen Emitter type, you can edit the settings so that the cone has a larger spread, or the circle has a bigger radius etc.</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>For a good performance, try using around 1000 particles.</span></p>
+<h3 dir="ltr"><span>**Particle Color and Appearance**</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Particles can use textures and 3D models as individual particles, but have a cube mesh as default so the user can focus on generation and movement straight from the beginning. When using textures, each particle behaves as a spherical billboard, facing the camera wherever it may be.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Additionally, Animaze supports binding animated textures/sprites to the particle system to give the user more artistic freedom. Each particle can also change colors dynamically, using a Color Modifier.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span style="text-decoration: underline;">Features</span>:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>The user can choose a static color and size for each particle. Further, the Color Modifier can be used to add color transitions. The Color Modifier displays a separate Color Timeline and an Alpha Timeline, so the user is free to think about transparency more easily. The transitions happen as the particle reaches the end of its lifetime, with the first color being the initial color of the particle and the last color being the color of the particle right before it stops displaying.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>A single texture can be used for each particle. The textures also benefit from the Color Modifier or from the static color, as the specified color gives the texture that color's tint.</span></p>
+</li>
+</ul>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>If a sprite/animated texture is bound, it is necessary to specify the size of each sprite tile and the number of tiles, so that the system knows which fragment of the texture it should display.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The speed at which the sprite runs can also be configured.</span></p>
+</li>
+</ul>
+<p><span><span><br/></span></span><span style="text-decoration-line: underline;">Requirements</span>:<span><span><br/></span></span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>The texture files need to be in </span><span>.jpg, .png </span><span>or </span><span>.ktx </span><span>format.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The model files need to be compatible with the Prop/Avatar3D format used in Animaze.</span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span>**Particle Movement**</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Particle Movement is of great importance to any Particle System and Animaze gives a lot  of  freedom to alter the standard movement directions. It features along the standard speed and direction, a gravitation component and also a movement modifier component which enables movement randomization, circular motion and acceleration.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span style="text-decoration: underline;">Features</span>:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>A customizable direction emitter, so that all items can follow the same trajectory or be left moving in random directions.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Each particle has a configurable base speed, weight (useful if using gravitation) and a direction (set in the emitter).</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Particle rotation is also possible around a specified axis or while facing the camera (please note that the two options exclude each other).</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The Movement Modifier offers the possibility to create spiraling motions which follow the base direction or alterations to the base direction with customizable frequency.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Animaze particle systems also offer a size to speed factor, in case a certain physical consistency is needed.</span></p>
+</li>
+</ul>
+<p><span id="docs-internal-guid-9e16cd51-7fff-ac24-689b-9cffc7b8ab93"><br/><br/><br/></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      .avatar format Technical Reference        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../avatarformat/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../complexitytiers/index.html">
+                    Avatar complexity tiers                </a>
+</li>
+<li>
+<a href="../geometryandrules/index.html">
+                    Geometry and Rules                </a>
+</li>
+<li>
+<a href="../texturesandmaterials/index.html">
+                    Textures and Materials                </a>
+</li>
+<li>
+<a href="../uvmapping/index.html">
+                    UV Mapping                </a>
+</li>
+<li>
+<a href="index.html">
+                    Particle System                </a>
+</li>
+<li>
+<a href="../soundeffects/index.html">
+                    Sound Effects                </a>
+</li>
+<li>
+<a href="../camera/index.html">
+                    Camera                </a>
+</li>
+<li>
+<a href="../live2davatars/index.html">
+                    Live2D Avatars                </a>
+</li>
+<li>
+<a href="../animation/index.html">
+                    Animation                </a>
+</li>
+<li>
+<a href="../animationposes/index.html">
+                    Visemes Animations &amp; Expression Poses                </a>
+</li>
+<li>
+<a href="../specialaction/index.html">
+                    Special Actions                </a>
+</li>
+<li>
+<a href="../deformation/index.html">
+                    Deformation                </a>
+</li>
+<li>
+<a href="../modifyproportions/index.html">
+                    Modify Proportions                </a>
+</li>
+<li>
+<a href="../skeleton/index.html">
+                    Skeleton                </a>
+</li>
+<li>
+<a href="../fullbodytracking/index.html">
+                    Full Body Motion Tracking                </a>
+</li>
+<li>
+<a href="../animazephysic/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../props/index.html">
+                    Props                </a>
+</li>
+<li>
+<a href="../backgrounds/index.html">
+                    Backgrounds                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How do I import Props in the Animaze Editor? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>How do I import Props in the Animaze Editor?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p dir="ltr"><span><span>The Animaze Editor</span></span> is an authoring tool that enables artists, hobbyists, and professionals to freely import their 3D, <span><span><a href="../../../manual/gettingstarted2d/index.html">Live2D</a></span></span>, hybrid and .VRM avatars to the Animaze apps. You can download the Animaze Editor freely on Steam. You can also find the Animaze Desktop app on <span><span><a href="http://animaze.tv/steam">Steam</a></span></span> and the Animaze iPhone app on the<span><span><a href="https://apps.apple.com/tr/app/animaze-mobile/id1466925554?ls=1"> App Store</a></span></span>. </p>
+<p dir="ltr">Throughout this guide, we will use the sources of a crown prop that you can <span><span><a href="https://s3.amazonaws.com/animaze.us/Animaze+Editor+Sample+Assets.zip">download here</a></span></span>. If you are new to 3D modeling, we recommend that you start with props and then progress to avatars, as shown in this guide. If you are new to modeling and avatars in general, the best place to start depends on your goals. If you are also taking into account other avatars, check out our <span><a href="../../../manual/gettingstarted2d/index.html">Live2D avatar documentation</a>. </span></p>
+<p dir="ltr">However, if you ultimately want to create 3D models, it's important to note that the process for 2D models and 3D models can be quite different. If you choose to work with 3D models, we recommend that you start with props and then progress to avatars.</p>
+<hr/>
+<p dir="ltr"></p>
+<p dir="ltr">Note that the following files folder structure is mandatory for the import process:</p>
+<p dir="ltr">1. .fbx geometry name the same as the folder name</p>
+<p dir="ltr">2. Textures (.tga, .png, .jpg files) go in Textures/ folder</p>
+<p dir="ltr">3. Skeletal Animations (exported as solo .fbx files) go in the Animations/ folder </p>
+<hr/>
+<p dir="ltr"></p>
+<p dir="ltr">To ease asset management and make it clear what each asset's role is (i.e. avatar, prop, or background), we are using a simple naming convention system that prefixes the asset type to the name of the assets. Here are three examples:</p>
+<p dir="ltr">* avatarName - for avatars </p>
+<p dir="ltr">* propName - for props</p>
+<p dir="ltr">* backgroundName - for backgrounds</p>
+<hr/>
+<p dir="ltr"></p>
+<p dir="ltr">Follow these steps to begin importing your model:</p>
+<p dir="ltr">1. Download the <strong>PropCrownTest</strong> archive using this <a href="https://s3.amazonaws.com/animaze.us/Animaze+Editor+Sample+Assets.zip"><b>link</b> </a>and extract the files inside.</p>
+<p dir="ltr">2. Open the Animaze Editor, navigate to <strong>Assets </strong>and select <strong>Import 3D Object.</strong></p>
+<p><span><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="532" src="../../../assets/images/1-1d4deef0.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></span></p>
+<p dir="ltr">3. Select the model's geometry file, the <strong>.fbx</strong> file.</p>
+<p dir="ltr"><img alt="3D avatars" height="532" src="../../../assets/images/2-a8a7e2dc.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr">4. The following window prompts you to select the files you want to import. If this is your first time importing a specific model, make sure all the files are ticked and select the item type from the dropdown list before clicking <strong>Import.</strong></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="534" src="../../../assets/images/3-2c02c694.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr">5. A report of Import Issues will be displayed after the Animaze Editor checks the files. The warning system checks for skeletal animations. As such, the warnings only apply if you are using them. The crown example doesn’t use animations yet, so we can ignore all the warnings.  Click X to dismiss the window.<img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="531" src="../../../assets/images/4-edfab249.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr">6. Next, there's a verbose log that gets prompted for every import, hit the <strong>Ok </strong>button to dismiss. As you work on more complicated models, these logs will surface errors and help you with debugging.</p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="532" src="../../../assets/images/5-da0eb9b2.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr">7. Once the prop is imported, it will be displayed in the viewport. Expand the Free Items in the <strong>Hierarchy Panel</strong>, right-click on the item and select <strong>Reset camera</strong> to have it centered in the Viewport.</p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="534" src="../../../assets/images/6a-00ea5913.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<p dir="ltr">8. In the <strong>Editor Panel</strong>, select the correct <strong>Tag </strong>from the pull-down menu. The tag tells the system where to attach the prop, so it’s important you select the correct tag.</p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="533" src="../../../assets/images/6-bc033c43.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p>9. The imported geometry sometimes comes in way too large or way too small from the 3D editing software, so we need to scale it to an appropriate value. A grid unit is equal to a unit in the metric system, so you can use the grid to estimate how big/small you want the item to be.</p>
+<p dir="ltr"></p>
+<p>In the Editor Panel, you change the size of the item by adjusting the value of Item scale.  A grid unit is equal to a unit in the metric system, so you can use the grid to decide how big/small you want the item to be. It’s current size is 0.100000. We can leave it like this.</p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="533" src="../../../assets/images/7-bc033c43.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p>10. If you want your hat to be able to fit on most avatars, then the prop needs scaling animations. Go to the <strong>Editor Panel</strong> and select <strong>Customization Options</strong>.</p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="529" src="../../../assets/images/8-870d0e16.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<p>11. Go to the Animation tab and click on Add button.</p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="530" src="../../../assets/images/9-7181546e.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p>12. Expand the added tab, click on Browse and load the scaling animation.</p>
+<p dir="ltr"></p>
+<p>Note, the location and name of the source folder will vary depending on where you saved and what you named the folder. The default name of the folder is <strong>“PropCrownTest”.</strong></p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="532" src="../../../assets/images/10-e86ccbc0.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="532" src="../../../assets/images/11-c37cd7af.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p>13. Click the Compute default value button to calculate the middle range of the scaling animation. The particular scaling animation used here features the default pose around the middle of the animation timeline, but to get a very precise value, the Compute default value button evaluates the animation in 1000 samples and checks each sampled pose to the default pose, trying to find the exact match.</p>
+<p dir="ltr"></p>
+<p>Once found, it automatically fills the Value text box with the percentage of the animation where it matches the default pose. Close the window afterwards.</p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="530" src="../../../assets/images/12-f2169eda.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p>14. Now let’s see how the added scaling animation works. In order to debug it, go to <strong>Tools</strong> and select <strong>Customization Debugger.</strong></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="535" src="../../../assets/images/13-cdec7683.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<p>15. Simply click and drag the slider left &amp; right to see how the animation works. Click the <strong>Revert</strong> button to set the correct value again and close the window.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="486" src="../../../assets/images/scale_propx-5c2a2aa1.gif" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p></p>
+<p>16. <strong>Save item</strong> in <strong>Hierarchy Panel</strong> when you are done. If you exit the Animaze Editor without saving, all of your work will be lost.</p>
+<p><img alt="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" height="531" src="../../../assets/images/saveItem-50c126cd.png" title="About Animaze by Facerig | 3D Avatars | How to Make an Avatar 3D" width="1000"/></p>
+<p dir="ltr"></p>
+<p dir="ltr"></p>
+<div>
+<p>That’s it. You have successfully imported a prop :)</p>
+</div>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

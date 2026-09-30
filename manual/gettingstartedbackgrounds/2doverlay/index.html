@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create a simple, static 2D background with an overlay &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Create a simple, static 2D background with an overlay</h1>
+<div class="aw-page-container">
+<p></p><h3><b>The base Background image. </b></h3>
+<p> </p>
+<p><span style="font-size: medium;"><strong>Step1: Open the Animaze Editor through Steam.</strong></span></p>
+<ul>
+<li>Go to Steam &gt; Library</li>
+<li>At the top of your game list there is a drop-down list (usually, it is set to GAMES)</li>
+<li>Click on the drop-down list and select TOOLS</li>
+<li>Scroll through the left side list and click on Animaze Editor</li>
+<li>Launch it as you would launch any Steam title.</li>
+</ul>
+<p>By default, you will have a scene loaded called <b>customization01_scene</b> and an avatar called <b>AvatarFrogTest</b>. </p>
+<p> <img alt="Background with overlays" height="414" src="../../../assets/images/image001-893d3ce1.png" title="By default, you will have a scene loaded called customization01_scene and an avatar called AvatarFrogTest. " width="900"/></p>
+<p></p>
+<p>The Animaze Editor will, at all times, have a single loaded scene item. This scene will serve as a container for a lot of data, including all background related information. </p>
+<p>This scene is what you will export to the Animaze app when you are done. </p>
+<p> </p>
+<p><span style="font-size: medium;"><strong>Step2: Clear (delete) the current scene.</strong></span></p>
+<p>In the Hierarchy panel Right-click the <b>customization01_scene </b>item and select <strong>Remove Item</strong> from the right-click menu. This will clear the scene and allow you to build a new one that you can bundle and export later (the <b>customization01_scene </b>is not by default bundle-able/exportable, and that is why you need to delete it).</p>
+<p>A <strong>DefaultScene</strong> will auto-replace the deleted scene. This is your blank slate.</p>
+<p>It is a good idea to rename and save your new scene now with a custom name. To do that, right-click on the DefaultScene item and select <strong>Save Item As</strong>, give it a name (for the purpose of this tutorial let’s assume you have named it <strong>podcastStudio_scene</strong>).  </p>
+<p><img alt="Background with overlays" height="254" src="../../../assets/images/image003-808120cc.png" title="Clear (delete) the current scene" width="800"/> </p>
+<p></p>
+<p><span style="font-size: medium;"><strong>Step3. Load the Background 2D Image in the Scene01 Scene. </strong></span></p>
+<p> <img alt="Background with overlays" height="408" src="../../../assets/images/image005-a0c06bfd.png" title="Load the Background 2D Image in the Scene01 Scene." width="900"/></p>
+<p> </p>
+<p>Go to <strong>Assets</strong> top menu &gt; I<strong>mport SkyBox 2D</strong>. In the import window that pops you need to fill:</p>
+<p>- your Simple Backdrop 2D image &gt; goes in the <strong>Backdrop Path</strong> field. This is the most important input field for you if you want to create a simple 2D Background. If you don’t want to worry about reflection cubes at all, then all the other fields are almost non-important.</p>
+<p>- a Skybox HDR texture will be needed in <strong>SkyBox Path</strong> to serve as a source for creating the backdrop’s reflections cube-maps. If you are unfamiliar with these terms and don’t care much for reflection cube maps, you can choose to skip this by ticking the <strong>Use default skybox</strong> checkbox, and then your background will use some generic reflection maps. </p>
+<p>- you can also check <strong>Auto Blur Blurry Reflection map</strong> if you do not want to specify a custom blurry reflection map hdr source. If you do want to provide one, you can do so in the <strong>Blurred Skybox Path</strong> field.</p>
+<p>- you can leave the other 3 fields about cube resolutionson with their default values (unless you are knowledgeable about reflection cube sizes and you have a clear idea on why you would want to stray from the defaults).</p>
+<p> </p>
+<p>After pressing <strong>Import</strong>, in the <strong>Hierarchy Panel</strong>, a  new <strong>2D backdrop</strong> type object will be created that references your Background image. It will appear under <strong>Free Items</strong>, and its name will be copied from the 2D image filename.</p>
+<p> </p>
+<p>You need to Drag&amp;Drop this <strong>2D backdrop</strong> type object from <strong>Free Items</strong> in the Scene category (podcastStudio_scene).</p>
+<p><img alt="Background with overlays" height="231" src="../../../assets/images/image007-8b5f7caa.png" title="You need to Drag&amp;Drop this 2D backdrop type object from Free Items in the Scene category (podcastStudio_scene)." width="800"/></p>
+<h3><b>Optional: Load the Overlay Image.</b></h3>
+<p>Now that the backdrop is loaded, you can also load an overlay image (with transparency). </p>
+<p>Navigate to:</p>
+<p><img alt="Background with overlays" height="229" src="../../../assets/images/image009-69ea1636.png" title="Load the Overlay Image" width="900"/> </p>
+<ul>
+<li>righ-click scene &gt; add &gt; attach new 2d overlay</li>
+<li>write an appropriate name (in our case, ‘Microphone’), hit ok</li>
+<li>select the ‘Microphone’ item from the hierarchy </li>
+<li>in the editor panel on the right, click on the no texture square</li>
+<li>select the desired 2d file</li>
+<li>hit ok</li>
+</ul>
+<p> </p>
+<h3><b>Set Up Light Values</b></h3>
+<p>If you plan on using 3D models with your background, you will likely also want to have a decent dynamic light setup. If you are using mostly 2D assets, you can get away with not worrying about lights too much. </p>
+<p> </p>
+<p>A typical Animaze Light setup would have</p>
+<ul>
+<li>Ambient light information:</li>
+<li>Overall Ambient Light Color, </li>
+<li>Overall Ambient Color intensity</li>
+<li>Six individual light colors (radiating off the six sides of an imaginary infinite size cube encompassing the scene) </li>
+<li>Up to 4 individual Dynamic lights (1 Directional and the rest of three would be Omni or Spot)</li>
+</ul>
+<p> </p>
+<p><span style="font-size: medium;">In order to create this lighting set-up for your background:</span></p>
+<p>1. Left-click on the imported background object to have it selected. The details for <strong>Environment Properties</strong> will be displayed in the <strong>Editor Panel</strong>, in the right side. Here you can set the Ambient Color, Ambient Color Intensity, and the six Ambient Cube lights.</p>
+<p><img alt="Background with overlay" height="291" src="../../../assets/images/image011-81f6961b.png" title="In order to create this lighting set-up for your background" width="800"/></p>
+<p></p>
+<p>After setting the Ambient light, you need to set the directional dynamic light.</p>
+<p>2. Right-click on the scene name (Scene01), click on <strong>Attach New Light</strong>. The new light will show up in the<strong> Hierarchy Panel</strong>, as a sub-object of the Scene01 object. Select it and then set the light properties in the<strong> Editor Panel</strong>.</p>
+<p><img alt="Background with overlays" height="219" src="../../../assets/images/image013-cb145506.png" title="Right-click on the scene name (Scene01), click on Attach New Light" width="800"/> </p>
+<p>TIP: It is recommended that you do not set up more than two dynamic lights, because you want to have some let over for special effects (the maximum number of dynamic lights supported by Animaze is 4).<br/> </p>
+<p>3. Save your work</p>
+<p>If you want to be able to come back and do edits to your background, you might want to save this in the Resources folder of the Animaze Editor. </p>
+<p>To do so, right-click on the scene &gt; <strong>Save Item</strong>. Your scene will be saved in the <strong>Resources</strong> subfolder of the Animaze editor install folder.</p>
+<p><img alt="Background with overlays" height="314" src="../../../assets/images/image015-06011618.png" title="Save your work  " width="800"/></p>
+<p>4. Export everything in a *<strong>.avatar</strong> file (bundle), to load in the Animaze app.</p>
+<p>To do so right-click on the scene &gt; <strong>Bundle</strong>. Your <strong>*.avatar</strong> bundle will be saved in the location of your choosing.</p>
+<p>That's it!</p>
+<p>  </p>
+<p> </p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Creating Backgrounds &amp; Scenes for Animaze        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../backgroundwoverlays/index.html">
+                    Getting started with backgrounds with overlays (2D)                </a>
+</li>
+<li>
+<a href="index.html">
+                    Create a simple, static 2D background with an overlay                </a>
+</li>
+<li>
+<a href="../loopingbackground/index.html">
+                    Create a looping animation Background                </a>
+</li>
+<li>
+<a href="../trackingdatabackground/index.html">
+                    Create a backdrop with animated elements that are linked to Tracking Data                </a>
+</li>
+<li>
+<a href="../backgroundtrigger/index.html">
+                    Create a backdrop with animated elements triggered by key-binds                </a>
+</li>
+<li>
+<a href="../importbackground/index.html">
+                    Import a background (skybox)                </a>
+</li>
+<li>
+<a href="../sendbackgroundf/index.html">
+                    Send your background .avatar file to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../sendbackgroundw/index.html">
+                    Send your background .avatar file to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../sendbackground/index.html">
+                    Send a background .avatar file to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="../troubleshootandsupportbackgroundsoverlayeditor/index.html">
+                    Troubleshoot &amp; Support                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

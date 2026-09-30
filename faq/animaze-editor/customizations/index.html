@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How can I add Customizations on an Avatar in the Animaze Editor? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>How can I add Customizations on an Avatar in the Animaze Editor? </h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><div class="containerCozy-336-Cz container-206Blv">
+<div class="markup-2BOw-j">Animaze Editor importer will automatically create a material per mesh. By default, newly created materials feature diffuse, normal map, specular and lighting components (more on Animaze material components in the .avatar technical doc), and the import process tries to properly bind the textures to these components if the texture sources are in the Textures/ folder beside the geometry .fbx file. If the textures aren't binded correctly, the avatar will be rendered with a white shading and you can manually bind the missing textures. The steps for customizing (binding textures, change component factors etc.) a mesh material are as follows:</div>
+</div>
+<div class="containerCozy-B4noqO container-1e22Ot"><span class="reactions-1xb2Ex"><span class="reactions-1xb2Ex"></span></span>
+<div class="reaction-1ELvT8 reactionMe-23mbRf">
+<div class="reactionInner-rRPZdY" tabindex="0">
+<div class="reactionCount-2ddRoS"></div>
+<div class="reactionCount-2ddRoS">- First make sure you tick the <b>Customization Options</b> box</div>
+</div>
+</div>
+</div>
+<p><img height="46" src="../../../assets/images/customization_1-60119362.png" width="400"/></p>
+<p><b><br/></b></p>
+<p><b>1. </b><b>Color customization</b></p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>Color mask</li>
+<li>Customized base texture  </li>
+</ul>
+<p>- Expand the customization window and start loading the required textures</p>
+<p><img height="411" src="../../../assets/images/customization_2-52fd8bd9.png" width="400"/></p>
+<p></p>
+<p></p>
+<p></p>
+<p>- You can fill in a name, a description and add a designated tag as body part or clothing component.</p>
+<p>For example, if the hair piece of your model is composed out of 3 meshes, you will have to add 3 color customizations using the same Tag, color mask textures, customized base textures and same values on the RGB Alpha channels when added.</p>
+<p><img height="577" src="../../../assets/images/customization_3-2295fda9.png" width="400"/></p>
+<p></p>
+<p></p>
+<p>- Add channel mask - the Color Mask uses the RGB &amp; Alpha channels, which you can add in order to set the color in the regions you want</p>
+<ul>
+<li>areas you paint in black are hidden</li>
+<li>areas you paint in white are visible</li>
+<li>areas you paint in shades of gray appear in various levels of transparency.</li>
+</ul>
+<p>- Set the colors for the channels in two ways:</p>
+<ul>
+<li>either by clicking on the color box in the channel, which will open up a color picker dialog box</li>
+</ul>
+<p><img height="673" src="../../../assets/images/customization_4-ee4d9188.png" width="400"/></p>
+<p></p>
+<ul>
+<li>or by going to the Tools menu and choosing the Customization Debugger, which will also open a dialog box where you can set the colors as you wish </li>
+</ul>
+<p><img height="129" src="../../../assets/images/customization_5-bc693834.png" width="400"/></p>
+<p><b><br/></b></p>
+<p><b>2. </b><b>Animation customization</b></p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>Animation files in <strong>.fbx</strong> format</li>
+</ul>
+<p>- Expand the customization window and fill in the name, description and add a designated tag</p>
+<p>- Browse for the animation file you will use</p>
+<p>- Set the value you want by clicking on the V box and sliding to left/right</p>
+<p><img height="150" src="../../../assets/images/customization_6-37045e3d.png" width="400"/></p>
+<p>- The <b>Compute default value </b>button finds the closest value of the idle animation; it calculates the middle value of the respective animation</p>
+<p>- <b>Save</b> your changes before exiting the <b>Editor</b></p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

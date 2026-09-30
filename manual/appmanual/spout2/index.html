@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using Spout2 sources in Animaze &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Using Spout2 sources in Animaze</h1>
+<div class="aw-page-container">
+<p></p><h2 data-renderer-start-pos="2" id="What-is-Spout2?"><span style="font-size: 12px;">What is Spout2?</span></h2>
+<p data-renderer-start-pos="19"><a class="css-tgpl01" data-renderer-mark="true" href="https://spout.zeal.co/" title="https://spout.zeal.co/">Spout</a> is a video frame sharing system for Microsoft Windows, which allows applications to share OpenGL textures. Spout leverages your graphics card enabling to you send real-time video between Windows applications with near-zero latency or overhead.</p>
+<h1 data-renderer-start-pos="271" id="Where-can-Spout2-be-used-in-Animaze?">Where can Spout2 be used in Animaze?</h1>
+<p data-renderer-start-pos="309">Spout2 system is currently supported in Animaze in two scenarios:</p>
+<ol class="ak-ol" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="378">Sending the rendered video frame of the avatar to applications that support receiving Spout2 feeds. More info <a class="css-tgpl01" data-renderer-mark="true" href="../../streaming-transparency/spout/index.html" title="https://www.animaze.us/manual/streaming-transparency/spout"><span data-renderer-mark="true" style="text-decoration: underline;">here</span></a>.</p>
+</li>
+<li>
+<p data-renderer-start-pos="497">Receiving a video feed from applications that support sending Spout2 feeds such as OBS. The receiving video feed can be used as a dynamic texture on an Avatar or Prop and as a Scene Sticker.</p>
+</li>
+</ol>
+<h1 data-renderer-start-pos="691" id="Goal">Goal</h1>
+<p data-renderer-start-pos="697">In this article we are going to use OBS to render a video that we are going to map on a Scene Sticker in Animaze.</p>
+<h1 data-renderer-start-pos="812" id="Requirements">Requirements</h1>
+<ol class="ak-ol" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="828">OBS Studio version 28 or above that you can download from the <a class="css-tgpl01" data-renderer-mark="true" href="https://obsproject.com/" title="https://obsproject.com/"><span data-renderer-mark="true" style="text-decoration: underline;">official website</span></a>.</p>
+</li>
+<li>
+<p data-renderer-start-pos="911">The <a class="css-tgpl01" data-renderer-mark="true" href="https://github.com/Off-World-Live/obs-spout2-plugin/releases" title="https://github.com/Off-World-Live/obs-spout2-plugin/releases"><span data-renderer-mark="true" style="text-decoration: underline;">Spout2 plugin</span></a> that can be installed by going to Animaze Settings &gt; Dedicated Capture Window &gt; Install Spout2 OBS Plugin or manually from the <a class="css-tgpl01" data-renderer-mark="true" href="https://github.com/Off-World-Live/obs-spout2-plugin/releases" title="https://github.com/Off-World-Live/obs-spout2-plugin/releases">official website.</a></p>
+</li>
+</ol>
+<h1 data-renderer-start-pos="1077" id="Scene-Sticker-usage">Scene Sticker usage</h1>
+<p><strong data-renderer-mark="true">1. (in OBS)</strong> go to Tools &gt; Spout Output Settings and click Start in the prompted options menu. <em data-renderer-mark="true">This will stream the whole OBS canvas through Spout2.</em></p>
+<p><em data-renderer-mark="true"></em><img alt="Using Spout2 with Animaze " height="251" src="../../../assets/images/image-20221019-121737_1_-0aef2880.png" title="Using Spout2 with Animaze " width="305"/></p>
+<p><img alt="Using Spout2 with Animaze " height="257" src="../../../assets/images/image-20221019-121816_1_-070c0852.png" title="Using Spout2 with Animaze " width="459"/></p>
+<p>2. <strong data-renderer-mark="true">(in OBS) </strong>An alternative method of outputting only a particular OBS Source in your OBS Scene is to right click on a source, go to Filters and add Spout Filter as an Effect.</p>
+<p><img alt="Using Spout2 with Animaze " height="405" src="../../../assets/images/image-20221019-122044_1_-802cb7d6.png" title="Using Spout2 with Animaze " width="248"/></p>
+<p><img alt="Using Spout2 with Animaze " height="445" src="../../../assets/images/image-20221019-122250_1_-464b06fe.png" title="Using Spout2 with Animaze " width="859"/></p>
+<p><strong data-renderer-mark="true">3. (in Animaze) </strong>On the left-hand menu locate and click the Scene Stickers button.<br/><strong data-renderer-mark="true">4. (in Animaze)</strong> In the Scene Stickers gallery scroll down to the Spout2 Shelf and hit the Refresh Button</p>
+<p><img alt="Using Spout2 with Animaze " height="208" src="../../../assets/images/image-20221019-123649-4576d6c3.png" title="Using Spout2 with Animaze " width="311"/></p>
+<p><strong>5. (in Animaze)</strong> Now select the Spout2 item.</p>
+<p><img alt="Now select the Spout2 item." height="655" src="../../../assets/images/image-20221019-123748-d5eeaf86.png" title="Now select the Spout2 item." width="800"/></p>
+<p data-renderer-start-pos="1672" style="display: inline !important;">6. Done</p>
+<p data-renderer-start-pos="1678"> </p>
+<h1 data-renderer-start-pos="1682" id="Retexturing-usage">Retexturing usage</h1>
+<p><strong data-renderer-mark="true">1. (in OBS)</strong> go to Tools &gt; Spout Output Settings and click Start in the prompted options menu. <em data-renderer-mark="true">This will stream the whole OBS canvas through Spout2.</em></p>
+<p><em data-renderer-mark="true"></em><img alt="Using Spout2 with Animaze " height="251" src="../../../assets/images/image-20221019-121737_1-0aef2880.png" title="Using Spout2 with Animaze " width="305"/></p>
+<p><img alt="Using Spout2 with Animaze " height="257" src="../../../assets/images/image-20221019-121816_1__1-070c0852.png" title="Using Spout2 with Animaze " width="459"/></p>
+<p><strong data-renderer-mark="true">2. (in OBS) </strong><span>An alternative method of outputting only a particular OBS Source in your OBS Scene is to right click on a source, go to Filters and add Spout Filter as an Effect.</span></p>
+<p><img alt="Using Spout2 with Animaze" height="405" src="../../../assets/images/image-20221019-122044_1__1-802cb7d6.png" title="Using Spout2 with Animaze" width="248"/><img alt="Using Spout2 with Animaze" height="445" src="../../../assets/images/image-20221019-122250_1__1-464b06fe.png" title="Using Spout2 with Animaze" width="859"/></p>
+<p><strong data-renderer-mark="true">3. (in Animaze) </strong><span>Go to Avatars gallery and select your current avatar so you can open up the Customizations drawer. Navigate to the Textures tab</span></p>
+<p><img alt="Spout2 Source " height="649" src="../../../assets/images/image-20221019-124043-7097f1bd.png" title="Spout2 Source " width="714"/></p>
+<p>4. <strong data-renderer-mark="true">(in Animaze) </strong>In the Body section, change the Diffuse Texture by clicking the <strong data-renderer-mark="true">Set Spout2 Source </strong>button. This will open a file explorer with Animaze Spout source files.</p>
+<p><img alt="Animaze Spout source " height="449" src="../../../assets/images/image-20221019-124219-ab7104c1.png" title="Animaze Spout source " width="800"/></p>
+<p>5.<span> </span><strong data-renderer-mark="true">(in Animaze) </strong><span>Select your Spout source file. This particular folder is refreshed every time you set a as an avatar texture.<img alt="Spout2 source in Animaze" height="328" src="../../../assets/images/image-20221019-124357-0c95b044.png" title="Spout2 source in Animaze" width="727"/> </span></p>
+<p><span></span></p>
+<p><span></span></p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1mzi1es" data-layout="center" data-node-type="mediaSingle">
+<div class="css-dmqgx9">
+<div data-alt="" data-collection="contentId-108298241" data-context-id="108298241" data-file-mime-type="image/png" data-file-name="image-20221019-124219.png" data-file-size="31515" data-height="528" data-id="09683b67-c8dc-408a-8ceb-b330a7c6d45a" data-node-type="media" data-type="file" data-width="940">
+<div class="new-file-experience-wrapper css-11neqf1" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20221019-124219.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view">aaaand you're done!<img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/4f4706ae-bf0e-47d2-a236-46d99696e0a9#media-blob-url=true&amp;id=09683b67-c8dc-408a-8ceb-b330a7c6d45a&amp;collection=contentId-108298241&amp;contextId=108298241&amp;height=528&amp;width=940&amp;alt="/></div>
+</div>
+</div>
+</div>
+</div>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Desktop Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../appintro/index.html">
+                    Introduction                </a>
+</li>
+<li>
+<a href="../avatars/index.html">
+                    Avatar Customization and Retexturing                </a>
+</li>
+<li>
+<a href="../appbackgrounds/index.html">
+                    Background types, importing and customization                </a>
+</li>
+<li>
+<a href="../appvoiceeffects/index.html">
+                    Voice Effects                </a>
+</li>
+<li>
+<a href="../appemotes/index.html">
+                    Emotes                </a>
+</li>
+<li>
+<a href="../appprops/index.html">
+                    Props types and customization                </a>
+</li>
+<li>
+<a href="index.html">
+                    Using Spout2 sources in Animaze                </a>
+</li>
+<li>
+<a href="../appanimations/index.html">
+                    Avatar Animations and special actions                </a>
+</li>
+<li>
+<a href="../quickscenes/index.html">
+                    Quick Scenes                </a>
+</li>
+<li>
+<a href="../dedwind/index.html">
+                    Dedicated Capture Window                </a>
+</li>
+<li>
+<a href="../voicemod/index.html">
+                    Leveraging Voicemod controls in Animaze                </a>
+</li>
+<li>
+<a href="../virtualcam/index.html">
+                    Animaze Virtual Camera                </a>
+</li>
+<li>
+<a href="../import3dh/index.html">
+                    Importing 3D avatars and hybrid avatars                </a>
+</li>
+<li>
+<a href="../import2d/index.html">
+                    Importing 2D avatars                </a>
+</li>
+<li>
+<a href="../vrmimp/index.html">
+                    Importing .VRM avatars                </a>
+</li>
+<li>
+<a href="../importrpms/index.html">
+                    Importing Ready Player Me avatars                </a>
+</li>
+<li>
+<a href="../trackers/index.html">
+                    Select Trackers                </a>
+</li>
+<li>
+<a href="../iphonetrack/index.html">
+                    iPhone tracking                </a>
+</li>
+<li>
+<a href="../webcamtracker/index.html">
+                    Webcam Tracker                </a>
+</li>
+<li>
+<a href="../tobii/index.html">
+                    Tobii Eye tracker                </a>
+</li>
+<li>
+<a href="../ultra/index.html">
+                    Ultraleap tracker                </a>
+</li>
+<li>
+<a href="../audiosync/index.html">
+                    Audio Based Lip sync                </a>
+</li>
+<li>
+<a href="../advtrack/index.html">
+                    Advanced Tracking Configuration                </a>
+</li>
+<li>
+<a href="../maxine/index.html">
+                    Using (alpha) Maxine AR Face Tracking in Animaze                </a>
+</li>
+<li>
+<a href="../subs/index.html">
+                    Subscriptions                </a>
+</li>
+<li>
+<a href="../requir/index.html">
+                    Minimum Requirements for PCs                </a>
+</li>
+<li>
+<a href="../keybinds/index.html">
+                    Keybinds controls                </a>
+</li>
+<li>
+<a href="../optwebcam/index.html">
+                    Optimizing Web Camera Tracking with Camera Angle and Ambient Light                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

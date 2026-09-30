@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Desktop: How can I get better pursed lips on Live2D? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>Animaze Desktop: How can I get better pursed lips on Live2D?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span><span id="docs-internal-guid-1fc039e1-7fff-4bd6-f3b4-e6ddb8f87590"><span></span></span></span></p>
+<p><span>Starting with the avalability of audio based lip-motion for Live2D in Animaze, on Feb 2021, we have ad</span><span>d</span><span>ed an optional feature for Live2D models. Use it if you want a more natural PursedLips be displayed</span><span> on</span><span> your Live2D models.</span></p>
+<p>The new <span style="text-decoration: underline;">PursedLips</span> specific functionality for Live2D models will occur as follows: </p>
+<p><span><span id="docs-internal-guid-1fc039e1-7fff-4bd6-f3b4-e6ddb8f87590"><span></span></span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<ul>
+<li><span>If the parameter<span style="text-decoration: underline;"> "ParamMouthSize" is not present</span> in the model, the model will behave just as before. </span>Existing users with old models will not have any problems. </li>
+<li><span>If the parameter <span style="text-decoration: underline;">"ParamMouthSize" is present</span> in the model, the app will behave in a new way, using the lower half of the input interval of "ParamMouthSize" to show "PursedLips". We are not using the upper half of the interval, because that is not "PursedLips".</span> </li>
+</ul>
+<p><br/>"ParamMouthSize" is not a standard parameter, but already exists in some of the official Live2D samples (it is not a new Animaze-specific parameter). We are just using half of its range to show "PursedLips"</p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

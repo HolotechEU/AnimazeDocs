@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3Dアバターのインポート方法 &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">3Dアバターのインポート方法 </h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>このガイドでは、</span><span>[ここでダウンロード]</span><span>できる</span><span style="text-decoration: underline;"><a href="https://s3.amazonaws.com/animaze.us/Animaze+Editor+Sample+Assets.zip">AvatarFrogTest</a></span><span>という名前のテストアバターのソースファイルを使います。サンプルフォルダーには2つのディレクトリ（</span><span>Animations</span><span>、</span><span>Textures</span><span>）と、アバターを作成したモデリングソフトウェアからエクスポートした</span><span>.fbx</span><span>ファイルが含まれています。 </span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>インポートプロセスでは、以下のファイルのフォルダー構造が必須となるため、ご注意ください：</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>1. </span><span>.fbx</span><span>ジオメトリ名をフォルダー名と同じにする</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>2.</span><span>テクスチャー</span><span>（.tga、.png、.jpgファイル）を</span><span>Textures/</span><span>のフォルダーに入れる</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>3.</span><span>骨格のアニメーション</span><span>（単一の</span><span>.fbx</span><span>ファイルとしてエクスポート）を</span><span>Animations/</span><span>のフォルダーに入れる </span></p>
+<p dir="ltr"><span>アセット管理を簡単なものにし、各アセットの役割（アバター、小道具、背景など）をはっきりさせるために、アセット名の頭の部分にアセットの種類を示す接頭辞を付ける単純な命名規則を採用しています。以下の3つはその例です：</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>* </span><span>avatarName</span><span> - アバター用 </span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>* </span><span>propName</span><span> - 小道具用</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>* </span><span>backgroundName</span><span> - 背景用</span></p>
+<p dir="ltr"><span>モデルのインポートを開始するには、以下の手順に従ってください：</span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>この</span><span>リンク</span><span>から</span><span>AvatarFrogTest</span><span>のアーカイブをダウンロードして、中身のファイルを展開します。</span></p>
+</li>
+<li><span id="docs-internal-guid-b271bdc4-7fff-7ae9-dfb6-19db1b9fdf57"><span>Animazeエディターを開き、</span><span>アセット</span><span>へ移動し、</span><span>3Dオブジェクトをインポート</span><span>を選択します。</span></span></li>
+</ol>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="534" src="../../../assets/images/1-4f5a6927.png" title="Learn how to use Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<ol start="3">
+<li dir="ltr">
+<p dir="ltr"><span id="docs-internal-guid-a1015fcf-7fff-44ce-737d-009c80410a14"><span>ファイルをダウンロードした場所から、モデルのジオメトリファイルである</span><span>.fbx</span><span>ファイルを選択します。 </span></span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="534" src="../../../assets/images/2-0046c699.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<ol start="4">
+<li dir="ltr">
+<p dir="ltr"><span><span id="docs-internal-guid-3b4a0b21-7fff-0d0e-da4e-66db6700a41f"><span>インポートするファイルを選択するウィンドウが表示されます。初めて特定のモデルをインポートする場合、</span><span>インポート</span><span>をクリックする前に、</span><span>すべて</span><span>のファイルにマークが入っていることを確認し、ドロップダウンリストからアイテムの種類を選択してください。 </span></span> </span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/3-c99f690f.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<ol start="5">
+<li dir="ltr">
+<p dir="ltr"><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Animazeエディターがファイルに問題がないかチェックした後、</span><span>インポート問題</span><span>のレポートが表示されます。警告システムは骨格のアニメーションをチェックするためのものです。カエルには骨格とブレンドシェイプアニメーションの両方があります。 </span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>対応する骨格のアニメーションがソースファイルにない場合、「</span><span>必要なアニメーションが見つかりません</span><span>」という下の画像のような問題が表示されます。欠けている骨格のアニメーションの役割を果たす有効なブレンドシェイプがある場合でも、この警告は発せられます。</span></p>
+<p dir="ltr"><span id="docs-internal-guid-d22983fe-7fff-4738-b545-138253c4e6ad"><span>アニメーションの代わりにブレンドシェイプを使う場合、この警告メッセージは無視して構いません。</span><span>X</span><span>を押してウィンドウを消します。</span></span></p>
+</li>
+</ol>
+<p><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/4-6302b190.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<ol start="6">
+<li dir="ltr">
+<p dir="ltr"><span id="docs-internal-guid-32c95096-7fff-9eed-1e93-4db0cff00903"><span>次に、インポートを行うたびに冗長なログが表示されますが、</span><span>Ok</span><span>ボタンを押して消します。より複雑なモデルを扱う場合は、ログがエラーを教えてくれるため、デバッグに役立ちます。 </span></span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/5-5ee1f4f7.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<ol start="7">
+<li dir="ltr">
+<p dir="ltr"><span id="docs-internal-guid-5e3ec542-7fff-eccd-7811-a9f8a516e2d6"><span>アバターをインポートすると、ビューポートと</span><span>階層パネル</span><span>に表示されます。階層パネルに表示されている方を選択すると、</span><span>エディターパネル</span><span>（右側）に詳細（アイコン、種類、名前、場所など）が表示されます。</span></span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="532" src="../../../assets/images/6-434e5ba4.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<div>8. <span><span></span></span>アバターを使用可能にし、正しくレンダリングするには、特定のサイズにする必要があります。3D編集ソフトウェアからインポートしたジオメトリは大きすぎたり小さすぎたりすることがあるため、適切な値になるようスケーリングする必要があります。グリッドユニットはメトリックシステムのユニットと同じです。
+
+<p dir="ltr"><span>エディターパネル</span><span>では、</span><span>アイテムのスケール</span><span>の値を調整することでアバターのサイズを変更します。この場合、インポートしたカエルが大きすぎるため、正しい結果を得るには、サイズを1.00000から0.005000に下げる必要があります。これで、カエルが見えないぐらい小さくなったため、カメラビューを調整する必要があります。 </span></p>
+<span id="docs-internal-guid-4a5fcf0c-7fff-6607-a8d8-c193b078a442"><br/><span>階層パネル</span><span>で</span><span>AvatarFrogTest</span><span>を</span><span>右クリック</span><span>して「</span><span>カメラをリセット</span><span>」を選択します。 </span><span> </span></span></div>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="534" src="../../../assets/images/save_item-27f6b163.png" title="Animaze by Facerig | 3D Avatars " width="1000"/></p>
+<p dir="ltr"><span><span></span></span></p>
+<ol start="9">
+<li dir="ltr">
+<p dir="ltr"><span id="docs-internal-guid-2b31cef4-7fff-f5ee-ab0a-136ab1db969c"><span>マテリアル・コンポーネントへのテクスチャー追加を開始します。まずはメッシュマテリアルを選択する必要があるため、</span><span>階層パネル</span><span>で</span><span>AvatarFrogTest</span><span>のカエルを開いてメッシュセクションの下でメッシュを選択するか、3Dビューポートで必要なメッシュをクリックします。すべてのプロパティが右側の</span><span>エディターパネル</span><span>に表示されます。</span></span></p>
+</li>
+</ol>
+<p><img height="534" src="../../../assets/images/03_08_How_to_import_a_3D_avatar-ae85af6d.png" width="1000"/> </p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      3Dオブジェクト入門        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../jpnanimaze3d/index.html">
+                    Animazeとは何か？                 </a>
+</li>
+<li>
+<a href="../jpn3dgettingstarted/index.html">
+                    Animazeエディター入門                  </a>
+</li>
+<li>
+<a href="../jpnimporttowindows/index.html">
+                    Animazeのデスクトップアプリケーションでバンドルをインポート                </a>
+</li>
+<li>
+<a href="index.html">
+                    3Dアバターのインポート方法                 </a>
+</li>
+<li>
+<a href="../jpncustomizationoptions3d/index.html">
+                    アバターにカスタマイズオプションを追加する方法                </a>
+</li>
+<li>
+<a href="../jpnchangeavatardetails3d/index.html">
+                    アバターの詳細を変更する方法（アイコン、説明、名前）                </a>
+</li>
+<li>
+<a href="../jpnsendprop3d/index.html">
+                    小道具の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（WindowsにおいてAnimazeエディターを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendprop3dw/index.html">
+                    小道具の.avatarファイルをiOSアプリのAnimazeに送信する方法（WindowsにおいてiTunesを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendprop3df/index.html">
+                    小道具の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（MacにおいてFinderを経由）                </a>
+</li>
+<li>
+<a href="../jpnemotes/index.html">
+                    アニメーション化されたエモートの追加方法                </a>
+</li>
+<li>
+<a href="../jpnframeavatar3d/index.html">
+                    アバターにフレームをつける方法                 </a>
+</li>
+<li>
+<a href="../jpnsendavatar3d/index.html">
+                    .avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（WindowsにおいてAnimazeエディターを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendavatar3dw/index.html">
+                    .avatarファイルをiOSアプリのAnimazeに送信する方法（WindowsにおいてiTunesを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendavatar3df/index.html">
+                    .avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（MacにおいてFinderを経由）                </a>
+</li>
+<li>
+<a href="../jpnavatarspecialactions/index.html">
+                    アバターの特殊アクションを設定する方法                </a>
+</li>
+<li>
+<a href="../jpnimportbackground/index.html">
+                    背景（スカイボックス）のインポート方法                 </a>
+</li>
+<li>
+<a href="../jpnsendbackground/index.html">
+                    背景の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（WindowsにおいてAnimazeエディターを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendbackgroundw/index.html">
+                    背景の.avatarファイルをiOSアプリのAnimazeに送信する方法（WindowsにおいてiTunesを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendbackgroundf/index.html">
+                    背景の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（MacにおいてFinderを経由）                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

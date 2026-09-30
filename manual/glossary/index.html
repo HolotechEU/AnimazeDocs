@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossary &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../faq/index.html">FAQ</a>
+        <a href="../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Glossary</h1>
+<div class="aw-page-container">
+<p></p><p><span><span><br/></span></span></p>
+<div align="left" dir="ltr">
+<table><colgroup><col width="202"/><col width="422"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Term</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Description</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Animaze Apps</span></p>
+</td>
+<td>
+<p dir="ltr"><span>The Animaze platform is thought out as a multi-platform interconnected set of apps. At this moment the Animaze Apps are the iOS Animaze Avatar app and the upcoming Windows Desktop app.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Animaze Editor</span></p>
+</td>
+<td>
+<p dir="ltr"><span>The Editor is the extra tool to convert/transcode your assets to Animaze friendly format (also called Animaze resources).</span><span> </span></p>
+<p dir="ltr"><span>In other words, the avatar is modeled outside of the Animaze Editor in a separate content generation pipeline. Once the avatar content is modeled, the Editor is used to add the content into the Animaze apps. </span></p>
+<p dir="ltr"><span>The Editor also provides the means to configure and customize avatar and related content such as: icons, names, descriptions, materials, physics, particle systems, sounds, backgrounds, lights, etc.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Animaze Engine</span></p>
+</td>
+<td>
+<p dir="ltr"><span>The core functionality of the Animaze Editor and Animaze Apps including:</span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>rendering system</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>animations system</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>retargeting system</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>miscellaneous support systems</span></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Assets</span></p>
+</td>
+<td>
+<p dir="ltr"><span>The source files of a model (be it 2D or 3D). These source files are imported in the Animaze Editor and converted to a Animaze friendly format that can be efficiently stored and loaded at runtime.</span></p>
+<p dir="ltr"><span>The Animaze Editor creates an Assets folder where it keeps all imported source files for various other operations.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Blendshape</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Blendshape animation, per-vertex animation, shape interpolation, shape keys, or blend shapes is a 3D computer animation method used together with skeletal animation. In a morph target animation, a "deformed" version of a mesh is stored as a series of vertex positions. In each key frame of an animation, the vertices are then interpolated between these stored positions.</span></p>
+<p dir="ltr"><span>The "morph target" is a deformed version of a shape. When applied to a human face, for example, the head is first modelled with a neutral expression and a "target deformation" is then created for each other expression. When the face is being animated, the animator can then smoothly morph (or "blend") between the base shape and one or several morph targets.</span></p>
+<p dir="ltr"><span>Blendshape animations give a better expression control, yet they are limited from the movement point of view because they are linear animations. However, there are some animations that cannot be attained using blendshapes, therefore the skeletal animations will be used.  </span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Cubism</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Cubism is the technology that drives the Live2D models and it’s integrated in Animaze Editor and Animaze Apps, enabling both software to render and animate the 2D characters.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Cubism Editor</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Cubism Editor is the software where you can create Live2D models and then use the Animaze Editor to convert/translate the models to Animaze friendly avatars and send them to the Animaze Apps.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Resources</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Animaze friendly runtime files specifically created to be stored and loaded efficiently.</span><span> </span></p>
+<p dir="ltr"><span>Resources are avatars, props, backgrounds, etc.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Retargeting</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Animaze Apps use facial tracking technologies to detect and track users facial expression. Retargeting is the mapping system that takes raw tracking data, processes it, interprets it and then maps to the avatars animations inputs.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Shader</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Terminology wise, the Shader is the GPU program that enables the item rendering, while the Material is the setup configuration for the Shader, with info such as textures and different factors or float values used by the Animaze Shader. </span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Skeletal animation – all-joint-based</span></p>
+</td>
+<td>
+<p dir="ltr"><span>It’s a technique in computer animation in which a character (or other articulated object) is represented in two parts: a surface representation used to draw the character (called skin or mesh) and a hierarchical set of interconnected bones (called the skeleton or rig) used to animate (pose and keyframe) the mesh. </span></p>
+<p dir="ltr"><span>While this technique is often used to animate humans or more generally for organic modeling, it only serves to make the animation process more intuitive, and the same technique can be used to control the deformation of any object—such as a door, a spoon, a building, or a galaxy. </span></p>
+<p dir="ltr"><span>When the animated object is more general than, for example, a humanoid character, the set of bones may not be hierarchical or interconnected, but it just represents a higher level description of the motion of the part of mesh or skin it is influencing.</span></p>
+<p dir="ltr"><span>This technique is used by constructing a series of 'bones,' sometimes referred to as rigging. Each bone has a three-dimensional transformation from the default bind pose (which includes its position, scale and orientation), and an optional parent bone. The bones therefore form a hierarchy. The full transform of a child node is the product of its parent transform and its own transform. </span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Special Actions</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Special Actions are animations (for Live2D models we use *.motion3.json files) that override the current idle motion of the avatar. The recommendation is to start from idle pose and end in idle pose, as these animations only run once per trigger.</span><span> </span></p>
+<p dir="ltr"><span>Special Actions aren’t triggered by the retargeting system, rather the app user triggers them by keybind input or button input depending on the Animaze App implementation.</span></p>
+<p dir="ltr"><span>Think of Special Actions as dance moves.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Special Poses</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Special Poses are animation poses - single frame - (for Live2D models we use *.exp3.json files) that are added and/or override the current idle pose. Special Poses are toggle-able and there can be more than one active at a time.</span><span> </span></p>
+<p dir="ltr"><span>Special Poses aren’t triggered by the retargeting system, rather the app user toggles on or off  through keybinds or button inputs depending on the Animaze App implementation.</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Subsurface scattering - SSS</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Subsurface scattering works by simulating how light penetrates a translucent surface like a grape for instance, and is absorbed and scattered and exits the surface at a different location. </span></p>
+<p dir="ltr"><span>When light rays are traveling and hit a surface there are many different things that occur all at once. Some of the light is going to be reflected off, giving specular light. However, with certain materials that have a level of translucency some of the light rays are actually going to be absorbed into the surface. Once inside, the light rays will scatter all around and exit the surface at different locations, providing subsurface scattering.  </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Glossary        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="glossarypage/index.html">
+                    Glossary                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

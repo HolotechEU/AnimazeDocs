@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configure avatar Special Actions &amp; Special Poses &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Configure avatar Special Actions &amp; Special Poses</h1>
+<div class="aw-page-container">
+<p></p><p><a href="../diveinto/index.html">Special Actions and Poses </a>are user triggered animations and are not part of the face tracking retargeting system. Think of special actions as cool dance moves that you want your avatar to display, while special poses are moods (make the avatar sad by changing the color tone of the face to blue).</p>
+<p>While the possibilities of Special Actions and Special Poses are limitless, all Special Actions and Special Poses must adhere to certain requirements and behaviors:</p>
+<ul>
+<li>if your avatar has an idle pose, then the special action must end in the idle pose. Otherwise, your avatar will remain in the state of the last frame of the special action</li>
+<li>special poses animation inputs are overwritten by tracking retargeting</li>
+</ul>
+<p>i.e., if a special pose changes ParamEyeLOpen input to 0 (eye shut), the parameter will be overridden by face tracking. It is recommended to use inputs that are not mapped by the Animaze tracking system.</p>
+<p> </p>
+<p>The Animaze Editor system tries to detect and import by default all the special actions and poses at import. The format is <b>*.motion3 for special actions &amp; *.exp3.json for special poses</b>, exported from the Cubism editor, and they can be added, rearranged and removed within the Animaze Editor. </p>
+<p>Steps to configure <b>Special Actions</b>:</p>
+<p>1. In the <b>Editor Panel</b>, click on <b>Special Actions</b> bar to expand it</p>
+<p><img alt="In the Editor Panel, click on Special Actions bar to expand it" height="531" src="../../../assets/images/1-b3e7deae.png" title="Animaze Editor" width="1000"/></p>
+<p>2. Clicking the <b>Configure Special Actions</b> button will open the configuration window </p>
+<p><img alt="Clicking the Configure Special Actions button will open the configuration window " height="534" src="../../../assets/images/2-efa3cd8b.png" title="Animaze Editor" width="1000"/></p>
+<p>3. The Editor lists the animations detected at import</p>
+<p><img alt="The Animaze Editor lists the animations detected at import" height="530" src="../../../assets/images/list_of_actions-da9f6be3.png" title="Animaze Editor" width="1000"/></p>
+<p>4. Here you can Add, Remove &amp; Rearrange the special actions. Click <b>OK </b>when you are done.</p>
+<p><img alt="Here you can Add, Remove &amp; Rearrange the special actions" height="531" src="../../../assets/images/3-acc9569b.png" title="Animaze Editor" width="1000"/></p>
+<p>5. Click the <b>Activate </b>button to trigger the animation and watch it perform the action</p>
+<p><img alt="Click the Activate button to trigger the animation " height="532" src="../../../assets/images/activateSpAc-7ee456fe.png" title="Animaze Editor" width="1000"/></p>
+<p></p>
+<p>The configuration for <strong>Special Poses</strong> follows the same exact steps. The system will look for *<b>.exp3.json</b> files in <b>expressions/</b> folder of the avatar</p>
+<p></p>
+<p>6. Save the avatar in the <b>Hierarchy Panel</b> when you are done</p>
+<p><img alt="Save the avatar in the Hierarchy Panel when you are done" height="420" src="../../../assets/images/4-46c3f10d.png" title="Animaze Editor" width="353"/></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing Live2D Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../stepsincreatingyourown2davatar/index.html">
+                    Steps in creating your own 2D avatar                </a>
+</li>
+<li>
+<a href="../animazeintro/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../paramlist/index.html">
+                    Live2D Model Requirements &amp; Animation Standards                </a>
+</li>
+<li>
+<a href="../motionoutput/index.html">
+                    Motion Output Parameter List                 </a>
+</li>
+<li>
+<a href="../complexparam/index.html">
+                    Live 2D Model Creation Process for Complex Mouth Geometries                </a>
+</li>
+<li>
+<a href="../gettingstarted/index.html">
+                    Getting started - Import Live2D model in Animaze Editor                </a>
+</li>
+<li>
+<a href="../changeavatardetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../changerendering/index.html">
+                    Change the rendering options                </a>
+</li>
+<li>
+<a href="../remapanimations/index.html">
+                    Remap avatar animation inputs                </a>
+</li>
+<li>
+<a href="../live2dretargetingoverrides/index.html">
+                    Live2D Retargeting Overrides                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Configure avatar Special Actions &amp; Special Poses                </a>
+</li>
+<li>
+<a href="../frameavatar/index.html">
+                    Frame the avatar                </a>
+</li>
+<li>
+<a href="../modifytexture/index.html">
+                    Quickly modify a texture on your avatar                </a>
+</li>
+<li>
+<a href="../expressiondebugging/index.html">
+                    Expressions debugging - Avatar Puppeteering                </a>
+</li>
+<li>
+<a href="../createavatarbundle/index.html">
+                    Create an *.avatar bundle                 </a>
+</li>
+<li>
+<a href="../importbundle/index.html">
+                    Import an *.avatar bundle in Animaze PC app                </a>
+</li>
+<li>
+<a href="../importlive2d/index.html">
+                    Import Your Live2D Models in Animaze PC                </a>
+</li>
+<li>
+<a href="../sendavatar/index.html">
+                    Send your avatar to Animaze Avatar iOS app                </a>
+</li>
+<li>
+<a href="../leaplive2d/index.html">
+                    Leap Motion Hand Sensors with Live2D avatars                </a>
+</li>
+<li>
+<a href="../diveinto/index.html">
+                    Dive into Documentation                </a>
+</li>
+<li>
+<a href="../createyourown/index.html">
+                    Create your own 2D avatar                </a>
+</li>
+<li>
+<a href="../troubleshootandsupport2deditor/index.html">
+                    Troubleshoot &amp; Support                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

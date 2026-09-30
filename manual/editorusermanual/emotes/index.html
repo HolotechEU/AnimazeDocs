@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to add animated Emotes &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">How to add animated Emotes</h1>
+<div class="aw-page-container">
+<p></p><p><strong>Emotes</strong> are global Special Actions that can be applied to any avatar, and their purpose is to enable a more expressive emotional state of the avatar (e.g. to enhance an angry expression we suggest using the fire emote, Flaming Mad). Emotes are triggered through keybinds that can be set in the Animaze app. </p>
+<p><img alt="About Animaze by Facerig | How to add emotes" height="330" src="../../../assets/images/flameemote-a7605213.gif" title="About Animaze by Facerig | 3D Avatars" width="400"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span></span></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p dir="ltr"><span>An <strong>Emote</strong> is a container item that can include any other Animaze item such as: <strong>Particle Systems</strong> (our core use so far), <strong>Lights</strong> (still only 4 will be applied on the avatar), <strong>3D Props</strong> and <strong>sounds</strong>.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>When triggered, an emote will be temporarily attached to the avatar, with options to follow or not the avatar movement and options to select specific skeletal joints to attach to.</span></p>
+<p><img alt="Animaze Editor" height="419" src="../../../assets/images/1p-c7010620.png" title="Emotes " width="800"/></p>
+<p dir="ltr"><span></span></p>
+<p><span><span></span></span></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p dir="ltr"><span style="font-size: medium;">An emote can be customized and configured using the following options:</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>1. Attach Particle Systems, Lights, 3D Props and/or Sounds items through the Editor's Hierarchy Panel</span></p>
+<p><img alt="Animaze Editor Add to Emote" height="375" src="../../../assets/images/2p-bc316da1.png" title="Emotes" width="500"/></p>
+<p dir="ltr"><span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>2. Duration of each attached component/item of the emote</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>3. The lifetime of an emote</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>4. Attached to a certain skeletal joint</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>5. Follow the avatar movement or not </span></p>
+<p><span><span></span></span></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p dir="ltr"><span style="font-size: medium;"><strong>Let’s create a fire emote, which will include a few Particle Systems:</strong></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>1. Create a<strong> texture atlas</strong> (.png format) – an image containing multiple smaller images of the same item. The easiest way to make a texture atlas is to use Timeline in Photoshop and make frame by frame drawing. We used a 6x6 tiles image:</span></p>
+<p dir="ltr"><span></span></p>
+<p><span><span></span></span></p>
+<div><span><img alt="Animaze Editor Add to Emote" height="208" src="../../../assets/images/3p-6618a061.png" title="Texture Atlas " width="209"/></span></div>
+<div><span></span></div>
+<div><span></span></div>
+<div><span></span></div>
+<p></p>
+<p><b><br/></b></p>
+<div><span id="docs-internal-guid-16bf29c5-7fff-1daa-8521-39c96d2e81a7"><span>2. Open the Animaze Editor, right-click in blank space in the <strong>Hierarchy Panel</strong>, select <strong>Add Emote</strong> and further select <strong>New Emote</strong>. You will be prompted to name it, we suggest using “Emote_Name”.</span></span></div>
+<p></p>
+<div><span id="docs-internal-guid-16bf29c5-7fff-1daa-8521-39c96d2e81a7"><span></span></span></div>
+<p><img alt="Animaze Editor Add to Emote" height="610" src="../../../assets/images/4p-2b823fa8.png" title="Create new emote " width="700"/></p>
+<div><span id="docs-internal-guid-16bf29c5-7fff-1daa-8521-39c96d2e81a7"><span></span></span></div>
+<div></div>
+<div><span id="docs-internal-guid-59138853-7fff-00be-8655-ea5f5edbad73"><span></span></span></div>
+<div><span id="docs-internal-guid-59138853-7fff-00be-8655-ea5f5edbad73"><span></span></span></div>
+<div><span id="docs-internal-guid-59138853-7fff-00be-8655-ea5f5edbad73"><span></span></span></div>
+<div><span id="docs-internal-guid-59138853-7fff-00be-8655-ea5f5edbad73"><span></span></span></div>
+<p><b><br/></b></p>
+<div><span id="docs-internal-guid-59138853-7fff-00be-8655-ea5f5edbad73"><span>3. Right-click on the newly created <strong>Emote</strong> and select <strong>Add</strong> &gt; <strong>Attach particle system</strong> &gt;<strong> New particle system</strong>. You will be prompted to name it, we suggest using “Emote_PS”. If you add more particle systems, add numbers in the naming, to be easier to work with them.</span></span></div>
+<p></p>
+<div><span id="docs-internal-guid-59138853-7fff-00be-8655-ea5f5edbad73"><span></span></span></div>
+<div><span id="docs-internal-guid-59138853-7fff-00be-8655-ea5f5edbad73"><span></span></span></div>
+<div></div>
+<div><img alt="Animaze Editor Add to Emote" height="419" src="../../../assets/images/5p-db80fefc.png" title="Add Particle System" width="800"/></div>
+<div></div>
+<div><br/><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<p><b><br/></b></p>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span>4. In the <strong>Editor Panel</strong> to the right, expand the <strong>Color and appearance</strong> tab, then <strong>drag and drop</strong> the atlas texture in the <strong>Texture Material</strong> box. While here, also change the particle size (1 = 1 meter).</span></span></div>
+<p></p>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<p><img alt="Animaze Editor Add to Emote" height="417" src="../../../assets/images/6p-a6ae2062.png" title="Add texture atlas " width="800"/></p>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span><span></span></span>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span><br/></span></p>
+<p dir="ltr"><span>5. Expand the <strong>Animated Textures</strong> tab, tick <strong>Use Animated Texture</strong>, set the tile numbers for <strong>Width &amp; Height</strong>, tick <strong>Use Smooth Frame Blending</strong> and adjust the <strong>FPS</strong>, if needed.</span></p>
+<span><span></span></span>
+<p dir="ltr"><span> <img alt="Animaze Editor Add to Emote" height="363" src="../../../assets/images/7p-3d859ac9.png" title="set values" width="500"/></span><span> <br/></span></p>
+<span><span></span></span>
+<p dir="ltr"><span><br/></span></p>
+<p dir="ltr"><span>6. In the <strong>Generation and Lifetime</strong> tab:</span></p>
+<span><span></span></span>
+<p dir="ltr"><span>     a. set the emitter type. We used <strong>Point</strong> in our fire example.</span></p>
+</div>
+<div>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<span><span></span></span>
+<div><span><span><span><span></span></span></span></span>
+<p dir="ltr"><span>     b. set particles generated per second to 1 </span></p>
+<span><span><span><span></span></span></span></span>
+<p dir="ltr"><span>     c. set Particle lifetime. We set it to 3</span></p>
+<img alt="Animaze Editor Add to Emote" height="482" src="../../../assets/images/8p-e2d9d290.png" title="set values" width="500"/><br/>
+<p dir="ltr"><span></span></p>
+<span><span><span><span></span></span></span></span>
+<div><span><br/></span><span id="docs-internal-guid-eea3d6a2-7fff-b003-516a-db687dc5f80d"><span></span></span></div>
+<div><span id="docs-internal-guid-eea3d6a2-7fff-b003-516a-db687dc5f80d"><span></span></span></div>
+<div><span id="docs-internal-guid-eea3d6a2-7fff-b003-516a-db687dc5f80d"><span><br/></span></span></div>
+<div><span id="docs-internal-guid-eea3d6a2-7fff-b003-516a-db687dc5f80d"><span>7. We added additional particles for a more realistic display of the flame, see the fire sparks in the image below:</span></span></div>
+<br/>
+<div><span id="docs-internal-guid-eea3d6a2-7fff-b003-516a-db687dc5f80d"><span></span></span></div>
+</div>
+<div><span id="docs-internal-guid-eea3d6a2-7fff-b003-516a-db687dc5f80d"><span></span></span></div>
+<div></div>
+<div><img alt="Animaze Editor Add to Emote" height="285" src="../../../assets/images/9p-1e81bcb0.png" title="extra particle " width="300"/></div>
+<div></div>
+<div></div>
+<p><b><br/></b></p>
+<div><span id="docs-internal-guid-fff923a0-7fff-31f0-d327-2646e28699a1"><span>To obtain this, you need to take the same steps as above, but instead of a tiled image, you will be using a single layer image (no tiles):</span></span></div>
+<br/>
+<div><span id="docs-internal-guid-fff923a0-7fff-31f0-d327-2646e28699a1"><span></span></span></div>
+<div><img alt="Animaze Editor Add to Emote" height="211" src="../../../assets/images/10p-b23de421.png" title="new particle " width="209"/></div>
+<div><span><span></span></span>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span><br/></span></p>
+<p dir="ltr"><span>8. Tick the <strong>Size lifetime variation</strong> and set the size values.</span></p>
+<span><span></span></span>
+<p dir="ltr"><img alt="Animaze Editor Add to Emote" height="206" src="../../../assets/images/11p-304dfb14.png" title="set values" width="500"/></p>
+<span><span></span></span>
+<p dir="ltr"><span>The emitter type for this one is set to <strong>Circle</strong>. Adjust the scale and position as desired. The maximum number of particles is 20, while the particles generated per second is 10, adjust these values as desired for your use case.</span></p>
+<br/>
+<p dir="ltr"><span></span></p>
+<span><span></span></span>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span style="font-size: medium;">Good luck! This is an amazing feature!</span></p>
+<span><span></span></span>
+<div><span><br/></span></div>
+</div>
+<div></div>
+<span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span id="docs-internal-guid-16bf29c5-7fff-1daa-8521-39c96d2e81a7"><span></span></span><span></span></div>
+<div><span></span></div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Editor User Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../abouteditor/index.html">
+                    About the Animaze Editor                </a>
+</li>
+<li>
+<a href="../steameditor/index.html">
+                    Steam Install Process                </a>
+</li>
+<li>
+<a href="../editorworkflow/index.html">
+                    Animaze Editor Workflow                 </a>
+</li>
+<li>
+<a href="../topbarmenu/index.html">
+                    Top Bar Menu                </a>
+</li>
+<li>
+<a href="../cameranavigationkeys/index.html">
+                    Camera Navigation Keys                </a>
+</li>
+<li>
+<a href="../mainpanels/index.html">
+                    Main Panels                </a>
+</li>
+<li>
+<a href="../editormaterialcomponents/index.html">
+                    Material Components                </a>
+</li>
+<li>
+<a href="../animazeeditorenvironment/index.html">
+                    Environment Properties                 </a>
+</li>
+<li>
+<a href="../animazephysics/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../editorretargetingoverrides/index.html">
+                    Editor Retargeting Overrides                </a>
+</li>
+<li>
+<a href="index.html">
+                    How to add animated Emotes                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

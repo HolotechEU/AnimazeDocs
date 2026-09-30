@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>アニメーション化されたエモートの追加方法 &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">アニメーション化されたエモートの追加方法</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span style="font-size: 12px;">エモートは、どんなアバターにも適用できる世界的な特殊アクションで、その目的はアバターをより表情豊かにすることです（例：怒った表情をより向上させるには、炎のエモートをおすすめします）。エモートはキーバインドからトリガーされます。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img alt="About Animaze by Facerig | How to add emotes" height="330" src="../../../assets/images/flameemote-a7605213.gif" title="About Animaze by Facerig | 3D Avatars" width="400"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>エモートは下記のような他のAnimazeのアイテムを入れることのできるコンテナのようなアイテムです：パーティクル・システム（現時点での私達のメインアイテム）、ライト（アバターには4つまでしか適用できません）、3D小道具、音。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>トリガーすると、エモートは一時的にアバターに適用されます。アバターの動きに追従するか否かや、特定の骨格の関節を選択するオプションも付いています。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>エモートはカスタム可能で、下記のオプションを使用して設定できます：</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>1. エディターの階層パネルを通した、パーティクル・システム、ライト、3D小道具または音アイテム（もしくはその両方）の適用</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>2. 適用されたエモートのコンポネント/アイテムの時間</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>3. エモートの継続時間</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>4. エモートを特定の骨格の関節に適用</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>5. アバターの動作に追従するか否か </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>パーティクル・システムを含む炎のエモートを作成してみましょう：</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>1.テクスチャーアトラス（.png形式）を作成 ― 同じアイテムのマルチ小画像を含む画像。テクスチャーアトラスを作成する最も簡単な方法は、Photoshopのタイムラインを使用して、フレームドローイングでフレームを作成することです。6x6のタイルの画像を使用します：</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="208" src="../../../assets/images/pasted_image_0-36e2484d.png" width="209"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>2.Animazeエディターを開き、階層パネルの何も無いスペースで右クリックして、エモートを追加を選択し、それから新しいエモートを選択します。名前を付ける際は「Emote_Name」を使用することを提案します。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="296" src="../../../assets/images/pasted_image_0_1_-7af58f75.png" width="219"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>3.       新たに作成したエモートを右クリックし、追加 &gt; パーティクル・システムを適用 &gt; 新しいパーティクル・システム の順に選択します。名前を付ける際は「“Emote_PS」を使用することを提案します。パーティクル・システムを追加する場合、名前に数字を付け加えて、使いやすいようにしましょう。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="197" src="../../../assets/images/pasted_image_0_2_-bb7d552a.png" width="317"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>4.       エディターパネルの右で色と外見タブを開き、テクスチャーマテリアルボックス内でアトラステクスチャーをドラッグ＆ドロップします。ここでは、パーティクルのサイズも変更します（1 = 1m)。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> <img height="343" src="../../../assets/images/pasted_image_0_3_-8c846234.png" width="270"/></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>5.       必要であれば、アニメーション化されたテクスチャータブを開き、アニメーション化されたテクスチャーを使用するにチェックを入れ、タイルの幅と高さの数字を設定して、円滑なフレーム・ブレンディングを使用にチェックを入れてFPSを調整します。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> <img height="115" src="../../../assets/images/pasted_image_0_4_-44174151.png" width="300"/></span><span> </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>6.       世代と寿命タブ内：</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>a.       エミッターの種類を設定。炎の例では「Point」を使用します。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="267" src="../../../assets/images/unnamed-86785e98.png" width="200"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>b.       1秒ごとに生成されるパーティクルを1に設定 </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>c.        パーティクルの寿命を設定。3に設定しました</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>フレームのディスプレイがよりリアルになるよう、追加のパーティクルを加えました。下の画像の炎の光をご覧ください：</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="201" src="../../../assets/images/pasted_image_0_5_-72cd2255.png" width="212"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>このようにしたい場合、上記と同じ手順を踏みますが、タイルの画像の代わりにシングルレイヤーの画像（タイルではないもの）を使用します：<img height="135" src="../../../assets/images/pasted_image_0_6_-8cee3efc.png" width="134"/></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>サイズの寿命のバリエーションにチェックを入れてサイズ値を設定します：</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="186" src="../../../assets/images/fireemotedoc-29052ea1.png" width="580"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>これのエミッターの種類はサークルに設定されています。スケールと位置を好みに調整します。パーティクルの最大値は20で、パーティクルは1秒ごとに10生成され、自分の使用方法に合わせて好きな値に調整します。</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>頑張って！素晴らしい機能です！</span></p>
+<p dir="ltr"><span></span></p>
+<p><span><span></span></span></p>
+<div><span><iframe frameborder="0" height="350" src="http://www.youtube.com/embed/TQ6DzRc3mB8" width="425"></iframe></span></div>
+<div><span id="docs-internal-guid-870c176c-7fff-70e5-b861-9833fb51d34b"><span></span></span></div>
+<div><span id="docs-internal-guid-16bf29c5-7fff-1daa-8521-39c96d2e81a7"><span></span></span><span></span></div>
+<div><span></span></div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      3Dオブジェクト入門        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../jpnanimaze3d/index.html">
+                    Animazeとは何か？                 </a>
+</li>
+<li>
+<a href="../jpn3dgettingstarted/index.html">
+                    Animazeエディター入門                  </a>
+</li>
+<li>
+<a href="../jpnimporttowindows/index.html">
+                    Animazeのデスクトップアプリケーションでバンドルをインポート                </a>
+</li>
+<li>
+<a href="../jpnimportavatar3d/index.html">
+                    3Dアバターのインポート方法                 </a>
+</li>
+<li>
+<a href="../jpncustomizationoptions3d/index.html">
+                    アバターにカスタマイズオプションを追加する方法                </a>
+</li>
+<li>
+<a href="../jpnchangeavatardetails3d/index.html">
+                    アバターの詳細を変更する方法（アイコン、説明、名前）                </a>
+</li>
+<li>
+<a href="../jpnsendprop3d/index.html">
+                    小道具の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（WindowsにおいてAnimazeエディターを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendprop3dw/index.html">
+                    小道具の.avatarファイルをiOSアプリのAnimazeに送信する方法（WindowsにおいてiTunesを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendprop3df/index.html">
+                    小道具の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（MacにおいてFinderを経由）                </a>
+</li>
+<li>
+<a href="index.html">
+                    アニメーション化されたエモートの追加方法                </a>
+</li>
+<li>
+<a href="../jpnframeavatar3d/index.html">
+                    アバターにフレームをつける方法                 </a>
+</li>
+<li>
+<a href="../jpnsendavatar3d/index.html">
+                    .avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（WindowsにおいてAnimazeエディターを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendavatar3dw/index.html">
+                    .avatarファイルをiOSアプリのAnimazeに送信する方法（WindowsにおいてiTunesを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendavatar3df/index.html">
+                    .avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（MacにおいてFinderを経由）                </a>
+</li>
+<li>
+<a href="../jpnavatarspecialactions/index.html">
+                    アバターの特殊アクションを設定する方法                </a>
+</li>
+<li>
+<a href="../jpnimportbackground/index.html">
+                    背景（スカイボックス）のインポート方法                 </a>
+</li>
+<li>
+<a href="../jpnsendbackground/index.html">
+                    背景の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（WindowsにおいてAnimazeエディターを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendbackgroundw/index.html">
+                    背景の.avatarファイルをiOSアプリのAnimazeに送信する方法（WindowsにおいてiTunesを経由）                </a>
+</li>
+<li>
+<a href="../jpnsendbackgroundf/index.html">
+                    背景の.avatarファイルをiOSアプリのAnimaze Avatarに送信する方法（MacにおいてFinderを経由）                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

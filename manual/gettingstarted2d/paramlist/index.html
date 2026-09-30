@@ -1,0 +1,1822 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live2D Model Requirements &amp; Animation Standards &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Live2D Model Requirements &amp; Animation Standards</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="2116"><span><span></span></span></p>
+<p data-pm-slice="1 1 []">To work with Animaze, your Live2D model must be created with the Live2D Cubism Editor version 3.0 or higher. Cubism 3.0 was released in Spring 2017, so if your model was created after, it is very likely to meet this requirement. </p>
+<p><span class="fabric-editor-annotation" data-id="614f3722-4223-4320-b786-0e6f0b041a95" data-mark-annotation-type="inlineComment" data-mark-type="annotation">If your model was created with a version of Live2D Cubism lower than 3.0, you need to load the model’s Live2D source files in the Live2D Cubism Editor v3.0 or higher and re-export the Live2D runtime files. </span></p>
+<h2><strong>Animation Standards</strong></h2>
+<p><span class="fabric-editor-annotation" data-id="7c358efe-1256-43e2-ad10-d9cb0114fdf1" data-mark-annotation-type="inlineComment" data-mark-type="annotation">Animation Standards refer to the sets of Live2D parameter inputs of the model that are required by the Animaze Retargeting System to map the raw tracking data (e.g. from face trackers) to the model's movement.</span></p>
+<p><span class="fabric-editor-annotation" data-id="7c358efe-1256-43e2-ad10-d9cb0114fdf1" data-mark-annotation-type="inlineComment" data-mark-type="annotation">Animaze supports two Animation Standards when it comes to Live2D parameters:</span></p>
+<ul class="ak-ul">
+<li>
+<p><span class="fabric-editor-annotation" data-id="7c358efe-1256-43e2-ad10-d9cb0114fdf1" data-mark-annotation-type="inlineComment" data-mark-type="annotation">the Default one which is the most widespread and works with virtually all vtubing platforms.</span></p>
+</li>
+<li>
+<p><span class="fabric-editor-annotation" data-id="7c358efe-1256-43e2-ad10-d9cb0114fdf1" data-mark-annotation-type="inlineComment" data-mark-type="annotation">the Extended Parameter Set which aims to improve on the expressivity of Live2D avatars and map key tracking inputs that otherwise would be used only for 3D avatars.</span></p>
+<p>A sample avatar (.avatar file, Live2D runtimes, and Live2D sources) using the extended parameters can be found <a href="https://s3.amazonaws.com/animaze.us/Live2DExtended_Sample.zip"><strong>here.</strong></a></p>
+<p><span class="fabric-editor-annotation" data-id="7c358efe-1256-43e2-ad10-d9cb0114fdf1" data-mark-annotation-type="inlineComment" data-mark-type="annotation"><br/></span></p>
+</li>
+</ul>
+<h3><span style="font-size: medium;"><strong>Default Live2D Animation Standard Parameters (last revision Sept 20 2021</strong>)</span></h3>
+<table data-autosize="false" data-layout="default" data-number-column="false" data-table-local-id="3e419cef-af30-4103-8081-3d62775da065">
+<tbody>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Live2D Parameter</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Description</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Default Value</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Comment</span></strong></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Head Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamAngleX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>head yaw movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamAngleY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>head pitch movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamAngleZ</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>head roll movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Body Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyAngleX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body yaw movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>not tracked by face trackers. Reserved for future use.</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyAngleY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body pitch movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by user's face leaning forward/backward</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyAngleZ</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body roll movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by user's face moving on horizontal axis in camera feed</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyUpDown</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body up/down movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong>(non-standard-parameter)*</strong> triggered by user's face moving on vertical axis in camera feed</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBreath</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>breathing movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Eyes Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeLOpen</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>blink and eye wide open movement.</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 75% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>Default value is eye opened (75% of the interval), when blink occurs, value goes to 0% of the interval, when eye wide open occurs the value goes to 100% of the interval</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeROpen</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>blink and eye wide open movement.</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 75% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>Default value is eye opened (75% of the interval), when blink occurs, value goes to 0% of the interval, when eye wide open occurs the value goes to 100% of the interval</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeBallX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eye horizontal movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeBallY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eye vertical movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeLSmile</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>activated when smiling</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeRSmile</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>activated when smiling</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeBallForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>bends eyes contour to complement frown and smile expressions. Start of the interval is for frowning, while the end of the interval is for smiling.</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Eyebrows Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow down to up movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow tilting movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLAngle</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow changing shape movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowRY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow down to up movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowRForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow tilting movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowRAngle</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow changing shape movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Mouth Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>mouth open movement, closed at start of interval, open at end of interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>mouth frown/smile animation. frown at start of interval, smile at end of interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>used for puckered lips from the center of the interval to start (normal to small size).</p>
+<p></p>
+<p>upper half of the interval is not used in this Animation Standard</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong>(non-standard-parameter)*</strong></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="ak-ul">
+<li>
+<p>non-standard-parameters are totally optional. The Animaze Retargeting system automatically replaces them with other retargeting methods (e.g. puckered lips without the ParamMouthSize is implemented with the use of ParamMouthY and ParamMouthForm).</p>
+</li>
+</ul>
+<h3><span style="font-size: medium;"><strong></strong></span></h3>
+<h3><span style="font-size: medium;"><strong>Default Viseme Mapping (last revision Sept 20 2021</strong>)</span></h3>
+<p>Visemes retargeting uses the Live2D model’s standard parameters for mouth open and form. A complete mapping of Viseme to Live2D parameter is depicted below.</p>
+<table data-autosize="false" data-layout="default" data-number-column="false" data-table-local-id="aa55c5b7-cda2-4745-8acb-09584aaa51d0">
+<tbody>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p><strong><span>Viseme</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p><strong><span>Live2D Parameter</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p><strong><span>Value</span></strong></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>AA</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>AH</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.6</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>AO</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>AW</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.5</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>OY</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>EH</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.65</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>IH</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.65</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.6</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>EY</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.65</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>Y</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.65</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>R</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.5</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>L</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.5</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>W</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.7</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.85</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>M</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.4</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>N</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.4</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>CH</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.4</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p><strong>FV</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.15</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>-0.4</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span style="font-size: medium;"><strong>Extended Parameter Set (last revision Sept 20 2021</strong>)</span></h3>
+<table data-autosize="false" data-layout="default" data-number-column="false" data-table-local-id="74ca2238-7d8b-45c5-95af-3e08a3b5d3f2">
+<tbody>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Live2D Parameter</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Description</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Default Value</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong><span>Comments</span></strong></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Head Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamAngleX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>head yaw movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamAngleY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>head pitch movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamAngleZ</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>head roll movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Body Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyAngleX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body yaw movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>not tracked by face trackers. Reserved for future use.</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyAngleY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body pitch movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by user's face leaning forward/backward</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyAngleZ</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body roll movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by user's face moving on horizontal axis in camera feed</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBodyUpDown</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>body up/down movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by user's face moving on vertical axis in camera feed</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBreath</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>breathing movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Eyes Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeLOpen</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>blink and eye wide open movement.</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 75% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>Default value is eye opened (75% of the interval), when blink occurs, value goes to 0% of the interval, when eye wide open occurs the value goes to 100% of the interval</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeROpen</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>blink and eye wide open movement.</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 75% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>Default value is eye opened (75% of the interval), when blink occurs, value goes to 0% of the interval, when eye wide open occurs the value goes to 100% of the interval</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeBallX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eye horizontal movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeBallY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eye vertical movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeLSmile</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>activated when smiling</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeRSmile</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>activated when smiling</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeBallForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>bends eyes contour to complement frown and smile expressions. Start of the interval is for frowning, while the end of the interval is for smiling.</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>same as ParamEyeBallForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Eyebrows Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow down to up movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow tilting movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLAngle</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow changing shape movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowRY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow down to up movement</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowRForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow tilting movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowRAngle</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>eyebrow changing shape movement, frowny/angry at the start of the interval, happy/surprised at the end of the interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p><span style="font-size: medium;"><strong>Mouth Movement</strong></span></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>mouth open movement, closed at start of interval, open at end of interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>mouth frown/smile animation. frown at start of interval, smile at end of interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>used for puckered lips from the center of the interval to start (normal to small size).</p>
+<p></p>
+<p>used by wide smiles and frown from the center of the interval to the end (normal to large size)</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>mouth movement on the horizontal axis.</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by asymmetric smiles and jaw tracking.</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamLipUnder</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>lower lip movement on vertical axis</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by pressed lips and unveil teeth tracked inputs</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamLipUpper</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>upper lip movement on vertical axis</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 50% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>triggered by pressed lips and unveil teeth tracked inputs</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamPuffCheeks</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>puffed cheeks</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>puffed cheeks input is tracked only by ARKit. On Windows Animaze also features puffed cheeks as a special pose automatically added by the system.</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamTongue</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>moves tongue inside the mouth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>parameter is not used by the tongue out movement that is detected by the face tracker, rather it is used for a more expressive viseme mapping</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamTooth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>clenches and opens teeth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>at 0% of the input interval</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" colspan="4" data-colwidth="170,170,170,170">
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span id="docs-internal-guid-064c32e9-7fff-7e41-d219-ab535dfcb3cf">A sample avatar (.avatar file, Live2D runtimes, and Live2D sources) using the extended parameters can be found <a href="https://s3.amazonaws.com/animaze.us/Live2DExtended_Sample.zip">here</a> </span></p>
+<p><span style="font-size: medium;"><strong>Extended Parameter Set Viseme Mapping (last revision Sept 20 2021</strong>)</span></p>
+<p>Visemes retargeting uses the Live2D model’s standard parameters for mouth open and form. A complete mapping of Viseme to Live2D parameter is depicted below.</p>
+<table data-autosize="false" data-layout="default" data-number-column="false" data-table-local-id="f0e25535-1879-4ee4-b2a3-e9b705f55f65">
+<tbody>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p><strong><span>Viseme</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p><strong><span>Live2D Parameter</span></strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p><strong><span>Value</span></strong></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>AA/AO</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>AH/AW</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.7</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.75</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>OY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.35</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="4">
+<p>EH</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.75</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamTooth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.8</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamLipUnder</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.6</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>IH</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.4</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.9</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="3">
+<p>EY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.9</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamTooth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>Y</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.22</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="3">
+<p>R</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.3</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.35</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamLipUnder</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.6</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>L</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamTongue</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>W</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>M</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamLipUnder</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamLipUpper</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>N</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamTooth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>CH</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.2</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamTooth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67" rowspan="2">
+<p>FV</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamTooth</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>ParamLipUnder</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="226.67">
+<p>0.2</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span id="docs-internal-guid-064c32e9-7fff-7e41-d219-ab535dfcb3cf"><br/></span></p>
+<h2><strong>Parameter Ranges</strong></h2>
+<p>The Animaze Retargeting System normalizes all values (interval 0 to 1) before applying the Live2D parameters so that the parameter ranges can be of any values (e.g. ParamMouthOpenY can be defined from -10 to 10 with default value 0, so when Animaze sets 0.75 - which is a half smile -, it will apply the value 5 to the ParamMouthOpenY parameter).</p>
+<p>Having said that, we do suggest following ranges for the Live2D Parameters:</p>
+<table data-autosize="false" data-layout="default" data-number-column="false" data-table-local-id="26d93c56-64d8-4868-a807-9e59b95163bf">
+<tbody>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong>Item</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong>Minimum values</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong>Default values</strong></p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p><strong>Maximum values</strong></p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeLOpen</p>
+<p>ParamEyeROpen</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0.75</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamEyeBallX ParamEyeBallY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>-1</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLY </p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>-1</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLX</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>-1</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamBrowLAngle ParamBrowRAngle</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0.5</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>(<strong>*</strong>)ParamBrowLForm</p>
+<p>(<strong>*</strong>)ParamBrowRForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0.2</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0.5</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0.8</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthForm</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>-1</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0.5</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthOpenY</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>ParamMouthSize</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>-1</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>0</p>
+</td>
+<td class="pm-table-cell-content-wrap" data-colwidth="170">
+<p>1</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>(*)The values for <strong>ParamBrowLForm </strong>&amp; <strong>ParamBrowRForm </strong>in the table make the eyebrows deform as intended with the current tracking system.</p>
+<p>Additionally, you can check the standard cubism parameter list <a href="https://docs.live2d.com/cubism-editor-manual/standard-parametor-list/?locale=en_us#"><strong><span style="text-decoration: underline;">here</span></strong></a> and <a href="https://docs.live2d.com/cubism-editor-manual/facial-expression-system/?locale=en_us#"><strong><span style="text-decoration: underline;">here</span></strong></a>.</p>
+<p></p>
+<p>To <a href="../importlive2d/index.html"><span style="text-decoration: underline;">import your Live2D model into Animaze</span></a>, you need your model’s Live2D Runtime files. They should be organized in the standard folder hierarchy.</p>
+<p> Additionally, your model3.json file and .moc3 file must use the same filename (e.g. ‘myavatar.moc3 and ‘myavatar.model3.json’). If they have different filenames, Animaze may fail to import all of your model’s files.</p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing Live2D Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../stepsincreatingyourown2davatar/index.html">
+                    Steps in creating your own 2D avatar                </a>
+</li>
+<li>
+<a href="../animazeintro/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="index.html">
+                    Live2D Model Requirements &amp; Animation Standards                </a>
+</li>
+<li>
+<a href="../motionoutput/index.html">
+                    Motion Output Parameter List                 </a>
+</li>
+<li>
+<a href="../complexparam/index.html">
+                    Live 2D Model Creation Process for Complex Mouth Geometries                </a>
+</li>
+<li>
+<a href="../gettingstarted/index.html">
+                    Getting started - Import Live2D model in Animaze Editor                </a>
+</li>
+<li>
+<a href="../changeavatardetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../changerendering/index.html">
+                    Change the rendering options                </a>
+</li>
+<li>
+<a href="../remapanimations/index.html">
+                    Remap avatar animation inputs                </a>
+</li>
+<li>
+<a href="../live2dretargetingoverrides/index.html">
+                    Live2D Retargeting Overrides                 </a>
+</li>
+<li>
+<a href="../specialactions/index.html">
+                    Configure avatar Special Actions &amp; Special Poses                </a>
+</li>
+<li>
+<a href="../frameavatar/index.html">
+                    Frame the avatar                </a>
+</li>
+<li>
+<a href="../modifytexture/index.html">
+                    Quickly modify a texture on your avatar                </a>
+</li>
+<li>
+<a href="../expressiondebugging/index.html">
+                    Expressions debugging - Avatar Puppeteering                </a>
+</li>
+<li>
+<a href="../createavatarbundle/index.html">
+                    Create an *.avatar bundle                 </a>
+</li>
+<li>
+<a href="../importbundle/index.html">
+                    Import an *.avatar bundle in Animaze PC app                </a>
+</li>
+<li>
+<a href="../importlive2d/index.html">
+                    Import Your Live2D Models in Animaze PC                </a>
+</li>
+<li>
+<a href="../sendavatar/index.html">
+                    Send your avatar to Animaze Avatar iOS app                </a>
+</li>
+<li>
+<a href="../leaplive2d/index.html">
+                    Leap Motion Hand Sensors with Live2D avatars                </a>
+</li>
+<li>
+<a href="../diveinto/index.html">
+                    Dive into Documentation                </a>
+</li>
+<li>
+<a href="../createyourown/index.html">
+                    Create your own 2D avatar                </a>
+</li>
+<li>
+<a href="../troubleshootandsupport2deditor/index.html">
+                    Troubleshoot &amp; Support                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

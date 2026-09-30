@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Textures (via Live2D Cubism textures) &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animated Textures (via Live2D Cubism textures) </h1>
+<div class="aw-page-container">
+<p></p><p><span><span><br/></span></span>Animaze supports more uses for animated textures created using Live2D Cubism technology for hybrid avatars. In addition to Animated Diffuse Maps (that were possible before) you can now also have:<span><span><br/></span></span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Animated Normal Maps</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Animated Emissive Maps</span></p>
+</li>
+</ul>
+<p dir="ltr"><span>As a teaching resource for creating these kinds of assets,</span><span> here are the links to all the source data for Avatar Lily. These include:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr"><span style="text-decoration: underline;"><strong>LINK TO <a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_FbxSourceFiles.zip">FBX source files for the 3D part of the model</a></strong></span></li>
+<li><span style="text-decoration: underline;"><strong>LINK TO <a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_TextureSourceFiles.zip">Texture sources in uncompressed format</a></strong></span></li>
+<li><span style="text-decoration: underline;"><strong>LINK TO <a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_CubismProjectSource.zip">Cubism Project (Sources, loadable in Cubism) for the Animated Textures</a></strong></span></li>
+<li><span style="text-decoration: underline;"><strong>LINK TO <a href="https://s3.amazonaws.com/animaze.us/Avatar+Lily+Sources/AvatarLily_CubismRuntimeFiles.zip">Cubism Runtime files for the Animated Textures</a></strong></span></li>
+</ul>
+<h2 dir="ltr"><span>Animated Textures (via Live2D Cubism textures)</span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The Live2D (Cubism) animated textures details are alpha-blended on top of the existing static textures, and the result of this blend is what is used on the model.  Having a correct (static) texture as a base is still important!</span></p>
+<p dir="ltr"><span>The animated textures, if used for Normal Maps, are used for dynamically enhancing the details on the avatar's normals. It’s a great way to accentuate the avatar’s expressivity without increasing the polycount</span><span><br/></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>These animated textures for normal maps built with Live2D (Cubism) assets work in synergy with the tracked animation inputs of the avatar. It's important that the Live2D (Cubism)  assets that are used for animated textures have their parameters named correctly for the behavior you want to obtain. For example, a general use-case is the BrowUP/Down animations for 3D, and for 2D ParamBrowLY, ParamBrowRY animations - surprise &amp; frowning.</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>if ParamBrowLY si ParamBrowRY are 0, then the opacity will be set to 0 &gt;&gt; default position</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>if ParamBrowLY si ParamBrowRY are -1 or 1, then enables frown (-1) &amp; eyebrow up (1) </span></p>
+</li>
+</ul>
+<p dir="ltr"><span>Below we will exemplify the general steps to create the source data for such a Live2D (Cubism) animated texture, and how to map it on your avatar as an animated normal map.</span></p>
+<p><span><span><img height="401" src="../../../assets/images/hybrid-6f2dc591.png" width="800"/></span></span></p>
+<h2 dir="ltr"><span>Animated Normal Maps Steps</span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Steps to create the source data for the Live2D powered animated normals:</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>For each individual parameter that you want to drive changes on the normal, you need to follow the following steps. We’ll use Eyebrow UP/Down as an example.</span></p>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>in the software you work with to create the geometry for your hybrid avatar (Maya, Blender etc), activate the eyebrow up animation, duplicate the mesh and export it</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>on this new mesh, create high-poly eyebrows wrinkles, bake it, and export it</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Repeat steps 1 and 2 for eyebrows down.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Separately, in the Live2D Cubism editor, create a new project add these two edited baked normals on different layers – stack them and set the opacity for these two layers, where:</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>o   </span><span>if ParamBrowLY and ParamBrowRY are 0 &gt;&gt; the opacity of these new layers will be set to 0 &gt;&gt; default position</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>o   </span><span>if ParamBrowLY si ParamBrowRY are -1 or 1 &gt;&gt; make sure that the live2D asset shows the  frown wrinkles (-1)  or  the eyebrow up wrinkles  (1), as appropriate</span></p>
+<p><span><span></span></span></p>
+<ol start="5">
+<li dir="ltr">
+<p dir="ltr"><span>Export the model runtimes (.json file)</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Steps to add the newly created Live2D Cubism runtime asset  on the avatar, through Animaze Editor:</strong></p>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Select the mesh that you want to add the Animated texture normals to in the Hierarchy Panel</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>in the Editor Panel, click Add Component and select Cubism Animated Texture – Normal</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Expand this tab, then click on the texture box and add the Live2D Cubism runtime that you have created above (the .json file you have ready.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>If needed, set texture size by adjusting the tiling and offset for the Live2DCubism set.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Use the Avatar Puppeteering debugger to test your work ( how tracking inputs activate animated elements on your Live2D asset - now being used as an animated norma map.</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<h2 dir="ltr"><span>Animated Emissive Texture</span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Like with Normals above, the same thing is supported for other texture maps.  Let’s take the specular Texture map that also holds the emissive channel - That can be replaced with a live2D asset too. In this example, this has been linked to being triggered by a Special Action instead of a tracking input,  (but it can also be linked to tracking input just like the normals above- it is up to you how what inputs you chose to animate your Live2D animated texture). </span></p>
+<p dir="ltr"><span>As an example is avatar Lily, for which we created a light effect, a light wave moving across the avatar’s body/ skin patterns when the “startled” Special Action is triggered. (The effect brings an emphasis on her innocent personality, amazed by her own magical potential and heritage.)</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>To achieve this we layered on top of static Specular Texture a Live2D (Cubism) surface. To see how we have animated the blue channel ( emissive)  in Live2D Cubism see step by step process below</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Steps to create it:</strong></p>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Import the static specular map on which you want to add the animated emissive in Photoshop</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> <img height="351" src="../../../assets/images/hybrid2-1d7eb94a.png" width="625"/></span></p>
+<p><span><span></span></span></p>
+<ol start="2">
+<li dir="ltr">
+<p dir="ltr"><span>Create a mask to isolate the parts that don’t need to be affected by the emissive, if needed</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Add a new layer with the form you need for your animation</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>o   </span><span>set value 0 for Red &amp; Green channels</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>o   </span><span>set value 1 for Blue channel – full emissive</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="315" src="../../../assets/images/ybrid3-36052528.png" width="625"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="247" src="../../../assets/images/hybrid4-9e71e3be.png" width="309"/></p>
+<p><span><span></span></span></p>
+<ol start="4">
+<li dir="ltr">
+<p dir="ltr"><span> The final result should look like this:</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> <img height="237" src="../../../assets/images/hybrid5-8f8384b4.png" width="296"/></span></p>
+<p><span><span></span></span></p>
+<ol start="5">
+<li dir="ltr">
+<p dir="ltr"><span>Import this file in Cubism Editor</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Create a new Parameter where:</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>o   </span><span>set the movement of the layer accordingly with the emissive info in the Blue channel</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>position 0 – the stripe is outside of the animation area</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>position 1 – the stripe is within the animation area</span></p>
+</li>
+</ul>
+<ol start="7">
+<li dir="ltr">
+<p dir="ltr"><span>Use this Parameter to create the animation in Cubism Editor</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Export the animation as </span><span>.moc3</span><span> file from the “Model” mode of the editor – Export motion</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Import the </span><span>model3.json </span><span>file (automatically created in the previous step) in the Cubism Viewer, then drag and drop the </span><span>scene1.model3.json </span><span>(also automatically created in the previous step)</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span> </span></p>
+<p><span><span></span></span></p>
+<h2 dir="ltr"><span>Steps to add it on the avatar, through Animaze Editor:</span></h2>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Select the mesh that you want to add the animated texture to in the Hierarchy Panel</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="297" src="../../../assets/images/hybrid6-a392158e.png" width="326"/></p>
+<p><span><span></span></span></p>
+<ol start="2">
+<li dir="ltr">
+<p dir="ltr"><span>in the Editor Panel, click Add Component and select Cubism Animated Texture – Specular</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="303" src="../../../assets/images/hybrid7-19eb5f95.png" width="278"/></p>
+<p><span><span></span></span></p>
+<ol start="3">
+<li dir="ltr">
+<p dir="ltr"><span>Expand this tab, then click on the texture box and add the .json file you have ready</span></p>
+</li>
+</ol>
+<p dir="ltr"><span>Addendum :</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Steps for bringing Lily to life:</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>1.     For this avatar we tried to create a friendly personality as possible, by harmonizing the proportions, dynamic silhouette based on round shapes, emphasizes Lily’s friendly and likable personality. </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The human/octopus hybrid turned out to be the most relatable approach for the ‘Octopus’ subject</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="505" src="../../../assets/images/hybrid7-de312aea.jpg" width="800"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="505" src="../../../assets/images/hybrid9-61220c6c.jpg" width="800"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="505" src="../../../assets/images/hybrid11-37f79d32.jpg" width="800"/></p>
+<p dir="ltr"><img height="505" src="../../../assets/images/hybrid10-28c674c1.jpg" width="800"/></p>
+<p><span><span><br/></span></span></p>
+<p dir="ltr"><span>Colors are inspired by underwater flora and fauna found in the warmer, friendlier water areas of our planet.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>2. We have created a big contrast between expressions, thus adding more depth to them. </span></p>
+<p><img height="1027" src="../../../assets/images/hybrid12-8c2a5381.png" width="727"/></p>
+<p dir="ltr"><span>3.   What is different for this avatar is the fact we add more deformations for jaw, lips, cheeks for more variation, so now you can obtain almost totally different characters.</span></p>
+<p><img height="504" src="../../../assets/images/hybrid13-8e390fbe.jpg" width="800"/></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><img height="524" src="../../../assets/images/hybrid14-a287ca19.jpg" width="800"/></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Creating Hybrid Avatars - 3D FBX models with Live2D models faces        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../hybridanimaze/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../startwithhybrid/index.html">
+                    Getting started with hybrid avatars                 </a>
+</li>
+<li>
+<a href="../createhybridcomponents/index.html">
+                    Create the 2D and 3D components for your hybrid avatar                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Animated Textures (via Live2D Cubism textures)                 </a>
+</li>
+<li>
+<a href="../assemblehybrid/index.html">
+                    Assemble your avatar in the Animaze editor                </a>
+</li>
+<li>
+<a href="../hybridchangedetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../framehybrid/index.html">
+                     How to frame the avatar                 </a>
+</li>
+<li>
+<a href="../hybridcustomization/index.html">
+                    Add customization options on an avatar                </a>
+</li>
+<li>
+<a href="../hybridspecialactions/index.html">
+                    Configure avatar Special Actions                </a>
+</li>
+<li>
+<a href="../hybriddebugging/index.html">
+                    Use Avatar Puppeteering - Expressions debugging                </a>
+</li>
+<li>
+<a href="../hybridwindows/index.html">
+                    Import your hybrid avatar in the Animaze Windows app                 </a>
+</li>
+<li>
+<a href="../hybridiositunes/index.html">
+                    Send your hybrid avatar to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../hybridiosfinder/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../hybridioswindows/index.html">
+                    Send your hybrid avatar to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="../hybriddive/index.html">
+                    Dive Into Documentation                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

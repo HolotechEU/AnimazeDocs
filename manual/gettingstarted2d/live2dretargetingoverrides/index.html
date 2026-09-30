@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live2D Retargeting Overrides &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Live2D Retargeting Overrides </h1>
+<div class="aw-page-container">
+<p></p><p>The Editor enables artists to custom map tracking animations to animation inputs. Currently only working for Live2D Avatars.</p>
+<p>Steps to add it on a 2D model:</p>
+<p>1. Select the Live2D avatar from the Hierarchy Panel</p>
+<p>2. In the Editor Panel, open <b>Live2D Options</b> and then <b>Retargeting Overrides</b></p>
+<p><img height="531" src="../../../assets/images/1-e995be39.png" width="1000"/></p>
+<p>3. Click <b>Add Override</b> and select a Live2D Animation Input you want to retarget. For the purpose of this guide, we selected ParamEarLOn.</p>
+<p><img height="527" src="../../../assets/images/2-8d5f9094.png" width="1000"/></p>
+<p>4. Now add a tracking input that you want to retarget by clicking the <b>Add Input</b> button. We chose JawDrop for the purpose of this guide.</p>
+<p><img height="529" src="../../../assets/images/3-2afcd959.png" width="1000"/></p>
+<p>5. It will look like this:</p>
+<p><img height="528" src="../../../assets/images/4-aed9dd02.png" width="1000"/></p>
+<p>6. In <b>Avatar Puppeteering</b> (Tools &gt; Avatar Puppeteering), toggle the MouthOpen expression and see the effects on the avatar. When setting Mouth open to 1, the left ear will show up.</p>
+<p><img height="616" src="../../../assets/images/5-4cca0744.png" width="980"/></p>
+<p>That’s all. The system enables you to also add more than one tracking input to retarget (by default, use as a weighted sum) or even use other operations on the tracking inputs such as min, max, or inverse sum.</p>
+<p></p>
+<p data-pm-slice="1 1 []">We have also prepared <a href="../motionoutput/index.html">a motion output parameters list</a> for you, the avatar creator for custom-animating your avatars in Animaze. You will likely want to refer to this list to custom-map aspects like Hand Motion from Ultraleap (Leap Motion) on your custom Live2D avatar (and more). </p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing Live2D Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../stepsincreatingyourown2davatar/index.html">
+                    Steps in creating your own 2D avatar                </a>
+</li>
+<li>
+<a href="../animazeintro/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../paramlist/index.html">
+                    Live2D Model Requirements &amp; Animation Standards                </a>
+</li>
+<li>
+<a href="../motionoutput/index.html">
+                    Motion Output Parameter List                 </a>
+</li>
+<li>
+<a href="../complexparam/index.html">
+                    Live 2D Model Creation Process for Complex Mouth Geometries                </a>
+</li>
+<li>
+<a href="../gettingstarted/index.html">
+                    Getting started - Import Live2D model in Animaze Editor                </a>
+</li>
+<li>
+<a href="../changeavatardetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../changerendering/index.html">
+                    Change the rendering options                </a>
+</li>
+<li>
+<a href="../remapanimations/index.html">
+                    Remap avatar animation inputs                </a>
+</li>
+<li>
+<a href="index.html">
+                    Live2D Retargeting Overrides                 </a>
+</li>
+<li>
+<a href="../specialactions/index.html">
+                    Configure avatar Special Actions &amp; Special Poses                </a>
+</li>
+<li>
+<a href="../frameavatar/index.html">
+                    Frame the avatar                </a>
+</li>
+<li>
+<a href="../modifytexture/index.html">
+                    Quickly modify a texture on your avatar                </a>
+</li>
+<li>
+<a href="../expressiondebugging/index.html">
+                    Expressions debugging - Avatar Puppeteering                </a>
+</li>
+<li>
+<a href="../createavatarbundle/index.html">
+                    Create an *.avatar bundle                 </a>
+</li>
+<li>
+<a href="../importbundle/index.html">
+                    Import an *.avatar bundle in Animaze PC app                </a>
+</li>
+<li>
+<a href="../importlive2d/index.html">
+                    Import Your Live2D Models in Animaze PC                </a>
+</li>
+<li>
+<a href="../sendavatar/index.html">
+                    Send your avatar to Animaze Avatar iOS app                </a>
+</li>
+<li>
+<a href="../leaplive2d/index.html">
+                    Leap Motion Hand Sensors with Live2D avatars                </a>
+</li>
+<li>
+<a href="../diveinto/index.html">
+                    Dive into Documentation                </a>
+</li>
+<li>
+<a href="../createyourown/index.html">
+                    Create your own 2D avatar                </a>
+</li>
+<li>
+<a href="../troubleshootandsupport2deditor/index.html">
+                    Troubleshoot &amp; Support                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

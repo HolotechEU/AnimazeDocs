@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Tracker: Motion Capture At Home &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Multi-Tracker: Motion Capture At Home</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="1">Animaze can track various aspects of your expression and speech, using one or more types of trackers at the same time. Usually, a camera-based visual face tracker provides the bulk of the data, and often an audio tracker can be used to complement it in regard to lip motion, especially useful for fast speech. There are also inferred body motions and hand motions, though let’s focus on the head and face.</p>
+<p data-renderer-start-pos="408">In order to allow these trackers to capture the best data possible, there are a few physical setup considerations for your expression capture space.</p>
+<h2 data-renderer-start-pos="558" id="Visual-Tracking-Hardware-Considerations">Visual Tracking Hardware Considerations</h2>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="601"><strong data-renderer-mark="true">Camera Sensor Quality: </strong>Higher quality camera sensors are able to more reliably capture expression nuances than inexpensive cameras. They both work in the end, but a 60 fps input feed will be able to capture faster motions (like fast blinks) than a 30- FPS input feed will not. Grain-free input feeds will generate less jitter than grainy video input. Higher input resolutions (4k or Full HD over a more manageable 720p or 480p) don't automatically lead to better face tracking. They will however cause higher CPU occupancy. Please note that the iPhone TrueDepth camera will fare better than any regular camera when used with Animaze, given its depth perception capabilities, both in them of tracking quality and system load.</p>
+</li>
+<li>
+<p data-renderer-start-pos="1329"><strong data-renderer-mark="true">Camera Sensor Placement:</strong> Ideally the camera should film your face head-on. The ideal place is on the top of your main monitor, whose upper edge should ideally be at your eye level. The more offset the camera is from this central position, the more expression nuance will be lost. Never bring it lower than the eye level (such as under your monitor) as from that angle many aspects of the tracking will be sub-par.</p>
+</li>
+<li>
+<p data-renderer-start-pos="1746"><strong data-renderer-mark="true">Lighting:</strong> Proper lighting is key to quality motion capture. Read more about it here: <a class="css-tgpl01" data-renderer-mark="true" href="../../../faq/tech/tipsandtricksfortracking/index.html" title="https://www.animaze.us/faq/tech/tipsandtricksfortracking">Animaze FAQ - Lighting</a></p>
+</li>
+<li>
+<p data-renderer-start-pos="1857"><strong data-renderer-mark="true">Obstructions:</strong> Anything that blocks the camera’s view of your face, like hair bangs draping down on the side of your face or any form of elaborate headwear, will progressively decrease the tracking quality. </p>
+</li>
+</ul>
+<h2 data-renderer-start-pos="2070" id="Audio-Tracking-Set-up-Considerations">Audio Tracking Set-up Considerations<span class="heading-anchor-wrapper"><button class="css-779anb"><span class="css-1ncnk3i"></span></button></span></h2>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="2110"><strong data-renderer-mark="true">Background noise in the microphone feed: </strong>When using audio-based lip motion, sometimes background noise can trigger unwanted lip motion. You can use the noise gate functionality in Animaze, to address that, or other ways of preventing background noise from reaching your microphone. If a clean sound stream is not possible, even with noise gate settings, you may want to consider toggling off audio-based tracking.</p>
+</li>
+<li>
+<div></div>
+</li>
+</ul>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Embodiment - Calibration and Fine-Tuning        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../emotion-avatars/index.html">
+                    Emotional Connection Through Avatars                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Multi-Tracker: Motion Capture At Home                </a>
+</li>
+<li>
+<a href="../face-tracker/index.html">
+                    Visual Face Tracker: Top Shelf Experience                </a>
+</li>
+<li>
+<a href="../simple-tracker/index.html">
+                    Visual Face Tracker: Simplified Experience                </a>
+</li>
+<li>
+<a href="../audio-tracker/index.html">
+                    Audio Lip Tracker                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

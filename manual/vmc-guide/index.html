@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze VMC Protocol Usage Guide &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../faq/index.html">FAQ</a>
+        <a href="../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animaze VMC Protocol Usage Guide</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="1">Animaze supports full-body retargeting (or even partial) with info received through the VMC protocol. The Virtual Motion Capture Protocol (<a class="css-tgpl01" data-renderer-mark="true" href="https://protocol.vmc.info/english" title="https://protocol.vmc.info/english">VMC protocol</a>), enables various applications to send and receive “avatar motions” with heterogenous sets of sensors and trackers (e.g. iPhone, webcam-based hand tracking, VR HMD body tracking, inertia sensor trackers, Kinect, etc.) through a network protocol.</p>
+<hr/>
+<p data-renderer-start-pos="1">The Architecture is quite simple, there are Assistant/Performer applications that can send motion data (body tracking, expressions, device data) and Marionette applications that receive data, retarget and render avatars. Animaze can act as a Marionette application that retargets only body tracking data.</p>
+<p data-renderer-start-pos="706">There’s a list of Assistant/Performer applications that can send data to Animaze here: <span data-card-url="https://protocol.vmc.info/Reference" data-inline-card="true"><span class="loader-wrapper"><span data-testid="hover-card-trigger-wrapper"><a class="css-6uefhw eeajecn0" data-testid="inline-card-resolved-view" href="https://protocol.vmc.info/Reference" tabindex="0"><span class="css-1p7ax5 e158gagu2" data-testid="inline-card-icon-and-title"><span class="smart-link-title-wrapper css-0 e158gagu8">VMC Protocol リファレンス実装と使用例</span></span></a></span></span></span></p>
+<table border="1" cellpadding="5" style="background-color: #ffffcc; border-color: #000000; border-width: 1px;">
+<tbody>
+<tr>
+<td>Each sender app is different and the UI/UX flow to start sending the motion data greatly varies. In this guide, we focus on illustrating a more abstract setup guide. The base idea is to have the Sender app send data to the same IP/Port combination as the Receiver app, in Animaze (which is the receiver app) you’ll have to activate the VMC Protocol body tracker, match the IP/Port combination, and connect. That’s all, that simple.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p data-renderer-start-pos="797">Here’s a breakdown:</p>
+<ol class="ak-ol" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="1252">go to Sender App</p>
+</li>
+<li>
+<p data-renderer-start-pos="1272">(in Sender App) Search and find the VMC Protocol sending config UI. Usually, apps that support VMC protocol have this icon somewhere</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-sjtcbt" data-layout="center" data-node-type="mediaSingle">
+<div class="css-1up4lqt">
+<div data-alt="" data-collection="contentId-148045825" data-context-id="148045825" data-file-mime-type="image/png" data-file-name="vmpc_logo_128x128.png" data-file-size="20027" data-height="96" data-id="c574ecab-c59e-4191-b6dc-ca67101b82f5" data-node-type="media" data-type="file" data-width="96">
+<div class="new-file-experience-wrapper css-1e3qyxt" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="vmpc_logo_128x128.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/a63a869b-7b3e-4c06-bc78-cf0632785377#media-blob-url=true&amp;id=c574ecab-c59e-4191-b6dc-ca67101b82f5&amp;collection=contentId-148045825&amp;contextId=148045825&amp;mimeType=image%2Fpng&amp;name=vmpc_logo_128x128.png&amp;size=20027&amp;width=96&amp;height=96&amp;alt="/><img height="128" src="../../assets/images/vmpc_logo_128x128-fe7373fe.png" width="128"/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="1411">(in Sender App) Configure the IP (use default port 39539) to match the one of the PC Animaze is installed on. To find out the IP of the PC, windows + R combo, write down cmd (opens Command Prompt), then in Command Prompt, write <em>ipconfig</em> and hit enter. Now identify your IP address. Here’s how it should look.</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-12k2vxn" data-layout="center" data-node-type="mediaSingle">
+<div class="css-1moa705">
+<div data-alt="" data-collection="contentId-148045825" data-context-id="148045825" data-file-mime-type="image/png" data-file-name="image-20230222-072018.png" data-file-size="3013" data-height="54" data-id="ed49e6b4-b813-4fca-814a-36e38cd2bcb8" data-node-type="media" data-type="file" data-width="325">
+<div class="new-file-experience-wrapper css-iznp33" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20230222-072018.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/e8213a8c-1bf9-43bf-ad7d-406377655dfe#media-blob-url=true&amp;id=ed49e6b4-b813-4fca-814a-36e38cd2bcb8&amp;collection=contentId-148045825&amp;contextId=148045825&amp;mimeType=image%2Fpng&amp;name=image-20230222-072018.png&amp;size=3013&amp;width=325&amp;height=54&amp;alt="/><img height="54" src="../../assets/images/ipconfig-e85624a9.png" width="325"/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="1726">(in Sender App) Find a function to start sending/broadcasting the motion data.</p>
+</li>
+<li>
+<p data-renderer-start-pos="1808">go to Animaze app</p>
+</li>
+<li>
+<p data-renderer-start-pos="1829">(in Animaze) Go to Settings &gt; Advanced Tracking Configuration &gt; Select Trackers &gt; scroll down to VMC Body Tracker and activate</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-8ls5yp" data-layout="center" data-node-type="mediaSingle">
+<div class="css-en8zm4">
+<div data-alt="" data-collection="contentId-148045825" data-context-id="148045825" data-file-mime-type="image/png" data-file-name="image-20230222-072641.png" data-file-size="31509" data-height="157" data-id="999b4d62-e91a-4715-9c7d-9ed3422e3a7f" data-node-type="media" data-type="file" data-width="314">
+<div class="new-file-experience-wrapper css-sawclr" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20230222-072641.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/7d93dc65-ffd9-4bf0-832f-d653139990fd#media-blob-url=true&amp;id=999b4d62-e91a-4715-9c7d-9ed3422e3a7f&amp;collection=contentId-148045825&amp;contextId=148045825&amp;mimeType=image%2Fpng&amp;name=image-20230222-072641.png&amp;size=31509&amp;width=314&amp;height=157&amp;alt="/><img height="157" src="../../assets/images/vmctracker-17383f5b.png" width="314"/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="1962">(in Animaze) Configure the IP to match your PC’s IP. Animaze should already have completed the field for IP with your PC’s IP.</p>
+<div class="rich-media-item mediaSingleView-content-wrap image-center css-1w8d5j3" data-layout="center" data-node-type="mediaSingle">
+<div class="css-rri3p2">
+<div data-alt="" data-collection="contentId-148045825" data-context-id="148045825" data-file-mime-type="image/png" data-file-name="image-20230222-072658.png" data-file-size="49377" data-height="291" data-id="9a9a9b67-6f5e-4271-bb7a-bd8b33aa5b75" data-node-type="media" data-type="file" data-width="317">
+<div class="new-file-experience-wrapper css-lobh2" data-testid="media-card-view" id="newFileExperienceWrapper">
+<div class="media-file-card-view css-1yn77bd" data-test-media-name="image-20230222-072658.png" data-test-progress="1" data-test-status="complete" data-testid="media-file-card-view"><img alt="" data-testid="media-image" draggable="false" src="blob:https://holotechconfluence.atlassian.net/bcfdb3b3-92e2-4f1e-8bde-f2fced405a15#media-blob-url=true&amp;id=9a9a9b67-6f5e-4271-bb7a-bd8b33aa5b75&amp;collection=contentId-148045825&amp;contextId=148045825&amp;mimeType=image%2Fpng&amp;name=image-20230222-072658.png&amp;size=49377&amp;width=317&amp;height=291&amp;alt="/><img height="291" src="../../assets/images/vmctrackerconfig-c71df3e3.png" width="317"/></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-renderer-start-pos="2095">(in Animaze) Tap Connect button if it is not already connected.</p>
+</li>
+<li>
+<p data-renderer-start-pos="2162">you are all set, if the Sender app is sending data, Animaze should already be retargeting receiving data.</p>
+</li>
+</ol>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze VMC Protocol Usage Guide        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="vmc-protocol-guide/index.html">
+                    Animaze VMC Protocol Usage Guide                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

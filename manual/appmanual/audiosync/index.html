@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Based Lip sync &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Audio Based Lip sync</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p>Animaze offers four Audio Based Lip sync options: <strong><span style="color: #800080;">Complex Audio Based Lip Sync, Simple Audio Based Lip Sync, Criware </span></strong><span style="color: #000000;">and<span style="color: #800080;"><strong> Oculus Lip Sync</strong></span></span><span style="color: #800080;">. </span></p>
+<p><span><span><img alt="Audio Based Lip sync in Animaze" height="795" src="../../../assets/images/1-c79c20c9.png" title="Audio Based Lip sync in Animaze" width="800"/></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span style="font-size: medium;"><strong><span style="color: #800080;">Complex Audio Based Lip Sync</span></strong></span><span> supports <strong><span style="color: #800080;">16 mouth shapes</span></strong> and is generally</span><span style="color: #800080;"> best for 3D avatars</span><span>, or 2D avatars with very detailed mouths. Tune the Complex Audio Based Lip Sync to your setup with the following controls:</span></p>
+</li>
+</ol>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong><span style="color: #800080;">Noise threshold </span></strong><span>is used to change the amplitude of the sound needed to open the avatar’s mouth. If you are in a very quiet setting, set the noise threshold low for maximum responsiveness. If there is some din, increase the noise threshold so the background noise doesn’t activate your avatar’s mouth. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong><span style="color: #800080;">Hold duration</span></strong> (ms)</span><span> sets the time duration between the moment the noise gate opens and closes. It is used to prevent the noise gate from closing between words. A longer hold duration will require a longer pause before the mouth stops moving.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong><span style="color: #800080;">Attack Duration</span> (</strong>ms)</span><span> sets time duration between when the noise gate closes and opens. A longer attack duration will require more input before the mouth starts moving. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The</span><strong><span style="color: #800080;"> Vowels smoothing </span></strong><span>for inputs detected as vowel sounds, you can set the smoothing. High smoothing will make the mouth movements stable but less responsive.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The</span><span style="color: #800080;"><strong> Consonants smoothing</strong> </span><span>for inputs detected as consonant sounds, you can set the smoothing. High smoothing will make the mouth movements stable but less responsive.  </span></p>
+</li>
+</ul>
+<p dir="ltr"><span><span><img alt="Complex Audio Based Lip Sync in Animaze" height="840" src="../../../assets/images/2-22ef065e.png" title="Complex Audio Based Lip Sync in Animaze" width="800"/></span></span></p>
+<p> 2.   <strong><span style="color: #800080; font-size: medium;">Simple Audio Based Lip Sync </span></strong>supports 3 mouth shapes. It is generally best for<span style="color: #800080;"> 2D avatars</span>.</p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong><span style="color: #800080;">Voice Pitch</span></strong><span> adjusts the lip sync algorithm to the user’s voice frequency. You should match the slider to the pitch of your voice. Higher pitched voices to the right and lower pitched voices to the left. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><strong><span style="color: #800080;">Voice Speed </span></strong><span>adjusts the lip sync algorithm to match your  speech rate. If you are a fast talker, move the slider to the right. Conversely, slower talkers should set the slider to the left. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><strong><span style="color: #800080;">Microphone Sensitivity </span></strong><span>adjusts how much to amplify the audio input. If you are close to the microphone, set the value lower. If you are further from the microphone, set the value higher.  </span></p>
+</li>
+</ul>
+<p><img alt="Simple Audio Based Lip Sync in Animaze" height="791" src="../../../assets/images/3-1178704b.png" title="Simple Audio Based Lip Sync in Animaze" width="755"/></p>
+<p dir="ltr"><span>   3.    </span><strong><span style="color: #800080; font-size: medium;">Criware </span></strong><span>detects and remaps vowels to the Animaze viseme system. </span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong><span style="color: #800080;">Noise threshold</span> </strong>- </span><span>changes the amplitude of the sound needed to open the avatar’s mouth. If you are in a quiet setting, set the noise threshold low for maximum responsiveness. If there is some din, increase the noise threshold so the background noise doesn’t activate your avatar’s mouth. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong><span style="color: #800080;">Hold duration (ms)</span></strong> - </span><span> sets the time duration between when the noise gate opens and closes. Use this setting to prevent the noise gate from closing between words. A longer hold duration will require a longer pause before the mouth stops moving. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><strong><span style="color: #800080;">Attack Duration (ms)</span></strong><span> - sets time duration between when the noise gate closes and opens. A longer attack duration will require more input before the mouth starts moving.</span></p>
+</li>
+</ul>
+<p dir="ltr"><span><span><img alt="Criware Tracking in Animaze" height="792" src="../../../assets/images/4-6ddec0c0.png" title="Criware Tracking in Animaze" width="755"/></span></span></p>
+<p>     4.  <strong><span style="color: #800080; font-size: medium;">OVR Lip-Sync (Oculus)</span></strong> detects and remapps 15 mouth shapes  to the Animaze viseme system </p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong><span style="color: #800080;">Noise threshold</span></strong> - </span><span>changes the amplitude of the sound needed to open the avatar’s mouth. If you are in a quiet setting, set the noise threshold low for maximum responsiveness. If there is some din, increase the noise threshold so the background noise doesn’t activate your avatar’s mouth. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong><span style="color: #800080;">Hold duration (ms)</span> </strong>- </span><span> sets the time duration between when the noise gate opens and closes. Use this setting to prevent the noise gate from closing between words. A longer hold duration will require a longer pause before the mouth stops moving. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><strong><span style="color: #800080;">Attack Duration (ms)</span></strong><span> - sets time duration between when the noise gate closes and opens. A longer attack duration will require more input before the mouth starts moving.</span></p>
+</li>
+</ul>
+<p dir="ltr"><span><span><img alt="OVR Lip-Sync in Animaze" height="793" src="../../../assets/images/5-acc064fc.png" title="OVR Lip-Sync in Animaze" width="756"/></span></span></p>
+<p dir="ltr"><span>After you enabled one of the available lip sync trackers and made changes to it, click Save to save your tracking preferences and exit the <strong><span style="color: #800080;">Audio Based Lip Sync drawer menu</span></strong>. </span></p>
+<p><span><span></span></span></p>
+<div><span><br/></span></div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Desktop Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../appintro/index.html">
+                    Introduction                </a>
+</li>
+<li>
+<a href="../avatars/index.html">
+                    Avatar Customization and Retexturing                </a>
+</li>
+<li>
+<a href="../appbackgrounds/index.html">
+                    Background types, importing and customization                </a>
+</li>
+<li>
+<a href="../appvoiceeffects/index.html">
+                    Voice Effects                </a>
+</li>
+<li>
+<a href="../appemotes/index.html">
+                    Emotes                </a>
+</li>
+<li>
+<a href="../appprops/index.html">
+                    Props types and customization                </a>
+</li>
+<li>
+<a href="../spout2/index.html">
+                    Using Spout2 sources in Animaze                </a>
+</li>
+<li>
+<a href="../appanimations/index.html">
+                    Avatar Animations and special actions                </a>
+</li>
+<li>
+<a href="../quickscenes/index.html">
+                    Quick Scenes                </a>
+</li>
+<li>
+<a href="../dedwind/index.html">
+                    Dedicated Capture Window                </a>
+</li>
+<li>
+<a href="../voicemod/index.html">
+                    Leveraging Voicemod controls in Animaze                </a>
+</li>
+<li>
+<a href="../virtualcam/index.html">
+                    Animaze Virtual Camera                </a>
+</li>
+<li>
+<a href="../import3dh/index.html">
+                    Importing 3D avatars and hybrid avatars                </a>
+</li>
+<li>
+<a href="../import2d/index.html">
+                    Importing 2D avatars                </a>
+</li>
+<li>
+<a href="../vrmimp/index.html">
+                    Importing .VRM avatars                </a>
+</li>
+<li>
+<a href="../importrpms/index.html">
+                    Importing Ready Player Me avatars                </a>
+</li>
+<li>
+<a href="../trackers/index.html">
+                    Select Trackers                </a>
+</li>
+<li>
+<a href="../iphonetrack/index.html">
+                    iPhone tracking                </a>
+</li>
+<li>
+<a href="../webcamtracker/index.html">
+                    Webcam Tracker                </a>
+</li>
+<li>
+<a href="../tobii/index.html">
+                    Tobii Eye tracker                </a>
+</li>
+<li>
+<a href="../ultra/index.html">
+                    Ultraleap tracker                </a>
+</li>
+<li>
+<a href="index.html">
+                    Audio Based Lip sync                </a>
+</li>
+<li>
+<a href="../advtrack/index.html">
+                    Advanced Tracking Configuration                </a>
+</li>
+<li>
+<a href="../maxine/index.html">
+                    Using (alpha) Maxine AR Face Tracking in Animaze                </a>
+</li>
+<li>
+<a href="../subs/index.html">
+                    Subscriptions                </a>
+</li>
+<li>
+<a href="../requir/index.html">
+                    Minimum Requirements for PCs                </a>
+</li>
+<li>
+<a href="../keybinds/index.html">
+                    Keybinds controls                </a>
+</li>
+<li>
+<a href="../optwebcam/index.html">
+                    Optimizing Web Camera Tracking with Camera Angle and Ambient Light                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

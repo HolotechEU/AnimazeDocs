@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top Bar Menu &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Top Bar Menu</h1>
+<div class="aw-page-container">
+<p></p><p align="justify"></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>The top bar menu holds the main functions of the Editor that are categorized as follows: Animaze, View, Tools, Assets, Animaze Storefront and Help. Below we detail the functions and features of every button and submenu of the top bar menu: </span></p>
+<p align="justify"><span><span></span></span></p>
+<h3 dir="ltr"><span>Animaze menu </span></h3>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>Functions: </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Quit</strong> – exits the Editor. </span></p>
+<h3 dir="ltr"><span>View menu </span></h3>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>The view menu holds the functions that display useful panels or information. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>Functions: </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Editor Panel (Inspector)</strong> – opens up a contextual Inspector for the all items in the Hierarchy Panel. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>•<strong> Items Hierarchy</strong> – opens up the hierarchy panel and displays in a hierarchic style all the existing items in the scene, including the scene itself. There are two different ways you can view and edit your items: </span></p>
+<p align="justify"><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Free items – item is not attached to anything, you can view and edit the item in model space (object space), like in any other 3D model viewer software. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Scene – a scene that acts as a container for: skybox object, lighting setup (up to 4), props (3d models, particle systems etc.), sound sources, spawning locations. </span></p>
+</li>
+</ul>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>All items in a scene are attached to the scene root, which happens to be the root of the render world (0,0,0 position, 0,0,0 orientation, 1.0 scale), and they will behave like attached items. </span></p>
+<p dir="ltr"><span></span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>Changing transform properties (position, rotation, scale) while an item is attached to the scene, will change its properties in relation to the scene, not self, i.e. scaling a prop to 10.0, will make the prop bigger in the current scene, although if it is used in another scene, it will spawn with scale 1. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>A scene can hold multiple props that move independently. They can be added by selecting the Scene in the Hierarchy Panel and right click on it, then add the desired item. The next one can be added as attachment to the current existing one, and you may move it independently, but as soon as you move the parent one, the newly added one will act as a child and move together with it. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Animation Timeline (Skeletal)</strong> – is a skeletal animation debugging tool, which provides the means to view every skeletal animation separately, featured by the Avatar. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>Note! Blendshapes will not be present in the Animation list, as they have a different data flow. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Asset Explorer</strong> – opens the Asset Explorer box at the bottom with all the data containing folders. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Console Log</strong> – opens the text log of all the info, warning error and fatal runs of the Editor. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Weight Paint Mode</strong> – toggles the avatar skinning weights debug, for the bone selected from the hierarchy it paints white color if it has influences over the vertices, and black if not. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Hide Selection Mesh</strong> – selecting meshes is no longer possible. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Draw Debug Info</strong> – toggles the debug info drawing (the grid). </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Aspect Ratio</strong> – toggles between different sizes of the Viewport (e.g. you can choose 9:16 to see how the model would look like on a phone display) and enables you to set preferred own aspect. </span></p>
+<p align="justify"><span><span></span></span></p>
+<p dir="ltr"><span>• <strong>Reset Layout</strong> – resets all the panels to their default layout.</span></p>
+<h3 dir="ltr"><span>Tools menu </span></h3>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>This menu holds functions that provide debugging tools for the 3D  imported objects.. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>Functions:</span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong>Avatar Puppeteering</strong><span> – opens a box where the face animations, visemes and hands can be toggled with, check the eyes, tongue, head movement, and the option to check/uncheck the look-at-camera option throughout the debugging process.<br/></span></p>
+</li>
+</ul>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="777" src="../../../assets/images/1a-959ff215.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="450"/></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong>Blendshapes Debugger</strong><span> – opens a box where the blendshape animations can be toggled with. The avatar must be in idle1 pose for them to work. </span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="777" src="../../../assets/images/2a-36b93c05.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="450"/></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong>Customization Debugger </strong></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Color</strong> – opens a dialog box where you can test the color customization of the model in real-time before adding them as texture masks in the editor panel if desired. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Animation</strong> – toggle the values which modify the model’s various mesh proportions.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Presets</strong> - toggle preset customization types.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Attachments</strong> -  simplified attaching system to test out the Attachment slots customization options (automatically detects props from the Resource folder)</span></p>
+</li>
+</ul>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="241" src="../../../assets/images/3a-d35d97c4.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="500"/></span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong>Debug Panel</strong><span> – opens a floating menu with multiple debugging features available:</span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span id="docs-internal-guid-3e8e295f-7fff-78f9-2c24-af04e9689910"><span><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="455" src="../../../assets/images/4aa-e7034b24.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="450"/></span></span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Gray Diffuse</strong> – the item will be displayed with a gray diffuse map &gt;&gt; the specular and normals info is easier to be read </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Draw Normal Map</strong> – draws normal mappings with RGB color coding: </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>blue shades means normals are facing Z axis </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>red shades X axis </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>green shades Y axis. </span></p>
+</li>
+</ul>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span id="docs-internal-guid-0ff486ea-7fff-b6d1-9e97-ce0053b0588a"><span><span><img alt="Draw normal map" height="424" src="../../../assets/images/4a-a106bcad.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></span></span></span></p>
+<p dir="ltr"><em><strong>Note! Black areas have normals with negative components, e.g. (0,-1,0) is translated to black. </strong></em></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Draw Vertex Color (RGB)</strong> – avatar us shaded with the color info in the vertices, ignoring the alpha channel. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Draw Vertex Alpha</strong> – avatar is shaded in grayscale showing the alpha info from the vertex color</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Force Flat Shading</strong> – the item in the scene is displayed with no lighting influence &gt;&gt; the specular and diffuse info will not be read in this mode </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Wireframe</strong> – the item in the scene is being displayed in wireframe mode </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Eye’s Bone Forward Axis</strong> – displays the avatar’s eyes bones axis. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Head’s Bone Forward Axis</strong> – displays the avatar’s head bone axis </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Draw Normals</strong> – draws green 3D lines on each vertex with the appropriate normal. They are not affected by Normal Mapping. </span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span id="docs-internal-guid-78125b62-7fff-01ac-6c08-2b03dc76126e"><span><span><img alt="Draw Normals" height="426" src="../../../assets/images/5a-c9aa9fce.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></span></span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Draw Skeleton Hierarchy</strong> – will draw the skeleton hierarchy of every item loaded. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Draw Blendshapes Influence</strong> –  draw the avatar Normals in Green if they are unaffected by the blendshapes and in Red if they are affected.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Use Blendshape Tangents</strong> – toggle blendshapes influence on tangents and binormals</span></p>
+</li>
+</ul>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Local Connect</strong> </span><span>- opens the Animaze Connect dialog that enables you to send avatars, props and backgrounds to the iOS Animaze app. Please follow the </span><span style="text-decoration: underline;"><a href="../../gettingstarted3d/sendavatar3d/index.html">guides</a>.</span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="266" src="../../../assets/images/6a-0ce1c347.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="450"/></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong>Animation Checker</strong><span> – opens the animations list and cross-checks them with your loaded/imported avatar.</span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span id="docs-internal-guid-acb93c2b-7fff-8a2c-287f-d13e5382098f"><span><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="425" src="../../../assets/images/7a-e51e69aa.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></span></span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><strong>Replay system</strong> - enables you to play pre-recorded mo-capped animations on the current avatar in scene. Currently, this is a reserved item, there are no Animaze apps that can generate these replay files.</p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><strong>Batch bundler</strong> - bundles all existing resources in the Resources/ folder into separate .avatar files.</p>
+</li>
+<li><span id="docs-internal-guid-80b662d0-7fff-f7a0-32f8-ef8c8351610f"><strong>Steam Workshop Uploader</strong> – this utility helps you upload your content (avatars, scenes or props) to Animaze’s Steam Workshop. Note that the uploaded can be used in Animaze Desktop application.</span></li>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span id="docs-internal-guid-361106ec-7fff-c413-0be0-acf4c5b89e7c"><span><span><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="238" src="../../../assets/images/8a-75f47e75.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="380"/></span></span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>General Settings</strong> – opens a dialog box where the following actions are available: </span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>set hotkeys as per your preferences </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>configure the Directories for Assets, Resources and Cache data. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>set the near and far plane for the camera </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>tick/untick physics features </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>change language <br/></span></p>
+</li>
+</ul>
+</ul>
+<h3 dir="ltr"><span><span></span></span></h3>
+<h3 dir="ltr"><span></span></h3>
+<h3 dir="ltr"><span></span></h3>
+<h3 dir="ltr"><span><br/></span></h3>
+<h3 dir="ltr"><span>Assets menu </span></h3>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>The assets menu holds functions that can import assets, load already imported ones and different assets and resources related functions. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>Functions: </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>• <strong>Load Avatar</strong> – opens a dialog box prompting to load an already imported/saved avatar. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>• <strong>Load Scene</strong> – opens a dialog box prompting to load an already imported/saved scene. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>• <strong>Add Prop</strong> – opens a dialog box prompting to add an already imported/saved prop in the scene. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>• <strong>Add Avatar</strong> – opens a dialog box prompting to add an already imported/saved avatar in the scene. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>• <strong>Import 3D Object</strong> – opens a dialog box prompting to import a .fbx file from a device location. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>• <strong>Import Live2D Avatar</strong> – opens a dialog box prompting to import a .model file from a device location. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>• <strong>Import Skybox</strong> – opens a dialog box prompting to import a background image from a device location. </span></p>
+<p dir="ltr"><span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p>• <strong>Import Skybox 2D</strong></p>
+<p><strong><br/></strong></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<h3 dir="ltr"><span>Help menu </span></h3>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span id="docs-internal-guid-03a5977c-7fff-704e-dd74-8048a3808776"><span>This menu provides information about software licenses and the current version of the software. It also provides you with the links to the Asset creation manual and to the Editor User manual.</span></span></p>
+<h2 dir="ltr"></h2>
+<p align="justify"><span style="font-family: Arial, serif;"><span style="font-size: small;"><span style="font-family: Montserrat, serif;"></span></span></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Editor User Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../abouteditor/index.html">
+                    About the Animaze Editor                </a>
+</li>
+<li>
+<a href="../steameditor/index.html">
+                    Steam Install Process                </a>
+</li>
+<li>
+<a href="../editorworkflow/index.html">
+                    Animaze Editor Workflow                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Top Bar Menu                </a>
+</li>
+<li>
+<a href="../cameranavigationkeys/index.html">
+                    Camera Navigation Keys                </a>
+</li>
+<li>
+<a href="../mainpanels/index.html">
+                    Main Panels                </a>
+</li>
+<li>
+<a href="../editormaterialcomponents/index.html">
+                    Material Components                </a>
+</li>
+<li>
+<a href="../animazeeditorenvironment/index.html">
+                    Environment Properties                 </a>
+</li>
+<li>
+<a href="../animazephysics/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../editorretargetingoverrides/index.html">
+                    Editor Retargeting Overrides                </a>
+</li>
+<li>
+<a href="../emotes/index.html">
+                    How to add animated Emotes                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

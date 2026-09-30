@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>オーバーレイを含むシンプルなスタティックの2D背景の作成方法。 &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">オーバーレイを含むシンプルなスタティックの2D背景の作成方法。</h1>
+<div class="aw-page-container">
+<p></p><p><span style="font-size: 12px;"><span id="docs-internal-guid-4355fb3d-7fff-78ff-b7da-f1708ea5757e"><span>基本背景画像。 </span></span></span></p>
+<p><strong><span style="font-size: 12px;">手順1：SteamからAnimazeエディターを開きます。</span></strong></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr">「Steam」 &gt; 「ライブラリ」の順にクリックします</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">ゲームリストの一番上にドロップダウンリストがあります（通常は「ゲーム」に設定されています）</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">ドロップダウンリストをクリックしてツールを選択します</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">左側のリストをスクロールし、Animazeエディターをクリックします</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">他のSteamのタイトルと同じ方法で起動します。</p>
+</li>
+</ul>
+<p dir="ltr">デフォルトでは、読み込んだシーンを「<strong>customization01_scene」、アバターを「AvatarFrogTest</strong>」と呼びます。 </p>
+<p dir="ltr"><img alt="Background with overlays" height="414" src="../../../assets/images/image001-893d3ce1.png" title="By default, you will have a scene loaded called customization01_scene and an avatar called AvatarFrogTest. " width="900"/></p>
+<p dir="ltr">Animazeエディターには常に、読み込んだシーンアイテムが1つだけ表示されます。このシーンは、情報に関連する全ての背景を含む大量のデータを保存する場所として機能します。 </p>
+<p dir="ltr">このシーンが、作業終了後にAnimazeアプリにエクスポートするものです。 </p>
+<h2 dir="ltr">手順2：現在のシーンを削除します。</h2>
+<p dir="ltr">階層パネルでcustomization01_sceneのアイテムを右クリックし、右クリックメニューから「アイテムを取り除く」を選択してください。これでシーンはリセットされ、後でバンドルやエクスポートを行うことのできる新たなシーンを構築できるようになります（customization01_sceneはデフォルトではバンドルやエクスポートができません。そのため、削除の必要があります）。</p>
+<h3><img alt="Background with overlays" height="254" src="../../../assets/images/image003-808120cc.png" title="Clear (delete) the current scene" width="800"/></h3>
+<p dir="ltr">DefaultSceneが削除されたシーンを自動的に置き換えます。これで白紙の状態となります。</p>
+<p dir="ltr">ここで、新しいシーンの名前を変更して保存するとよいでしょう。保存するには、DefaultSceneのアイテムを右クリックし、「アイテムの保存形式」を選択して、名前を付けてください（このチュートリアルでは、podcastStudio_sceneという名前を付けます）。  </p>
+<h2 dir="ltr">手順3：Scene01のシーンで背景2D画像を読み込みます。 </h2>
+<h3><img alt="Background with overlays" height="408" src="../../../assets/images/image005-a0c06bfd.png" title="Load the Background 2D Image in the Scene01 Scene." width="900"/></h3>
+<p dir="ltr">アセットのトップメニュー &gt; スカイボックス2Dをインポートの順にクリックします。表示されるインポートウィンドウで、以下を入力してください：</p>
+<p dir="ltr">- あなたのシンプルバックドロップ2D画像 &gt; 「バックドロップパス」フィールドへ。シンプルな2D背景を作成したい場合、これが最も重要な入力フィールドとなります。反射キューブを気にしない場合、他の全てのフィールドはあまり重要になりません。</p>
+<p dir="ltr"> - スカイボックスHDRテクスチャーは、バックドロップの反射キューブ・マッピングを作成するキューブとして機能させるために「スカイボックスパス」の中にある必要があります。このような用語に詳しくない場合、反射キューブ・マッピングをあまり気にする必要はありません。「デフォルトのスカイボックスを使用」にチェックを入れてこの手順をスキップすれば、背景は一般的な反射マッピングを使用します。 </p>
+<p dir="ltr">- カスタムぼかし反射マッピングHDRソースを指定したくない場合、「自動ぼかし反射マッピング」をチェックすることもできます。指定したい場合は、「ぼかしスカイボックスパス」フィールドから指定できます。</p>
+<p dir="ltr">- キューブの解像度に関するその他3つのフィールドは、デフォルト値のままで大丈夫です（反射キューブのサイズに詳しく、デフォルトでない設定にする理由が明確な場合を除く）。</p>
+<p dir="ltr">「インポート」ボタンを押すと、階層パネルに、背景画像を参照する「2Dバックドロップ」タイプのオブジェクトが新たに作成されます。これは「フリーアイテム」の下に表示され、名前は2D画像のファイル名がコピーされます。</p>
+<p dir="ltr">シーンカテゴリ（podcastStudio_scene）内の「フリーアイテム」から、この「2Dバックドロップ」タイプのオブジェクトをドラッグ＆ドロップしてください。</p>
+<p dir="ltr"><img alt="Background with overlays" height="231" src="../../../assets/images/image007-8b5f7caa.png" title="You need to Drag&amp;Drop this 2D backdrop type object from Free Items in the Scene category (podcastStudio_scene)." width="800"/></p>
+<h3 dir="ltr">オプション：オーバーレイ画像の読み込み。</h3>
+<p dir="ltr">バックドロップが読み込まれました。ここで、オーバーレイ画像（透明度あり）も読み込むことができます。 </p>
+<p dir="ltr">ナビゲーション。</p>
+<p><img alt="Background with overlays" height="229" src="../../../assets/images/image009-69ea1636.png" title="Load the Overlay Image" width="900"/></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr">シーンを右クリック &gt; 追加 &gt; 新たな2Dオーバーレイを添付</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">適切な名前を入力し（ここでは「Microphone」）、「OK」をクリック</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">階層から「Microphone」のアイテムを選択 </p>
+</li>
+<li dir="ltr">
+<p dir="ltr">右側のエディターパネルの「No Texture」と書かれた四角をクリック</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">必要な2Dファイルを選択</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">「OK」を押す</p>
+</li>
+</ul>
+<h3></h3>
+<h2 dir="ltr">ライト値の設定</h2>
+<p dir="ltr">背景に3Dモデルを使用する場合、適切なダイナミックライトのセットアップも必要になるでしょう。主に2Dのアセットを使用する場合は、ライトについてはあまり気にしなくても大丈夫です。 </p>
+<p dir="ltr">Animazeの主なライトの設定は次の通りです</p>
+<ul>
+<li dir="ltr">
+<p dir="ltr">アンビエントライトの情報：</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">アンビエントライトの色全般、 </p>
+</li>
+<li dir="ltr">
+<p dir="ltr">アンビエント色強度全般</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">6色のライト（シーンの周りを囲む想像上の無限サイズのキューブの6方向から放射線状に広がる） </p>
+</li>
+<li dir="ltr">
+<p dir="ltr">最大4つのダイナミックなライト（1つは指向性ライト、残りの3つはオムニライトもしくはスポットライト）</p>
+</li>
+</ul>
+<h3></h3>
+<p dir="ltr">背景にこのようなライト設定を作成する必要があります。</p>
+<p dir="ltr">インポートした背景オブジェクトを左クリックします。</p>
+<h3></h3>
+<p dir="ltr">エディターの右側にウィンドウが開きます。ここで、アンビエント色、アンビエント色強度、6つのアンビエントキューブライトを設定できます。</p>
+<h3><img alt="Background with overlay" height="291" src="../../../assets/images/image011-81f6961b.png" title="In order to create this lighting set-up for your background" width="800"/><br/><br/></h3>
+<p dir="ltr">アンビエントライトを設定後、指向性ダイナミックライトの設定をしてください。</p>
+<p dir="ltr">シーンの名前（Scene01）を右クリックし、「新しいライトを添付」をクリックします。新しいライトは、Scene01のオブジェクトのサブオブジェクトとして階層パネル内に表示されます。これを選択します。選択すると、エディターの右側にタブが開きます。ここでライトのプロパティの設定ができます。</p>
+<p dir="ltr"><img alt="Background with overlays" height="219" src="../../../assets/images/image013-cb145506.png" title="Right-click on the scene name (Scene01), click on Attach New Light" width="800"/></p>
+<p dir="ltr">特殊効果のために残して置きたい場合、ダイナミックライトは2つ以上設定しないことを推奨します（Animazeでサポートしているダイナミックライトの最大数は4つです）。</p>
+<p dir="ltr"><img alt="Background with overlays" height="314" src="../../../assets/images/image015-06011618.png" title="Save your work  " width="800"/></p>
+<h3 dir="ltr">作業を保存</h3>
+<p dir="ltr">戻ってきて背景を編集できるようにするには、Animazeエディターのリソースフォルダーに保存しておくとよいでしょう。 </p>
+<p dir="ltr">保存するには、シーンを右クリックし、「アイテムを保存」を選択します。作成したシーンは、Animazeエディターのインストールフォルダーのリソース・サブフォルダーに保存されます。</p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      オーバーレイを含む背景        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../jpnbackgroundwoverlays/index.html">
+                    オーバーレイを含む背景（2D）                </a>
+</li>
+<li>
+<a href="index.html">
+                    オーバーレイを含むシンプルなスタティックの2D背景の作成方法。                </a>
+</li>
+<li>
+<a href="../jpnloopingbackground/index.html">
+                    ループするアニメーション背景の作成方法                </a>
+</li>
+<li>
+<a href="../jpntrackingdatabackground/index.html">
+                    トラッキングデータに連動したアニメーション要素を持つバックドロップの作成方法                </a>
+</li>
+<li>
+<a href="../jpnbackgroundtrigger/index.html">
+                    キーバインドでトリガーされたアニメーション化された要素のあるバックドロップの作成方法                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

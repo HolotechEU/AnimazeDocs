@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Main Panels &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Main Panels</h1>
+<div class="aw-page-container">
+<p></p><p>The Animaze Editor has 4 main panels to work with, and a Viewport. We will detail them and explain in depth each of their features. The Panels can be rearranged around the Viewport as per your personal preference if needed, just by holding down the left mouse button on the Panel name bar and dragging them where desired.</p>
+<p><span style="font-size: large;"><b>The Hierarchy Panel</b></span><b></b></p>
+<p>In this Panel, you are able to see the object list in your scene, set in a hierarchic display. The objects can be manually swapped/rearranged in the hierarchy. The selected mesh items will be displayed with a green halo in the Viewport, where your model is, thus being easier to identify it.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="423" src="../../../assets/images/1bb-0b4ca0c3.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"></span></p>
+<p><span style="font-size: medium;">Mouse button actions:</span></p>
+<ul>
+<li><b>Left click</b> on an item in the<b> Hierarchy Panel</b>, will display details such as Name, Description, Position etc. in the Editor Panel to the right. Here you can change avatar details, add/remove customizations &amp; Special Actions, configure camera settings.  </li>
+<li><b>Left click</b> on a mesh’s icon will <b>lock</b> it and it will not be selectable in the Viewport anymore. Click again to unlock it.</li>
+</ul>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="397" src="../../../assets/images/2bb-07c25e30.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="300"/></p>
+<p></p>
+<ul>
+<li><strong>Left click</strong> on a mesh’s text will display the <strong>Material Properties</strong> in the<strong> Editor Panel</strong> to the right.</li>
+</ul>
+<p><img alt="Avatar Editor" height="423" src="../../../assets/images/2bbb-a1886a67.png" title="Avatar Editor Know How" width="800"/></p>
+<ul>
+<li><b>Right click</b> on a mesh to focus the camera on it.</li>
+</ul>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="355" src="../../../assets/images/3b-924056f2.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="300"/></p>
+<p></p>
+<ul>
+<li><b>Right click </b>on the avatar for the following actions:</li>
+</ul>
+<p><strong>Add</strong> – attach new particle system, light, prop, sound item, skybox, location.</p>
+<p><strong>Save item</strong> – saves the item in the current state.</p>
+<p><strong>Bundle</strong> – creates a bundle of the avatar, which can be afterwards uploaded on the Animaze Storefront.</p>
+<p><strong>Check integrity</strong> – verifies the integrity of all the files.</p>
+<p><strong>Reload</strong> – cleanly reloads the Animaze Item (deletes all references from memory and loads it from disk).</p>
+<p><strong>Clone</strong> – makes a clone of the Animaze Item in memory (need to save clone to keep it on disk).</p>
+<p><strong>Save item as</strong> – saves the current avatar as new and loads it, leaving its previous version unchanged.</p>
+<p><strong>Reset camera</strong> – frames the avatar in the Viewport.</p>
+<p><strong>Save all materials</strong> – saves all the materials that suffered changes.</p>
+<p><strong>Remove item</strong> – remove the item fron the scene.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="367" src="../../../assets/images/4b-67e664a7.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="300"/></p>
+<p></p>
+<ul>
+<li><b>Left clicking</b> on a bone in the Hierarchy Panel will locate it on the avatar’s body, visible in wireframe mode by pressing the “<strong>i</strong>” key on your keyboard.</li>
+</ul>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="425" src="../../../assets/images/5b-5609669e.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<ul>
+<li><b>Right clicking</b>on any bone in the Skeletal hierarchy of the model, it will open a set of possible and self-explanatory actions, such as:
+
+<ul>
+<li>attach a new particle system, light, prop, item, collider &gt;&gt; after which you can also set values or toggle with their properties.</li>
+</ul>
+<div></div>
+</li>
+<li><b>Right clicking</b> the <b>Scene</b> will prompt you to either save it, make additions of lights, props, colliders, particle systems or bundle the whole scene together. Multiple lights can be added/removed in a scene.</li>
+</ul>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>The Viewport</b></span><b></b></p>
+<p>In this panel you can see the avatar or any object you are working with. Use it to select and position the scenery, avatars, props, cameras, lightning. Upon any selection of an object, the correspondent in the Hierarchy Panel will be highlighted in a gray tint, thus being easier to identify in that panel as well.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="425" src="../../../assets/images/6b-a5f4fd71.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p>The scene has a set of navigation controls in the top bar, to help you move around quickly and efficiently:</p>
+<p><span style="font-size: medium;"><b>Translation button</b></span></p>
+<p>When having the object selected, this button will <b>move</b> it on the XYZ axis by dragging it with the left mouse button. It can also be moved by manually modifying the values in the Editor panel.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="426" src="../../../assets/images/7b-8c59aef3.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Rotation button</b></span></p>
+<p>When having the avatar selected, this button will <b>rotate</b> it on the XYZ axis by dragging it with the left mouse button. It can also be rotated by manually modifying the values in the Editor panel.</p>
+<p><img height="423" src="../../../assets/images/8b-98e1f21d.png" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Scale button</b></span></p>
+<p>When having the avatar selected, this button will <strong>resize</strong> it uniformly by dragging it with the left mouse button. It can also be resized by manually modifying the value in the Editor panel.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="425" src="../../../assets/images/9b-6962a734.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b></b></span></p>
+<p><span style="font-size: large;"><b></b></span></p>
+<p><span style="font-size: large;"><br/></span></p>
+<p><span style="font-size: large;"><b></b></span></p>
+<p><span style="font-size: large;"><b></b></span></p>
+<p><span style="font-size: large;"><b>The Editor Panel (Inspector)</b></span></p>
+<p>This panel, positioned in the right side of the Animaze Editor as default, displays detailed information about the currently selected object in the <b>Hierarchy Panel</b>, including all attached components, materials and their properties, and allows you to customize them, add or remove.</p>
+<p><b>Item Settings</b> - displays the type of the object, location coordinates on the world axis, name and description of a current selected item.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="425" src="../../../assets/images/10b-2f855b9d.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b>Snap to ground</b> button will bring the item above the debug grid, if it’s not already in that position.</p>
+<p><b>Item Stats</b> - displays the numerical values in terms of vertex, polygons, textures, their sizes, an overall analysis of the current selected item. It also retrieves info on unused textures and a full textures report, which can be exported as a report.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="425" src="../../../assets/images/11b-d29d4682.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Customization Options</b></span></p>
+<p>There are several types of customization available:</p>
+<p><b>Color Customization - </b>allows the adding of one or multiple color masks texture on your model. It can be named, described and tagged as a body part or clothing component.</p>
+<p>For example, if the hair piece of your model is composed out of 3 meshes, you will have to add 3 color customizations using the <b>same Tag</b>, color mask textures, customized base textures and same values on the RGB Alpha channels when added.</p>
+<ul>
+<li>the Color Mask uses the RGB &amp; Alpha channels, which you can add in order to set the color in the region you want
+
+<ul>
+<li>areas you paint in black are hidden</li>
+<li>areas you paint in white are visible</li>
+<li>areas you paint in shades of gray appear in various levels of transparency</li>
+</ul>
+</li>
+</ul>
+<p><strong>Animation Customization</strong><b> - </b>allows the adding of one or multiple animations for your model. It can be named, described and tagged as a body or clothing component.</p>
+<p><b>Attachment Customization - </b>allows the adding of Props on designated bones.</p>
+<p></p>
+<p><b> </b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Special Actions</b></span></p>
+<p>Here you can configure (add, change, remove and activate the Special Actions for your avatar.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="427" src="../../../assets/images/13b-a1e084f0.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Special Poses</b></span></p>
+<p>Here you can configure (add, change, rename, remove) and Toggle the Special Poses for your avatar.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="422" src="../../../assets/images/SpPose-4b5d4d9b.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Item Camera Settings</b></span></p>
+<ul>
+<li><b>Use Default Camera</b></li>
+</ul>
+<ul>
+<li><b>Field of View</b><i> –</i> toggle numeric values which will extent/compress the view range in the Viewport.</li>
+<li><b>Camera Reset Mode</b>   </li>
+</ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<li>Default – the look at bone in this mode is BipHead, but it can be changed as desired</li>
+<li>Skeleton – <i>Camera</i> and <i>Look at bone</i> can be chosen as per preference</li>
+<li>Custom – <i>Camera position &amp; rotation</i> values can be set manually if needed. The <b>Snapshot</b> button will make the current display the default camera view for the Reset Camera option when right-clicking the model in the Hierarchy Panel.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="423" src="../../../assets/images/14b-6b1f9e93.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>The Animation Panel</b></span><b></b></p>
+<p>In this panel you are able to view and play/stop/pause all the animations in the embedded list of the model in the scene.</p>
+<p>Note that for the models built with blendshapes, the animation will be played in its raw state. For example, when playing the Tongue Out animation, the model will not open his mouth to stick out the tongue, but it will pass through the closed mouth.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="426" src="../../../assets/images/15b-7c166002.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>The Asset Explorer Panel </b></span></p>
+<p>In this panel you can navigate through all the data folders of Animaze Editor. </p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="426" src="../../../assets/images/16b-c7e6c741.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p>When navigating into the <strong>Texture</strong> folder, double clicking a texture will open up a <strong>Texture Inspector</strong>, providing meta-information about it: </p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="426" src="../../../assets/images/17b-e66e1609.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="800"/></p>
+<ul>
+<li>Texture name </li>
+<li>Texture type</li>
+<ul>
+<li>2D</li>
+<li>Cube </li>
+</ul>
+</ul>
+<ul>
+<li>Wrap mode - configures the wrapping mode on the texture’s sampler</li>
+<ul>
+<li>Clamp – stretches the Texture’s edges </li>
+<li>Clamp to border – the coordinates that fall outside the range will be given a specified border color</li>
+<li>Repeat – the integer part of the coordinate will be ignored and a repeating pattern is formed </li>
+<li>Mirrored Repeat – the texture will be repeated, but it will be mirrored when the integer part of the coordinate is odd. </li>
+</ul>
+</ul>
+<ul>
+<li>Filter Model - configures the filtering on the texture’s sampler</li>
+<ul>
+<li>Nearest – returns the pixel that is closest to the coordinates</li>
+<li>Linear – returns the weighted average of the 4 pixels surrounding the given coordinates. </li>
+</ul>
+</ul>
+<ul>
+<li>Compressed - toggle between ETC2 encoding compression or uncompressed. Useful for high detail maps like Normal Maps.</li>
+<li>Generate Mip Maps – smaller copies of your texture that have been sized down. It is Texture Inspector recommended that you use them because they result in both a higher quality and higher performance. </li>
+<li>sRGB (Color Space) - mark if this Texture is treated as having sRGB format (make sure source file is sRGB format when toggling this on)</li>
+<li>Aniso Level – increases Texture quality when viewing the Texture at a steep angle. </li>
+<li>Max size - max size of the Texture, if source texture is larger, it will be resized to this value.</li>
+</ul>
+<p>Modified values will take effect after pushing the <b>Reimport </b>button.</p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p>When navigating into the <strong>Animations</strong> folder, double clicking an animation will open up an <strong>Animation Inspector</strong>, containing meta-information on it: </p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="431" src="../../../assets/images/18b-2a12f7fb.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="300"/></p>
+<p></p>
+<p>• Animation name </p>
+<p>• Compression – when <b>On</b>, it will only consider the animations containing keys </p>
+<p>• Position error (expressed in percentage) </p>
+<p>• Rotation error (expressed in percentage) </p>
+<p>• Scale error (expressed in meters) </p>
+<p> </p>
+<p>Some animations can be very subtle, and when compressed, they might not be visible when triggered. </p>
+<p><b>Tip: Setting the compression to Off, deleting the animtree in the animations folder and reloading the item will solve this issue. </b></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p>When navigating into the <strong>Blendshapes</strong> folder, double clicking a blendshape will open up a <strong>Blendshape Inspector</strong>, where the values for Vertex position error and Normal position error are the thresholds for the blendshape animation. </p>
+<p>The thresholds affect the number of vertices that get animated by the blendshape. The thresholds also impact the avatar's bundle size and runtime performance.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="427" src="../../../assets/images/19b-4df5a7dc.png" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="300"/></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Editor User Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../abouteditor/index.html">
+                    About the Animaze Editor                </a>
+</li>
+<li>
+<a href="../steameditor/index.html">
+                    Steam Install Process                </a>
+</li>
+<li>
+<a href="../editorworkflow/index.html">
+                    Animaze Editor Workflow                 </a>
+</li>
+<li>
+<a href="../topbarmenu/index.html">
+                    Top Bar Menu                </a>
+</li>
+<li>
+<a href="../cameranavigationkeys/index.html">
+                    Camera Navigation Keys                </a>
+</li>
+<li>
+<a href="index.html">
+                    Main Panels                </a>
+</li>
+<li>
+<a href="../editormaterialcomponents/index.html">
+                    Material Components                </a>
+</li>
+<li>
+<a href="../animazeeditorenvironment/index.html">
+                    Environment Properties                 </a>
+</li>
+<li>
+<a href="../animazephysics/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../editorretargetingoverrides/index.html">
+                    Editor Retargeting Overrides                </a>
+</li>
+<li>
+<a href="../emotes/index.html">
+                    How to add animated Emotes                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Lip Tracker &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Audio Lip Tracker</h1>
+<div class="aw-page-container">
+<p></p><p data-renderer-start-pos="1">Animaze has four different Audio Lip tracker engines that you can pick from, to aid the avatar’s speech.</p>
+<p data-renderer-start-pos="107">To test if a certain lip motion comes from the audio tracker or from the video tracker, you can temporarily stop the visual tracking (for instance block the camera’s view of your face with your hand) and say a few words, and see if the avatar's lips are moving. If they are, those motions were tracked via audio. In a similar way, you can stop audio tracking (mute the microphone) and say a few words, while the camera has a clear view of your face. If the lips on the avatar are moving, then those motions likely come from the visual tracking. This will help you figure out what motions come from which type of tracking.</p>
+<p data-renderer-start-pos="735">If you do use Audio lip tracking to aid with speech articulation as an advanced user you need to be mindful of whether you want it to <strong data-renderer-mark="true">complement </strong>the visual tracking, and work together with it at the same time, or rather if you want it to<strong data-renderer-mark="true"> </strong>functionally <strong data-renderer-mark="true">replace</strong> the visual tracking.</p>
+<p data-renderer-start-pos="1016"> </p>
+<p data-renderer-start-pos="1018"><strong data-renderer-mark="true">Video and audio working together.</strong></p>
+<p data-renderer-start-pos="1053">The Audio tracking and video tracking working together and complementing each other is the default setting in Animaze. For high-performance tracking, you want to be mindful of the different time delays that each of them has. Typically, the visual tracker will be faster than the audio tracker, but in many cases, the time difference should not be too large and the end result should be serviceable.</p>
+<p data-renderer-start-pos="1458">There are cases, however, where microphones and/or their sound drivers do a fair amount of sound buffering for the purpose of sound preprocessing, and that takes place before the sound from the microphone is allowed to reach the Animaze app. To further compound the issue, accurate sound analysis in Animaze itself too requires a fair-sized sound buffer. What this all means is that, especially in fast speech scenarios, you might see situations where the visual tracker is much faster at displaying the lip motion, than the audio tracker. Because of this time difference, the two can even end up contradicting each other. In these cases, you need to either fix that de-sync or make a call on which one you prefer, as leaving both on and de-synced will not be a good experience.</p>
+<p data-renderer-start-pos="2243">For video production purposes (Animaze Video Export) there is a time offset setting in Animaze that you can use to time-align the output of the video and audio trackers, no matter how large the sound preprocessing delay ends up being. That functionality however is not available for real-time as it would mean delaying avatar reactions from all trackers to match the slowest tracker in the stack.</p>
+<p data-renderer-start-pos="2645">Still, should you want to do that in real-time, you can do it via third-party video broadcasting apps like ManyCam or OBS, as they allow you to route the video input through them, and add a bit of delay to the inbound video stream. This will help you offset the time difference between the faster video path and slower audio path and bring them back in sync.</p>
+<p data-renderer-start-pos="3005"> </p>
+<p data-renderer-start-pos="3007"><strong data-renderer-mark="true">Favoring Lip Motions sourced from Video Tracking.</strong></p>
+<p data-renderer-start-pos="3058">If you want to lean more on Video Tracking, simply lower the Viseme Boost Slider in the Audio Tracking settings or turn off Audio tracking. If you use iPhone-based tracking, quite often you can do without Audio tracking altogether.</p>
+<p data-renderer-start-pos="3292"> </p>
+<p data-renderer-start-pos="3294"><strong data-renderer-mark="true">Favoring Lip Motions sourced from Audio Tracking.</strong></p>
+<p data-renderer-start-pos="3345">The extreme way to lean on Audio tracking is by turning off Video tracking. However, that is an extreme solution because of how much data Video tracking provides to the avatars, beyond the mouth. What you can do if you want to allow Audio tracking to take precedence, but still use the video-tracking for everything else, is to alter the Advanced Tracking Settings by increasing temporal filtering sliders (turning off some inputs or adjusting the mapping ranges) of mouth aspects that are involved in speech articulation, just so that the overall face expression can still go through, but the fast speech-related lip motions coming from the visual tracker are largely filtered out. This way, only the fast lip motion from the audio is visible. Note that in many cases, if relying on audio-sourced lip motion, you might also have to offset the outgoing microphone stream a bit in your broadcasting software, to time-sync it to the audio-sourced lip motion on the screen.</p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Embodiment - Calibration and Fine-Tuning        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../emotion-avatars/index.html">
+                    Emotional Connection Through Avatars                 </a>
+</li>
+<li>
+<a href="../multi-tracker/index.html">
+                    Multi-Tracker: Motion Capture At Home                </a>
+</li>
+<li>
+<a href="../face-tracker/index.html">
+                    Visual Face Tracker: Top Shelf Experience                </a>
+</li>
+<li>
+<a href="../simple-tracker/index.html">
+                    Visual Face Tracker: Simplified Experience                </a>
+</li>
+<li>
+<a href="index.html">
+                    Audio Lip Tracker                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

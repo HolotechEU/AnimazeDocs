@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>物理演算 &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">物理演算</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<h1 dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>Animazeは.VRMモデル用にカスタマイズされた物理演算システムを実装しており、UniVRMがUnityで行うことを厳密にエミュレートしています。つまり、すべてのUniVRM物理演算機能をサポートしています。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>コライダーグループ</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<div align="left" dir="ltr">
+<table><colgroup><col width="71"/><col width="82"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>プロパティ</span></p>
+</td>
+<td>
+<p dir="ltr"><span>サポートの有無</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>ノード</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>オフセット</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>半径</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>スプリングボーングループ</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<div align="left" dir="ltr">
+<table><colgroup><col width="138"/><col width="82"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>プロパティ</span></p>
+</td>
+<td>
+<p dir="ltr"><span>サポートの有無</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>スプリングボーンのルート</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>コライダーグループ</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>センター</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>抵抗力</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>重力の方向</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>重力の強度</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>ヒット半径</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>剛性</span></p>
+</td>
+<td>
+<p dir="ltr"><span>あり</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animazeの.VRMモデル技術説明書        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../vrmgeneraljp/index.html">
+                    .VRM全般の手順                </a>
+</li>
+<li>
+<a href="../vrmgeometryjp/index.html">
+                    形状/マテリアル/テクスチャー                </a>
+</li>
+<li>
+<a href="../jpnvrmanimations/index.html">
+                    アニメーションとリターゲティング                </a>
+</li>
+<li>
+<a href="index.html">
+                    物理演算                </a>
+</li>
+<li>
+<a href="../vrmperfectsyncjp/index.html">
+                    パーフェクトシンク機能を.VRM形式のアバターに追加するためのガイド                </a>
+</li>
+<li>
+<a href="../vrmimportjp/index.html">
+                    VRMモデルをAnimazeにインポートする方法                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

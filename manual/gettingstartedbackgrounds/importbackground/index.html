@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import a background (skybox) &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Import a background (skybox)</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span>Animaze can import HDRI cubemaps (.hdr files) that are translated to Animaze-friendly cubes. We prepared a background that pictures a desert scene. </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>To ease asset management and make it clear what each asset's role is (i.e. avatar, prop or background), we are using a simple naming convention system that prefixes the asset type to the name of the assets. Here are the three examples:</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>* </span><span>avatarName</span><span> - for avatars </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>* </span><span>propName</span><span> - for props</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>* </span><span>backgroundName</span><span> - for backgrounds</span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<h3 dir="ltr"><span>To import a skybox, follow the steps below:</span></h3>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Download the Animaze Editor Sample Assets from </span><span>this </span><a href="https://animaze.tv/AnimazeEditorSampleAssets"><span>link</span></a><span> and extract the files. Inside, you'll find a sample HDRI file BackgroundDesertTest/BackgroundDesertTest.hdr - this is our desert scene skybox.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Open the Animaze Editor, </span><span>navigate to </span><span><strong>Assets </strong></span><span>and select</span><span> </span><strong>Import skybox </strong></p>
+</li>
+</ol>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span><span><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="426" src="../../../assets/images/1-3f62da6c.png" title="Animaze by Facerig | 3D Avatars " width="800"/></span></span></p>
+<ol start="3">
+<li dir="ltr">
+<p dir="ltr"><span>In the</span><strong> Import skybox </strong><span><strong>window</strong>, click on </span><span>Browse </span><span>and open the </span><strong>BackgroundDesertTest.hdr </strong><span>file you downloaded in the first step. </span></p>
+</li>
+</ol>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="427" src="../../../assets/images/2-0d953ea0.png" title="Animaze by Facerig | 3D Avatars " width="800"/></p>
+<ol start="4">
+<li dir="ltr">
+<p dir="ltr"><span>Mark the </span><strong>Autogenerate blurred image</strong><span> box to generate the blurry reflection map with the </span><strong>Blur Strength</strong><span> level set in the option immediately below. </span></p>
+</li>
+</ol>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>The skybox (or background) import process generates three textures, one is the background that's rendered behind the avatar, the other two are reflection maps (blurry and sharp). </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>To detail, the three textures are: </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>* skybox/background texture is what gets rendered on screen directly </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>* blurry reflection map is what gets mapped as reflection on matte surfaces/meshes on avatars and props </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>* sharp reflection map is what gets mapped as reflection on glossy surfaces/meshes on avatars and props</span></p>
+<p dir="ltr"><span>This way the avatar will stand out in the scene, while the watcher’s eyes are not being distracted by the background elements. Click </span><strong>Import.</strong></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="427" src="../../../assets/images/3-b88d65ab.png" title="Animaze by Facerig | 3D Avatars " width="800"/></p>
+<p dir="ltr"><span style="font-size: 12px;">The background is now imported and visible in the viewport. In order for it to be recognized by the system in the app, it will need an icon image, so let’s create it. </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ol start="5">
+<li dir="ltr">
+<p dir="ltr"><span>Click on the </span><strong>customization01_scene</strong><span> in the </span><strong>Hierarchy Panel</strong><span>,</span><span> </span><span>the details of the scene are now displayed in the </span><strong>Editor Panel</strong><span> to the right.</span><span> </span><span>Right click on the current icon and then select </span><span><strong>Generate thumbnail</strong>.</span></p>
+</li>
+</ol>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="425" src="../../../assets/images/4-ad9755b1.png" title="Animaze by Facerig | 3D Avatars " width="800"/></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ol start="6">
+<li dir="ltr">
+<p dir="ltr"><span>The new icon is ready and applied in real-time. Save the new scene by choosing </span><span><strong>Save item</strong> as</span><span> in the </span><strong>Hierarchy Panel</strong><span> and write a new name for it. We chose to save it as </span><strong>BakgroundDesertTest_scene</strong><span>, </span><span>then click</span><span><strong> OK</strong>. </span><span>It will create a different folder in </span><span>Resources </span><span>directory and save it outside the original version, as a new scene. </span></p>
+</li>
+</ol>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span><span><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="425" src="../../../assets/images/5-67204e3a.png" title="Animaze by Facerig | 3D Avatars " width="800"/></span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="425" src="../../../assets/images/5a-af3f2dc2.png" title="Animaze by Facerig | 3D Avatars " width="800"/></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<ol start="7">
+<li dir="ltr">
+<p dir="ltr"><span>The new scene is loaded </span></p>
+</li>
+</ol>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span><span><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="426" src="../../../assets/images/6-b848f36e.png" title="Animaze by Facerig | 3D Avatars " width="800"/></span></span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>This is how the structure folder will look like: </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><img alt="Learn how to use Animaze by Facerig | 3D Avatars " height="133" src="../../../assets/images/7-3c5aa2d9.png" title="Animaze by Facerig | 3D Avatars " width="500"/></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"> </p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<p dir="ltr"><span>Congrats! You’ve successfully imported the background :) </span></p>
+<h3 dir="ltr"><span><span></span></span></h3>
+<div><span><br/></span></div>
+<p><span><span></span></span></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Creating Backgrounds &amp; Scenes for Animaze        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../backgroundwoverlays/index.html">
+                    Getting started with backgrounds with overlays (2D)                </a>
+</li>
+<li>
+<a href="../2doverlay/index.html">
+                    Create a simple, static 2D background with an overlay                </a>
+</li>
+<li>
+<a href="../loopingbackground/index.html">
+                    Create a looping animation Background                </a>
+</li>
+<li>
+<a href="../trackingdatabackground/index.html">
+                    Create a backdrop with animated elements that are linked to Tracking Data                </a>
+</li>
+<li>
+<a href="../backgroundtrigger/index.html">
+                    Create a backdrop with animated elements triggered by key-binds                </a>
+</li>
+<li>
+<a href="index.html">
+                    Import a background (skybox)                </a>
+</li>
+<li>
+<a href="../sendbackgroundf/index.html">
+                    Send your background .avatar file to Animaze Avatar iOS app (on Mac, via Finder)                </a>
+</li>
+<li>
+<a href="../sendbackgroundw/index.html">
+                    Send your background .avatar file to the Animaze iOS app (on Windows, via iTunes)                </a>
+</li>
+<li>
+<a href="../sendbackground/index.html">
+                    Send a background .avatar file to Animaze Avatar iOS app (on Windows, via Animaze Editor)                </a>
+</li>
+<li>
+<a href="../troubleshootandsupportbackgroundsoverlayeditor/index.html">
+                    Troubleshoot &amp; Support                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

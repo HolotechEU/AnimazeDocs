@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animation &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animation</h1>
+<div class="aw-page-container">
+<p></p><p></p>
+<p>All animations  for <strong>3D objects</strong>  must be provided in<strong> *.FBX</strong><span style="text-decoration: underline;"></span> format. The default scale factor should be set to identity, however it’s expressed in your 3D software (1,1,1 or 100,100,100). Scale factor can be animated.</p>
+<p><span><strong>Animations </strong>are placed in the same folder where the avatar's model is, in a separate dedicated folder. Standard animations – first percent will start from <strong data-renderer-mark="true">idle1 </strong>position, <a href="../../animationappendix/skeletalanimations/index.html" title="https://www.animaze.us/manual/animationappendix/skeletalanimations">unless stated otherwise</a>.</span></p>
+<p><span><b>All base animations must be exported with animation keys on ALL bones. The base animations that we use are:</b></span></p>
+<ul>
+<li><span><b>idle1</b>- is the base animation in which the avatar has micro movements and breathes, the arms are near the body</span></li>
+<li><b>idlePose</b> - this is the first frame key from <b>idle1</b> animation. <span>The majority of other</span> animations are built starting from this pose.</li>
+<li><b>MouthOpen</b> - starts from idle pose animation. The last frame of this animation is the base for all other mouth open animations.</li>
+<li><span><b>MouthOpen_TongueOut</b></span></li>
+<li><span><b>MouthClosed_TongueOut</b></span></li>
+<li><span><b>TPose - </b><span class="inline-highlight last-mark-highlight active-highlight" data-id="e9dc9c0c-ff1a-42dd-a421-52207d8c53de" data-mark-annotation-type="inlineComment" data-mark-type="annotation" data-renderer-mark="true" id="e9dc9c0c-ff1a-42dd-a421-52207d8c53de"><span data-id="3f36003d-02ca-4b67-907b-04e7e22055b7" data-mark-annotation-type="inlineComment" data-mark-type="annotation" data-renderer-mark="true" id="3f36003d-02ca-4b67-907b-04e7e22055b7">animation used in full-body tracking (if you want to use those sets of animations it is necessary to have a symmetrical position in the idle animation)</span></span></span></li>
+</ul>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span>There are 2 animation methods that we use:</span></h3>
+<h3><span><span></span></span></h3>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Pure </span><span>joint</span><span>-</span><span>based </span><span>animations – all animations use the skeleton bones</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>A combination of </span><span>joint-based </span><span>animations with </span><span>blendshapes </span><span>animation</span></p>
+</li>
+</ol>
+<h2><span style="font-size: 1.5em;"></span></h2>
+<hr/>
+<h2><span style="font-size: 1.5em;">Skeletal animation (joint-based)</span></h2>
+<h2><span><span></span></span></h2>
+<p dir="ltr"><span>Animaze </span><span>uses what we call animation atomics retargeting method, which implies that all required animations need to modify or animate a specific (typically small) part of the avatar. All the tracked movement (from a facial tracker) is split into very simple motions, which are called atomics. Each atomic is driven separately and combined (in many cases additively) to build a complex expression.</span></p>
+<p>As an example, think of a happy smile expression, the tracking and interpretation modules of Animaze tech detect the following atomics: mouth corners smile, eyelids squint and interior eyebrows go up. These atomics are mapped with their animations (left and right) so that the avatar will display a happy smiling face, like in the example below.</p>
+<p><span><span><span></span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span></span></span></p>
+<p><span><span><img alt="Learn how to use Animaze by Facerig" height="261" src="../../../assets/images/1-b601310c.jpg" style="display: block; margin-left: auto; margin-right: auto;" title=" Animaze by Facerig" width="500"/></span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span>For instance, if you are making the frown animation for the left eyebrow, named </span><span>LeftBrowDown</span><span>, then the only bones moving in that animation should be the middle and inner bones of the left </span>eyebrow, all the rest should have the same exact transformation of their base animation, which is idle1.</p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Any offset in the additive animations brings a pose offset in Animaze. For example, if an eyebrow animation brings an offset to neck, every time the avatar will move that eyebrow, it will also transform the neck.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The program will identify the bones destined to move in the animation and will ignore the non- moving ones, making debugging simpler and avoiding transformations made by lack of precision.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Basically, all additive animations have as starting point the idle pose (the first or the last frame of the idle1 animation).</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>There are some exceptions form this rules like the additive animations of the other base animations (mouth open tongue out, mouth closed tongue out, TPose):</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li><strong>MouthOpen_TongueOut</strong> animation and the aditive animations that are builted over (MouthOpenTongueOut_Up/Down and Left/Right). These are based on <strong>MouthOpen_TongueOut</strong> (last frame of the animation), which is also added on idle1 animation. These animations are: <strong>MouthOpen_TongueOut_LR</strong> and <strong>MouthOpen_TongueOut_UD</strong>.</li>
+<li>Animation for tongue while only the tip of the tongue is out: <strong>MouthClosed_TongueOut</strong> which is also added on idle1 animation. These animations are: <strong>MouthClosedTongueOut_LR</strong>, <strong>MouthClosed_TongueOut_UD</strong>.</li>
+</ul>
+<p dir="ltr"><span>Animaze </span><span>supports some procedural animations that need reference bones in the skeleton. One of these animations is the </span><strong>look-at-camera</strong><span> function, that makes the avatar gaze into the camera.</span>This feature relies on the transforms of the <strong>BipHead, BipLEye, and BipREye (with the axis convention in place: z forward, y in the right side, x vertical) </strong>bones.</p>
+<p><span><span>BipRoot helps to position the avatar in scene using the same axis conventions as BipHead. For more detail you can check the picture bellow with the visual axis representation over the avatar Fluffo`s eyes.</span></span></p>
+<p dir="ltr"><span>Procedural  animation </span><span>techniques and actions are also used to substitute for lack or poor tracking  of certain features and user movements:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Crossed eyes correction</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Lazy eye correction</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Look at camera behavior</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Orientate head to camera behavior</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Auto blinking behavior</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Avatar idle animation (we animate certain parts of certain avatars regardless of tracking input to make them feel more alive, like how Fluffo’s ears occasionally twitch)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Natural pupil behavior (small micro movements undetectable by current tracking technologies)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Triggerable special animations (puffed cheeks, tongue &amp; other custom animations e.g. fist bumps, hand-waves, dances can be created and tied to key-presses)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Triggerable special poses (e.g helmet visor open/closed) - animations that are toggleable and not influenced by the tracking interpretation mapping</span></p>
+</li>
+</ul>
+<div>
+<p dir="ltr"><span><span><img height="53" src="../../../assets/images/2-c1d2ebda.png" style="display: block; margin-left: auto; margin-right: auto;" width="514"/></span></span></p>
+<span><span></span></span>
+<p dir="ltr"><span></span></p>
+<h2 dir="ltr"><span><span></span></span></h2>
+<hr/>
+<h2 dir="ltr"><span><span>Joint-based animations combined with blendshape animations</span></span></h2>
+<p dir="ltr"><span>Blendshapes are being imported bringing their positions, their normals and their tangent space. <br/></span></p>
+<span><span></span></span><span><span></span></span>
+<p dir="ltr"><span>All additive blend shapes have as base NaturalPose blendshape which is the equivalent of the idle1 animation. Regarding the open/closed mouth blend shapes will be built as follows:</span></p>
+<span><span></span></span><ol>
+<li>these blendshapes are being built over <strong>NaturalPose &amp; MouthOpen</strong> combined: <strong>MouthOpenLeft_U</strong>, <strong>MouthOpenRight_U, MouthOpenLeft_D, MouthOpenRight_D, MouthOpen_pursedLips_L, MouthOpen_pursedLips_Mid, MouthOpen_pursedLips_R, MouthOpenLeft_teethCovered_U, MouthOpenRight_teethCovered_U.</strong></li>
+<li>these are being built over <strong>NaturalPose &amp; MouthOpen_TongueOut</strong> combined: <strong>MouthOpen_TongueOut_L, MouthOpen_TongueOut_R, MouthOpen_TongueOut_U, MouthOpen_TongueOut_D.</strong></li>
+<li>these are being built over <strong>NaturalPose &amp; MouthClosed_TongueOut</strong> combined: <strong>MouthClosed_TongueOut_L, MouthClosed_TongueOut_R, MouthClosed_TongueOut_U, MouthClosed_TongueOut_D.</strong></li>
+</ol><span><span><br/></span></span>
+<p dir="ltr"><span>Unlike the full skeletal avatar (which has more facial bones), this hybrid type avatar needs a base rig which will contain only a smaller subset of the facial bones like </span><strong>BipHead, BipLEye, BipREye </strong><span>and </span><strong>BipTongue</strong><span><strong>, </strong>the rest of the face being animated by the blendshapes. Expressions like eyes squint, open mouth, raised eyebrows etc, will be triggered through blendshapes.</span></p>
+<p dir="ltr"><span><span><img height="55" src="../../../assets/images/3-f436f513.png" style="display: block; margin-left: auto; margin-right: auto;" width="514"/></span></span></p>
+<span><span></span></span>
+<div><span><span><br/></span></span></div>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      .avatar format Technical Reference        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../avatarformat/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../complexitytiers/index.html">
+                    Avatar complexity tiers                </a>
+</li>
+<li>
+<a href="../geometryandrules/index.html">
+                    Geometry and Rules                </a>
+</li>
+<li>
+<a href="../texturesandmaterials/index.html">
+                    Textures and Materials                </a>
+</li>
+<li>
+<a href="../uvmapping/index.html">
+                    UV Mapping                </a>
+</li>
+<li>
+<a href="../particlesystem/index.html">
+                    Particle System                </a>
+</li>
+<li>
+<a href="../soundeffects/index.html">
+                    Sound Effects                </a>
+</li>
+<li>
+<a href="../camera/index.html">
+                    Camera                </a>
+</li>
+<li>
+<a href="../live2davatars/index.html">
+                    Live2D Avatars                </a>
+</li>
+<li>
+<a href="index.html">
+                    Animation                </a>
+</li>
+<li>
+<a href="../animationposes/index.html">
+                    Visemes Animations &amp; Expression Poses                </a>
+</li>
+<li>
+<a href="../specialaction/index.html">
+                    Special Actions                </a>
+</li>
+<li>
+<a href="../deformation/index.html">
+                    Deformation                </a>
+</li>
+<li>
+<a href="../modifyproportions/index.html">
+                    Modify Proportions                </a>
+</li>
+<li>
+<a href="../skeleton/index.html">
+                    Skeleton                </a>
+</li>
+<li>
+<a href="../fullbodytracking/index.html">
+                    Full Body Motion Tracking                </a>
+</li>
+<li>
+<a href="../animazephysic/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../props/index.html">
+                    Props                </a>
+</li>
+<li>
+<a href="../backgrounds/index.html">
+                    Backgrounds                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

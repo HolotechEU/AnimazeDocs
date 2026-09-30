@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live 2D Model Creation Process for Complex Mouth Geometries &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Live 2D Model Creation Process for Complex Mouth Geometries</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"></p>
+<p><img alt="複雑な口角形状の Live2Dモデル作成方法" height="369" src="../../../assets/images/Screenshot_2021-11-12_at_16.12.27-78cf5b58.png" title="複雑な口角形状の Live2Dモデル作成方法" width="807"/></p>
+<h1><span><span></span></span></h1>
+<h1 dir="ltr"><span>List of Parameters to Be Prepared   </span></h1>
+<div align="left" dir="ltr"><span><span></span></span>
+<div align="left" dir="ltr">
+<table><colgroup><col width="118"/><col width="147"/><col width="120"/><col width="120"/><col width="119"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth open/closed</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthOpenY</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth transformation</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthForm</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Upper lip</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamLipUpper</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Lower lip</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamLipUnder</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Tongue up/down</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamTongue</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth width</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthSize</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth left/right</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthX</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Cheek puffiness</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamPuffCheeks</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div align="left" dir="ltr"><span><span></span></span>
+<h2 dir="ltr"><span>Mouth Open/Closed (1)</span></h2>
+<span><span></span></span>
+<div align="left" dir="ltr">
+<table><colgroup><col width="118"/><col width="147"/><col width="120"/><col width="119"/><col width="120"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth open/closed</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthOpenY</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span><span><br/></span></span>
+<p dir="ltr"><span>1. In the same manner as the standard opening and closing of the mouth, add art mesh keys for the upper and lower lips, mouth interior, tongue, and teeth. Set the mouth to open at [+1.0] and close at [0.0].</span></p>
+<p dir="ltr"><span>2. When the mouth is opened wide, the chin should move simultaneously for a more natural look. Create a warp deformer under the facial curvature parameter for raising/lowering the chin and add art mesh keys.</span></p>
+<span><span></span></span>
+<div></div>
+</div>
+<div align="left" dir="ltr">
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<h1 dir="ltr"><span>Mouth Open/Closed (2)</span></h1>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>3. To make the chin go down slightly at [+1.0], adjust the geometry to match the mouth movement.</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>4. Adjust the art mesh geometry, etc., to ensure the outlines of the lips do not get clipped and the interior mouth parts do not extrude, etc., when the mouth is opening or closing.</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>5. Combining three or more parameters makes adjustment difficult. Avoid doing so as much as possible. For simple movements, such as the vertical movements of the upper teeth, a deformer can be used instead.</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<div><span><br/></span></div>
+<p><img alt="パラメータ３つ以上の掛け合わせは調整が大変になるのでなるべく 避けましょう。「上歯」の上下動のようなシンプルな動きはデフォーマ も使っても" height="297" src="../../../assets/images/Screenshot_2021-11-12_at_16.18.56-b23e6912.png" title="パラメータ３つ以上の掛け合わせは調整が大変になるのでなるべく 避けましょう。「上歯」の上下動のようなシンプルな動きはデフォーマ も使っても" width="324"/></p>
+<p><span><span></span></span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<h1 dir="ltr"><span>Mouth Transformation</span></h1>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<div align="left" dir="ltr">
+<table><colgroup><col width="119"/><col width="144"/><col width="121"/><col width="120"/><col width="120"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth transformation</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthForm</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p dir="ltr"><span>1. In the same manner as the standard transformation of the mouth geometry, add art mesh keys for the upper and lower lips, and mouth interior. With the mouth open/closed parameter (ParamMouthOpenY) set at [0.0] (mouth closed), set the mouth shape to be smiling when the mouth transformation parameter (ParamMouthForm) is at [+1.0], and frowning angrily when it is at [-1.0].</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>2. Next, with the mouth open/closed parameter (ParamMouthOpenY) set at [1.0] (mouth open fully), set the mouth shapes to match the mouth transformation parameter (ParamMouthForm) for [+1.0] and [-1.0].</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>3. When the various mouth geometries have been adjusted, combine the opening/closing of the mouth and mouth transformation geometry functions, randomly adjust the parameters to confirm the motions and positioning are accurate, and adjust shapes as necessar</span></p>
+<div align="left" dir="ltr"><img alt="それぞれの形状の調整ができたら、「口の開閉」と「口の変形」を合 体させ、パラメータをランダムに動かして遷移を確認し、形状を整え ます。" height="489" src="../../../assets/images/Screenshot_2021-11-12_at_16.21.10-e2dde40a.png" title="それぞれの形状の調整ができたら、「口の開閉」と「口の変形」を合 体させ、パラメータをランダムに動かして遷移を確認し、形状を整え ます。" width="356"/></div>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<h1 dir="ltr"><span>Upper/Lower Lip (1)</span></h1>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<div align="left" dir="ltr">
+<table><colgroup><col width="120"/><col width="140"/><col width="122"/><col width="121"/><col width="121"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Upper lip</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamLipUpper</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Lower lip</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamLipUnder</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>The lip parameters are used for adjusting how the teeth are seen.</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>1. Because the art meshing of the lips is already controlled using the mouth open/closed parameter (ParamMouthOpenY) and the mouth transformation parameter (ParamMouthForm), make a separate warp deformer for the upper and lower lips respectively, and add their keys to the upper lip and lower lip parameters (ParamLipUpper and ParamLipUnder).</span></p>
+</div>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<h1 dir="ltr"><span>Upper/Lower Lip (2)</span></h1>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>2. Create motions for the two lip parameters. At [+1.0], the lips should open toward the outside, and, at [-1.0], they should close toward the inside.</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>3. While adjusting the mouth open/closed parameter (ParamMouthOpenY) and the mouth transformation parameter (ParamMouthForm), see how the lips geometry changes. If the geometry of the lips is excessively transformed due to parameter combinations, add art mesh keys for the lips and adjust as necessary.</span></p>
+<p><img alt="上/下唇②" height="509" src="../../../assets/images/Screenshot_2021-11-12_at_16.24.47-3d0b336e.png" title="上/下唇②" width="324"/></p>
+<h1><span><span></span></span></h1>
+<h1 dir="ltr"><span>Tongue Up/Down</span></h1>
+<h1><span><span></span></span></h1>
+<div align="left" dir="ltr">
+<table><colgroup><col width="120"/><col width="139"/><col width="121"/><col width="122"/><col width="122"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Tongue up/down</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamTongue</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1><span><span></span></span></h1>
+<p dir="ltr"><span>1. Add art mesh keys for the tongue. With the mouth open/closed parameter (ParamMouthOpenY) set at [+1.0] and the tongue up/down parameter (ParamTongue) also at [+1.0], make the tongue stretch upward.</span></p>
+<h1><span><span></span></span></h1>
+<p dir="ltr"><span>2. Next, with the tongue up/down parameter (ParamTongue) set at [+1.0] and the mouth open/closed parameter (ParamMouthOpenY) at [0.0], adjust the geometry of the tongue. While the tongue won’t be visible, this operation is necessary to make its transitional movement look natural.</span></p>
+<div align="left" dir="ltr">
+<h1 align="left" dir="ltr"><img alt="舌の上下" height="523" src="../../../assets/images/Screenshot_2021-11-12_at_16.27.02-a16739e6.png" title="舌の上下" width="341"/></h1>
+<p><span><span></span></span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<h1 dir="ltr"><span>Mouth Width</span></h1>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<div align="left" dir="ltr">
+<table><colgroup><col width="119"/><col width="143"/><col width="121"/><col width="121"/><col width="120"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth width</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthSize</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p dir="ltr"><span>1. For the parameters of all mouth parts excluding the teeth, make width-adjustment warp deformers for puckering the mouth and add their keys.</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>2. Create horizontal transformations so that the mouth is widened overall toward the outside with the mouth width parameter (ParamMouthSize) set at [+1.0], and puckered overall to the inside at [-1.0].</span></p>
+<h1><span><span></span></span></h1>
+<h1 dir="ltr"><span>Mouth Left/Right (1)</span></h1>
+<h1><span><span></span></span></h1>
+<div align="left" dir="ltr">
+<table><colgroup><col width="120"/><col width="139"/><col width="122"/><col width="122"/><col width="121"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Mouth left/right</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamMouthX</span></p>
+</td>
+<td>
+<p dir="ltr"><span>-1.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1><span><span></span></span></h1>
+<p dir="ltr"><span>This parameter is for adjusting the horizontal positioning of the mouth so that a corner of the mouth is upturned in a sneer. This adjustment allows for more cartoonish facial expressions.</span></p>
+<h1><span><span></span></span></h1>
+<p dir="ltr"><span>1. For the parameters that control mouth puckering, create mouth left/right position warp deformers and add their keys. Also, because some movement of the cheeks is needed, add cheek puffiness warp deformers to the chin up/down parameters and add their keys.</span></p>
+<div align="left" dir="ltr"><span><span></span></span>
+<p dir="ltr"><span>Mouth Left/Right (2)</span></p>
+<span><span></span></span>
+<p dir="ltr"><span>2. Make the mouth geometry so that it moves to the left at [+1.0] and to the right at [-1.0] and with the appropriate corner of the mouth slightly upturned. Adjust the cheek geometry so that the appropriate cheek rises slightly together with the mouth’s horizontal movement.</span></p>
+</div>
+<div align="left" dir="ltr"> <img alt="口の左右②" height="590" src="../../../assets/images/Screenshot_2021-11-12_at_16.37.17-23866da9.png" title="口の左右②" width="391"/></div>
+<div align="left" dir="ltr"><span><span></span></span>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<h1 dir="ltr"><span>Cheek Puffiness</span></h1>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<div align="left" dir="ltr">
+<table><colgroup><col width="119"/><col width="144"/><col width="120"/><col width="121"/><col width="120"/></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>Parameter Name</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Parameter ID</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minimum Value</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Default</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Maximum Value</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Cheek puffiness</span></p>
+</td>
+<td>
+<p dir="ltr"><span>ParamPuffCheeks</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>0.0</span></p>
+</td>
+<td>
+<p dir="ltr"><span>1.0</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>This parameter is used to make the cheeks puff in order to create an angry expression, etc.</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>1. Add keys for the cheek puffiness adjustment deformer to the cheek puffiness parameter (ParamPuffCheeks).</span></p>
+<h1 align="left" dir="ltr"><span><span></span></span></h1>
+<p dir="ltr"><span>2. Make the cheek geometry so that the cheeks puff when the parameter is set at [+1.0].</span></p>
+<div><span id="docs-internal-guid-5c3f727b-7fff-7502-312b-f48be179123b"><span>3. As the final step, the parameter combinations need to be adjusted. Using auto-generation of the 4-corner geometry, etc., adjust the geometry of features with the mouth left/right parameter (ParamMouthX) set at [+1.0] and [-1.0] when the cheek puffiness parameter (ParamPuffCheeks) is set at [+1.0].</span></span></div>
+<h1 align="left" dir="ltr"><img alt="頬のふくらみ" height="542" src="../../../assets/images/Screenshot_2021-11-12_at_16.41.04-cb15d250.png" style="font-size: 12px;" title="頬のふくらみ" width="397"/></h1>
+<p dir="ltr"><span></span></p>
+</div>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+</div>
+<div align="left" dir="ltr">
+<p dir="ltr"><span></span></p>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing Live2D Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../stepsincreatingyourown2davatar/index.html">
+                    Steps in creating your own 2D avatar                </a>
+</li>
+<li>
+<a href="../animazeintro/index.html">
+                    What is Animaze and what is the “.avatar” format?                </a>
+</li>
+<li>
+<a href="../paramlist/index.html">
+                    Live2D Model Requirements &amp; Animation Standards                </a>
+</li>
+<li>
+<a href="../motionoutput/index.html">
+                    Motion Output Parameter List                 </a>
+</li>
+<li>
+<a href="index.html">
+                    Live 2D Model Creation Process for Complex Mouth Geometries                </a>
+</li>
+<li>
+<a href="../gettingstarted/index.html">
+                    Getting started - Import Live2D model in Animaze Editor                </a>
+</li>
+<li>
+<a href="../changeavatardetails/index.html">
+                    Change the avatar details (icon, description &amp; name)                </a>
+</li>
+<li>
+<a href="../changerendering/index.html">
+                    Change the rendering options                </a>
+</li>
+<li>
+<a href="../remapanimations/index.html">
+                    Remap avatar animation inputs                </a>
+</li>
+<li>
+<a href="../live2dretargetingoverrides/index.html">
+                    Live2D Retargeting Overrides                 </a>
+</li>
+<li>
+<a href="../specialactions/index.html">
+                    Configure avatar Special Actions &amp; Special Poses                </a>
+</li>
+<li>
+<a href="../frameavatar/index.html">
+                    Frame the avatar                </a>
+</li>
+<li>
+<a href="../modifytexture/index.html">
+                    Quickly modify a texture on your avatar                </a>
+</li>
+<li>
+<a href="../expressiondebugging/index.html">
+                    Expressions debugging - Avatar Puppeteering                </a>
+</li>
+<li>
+<a href="../createavatarbundle/index.html">
+                    Create an *.avatar bundle                 </a>
+</li>
+<li>
+<a href="../importbundle/index.html">
+                    Import an *.avatar bundle in Animaze PC app                </a>
+</li>
+<li>
+<a href="../importlive2d/index.html">
+                    Import Your Live2D Models in Animaze PC                </a>
+</li>
+<li>
+<a href="../sendavatar/index.html">
+                    Send your avatar to Animaze Avatar iOS app                </a>
+</li>
+<li>
+<a href="../leaplive2d/index.html">
+                    Leap Motion Hand Sensors with Live2D avatars                </a>
+</li>
+<li>
+<a href="../diveinto/index.html">
+                    Dive into Documentation                </a>
+</li>
+<li>
+<a href="../createyourown/index.html">
+                    Create your own 2D avatar                </a>
+</li>
+<li>
+<a href="../troubleshootandsupport2deditor/index.html">
+                    Troubleshoot &amp; Support                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

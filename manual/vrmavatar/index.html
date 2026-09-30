@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>.VRM General Flow &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../faq/index.html">FAQ</a>
+        <a href="../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">.VRM General Flow</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span>Animaze now supports importing VRM models. To use a .VRM model in Animaze, you need to get a .VRM model file, import it through the Animaze Editor, bundle the newly imported avatar in a .avatar file in the Animaze Editor, and then import that .avatar file into the Animaze app (Windows or iOS).</span></p>
+<p dir="ltr"><span>The VRM import process is designed to be as simple and streamlined as possible, while providing all the configuration and customization tools the Animaze Editor is already offering to .FBX sourced models.</span></p>
+<p><b><br/></b></p>
+<p dir="ltr"><strong>The main differences between .VRM and .FBX sourced models are:</strong></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>VRM sourced models have custom tailored materials that try to replicate the shading on Unity based applications (MToon).</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>VRM sourced models have custom tailored Animation Standards (VRoid and Perfect Sync) that are used by the Animaze Retargeting System. The default Animation Standard is VRoid and all its requirements are listed in the Animation &amp; Retargeting section.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>VRM sourced models have a custom tailored physics system that tries to emulate the one implemented by UniVRM.</span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span class="Apple-tab-span"> </span></span><span>It is strongly recommended to follow VRoid’s VRM model specification, as the import process has been developed and optimized around VRoid’s sample models sourced from VRoid’s sample avatars website or from the VRoid Studio Steam application.</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Link to technical VRM specification: </span><a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md"><span>https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md</span></a></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Link to VRoid Studio on Steam: </span><a href="https://store.steampowered.com/app/1486350/VRoid_Studio_v0121/"><span>https://store.steampowered.com/app/1486350/VRoid_Studio_v0121/</span></a></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Link to VRoid sample models: </span><a href="https://vroid.pixiv.help/hc/en-us/sections/360002889853--Sample-Models"><span>https://vroid.pixiv.help/hc/en-us/sections/360002889853--Sample-Models</span></a></p>
+</li>
+</ul>
+<p><span><span><br/></span></span></p>
+<p dir="ltr"><span><span class="Apple-tab-span"> </span></span><span>Note that Animaze implements a subset of the features the VRM models support. Check out each section for a detailed view.</span></p>
+<p dir="ltr"><span><iframe allowfullscreen="" frameborder="0" height="600" src="https://www.youtube.com/embed/_0btUrd310A" title="YouTube video player" width="600"></iframe></span></p>
+<p><b>TIP</b>: If you need to modify your existing *.vrm/*.glb format avatar (add headphones or other accessories) in Blender or other softwares out there, make sure you export it in the same format you initially imported it. Take into consideration the conventions agreed for the specific format.</p>
+<p dir="ltr"><span></span></p>
+<p><span><span></span></span></p>
+<div><span><br/></span></div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Importing VRM Format Models        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="vrmgeneral/index.html">
+                    .VRM General Flow                </a>
+</li>
+<li>
+<a href="vrmgeometry/index.html">
+                    Geometry &amp; Materials &amp; Textures                </a>
+</li>
+<li>
+<a href="vrmanimations/index.html">
+                    Animations &amp; Retargeting                </a>
+</li>
+<li>
+<a href="vrmphysics/index.html">
+                    Physics                </a>
+</li>
+<li>
+<a href="vrmperfectsync/index.html">
+                    PerfectSync capabilities to .VRM sourced avatars                </a>
+</li>
+<li>
+<a href="vrmimport/index.html">
+                    Import Your .VRM Model Into Animaze                </a>
+</li>
+<li>
+<a href="troubleshootandsupportvrmeditor/index.html">
+                    Troubleshoot &amp; Support                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

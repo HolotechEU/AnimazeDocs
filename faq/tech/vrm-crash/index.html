@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Desktop: What can I do if my VRM model crashes Animaze when imported or doesn&#x27;t load? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>Animaze Desktop: What can I do if my VRM model crashes Animaze when imported or doesn't load?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p data-pm-slice="1 3 []">Two common sources of Animaze crashing when importing VRM models are:</p>
+<ol class="ak-ol">
+<li>
+<p><a href="#scenario1">Scenario 1</a>: you have already imported several versions of the model or several distinct models, so there are some legacy files from previous imports that interfere with the current import process.</p>
+</li>
+<li>
+<p><a href="#scenario2">Scenario 2</a>: some VRM related values are corrupted (e.g. physics radii)</p>
+</li>
+<li>
+<p><a href="#scenario3">Scenario 3</a>: the model is corrupted (the binary part of the model has inconsistencies)</p>
+</li>
+</ol>
+<table border="1" cellpadding="5" style="border-color: #000000; border-width: 1px; background-color: #ffffcc; border-style: solid;">
+<tbody>
+<tr>
+<td><strong>We are continuously trying to solve such crashes, if it’s not fixed yet it’s either because we cannot replicate the issue or some other external factor. It would greatly help if you’d report (to support[at]animaze[dot]us) such crashes anyway, accompanied by as much info as you can provide (the .vrm model, model particularities - custom textures, anims, etc. - <a href="../gatherlogs/index.html">the Animaze logs</a>, etc.).</strong></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p></p>
+<h1><strong><a name="scenario1"></a>Workarounds for Scenario 1</strong></h1>
+<h3>Method 1 - non-destructive -</h3>
+<ol class="ak-ol">
+<li>
+<p>Make sure Animaze is closed.</p>
+</li>
+<li>
+<p>Navigate to <strong>Resources/ </strong>folder</p>
+<ol class="ak-ol">
+<li>
+<p>(Animaze Steam version) navigate to &lt;steamInstallDir&gt;\steamapps\common\Animaze\Data\Resources\ folder (quick way is to go into Steam Client, right click on Animaze &gt; Manage &gt; Browse Local Files, then navigate to Data\Resources\ folder).</p>
+</li>
+<li>
+<p>(Standalone version) navigate to &lt;AnimazeInstallDir&gt;\Data\Resources (quick way through the Launcher is clicking on vertical three dot button next to Animaze, Browse Local Files, then navigate to Data\Resources\ folder).</p>
+</li>
+</ol></li>
+<li>
+<p>Animaze will create a folder for imported model with the name of the *.vrm file. Find the avatarName/ folder and delete it</p>
+</li>
+<li>
+<p>Do step 1 &amp; 2 for the folder <strong>Assets/</strong>, delete your avatar folder from Assets/ as well.</p>
+</li>
+<li>
+<p>Start Animaze and import</p>
+</li>
+</ol>
+<h3>Method 2 - clean reinstall -</h3>
+<ol class="ak-ol">
+<li>
+<p>if Method 1 doesn’t work, another method is to reinstall Animaze with attention to deleting any user generated folders and files (such as avatars, logs, preferences, etc.).</p>
+</li>
+<li>
+<p>Uninstall Animaze</p>
+</li>
+<li>
+<p>Navigate to previous install folder and delete all remaining folder and files</p>
+</li>
+<li>
+<p>Reinstall Animaze</p>
+</li>
+<li>
+<p>Start Animaze and import</p>
+</li>
+</ol><hr/>
+<h1></h1>
+<h1><strong><a name="scenario2"></a>Workarounds for Scenario 2</strong></h1>
+<ol class="ak-ol">
+<li>
+<p>Backup the .vrm model file before pursuing this workaround, we are changing the file and it could lead to permanently corrupting it.</p>
+</li>
+<li>
+<p>Open the .vrm model with a text editor (e.g. Notepad). The configuration part is human readable in the json format ( { “key” : value } ).</p>
+</li>
+<li>
+<p>Search for keyword “Inf”, “Ind” or "NaN" and change those values to 0.0 or 0.1. Don’t use find and replace, judge case by case and only replace in the human-readable part of the file (the JSon part). E.g. if it is part of of a radius property, it’s best to use a small float value like 0.01 instead of 0.0.</p>
+</li>
+<li>
+<p>Save the .vrm model file and reimport in Animaze.</p>
+</li>
+</ol>
+<div><hr/></div>
+<h1></h1>
+<h1><strong><a name="scenario3"></a>Workarounds for Scenario 3</strong></h1>
+<p>There are no workarounds if the model (the binary part) is corrupted and the best course of action is to check the VRM exporter you’ve used, see if there are known limitations or issues, or outright try to export with a different VRM exporter. Usually, this is the case with Blender plugins, models exported through UniVRM in Unity or directly from VRoid Studio have no such issues.</p>
+<p>You can always check the validity of the VRM model, by renaming the file extension to .glb and uploading it to <a href="https://github.khronos.org/glTF-Validator/">glTF Validator</a>. The online tool can tell you if the VRM model is usable or not, look out for errors with severity 0.</p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

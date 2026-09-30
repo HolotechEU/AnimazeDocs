@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>パーフェクトシンク機能を.VRM形式のアバターに追加するためのガイド &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">パーフェクトシンク機能を.VRM形式のアバターに追加するためのガイド</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>Animazeにはアニメーションの標準が多数あり、さまざまな形式のモデル（fbx、vrm、glb）のアニメーションマッピングのトラッキングを適切にサポートしています。これらの標準は、一連の骨格のアニメーション、ブレンドシェイプ（モーフターゲット）、ブレンドシェイプのグループ（vrm固有）、および骨格の関節（プロシージャルなアニメーションに使用）によって定義されます。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>Animazeにインポートされた.VRM形式のモデルでは、デフォルトでVRoidアニメーションの標準が使用されますが、これは変更することができます。このガイドでは、.vrm形式モデルのアニメーションの標準を従来のVRoid標準からパーフェクトシンク標準に変更する方法について説明します。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>パーフェクトシンクアニメーションの標準には、ARKitの顔モジュールシェイプと直接互換性のある52の顔の表情のブレンドシェイプが必要です（完全なリストは</span><a href="https://developer.apple.com/documentation/arkit/arfaceanchor/blendshapelocation"><span>こちら</span></a><span>）。パーフェクトシンクの標準は、.vrmモデルに合わせてカスタマイズされているため、モデルは.vrmルールに従う必要があり、ブレンドシェイプはVRMの表情またはブレンドシェイプグループを経由してアクセスされます。.VRMモデルをAnimazeにインポートして使用する方法の詳細については、</span><span>「Animazeの.VRMモデル技術説明書」[add link]</span><span>を参照してください。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>アニメーションの標準をVRoidからパーフェクトシンクに変更するには、いくつかの簡単な手順で実行できます：</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>.vrmモデルをインポートします。</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Animazeのアイテムファイルが保存されているリソースフォルダーにアクセスします（通常、リソースフォルダーは&lt;steamInstallDir&gt;\steamapps\common\Animaze Editor\Data\Resources\にあります）。アイテムのフォルダーと設定ファイル「</span><span>アバター名\アバター名.item</span><span>」を見つけます。</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>「アバター名.item」ファイルをテキスト・エディターで開き、</span><span>"AnimationStandard" </span><span>を変更：</span><span>「VRoid_1_0」</span><span>の文字列を</span><span>「AnimationStandard」</span><span>に変更：</span><span>「PerfectSync_1_0」、</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>ファイルを保存し、左にあるエディターの階層パネルから、アバターを右クリックして「再読み込み」ボタンを選択することで、アバターを再読み込みします。</span><span>再読み込みする前にアイテムを保存しないでください。エディターの外部で.itemファイルに加えられた変更が上書きされてしまいます。</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>これで、アバターの操作パネルでアニメーションをテストできるようになります。</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>アバターはバンドルしてAnimazeデスクトップで使用することができます。</span></p>
+</li>
+</ol>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animazeの.VRMモデル技術説明書        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../vrmgeneraljp/index.html">
+                    .VRM全般の手順                </a>
+</li>
+<li>
+<a href="../vrmgeometryjp/index.html">
+                    形状/マテリアル/テクスチャー                </a>
+</li>
+<li>
+<a href="../jpnvrmanimations/index.html">
+                    アニメーションとリターゲティング                </a>
+</li>
+<li>
+<a href="../vrmphysicsjp/index.html">
+                    物理演算                </a>
+</li>
+<li>
+<a href="index.html">
+                    パーフェクトシンク機能を.VRM形式のアバターに追加するためのガイド                </a>
+</li>
+<li>
+<a href="../vrmimportjp/index.html">
+                    VRMモデルをAnimazeにインポートする方法                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

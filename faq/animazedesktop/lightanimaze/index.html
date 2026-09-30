@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Desktop: What can I do in Animaze to reduce the CPU/GPU load? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1>Animaze Desktop: What can I do in Animaze to reduce the CPU/GPU load?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr">A streaming setup in general is challenging for any system, CPU and GPU resources will be impacted and here is why:</p>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>you are running a game optimized to look best using as much of the system resource as possible.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>you are running Animaze which has the task of rendering a live character and face tracking in real time at pixar level quality expectation.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>your are streaming to a platform, which includes two heavy tasks encoding video and audio and data streaming.</span></p>
+</li>
+</ol>
+<p><span><span><br/></span></span></p>
+<p dir="ltr"><span>Here's what you can do in Animaze to reduce the load:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>webcam resolution and FPS are important. We recommend favoring higher frame rates over higher resolutions and clear (non-grainy/noise) images. Higher resolutions will not necessarily produce better results, but will eat up more CPU. For example, a resolution setting of 640x480 @30 will FPS work, but a 720p resolution @60 FPS likely will have better results.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Animaze render resolution is set to the window size so if you maximize it on a 1080p monitor, the resolution will go up to 1920 x 1080. There's two ways to lower the render resolution, first the trivial one is to resize the application window (best is to be left to default which is 1280 x 720), second is to go to Settings &gt; Video Graphics and change the Render Scale option. Using this latter option you can decrease the rendering resolution without scaling the window, the output is going to become blurry, but in a streaming setup with the face-cam in a corner occupying about 10-15% of the frame, it's a good compromise to have the render scale to 60% (with the default window size). This action should help with lowering the GPU resources needed for Animaze.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>other Video Graphics options impact GPU and CPU resources, you can:</span></p>
+</li>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>1. change Shadow Map Resolution, go to "Low" option.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>2. change Fur Quality, set the slider down to about 10-15%. Impact seen when rendering fur shaded avatars &amp; props.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>3. for Live2D avatars, change the "2D Avatar Render Scale", set the slider to 30%, note that this will make the Live2D avatar blurry. Impact seen when rendering Live2D and Mixed Avatars.</span></p>
+</li>
+</ul>
+<li dir="ltr">
+<p dir="ltr"><span>cap the framerate of the app so it impacts CPU performance less. From Settings &gt; Video Graphics turn Vsync off and set FPS to 30 or even low as 24 depending on how demanding are the other 2 streaming participants (the game and streaming software)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>while streaming keeps UI elements hidden (especially the galleries). UI elements will impact CPU and GPU performance, having a clean "canvas" will reduce the impact.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>for custom 3D Avatars &amp; Props, make sure you are following the guideline on complexity https://www.animaze.us/manual/technicalreference/complexitytiers (see Complexity by performance table). Stay in the Mobile/Laptop range for a lower impact on the streaming setup. Also, note that props add up to the vertices/textures budget.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>for Live2D Avatars, textures sizes and Live2D rendering resolution (which you can set from Animaze Editor) have a great impact. Even though these avatar types are 2D, the animation complexity under the hood (not to be confused with expressivity) and the number of moving parts, make them equivalent to 3D avatars, so don't expect a serious performance boost by just going 2D.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>If using the Animaze Virtual Camera as the face-cam bit in your setup impacts the performance too much, you can switch to using the Secondary Render Window and using the Window Capture in the streaming software.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>you can lower the face tracking performance impact by setting the camera to a lower resolution (as low as 640x480 or 640x360) at 30 fps. You can do this by going to Settings &gt; Video Graphics and setting the Webcam Resolution &amp; FPS.</span></p>
+</li>
+</ul>
+<p><span><span><br/></span></span></p>
+<p dir="ltr"><span>There are things that you can do outside Animaze to lower performance impact:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>use a lower setting in the game you are streaming (render scale, render resolution, texture quality, shadows quality, framerate cap).</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>use “borderless window” in your game instead of fullscreen for a more even distribution of GPU/CPU resources by the OS.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>use a second computer for streaming and Animaze.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>tinker with the bitrate and resolution options in your streaming software</span></p>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

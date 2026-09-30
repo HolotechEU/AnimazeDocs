@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retopology &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Retopology</h1>
+<div class="aw-page-container">
+<p></p><p></p>
+<p>When you finish the sculpting stage, you can start building the topology. Retopology is the process of rebuilding your model for use in a game or animation environment. The idea is to create another mesh that simplifies the original HD asset, at a smaller file size that’s easier to use in animations and to be rendered.</p>
+<p>Depending on the use-case you envision for your avatar (mainly used in a face-cam scenario, used mostly on mobiles or on desktops) it can have varying degrees of complexity. To make things easier, we are defining for you several complexity tiers for 3D avatars in the <a href="../../technicalreference/index.html">Technical Documentation</a>, where you can find complexity by features (animation types, shading, textures), by performance (animations type, number of active vertices, number of textures and their sizes depending on the types of devices like mobile, laptop, pc).</p>
+<p>In our example below, the shark avatar is full body and should have a maximum of 5000 active vertices. It has different areas of polygons density because the area of interest is its face, where most of the animations happen, therefore it needs more details.</p>
+<p>We use the quad draw tool in Maya for this step of the process, where you can quickly move around the object and build a new model following the surface of the reference, but you can work in a software of your preference as long as you can do the topology in it (BLENDER, TOPOGUN, etc). </p>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span>There are Rules that you need to follow when building a 3D object:</span></h3>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Use the Z-axis as the forward axis of the 3D model, it helps a lot with computations done by procedural animation systems in Animaze.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The polygonal surfaces must have the transformation reset to identity. That means their axis should be aligned to the world axis, the position should be 0,0,0 and the scale should be neutral (1,1,1 or 100,100,100 - depending on the software defaults).</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The scene must be expressed in the metric system</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Normal maps must not be flipped (in the Autodesk tangent space, or similar)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The polygons must not overlap each other.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Must avoid 5 sided polygons (n-gons)</span></p>
+</li>
+</ul>
+<p></p>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span>You should also consider the following:</span></h3>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>The topology should be created using polygons as large as possible in the beginning, focusing on obtaining the topology loops. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>For the wrists and face, try to create more loops, so that the topology will deform correctly when creating animations (pic 1 above). </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Having separate geometries for body and head is more efficient to work with, but it really depends on the type of model and the purpose of its design.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Working with the mirror option activated from the beginning helps a lot - but note that if you make one side only and then mirror it, you’ll have to check and repair the geometry because flaws usually appear in this stage (but check the UV maps). Also, extra vertices resulting from the mesh mirror procedure must be merged in the middle, to avoid geometry flaws.</span></p>
+</li>
+</ul>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>After you finish the polygonal surfaces, do not forget to reset the transformation to identity.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>The seams shouldn’t be visible on an avatar, so it’s best to have them on parts of the model where they cannot be easily seen. The effect is more visible on shaders with subsurface scattering, fur and translucency or SkindotMap components.</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"></p>
+<p><span><span><img alt="" src="../../../assets/images/SeamLinesEx-0655e8e7.png"/></span></span></p>
+<p dir="ltr"><span>Once the topology is done, you can optimize the model (reducing the number of polygons). Eg: in the area of the fins, it’s back and in less visible areas that do not impact the visual quality.</span></p>
+<p><span><span></span></span></p>
+<div><span><br/></span></div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      FBX Format Model - Asset Pipeline Guide        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../steps3d/index.html">
+                    Steps in creating your own 3D avatar                </a>
+</li>
+<li>
+<a href="../generatefur/index.html">
+                    How to generate fur and fur mask                </a>
+</li>
+<li>
+<a href="../furdirection/index.html">
+                    How to set Fur direction and length                 </a>
+</li>
+<li>
+<a href="../3dconcept/index.html">
+                    Concept and High-Poly                </a>
+</li>
+<li>
+<a href="index.html">
+                    Retopology                </a>
+</li>
+<li>
+<a href="../3duv/index.html">
+                    UV mapping                </a>
+</li>
+<li>
+<a href="../3drigging/index.html">
+                    Rigging                </a>
+</li>
+<li>
+<a href="../3dskinning/index.html">
+                    Skinning                </a>
+</li>
+<li>
+<a href="../3danimations/index.html">
+                    Animations                </a>
+</li>
+<li>
+<a href="../3dphysics/index.html">
+                    Physics system                </a>
+</li>
+<li>
+<a href="../3dtextures/index.html">
+                    Textures                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

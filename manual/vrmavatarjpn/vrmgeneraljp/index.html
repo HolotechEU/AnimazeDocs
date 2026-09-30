@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>.VRM全般の手順 &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">.VRM全般の手順</h1>
+<div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>AnimazeでVRMモデルのインポートがサポートされるようになりました。Animazeで.VRMモデルを使用するには、.VRMモデルファイルを準備し、Animazeエディター経由でインポートし、Animazeエディターの.avatarファイルにある新しくインポートしたアバターをバンドルし、その後Animazeアプリ（WindowsまたはiOS）に.avatarファイルをインポートする必要があります。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>VRMのインポート手順ができる限りシンプルで合理化されたものに設計されている一方で、.FBX形式のモデルで使用するすべての設定ツールやカスタマイズツールはAnimazeエディターで提供されています。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>.VRM形式と.FBX形式のモデルの主な違いは以下の通りです。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>VRM形式のモデルには、Unityベースのアプリケーション（MToon）でのシェーディングのレプリケーションを可能にするために、調整済みのカスタムマテリアルがあります。</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>VRM形式のモデルには、Animazeリターゲティングシステムで使用されるカスタム調整されたアニメーションの標準（VRoidとパーフェクトシンク）があります。デフォルトのアニメーションの標準はVRoidで、そのすべての要件はアニメーション＆リターゲティングセクションに表示されます。</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>VRM形式のモデルには、UniVRMによって実装された物理演算システムをエミュレートするカスタム調整された物理演算システムがあります。</span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>VRoidサンプルアバターのウェブサイト、またはSteamのVRoid StudioアプリケーションからのVRoidサンプルモデルに基づいて、インポートプロセスが開発、最適化されているため、VRoidのVRMモデルの仕様に準拠することが強く推奨されています。</span></p>
+<p dir="ltr"><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>VRMの技術仕様へのリンク: </span><a href="https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md"><span>https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md</span></a><span> </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>SteamのVRoid Studioへのリンク: </span><a href="https://store.steampowered.com/app/1486350/VRoid_Studio_v0121/"><span>https://store.steampowered.com/app/1486350/VRoid_Studio_v0121/</span></a><span> </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>VRoidサンプルモデルへのリンク: </span><a href="https://vroid.pixiv.help/hc/en-us/sections/360002889853--Sample-Models"><span>https://vroid.pixiv.help/hc/en-us/sections/360002889853--Sample-Models</span></a></p>
+</li>
+</ul>
+<p dir="ltr"><span><span></span></span></p>
+<p dir="ltr"><span>Animazeでは、VRMモデルでサポートされる機能のサブセットが実装されています。各セクションで詳細を確認してください。</span></p>
+<p dir="ltr"><iframe allowfullscreen="" frameborder="0" height="600" src="https://www.youtube.com/embed/_0btUrd310A" title="YouTube video player" width="600"></iframe></p>
+<p dir="ltr"><span id="docs-internal-guid-ce38f2e2-7fff-d0ab-f58d-f86bb4b355a1">ヒント:Blenderやその他のソフトウェアで、すでにある*.vrm/*.glbフォーマットのアバターを改変する必要がある場合（ヘッドホンやその他のアクセサリを追加）、それを最初にインポートした時と同じフォーマットでエクスポートしてください。特定のフォーマットに合う協定を考慮にいれてください。</span></p>
+<div><span><br/></span></div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animazeの.VRMモデル技術説明書        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="index.html">
+                    .VRM全般の手順                </a>
+</li>
+<li>
+<a href="../vrmgeometryjp/index.html">
+                    形状/マテリアル/テクスチャー                </a>
+</li>
+<li>
+<a href="../jpnvrmanimations/index.html">
+                    アニメーションとリターゲティング                </a>
+</li>
+<li>
+<a href="../vrmphysicsjp/index.html">
+                    物理演算                </a>
+</li>
+<li>
+<a href="../vrmperfectsyncjp/index.html">
+                    パーフェクトシンク機能を.VRM形式のアバターに追加するためのガイド                </a>
+</li>
+<li>
+<a href="../vrmimportjp/index.html">
+                    VRMモデルをAnimazeにインポートする方法                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

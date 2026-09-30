@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Desktop: How to use Leap Motion Hand Sensors with Live2D avatars? &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1> Animaze Desktop: How to use Leap Motion Hand Sensors with Live2D avatars?</h1>
+<div class="aw-faq-search">
+
+</div><div class="aw-page-container">
+<p></p><p><span><span></span></span></p>
+<p dir="ltr">Making your Live2D avatar compatible with Ultraleap’s Leap Motion Controller is not for the faint of heart. As neither Live2D nor Ultraleap designed their product with the other in mind, it takes patience and tuning to make the two systems harmonize. Luckily, if this is too much for you to take on alone, there is a fantastic community of Live2D artists that you can commission to update your Live2D avatar rig. You can find an artist to work <a href="https://www.animaze.us/suggested-artists" target="_blank">with here</a>.</p>
+<p>OK, for those who have not been scared off. Good on you! This guide aims to give you the building blocks by walking you through the process using the <a href="https://www.live2d.com/en/download/sample-data/">free-to-download sample Hiyori Momose</a>. </p>
+<h2 dir="ltr"><span>Step 1: Increasing your avatar’s arms range of motion in Live2D’s Cubism Editor </span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Before you can get started connecting your avatar to an Ultraleap controller, you need to make sure that your avatar’s arms and hands support movement.</span></p>
+<p dir="ltr"><span>Because most streamers only use face tracking, it is likely that your avatar was not built with this capability in mind and will need to be updated. </span></p>
+<p dir="ltr"><span>Increasing your avatar’s range of motion begins in Live2D’s Cubism editor. </span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Install the Cubism Editor here: </span><a href="https://www.live2d.com/en/"><span>https://www.live2d.com/en/</span></a><span> </span></p>
+<p dir="ltr">Live2D has all sorts of great tutorials, which you can find <a href="https://docs.live2d.com/cubism-editor-tutorials/deformer/?locale=en_us" target="_blank">here</a></p>
+<p dir="ltr"><span>Once you have rigged your Live2D model, it’s time to move over to the Animaze Editor.</span></p>
+<h2 dir="ltr"><span>Step 2: Import your Live2D avatar into the Animaze Editor</span></h2>
+<h2><span><span></span></span></h2>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Open the Animaze Editor from your Steam Library.  Select </span><span>Tools </span><span>from the pull-down menu and click on </span><span>Animaze Editor.</span><span> </span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Open the Animaze Editor from your Steam Library.  Select Tools from the pull-down menu and click on Animaze Editor. " height="318" src="../../../assets/images/unnamed-14957955.gif" title="Import your Live2D avatar" width="480"/></span></span><span>.</span></p>
+<p><span><span></span></span></p>
+<ol start="2">
+<li dir="ltr">
+<p dir="ltr"><span>In the </span><span>Assets </span><span>menu, select </span><span>Import L2D Avatar. </span><span>Find your avatar JSON file and click </span><span>Open</span><span>.</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="In the Assets menu, select Import L2D Avatar. Find your avatar JSON file and click Open." height="320" src="../../../assets/images/unnamed_1_-fffc2ab0.gif" title="Import your Live2D avatar" width="480"/></span></span></p>
+<h2 dir="ltr"><span>Step 3: Acquaint yourself with your Avatars Parameters </span></h2>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>For a full list of Animaze Parameters see this post: </span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>On the right-hand side, in the </span><span>Editor Menu</span><span>, expand the Live2D options.</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Acquaint yourself with your Avatars Parameters " height="334" src="../../../assets/images/unnamed_2_-2049ede0.gif" title="Editor Menu" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="2">
+<li dir="ltr">
+<p dir="ltr"><span>Scroll down to the</span><span> Parameter Debugger </span><span>and expand.</span></p>
+</li>
+</ol>
+<p dir="ltr"><span><span><img alt="Scroll down to the Parameter Debugger and expand." height="336" src="../../../assets/images/unnamed_3_-987a6521.gif" title="Get used to the Parameters " width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="3">
+<li dir="ltr">
+<p dir="ltr"><span>Find the parameters that are labeled ParamArmLA and ParamArmRA. </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Play around with the sliders. The sliders give you a sense of the range of motion the avatar supports. (Changing that range of motion happens in the Cubism Editor).</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Play around with the sliders. The sliders give you a sense of the range of motion the avatar supports. (Changing that range of motion happens in the Cubism Editor)." height="336" src="../../../assets/images/unnamed_3_-987a6521.gif" title="Leap Motion for Live2D" width="480"/></span></span></p>
+<h2 dir="ltr"><span>Step 4: Add Retargeting Overrides</span></h2>
+<h2><span><span></span></span></h2>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>Start by clicking </span><span>Retargeting Overrides</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Start by clicking Retargeting Overrides" height="334" src="../../../assets/images/unnamed_6_-0726f29f.gif" title="Retargeting Overrides" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="2">
+<li dir="ltr">
+<p dir="ltr"><span>Click  </span><span>Add Override</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Start by clicking Retargeting Overrides" height="334" src="../../../assets/images/unnamed_6_-0726f29f.gif" title="Retargeting Overrides" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="3">
+<li dir="ltr">
+<p dir="ltr"><span>Select </span><span>ParamArmLA </span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Start by clicking Retargeting Overrides" height="334" src="../../../assets/images/unnamed_8_-966fb3da.gif" title="Retargeting Overrides" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="4">
+<li dir="ltr">
+<p dir="ltr"><span>Click on </span><span>Add Input</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Select HandL_LR (NOTE there are a myriad of relevant inputs you can add. Experiment with the inputs to get best results)</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span class="Apple-tab-span"> </span></span><span><span><img height="334" src="../../../assets/images/pOrBfk7mS5WuNhKS1qghfCpsecsfXPsORBiYj7wWfManbq4Is0YH6xh3X6bVNT5U8qi7ybJrOSukq0NOs2Bjq1e4Uh2ofDaJrNS-FVMeS8ZVT8MrSGvAJgrrjynFC-JDD5_B-Evy_s0-a05a3200.gif" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="6">
+<li dir="ltr">
+<p dir="ltr"><span>Repeat the process with ParamArmRA and HandR inputs.</span></p>
+</li>
+</ol>
+<h2 dir="ltr"><span>Step 5: Check your progress so far</span></h2>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span>On the left-hand hierarchy panel, right-click the model name and press save.</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>To export from the Editor, right-click and select </span><span>Bundle</span><span>. Select where you want the export to save. </span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Retargeting Overrides" height="270" src="../../../assets/images/unnamed_9_-7840b72d.gif" title="Retargeting Overrides" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="3">
+<li dir="ltr">
+<p dir="ltr"><span>Open Animaze</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>In the avatar drawer, click on the plus sign and select your avatar.</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Retargeting Overrides" height="296" src="../../../assets/images/unnamed_10_-98d5dffe.gif" title="Retargeting Overrides" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<ol start="5">
+<li dir="ltr">
+<p dir="ltr"><span>Connect your Leap Motion controller by going to advance configurations&gt; select tracker and Leap Motion</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Turn the feed so you can see what the tracker is picking up (more on how to best use the Leap Motion Controller in this FAQ: https://www.animaze.us/faq/animazedesktop/ultraleap)</span></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img alt="Retargeting Overrides" height="312" src="../../../assets/images/giphy_1_-10d259a6.gif" title="Retargeting Overrides" width="480"/></span></span></p>
+<p dir="ltr"><span><span><img alt="Retargeting Overrides" height="428" src="../../../assets/images/giphy-95faed00.gif" title="Retargeting Overrides" width="480"/></span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Wooo! The hands are moving. But you might notice the range of motion isn’t QUITE what you hoped. This is where the fun/ sweet agony of tuning begins. Back to Cubism editor for some refinements :) </span></p>
+<p><span id="docs-internal-guid-60a91cc2-7fff-b486-b662-d6cd2a815120"><br/><br/><br/><br/></span></p>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

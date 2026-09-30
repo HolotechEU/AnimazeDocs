@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Editor Workflow &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animaze Editor Workflow </h1>
+<div class="aw-page-container">
+<p></p><p>The Animaze Editor Workflow can be split into two directions. <b>Firstly</b><span style="text-decoration: underline;">,</span> is adding and importing external 3D models, with current support only for .fbx format. Soon the Animaze Editor will also support the .VRM format.</p>
+<p><b>Secondly</b>, is customizing and creating resources from within the editor, which include the materials editing, level editing, props editing, scale editing, particle systems, sounds, physics <span style="text-decoration: underline;">(coming in future releases)</span> etc. </p>
+<p></p>
+<p><b><span style="font-size: medium;">Model Importing</span> </b></p>
+<p>Importing a 3D or 2D model (.fbx format) creates an Animaze friendly resource that's ready to use at runtime by Animaze SDK powered applications (including 1st party Holotech Studios apps and 3rd parties). </p>
+<p>The selected source files (models and textures) are copied to the Assets/ folder of the Editor (find it at &lt;AnimazeEditorInstallationDir&gt;\Data\Assets\), then they go through the import process which outputs Animaze resources placed in the Resources/ folder. </p>
+<p>The VRM format import is currently an in progress feature and we will provide more information on the process soon.</p>
+<p>A small summary: </p>
+<p>• <strong>Assets/ </strong>folder contains the sources of the imported avatars and props </p>
+<p>• <strong>Resources/</strong> folder contains the runtime ready versions of the imported avatars and props, with each item having a separate folder. </p>
+<p>The current import process has some rules and limitations: </p>
+<p>1. Animaze expects the current files and folders structure for an item (avatar/prop): </p>
+<p>• <b>Animations</b>/ → folder with .fbx animations (single clip per file) </p>
+<p>• <b>Textures</b>/ → folder with textures </p>
+<p>• <b>itemGeometry.fbx</b> → geometry file named as desired. </p>
+<p><b>Note!</b> The Geometry file should contain only geometry and blendshapes info, as skeletal animation data is ignored. </p>
+<p> </p>
+<p>2. Once an item is imported, if you want to re import it you need to delete the following files from the item's Resources/ folder: </p>
+<p>• *.model file from the root of the item's folder – this is the case for all reimports </p>
+<p>• *.anim and *.animtree files from Animations/ folder of the item's folder – if you want to  re-import animations. You can also delete specific files if you need to re-import specific animations </p>
+<p>• *.mesh files from the Meshes/ folder of the item's folder – if you want to re-import geometry </p>
+<p>• *.skel file from Skeleton/ folder of the item's folder – if there are changes to the skeleton of the geometry </p>
+<p>• *.ktx files from Textures/ folder of the item's folder – if you want to re-import the texture files </p>
+<p><b>Pro Tip!</b> Once an avatar is imported, you can adjust its textures/animations/geometry from the Assets/ folder. Animaze Editor will automatically see the change and prompt you to re-import the asset so you can preview it as fast as possible. This works only when Animaze Editor is running, while when it’s not running, will not be automatically reimported. Also, see below how re-importing single-files works.</p>
+<p></p>
+<p><span style="font-size: medium;"><b>Re-importing Assets </b></span></p>
+<p>Re-importing single files, such as a texture or a modified animation is quite simple. In animaze Editor, select the Import type you need, uncheck the .fbx source of the item, then select whichever file you need to reimport, be it textures or animation clips.</p>
+<p><img alt="Avatar Editor | Rig Your Own Avatar with Animaze" height="610" src="../../../assets/images/reimport_singlefile-ac27fb23.gif" title="Avatar Editor | Rig Your Own Avatar with Animaze" width="1000"/></p>
+<p></p>
+<p>To use the re-imported texture select the needed mesh in the Hierarchy Panel, click on the texture box and then select it from the Texture Picker. It will automatically be converted to .ktx format and placed into the Resource/Avatar’s folder.</p>
+<p><img alt="Avatar Editor " height="533" src="../../../assets/images/replace_texture_1-4a92d87e.gif" title="Avatar Editor Know How" width="1000"/></p>
+<p><strong><span style="font-size: medium;">Skybox Importing </span></strong></p>
+<p>The Animaze Editor currently supports importing <strong>*.hdr</strong> for the skybox and environment mapping textures. </p>
+<p> </p>
+<p><span style="font-size: medium;"><strong>Skybox 2D Importing</strong></span></p>
+<p>The Animaze Editor also supports creating a skybox with a 2D backdrop and environment mapping textures. You can import a <strong>*.hdr</strong> for the skybox itself and a <strong>.bmp</strong>, <strong>.tga</strong>, <strong>.png</strong> and <strong>.jpg</strong> backdrop image. In addition, you can import a Live2D model (*.model3.json) as a background image to get an animated 2D effect.</p>
+<p> </p>
+<p><span style="font-size: medium;"><strong>Resource Creation </strong></span></p>
+<p>Some Animaze resources cannot be imported, but can be created within the editor itself:  </p>
+<ul>
+<li>Particle Systems </li>
+<li>3D Scenes </li>
+<li>Sound sources  </li>
+<li>Emotes </li>
+<li>Background with overlays</li>
+<li>Customized lights setup </li>
+</ul>
+<p></p>
+<p></p>
+<p><span style="font-size: medium;"><strong>Scene management</strong></span></p>
+<p>Animaze Editor has a simplified scene manager that is more focused around the avatar, although powerful enough to implement a full 3D scene with props, lighting setup, particle systems, skybox etc. </p>
+<p> </p>
+<p>Items in Animaze Editor can be placed in two places in the Hierarchy Panel: </p>
+<p>➢ either Free Items, where they can be edited like in any model viewer and editor </p>
+<p>➢ either part of a Scene (called Default Scene), which makes all transform values (position, orientation and scale) be relative to the scene and also loads them every time the scene is loaded, if previously saved, same as a game level. </p>
+<p> </p>
+<p>Avatars are not saved in a scene, even if they are attached at runtime, when saved to disk they will be removed. Use <strong>Spawn Locations</strong> as hints for the system to place the Avatar at a desired location in the Scene. </p>
+<p></p>
+<p><span style="font-size: medium;"><b>Idle Types for 2D and 3D avatars</b></span></p>
+<p>The Animaze SDK supports multiple idle animations for either 2D or 3D avatars with the option of changing between animations at runtime. The Animaze Editor allows changing the idle types of an avatar, which can then be saved and bundled (optionally) into a new <strong>*.avatar</strong> file so the animations can be used in Animaze Desktop too.</p>
+<p><b><br/></b></p>
+<p><span style="font-size: small;"><b>Adding idle animations for 2D Avatars </b></span></p>
+<p>In the Animaze Editor, idle Animations can be found in the <strong>Editor Panel</strong>. Having selected the avatar in the <strong>Hierarchy Panel</strong>, in the right panels we can see the <strong>Idle Animations</strong> option, along with Special Actions and Special Poses.</p>
+<p><i>Note that bundled avatars cannot have their animations modified.</i></p>
+<p><img alt="Avatar Editor" height="427" src="../../../assets/images/idleanim1-acbabe66.png" title="Avatar Editor Know How" width="800"/></p>
+<p></p>
+<p>When configuring idle animations we can either add, remove or reorder existing ones. We can reorder the animations in the same configuration window where we’re adding or removing them. Playing with the <strong>Move up</strong> and <strong>Move down</strong> options will reflect this.</p>
+<p><img alt="Avatar Editor" height="428" src="../../../assets/images/idleanim2-94edf92a.png" title="Avatar Editor Know How" width="800"/></p>
+<p></p>
+<p>For a 2D avatar, adding an animation simply means selecting a <strong>*.motion3.json</strong> file.</p>
+<p><img alt="Avatar Editor" height="306" src="../../../assets/images/idleanim3-e312d159.png" title="Avatar Editor Know How" width="500"/></p>
+<p></p>
+<p>Once the first idle animation is added, you will already see your avatar being animated by it when activating it. By default, without any user selection, the animation system will use the first configured idle animation. This means that if we were to add a second idle animation, the first one would still be playing since new animations get added to the back of the list.</p>
+<p>It’s important to note that Live2D avatars also have what’s called the “Idle“ motion group. The animations in this group, if present, will take precedence over any other idle animations. This means that they’ll be added to the idle animations list first (and the first one will be played).</p>
+<p>Finally, we simply have to save our changes (to write these settings to the files on the disk) by right-clicking our avatar in the <strong>Hierarchy Panel</strong> and click on <strong>Save Item</strong> (alternatively we also can bundle the avatar into a <strong>*.avatar</strong> file).</p>
+<p><img alt="Avatar Editor" height="362" src="../../../assets/images/idleanim4-d5db4083.png" title="Avatar Editor Know How" width="300"/></p>
+<p></p>
+<p></p>
+<p><b><span style="font-size: small;">Adding idle animations for 3D Avatars</span> </b></p>
+<p>The workflow is exactly the same for 3D avatars as it is for 2D avatars, except that there is not “Idle“ motion group for 3D avatars. The first animation in the list will be played.</p>
+<p> </p>
+<p><b>Idle types in Animaze Desktop</b> </p>
+<p>In Animaze Desktop, idle animations can be used from the Idles tab in the Animations drawer.</p>
+<p><img alt="Avatar Editor" height="715" src="../../../assets/images/idleanim5-d2ddcb6b.png" title="Avatar Editor Know How" width="800"/></p>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Editor User Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../abouteditor/index.html">
+                    About the Animaze Editor                </a>
+</li>
+<li>
+<a href="../steameditor/index.html">
+                    Steam Install Process                </a>
+</li>
+<li>
+<a href="index.html">
+                    Animaze Editor Workflow                 </a>
+</li>
+<li>
+<a href="../topbarmenu/index.html">
+                    Top Bar Menu                </a>
+</li>
+<li>
+<a href="../cameranavigationkeys/index.html">
+                    Camera Navigation Keys                </a>
+</li>
+<li>
+<a href="../mainpanels/index.html">
+                    Main Panels                </a>
+</li>
+<li>
+<a href="../editormaterialcomponents/index.html">
+                    Material Components                </a>
+</li>
+<li>
+<a href="../animazeeditorenvironment/index.html">
+                    Environment Properties                 </a>
+</li>
+<li>
+<a href="../animazephysics/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../editorretargetingoverrides/index.html">
+                    Editor Retargeting Overrides                </a>
+</li>
+<li>
+<a href="../emotes/index.html">
+                    How to add animated Emotes                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

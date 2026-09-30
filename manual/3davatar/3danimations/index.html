@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animations &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Animations</h1>
+<div class="aw-page-container">
+<p></p><p>Animations should be <span style="text-decoration: underline;">exported in .fbx format, in the \Animations folder of the avatar.</span></p>
+<p>As a rule, the <strong>geometry must be</strong> <strong>exported together with the skeleton</strong> in the geometry <strong>*.fbx</strong> file of the model, placed outside of the Textures and Animations folders (AvatarLily.fbx in the example below). In all the other animations, the geometry is not needed.</p>
+<p><img alt="Folder structure" height="116" src="../../../assets/images/fbx_lily-8544797e.png" title="Rig Your Own Avatar with Animaze" width="290"/></p>
+<p>If the model contains Blendshapes, then they must be exported in the geometry <strong>*.fbx</strong> file, as well. So, when importing your model in Animaze Editor, if they have been named according to our <a href="../../animationappendix/blendshapeanimations/index.html">Animation Appendix</a>, the system will create a Blendshape folder for them, as below.</p>
+<p><span style="text-decoration: underline;"><img alt="Folder structure" height="251" src="../../../assets/images/fbx_lily_blendshape-3ff8658c.png" title="Rig Your Own Avatar with Animaze" width="290"/></span></p>
+<p></p>
+<p><span style="text-decoration: underline;"></span></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><strong>All base animation must be exported with animation keys on ALL bones. The base animations that we use are:</strong></span></p>
+<p><span><span></span></span></p>
+<ul>
+<li><strong>idle1</strong>- is the base animation in which the avatar has micro movements and breathes, the arms are near the body
+
+<ul>
+<li><strong>idlePose</strong> - this is the first frame key from <strong>idle1</strong> animation. All other animations are built starting from this pose.</li>
+</ul>
+</li>
+<li>
+<p><strong>MouthOpen</strong> - starts from idle pose animation. The last frame of this animation is the base for all other mouth open animations.<strong></strong></p>
+</li>
+<li>
+<p><strong>MouthOpen_TongueOut</strong><strong></strong></p>
+</li>
+<li>
+<p><strong>MouthClosed_TongueOut</strong></p>
+</li>
+<li>
+<p><b>Tpose - </b>animation used in full-body tracking</p>
+</li>
+</ul>
+<div></div>
+<div>
+<p><strong>Mind that all the base animations must be exported with the whole skeleton (pic below, avatarLily’s skeleton), while all the other animations must be exported only with the bones that are moving (have animation keys).</strong></p>
+<p><strong><img alt="Avatar skeleton" height="398" src="../../../assets/images/Lily_full_skel_export_in_all_base_anims-9b7a82a0.png" title="Rig Your Own Avatar with Animaze" width="420"/></strong></p>
+</div>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span><br/></span></p>
+<p dir="ltr"><span>When you are creating the animations, try to exaggerate expressions, because tracking will never do 100% of the animation. All the animations must be export selected, linear animations (a nonlinear animation - meaning that the animation is playing in different paces when enabled - could interfere with the tracking and cause issues).   </span></p>
+<p dir="ltr"><span>Before exporting the animation, you should reduce the middle bones to 50%, else they will double transform in AnimazeEditor for each side of the animation, left &amp; right.</span></p>
+<p dir="ltr"><span><br/></span></p>
+<p dir="ltr"><span style="font-size: medium;"><strong>There are 2 ways to animate the character:</strong></span></p>
+<p><span><span></span></span></p>
+<ol>
+<li dir="ltr">
+<p dir="ltr"><span><strong>Pure-joint based animations</strong> – all animations use the skeleton bones</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><strong>A combination of joint-based animations with blendshapes animations</strong></p>
+</li>
+</ol>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span><br/></span></h3>
+<h3 dir="ltr"><span>1 Skeletal Animation (all joint based)</span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>This technique is represented in two parts: a surface representation used to draw the character (called skin or mesh) and a hierarchical set of interconnected bones (called the skeleton or rig) used to animate (pose and keyframe) the mesh.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Each bone has a three-dimensional transformation from the default bind pose (which includes its position, scale and orientation), and an optional parent bone. The bones therefore form a hierarchy. The full transform of a child node is the product of its parent transform and its own transform.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Animaze uses what we call animation atomics retargeting method, which implies that all required animations need to modify or animate a specific (typically small) part of the avatar. All the tracked movement (from a facial tracker) is split into very simple motions, which are called atomics. Each atomic is driven separately and combined (in many cases additively) to build a complex expression.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>For instance, if you are making the frown animation for the left eyebrow, named </span><span>LeftEyebrow_D</span><span>, then the only bones moving in that animation should be the middle and inner bones of the left eyebrow, all the rest should have the same exact transformation of their base animation, which is idle1. Any offset in the additive animations brings a pose offset in Animaze. For example, if an eyebrow animation brings an offset to the neck, every time the avatar will move that eyebrow, it will also transform the neck.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span></span></p>
+<p></p>
+<p>First animation to be created should be idle1. From this animation, extract the first frame and export it in a *.fbx file together with the skeleton containing keys on every bone - this is now the idlePose. From this position on, create all the other animations, for example:</p>
+<p><span><strong>&gt;&gt;</strong></span> from <strong>idlePose</strong> position create the <strong>Avatar_F</strong> animation. In this animation the avatar bends forward, so only the bones that bend the avatar must contain animation keys.  Just these bones must be exported in this .fbx animation (”export selected” function in Maya).</p>
+<p dir="ltr"><span><img alt="Avatar skeleton" height="580" src="../../../assets/images/AvatarF_animation_export-c6c68588.png" title="Rig Your Own Avatar with Animaze" width="340"/></span></p>
+<p dir="ltr"><span><br/></span></p>
+<p><strong>&gt;&gt;</strong> another example is <strong>MouthOpen</strong> animation and the ones that emerge from it (MouthOpen_PursedLips etc). Likewise, the first frame in this animation is <strong>idlePose</strong>, while in the last frame (end of the animation), the avatar will open its mouth. As stated, being a base animation, it will have to be exported with the whole skeleton.</p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span>Basically, all additive animations have as base animation <strong>idle1</strong> animation, or to be precise, they take reference the last percentage of that animation (<strong>idlePose</strong>).<br/></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span style="font-size: small;"><strong>There are some exceptions to this rule:</strong></span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Animation for tongue while the tongue is sticking out. These are based on </span><strong>MouthOpen_TongueOut</strong><span>, which is also added on <strong>idle1</strong> animation. These animations are: </span><strong>MouthOpen_TongueOut_LR and MouthOpen_TongueOut_UD.</strong></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Animation for tongue while only the tip of the tongue is out: </span><strong>MouthClosed_TongueOut</strong><span> which is also added on <strong>idle1</strong> animation. These animations are: </span><strong>MouthClosedTongueOut_LR, MouthClosed_TongueOut_UD.</strong></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span><br/></span></p>
+<p dir="ltr"><span>Animaze supports some procedural animations that need reference bones in the skeleton. One of these animations is the </span><span>“<strong>look-at-</strong></span><span>”</span><span> </span><span>function, that makes the avatar gaze into the camera.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>This feature relies on the transformation of the BipHead</strong><span><strong> bone</strong>, needed in the skeletal hierarchy. It’s used to guide the axis and it will only be exported to basic geometry and animation <strong>idle1</strong>.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Procedural animation</span><span> techniques and actions are also used to substitute for lack or poor tracking of certain features and user movements:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Crossed eyes correction</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Lazy eye correction</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Look at camera behavior</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Orientate head to camera behavior</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Auto blinking behavior</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Avatar idle animation (we animate certain parts of certain avatars regardless of tracking input to make them feel more alive, like how Fluffo’s ears occasionally twitch)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Natural pupil behavior (small micro movements undetectable by current tracking technologies)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Triggerable special animations (puffed cheeks, tongue &amp; other custom animations e.g. fist bumps, waves, dances can be created and tied to key-presses)</span></p>
+</li>
+</ul>
+<h3 dir="ltr"><span><br/></span></h3>
+<h3 dir="ltr"><span>2 Joint-based animations combined with blendshape animations </span></h3>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>There are two use cases for this type of animations: </span></p>
+<p dir="ltr"><strong>2.1.  </strong><span><strong>Skeletal with corrective blendshape</strong> - </span><span>The animation is skeletal, while the blendshape is a completion for more details or a correction for undesired deformations, for example when the avatar lifts the arm and the geometry isn’t behaving as you’d want to.</span></p>
+<p dir="ltr"><strong>2.2.  </strong><span><strong>Skeletal with blendshape animation</strong> - </span><span>Keep a base rig for general movements (head, jaw, body movements), while the transformations are blendshape based only (smile, eyebrow up animations). </span></p>
+<p dir="ltr"><span>Check the Animaze animation </span><a href="../../animationappendix/index.html"><span>appendix</span></a><span>, it contains name conventions of skeletal animations, blendshape animations &amp; visemes.</span></p>
+<p dir="ltr"><span>The base animations (idle1, MouthOpen_TongueOut etc) can be created skeletal, while the body, head, eyes and the rest can be built with blendshapes (but it’s easier to keep it skeletal).</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Animaze doesn’t support inbetween blendshapes, but it supports skeletal animations with corrective blendshapes.</strong></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>You can build the animations on a single mesh. When importing the avatar in Animaze Editor, a blendshape that contains more than one material will be split into two separate materials. </span></p>
+<p><span><span><br/></span></span></p>
+<p dir="ltr"><span><span style="font-size: small;"><strong>Blendshapes</strong></span> are being imported bringing their positions, their normals and their tangent space. <br/></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span></span></p>
+<p>The equivalent of <strong>idle1</strong> animation for blendshape is <strong>NaturalPose</strong>. Over the natural pose you can start and build your morph targets, smile, mouth open etc.</p>
+<p dir="ltr"><span><br/></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>All additive blendshapes have as base <strong>NaturalPose</strong> blendshape, and the open/closed mouth blendshapes will be built as follows:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>these blendshapes are being built over </span><strong>NaturalPose &amp;  MouthOpen</strong><span> combined: <strong>MouthOpenLeft_U, MouthOpenRight_U, MouthOpenLeft_D, MouthOpenRight_D, MouthOpen_pursedLips_L, MouthOpen_pursedLips_Mid, MouthOpen_pursedLips_R, MouthOpenLeft_teethCovered_U, MouthOpenRight_teethCovered_U.</strong></span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>these are being built over </span><strong>NaturalPose &amp; MouthOpen_TongueOut</strong><span> combined: <strong>MouthOpen_TongueOut_L, MouthOpen_TongueOut_R, MouthOpen_TongueOut_U, MouthOpen_TongueOut_D.</strong></span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>these are being built over <strong>NaturalPose &amp; MouthClosed_TongueOut</strong> combined: <strong>MouthClosed_TongueOut_L, MouthClosed_TongueOut_R, MouthClosed_TongueOut_U, MouthClosed_TongueOut_D.</strong></span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>The equivalent of <strong>idle1</strong> animation for blendshape is </span><strong>NaturalPose</strong><span>. Over the natural pose you can start and build your morph targets, smile, mouth open etc.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>Here will be applied the same rules as the skeletal animation with base animations and additive animations, for example:</span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>you will build mouth closed smile over the NaturalPose</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>you will start to build over the MouthOpen - morph target MouthOpenLeft/Right_U or mouth open smile (basically you start to sculpt your blendshape over the mouth open bs, which is added over the natural pose).</span></p>
+</li>
+</ul>
+<p dir="ltr"><span><span><img height="66" src="../../../assets/images/BraQX95o4xvEl8_65DPGLhg3pM4uQp3oIjA-6tdS2KoKyhYp2UmAUznoTo07JeRmTkH-9MNUcvLyHscfe-_9qhgqdq6dGpFkOZXSI9k7y9s6ni_5lmhgnie6VErnDo4hTdGOtxNL-f3681eed.png" width="850"/></span></span></p>
+<p dir="ltr"><span>As stated before, before exporting the smile animation, you should reduce middle bones to 50%, else the middle bones will double transform in AnimazeEditor for each side of the animation, left &amp; right. See pic below:</span></p>
+<p dir="ltr"><span> </span><span><span><img height="603" src="../../../assets/images/8QoiBB-unxUwi5FjFFqo3cLSzfzfvyX0PcFpmWpKCu1QHT5zDvYrqzCD758Fw5-7sgMU0rK43m-Ztr9CpqyxbMXvgh7Q2JnebZEi2yHp5YWqYexdCFWW_rPvyO4lMyevabVMmer3-f091b160.png" width="550"/></span></span></p>
+<p dir="ltr"><span>To do this follow these steps: </span></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>add keys at frame 15 </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>delete at frame 30 </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>move animation keys from 15 to 30. </span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>And now we are ready to export the animation. Select the bones that are used to create the smile on the left side including middle bones and export it using the names from the <a href="../../animationappendix/index.html">Documentation</a>, in this case is: </span><span>MouthClosedLeft_U.fbx</span><span>.</span></p>
+<p dir="ltr"><span>After that you will select the right side with middle bones and do the same thing.</span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span><span><img height="438" src="../../../assets/images/Vh1jWK9E1A2FW_1D0A0fYUuUwLE3INnrS4Yza_dDj3YvS1WNsmPC3HEht-D-s0pmda8e7GTrhjP08Q2psjoLqEApY0Z4IPi0EmW8LsftQbLwee0n0HdU0n9B6WbHr9SFPgbe-yc0-a2ce748f.png" width="400"/></span></span><span> </span><span><span><img height="438" src="../../../assets/images/OHIyNp92V5MELpqkJ0U8WjxZv2cPMuNcJvtOC62mAZeqWEmSptA_sF1N1zsFUp-uIaLXLBR4Zb8-kYdDqQObwZ18bTtV6cveV89HIQrS968-Lf6CYGYXKMUNzgHlpA5OAIV40y3Y-9ef3edbf.png" width="400"/></span></span></p>
+<p><span><span></span></span></p>
+<p dir="ltr"><span>                                        <br/></span></p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<p>The flow to create the open mouth smiling animations is:</p>
+<p dir="ltr"><span></span></p>
+<p dir="ltr"><span></span></p>
+<ul>
+<li>start in idlePose</li>
+<li>create MouthOpen animation</li>
+<li>take the pose from last frame of MouthOpen animation (meaning idle1+MouthOpen)</li>
+<li>from this frame create MouthOpenLeft_U, MouthOpenLeft_D, MouthOpen_pursedLips_Mid, MouthOpenLeft_teethCovered_U etc.</li>
+</ul>
+<p dir="ltr"><span><br/></span></p>
+<p dir="ltr"><span>After you finish creating the blendshapes or animations, try to import 2 or 3 over each other to see how they will look combined in animaze app (for blendshapes, just activate more bs in the same time).</span></p>
+<p dir="ltr"><span>Below is a basic list of animations that combined result in 6 emotions. Use them as a guide and mind that they can be attained using other combinations as well:</span></p>
+<p dir="ltr"><strong>Happy</strong></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span> MouthOpenLeft/Right_U</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightEyeSquint </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Mouth_unveilledTeeth_U</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Surprise </strong></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>MouthOpen</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>MouthOpen_pursedLips_Mid  </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightEyeWideOpen </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightBrowUp</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Angry</strong></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>MouthOpen (partial)</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>MouthOpenLeft/Right_D</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightBrowDown</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Nose_U</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Mouth_unveilledTeeth_U</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightEyeClosed  (partial)</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Sad</strong></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightBrowSqueezeIn</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>MouthClosedLeft/Right_D</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Nose_D (partial)</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Disgust</strong></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightBrowDown</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Mouth_unveilledTeeth_D</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<p dir="ltr"><strong>Scared</strong></p>
+<p><span><span></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span>MouthOpen</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightEyeWideOpen </span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Left/RightBrowSqueezeIn</span></p>
+</li>
+<li dir="ltr">
+<p dir="ltr"><span>Nose_D</span></p>
+</li>
+</ul>
+<p><span><span></span></span></p>
+<h3 dir="ltr"><span></span></h3>
+<h3 dir="ltr"><span><br/></span></h3>
+<h3 dir="ltr"><span>Import your 3D avatar in Animaze Editor <br/></span></h3>
+<p dir="ltr"><span>After finishing all the process above, import your avatar in </span><a href="../../editorusermanual/index.html"><span>Animaze Editor</span></a><span> for debugging purposes, fine tuning and later upload it on Storefront, if you want to. Here is the </span><a href="../../gettingstarted3d/importavatar3d/index.html"><span>link </span></a><span> with the process flow for this import step. </span></p>
+<p><span><span></span></span></p>
+<div><span><br/></span></div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      FBX Format Model - Asset Pipeline Guide        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../steps3d/index.html">
+                    Steps in creating your own 3D avatar                </a>
+</li>
+<li>
+<a href="../generatefur/index.html">
+                    How to generate fur and fur mask                </a>
+</li>
+<li>
+<a href="../furdirection/index.html">
+                    How to set Fur direction and length                 </a>
+</li>
+<li>
+<a href="../3dconcept/index.html">
+                    Concept and High-Poly                </a>
+</li>
+<li>
+<a href="../3dretopology/index.html">
+                    Retopology                </a>
+</li>
+<li>
+<a href="../3duv/index.html">
+                    UV mapping                </a>
+</li>
+<li>
+<a href="../3drigging/index.html">
+                    Rigging                </a>
+</li>
+<li>
+<a href="../3dskinning/index.html">
+                    Skinning                </a>
+</li>
+<li>
+<a href="index.html">
+                    Animations                </a>
+</li>
+<li>
+<a href="../3dphysics/index.html">
+                    Physics system                </a>
+</li>
+<li>
+<a href="../3dtextures/index.html">
+                    Textures                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

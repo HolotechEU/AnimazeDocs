@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Material Components &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+
+
+
+
+
+<h1 class="manual-title">Material Components</h1>
+<div class="aw-page-container">
+<p></p><p></p>
+<p>Material components can be customized by the data fed within the Animaze Editor's Material Editor (changing the diffuse texture, setting a tint color etc.). All components that can be changed <strong><i>only</i> </strong>from the Animaze Editor are marked accordingly by (*).</p>
+<p>Selecting an item’s mesh in the <b>Hierarchy Panel</b>, will display the material properties and components in the <b>Editor Panel</b>.</p>
+<p><img alt="Avatar Editor Material Components" height="427" src="../../../assets/images/1c-45ac06aa.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p><b><i>Warning!</i></b></p>
+<p><i>There are currently two main restrictions regarding Materials in Animaze:</i></p>
+<ul>
+<li><i>The mesh can only feature a single material</i></li>
+<li><i>The mesh needs to be exported with a single UV set</i></li>
+</ul>
+<div></div>
+<p><b>The current AnimazeShader supports the following Material Components:</b></p>
+<p> <span style="font-size: large;"><b>Diffuse</b></span></p>
+<p>Applies diffuse color to the rendered surface based on a provided texture.</p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>diffuse texture – RGBA texture. The diffuse texture holds diffuse color info of the rendered surface stored in RGB channels. Alpha channel is used to specify transparency, 0 (black) areas for full transparency and towards 255 (white) surfaces get increasingly opaque.</li>
+</ul>
+<p><img alt="Avatar Editor Material Components" height="425" src="../../../assets/images/2c-e01e8d11.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><span style="font-size: large;"><b></b></span></p>
+<p><span style="font-size: large;"><b></b></span></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Tangent Space</b> <b>Normal Mapping</b></span></p>
+<p>Applies normal mapping to the rendered surface based on the provided texture. For the  best results, we recommend baking the normal map in a software that is compatible with Autodesk (i.e. Mudbox, Maya, Substance).</p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>normal map texture – RGB texture. The texture holds normal map info stored in Tangent (or texture) space.</li>
+<li>geometry exported with Normals info</li>
+</ul>
+<p>We recommend baking the normal map after exporting the .fbx file from the software you are working with, so that the UV maps do not get overwritten.</p>
+<p>The details present in normal maps are static: for now, they cannot be dynamically altered at run- time. If you want dynamic things like expression wrinkles that appear/disappear based on expression changes, don’t put them in the tangent space normal maps.</p>
+<p><img alt="Avatar Editor Material Components" height="426" src="../../../assets/images/3c-bea759b2.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Environment Mapping</b></span></p>
+<p>The AnimazeShader maps an environment texture (the Skybox) to the mesh surface. The Environment texture is provided by Animaze System, specifically the Skybox item cube texture.</p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>geometry exported with Normals info</li>
+<li>Specular Map Texture – RGBA texture. The Environment mapping uses the Green Channel from the Specular Map texture as an intensity factor; lower values make the surface unreflective, while higher values make the surface more reflective. The Green Channel can also be interpreted as metalness.</li>
+<li>(*) Environment Multiplier – float value. A multiplier that can boost the intensity of the environment reflected on the surface.</li>
+</ul>
+<p><img alt="Avatar Editor Material Components" height="424" src="../../../assets/images/4c-d966716c.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Skinning</b></span></p>
+<p>Animaze does all the skeletal animation skinning on the GPU. This component informs the Animaze system to add skeletal animation to the item in question.</p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>The geometry needs to hold skinning information. Vertex weights are capped to <b>4 influences.</b></li>
+</ul>
+<p>If there are more than 4, then the extra influences will be detected at import in Animaze Editor and will redistribute them automatically. This can lead to an unwanted edgy result of the geometry, so we recommend to limit the influences to 4 per vertex.</p>
+<p><img alt="Avatar Editor Material Components" height="426" src="../../../assets/images/5c-ec119ba7.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Lighting</b></span></p>
+<p>Adds lighting to the rendered model. Removing this component results in a pre-lit or unlit model that displays the diffuse texture (if the Diffuse component is added) without any shading changes.</p>
+<p><img alt="Avatar Editor Material Components" height="424" src="../../../assets/images/6c-e09fdf94.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p><b>The AnimazeShader supports a maximum of 4 lights of any type: directional or omni.</b></p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>geometry exported with Normals info</li>
+<li>geometry exported with Tangent or Binormal info</li>
+<li>Specular Map Texture – RGBA texture. The specular map uses two channels to customize the specular behavior on the surfaces.</li>
+<li><i>Red Channel</i> holds the specular exponent info (also known as shininess or glossiness), so it controls how blurry or sharp the specular shine is rendered. Higher values make the shine small and sharp, while lower values make the shine large and blurry.</li>
+<li><i>Green Channel</i> holds the specular intensity info, where 0 means no specular shine, while 255 is max shine intensity.</li>
+<li><i>Blue Channel</i> holds the emissive intensity information, lower the values, less emissive and more influenced by lighting, higher values, more emissive.</li>
+<li><i>Alpha Channel</i> is reserved for other components.</li>
+</ul>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Specular Mapping</b></span><b></b></p>
+<p>The specular mapping is a component that can fine control the specular reflection on a rendered surface.</p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>Specular Map texture – RGBA texture. The specular map uses two channels to customize the specular behavior on the surfaces:</li>
+</ul>
+<p><i>*<strong>Red channel</strong> </i>holds the specular exponent info (also known as shininess or glossiness), so it controls how blurry or sharp the specular shine is rendered:</p>
+<p>  - higher values make the shine small and sharp</p>
+<p>  - lower values make the shine large and blurry<i>   </i></p>
+<p><strong><i>*G</i><i>reen channel </i></strong>holds the specular intensity info:</p>
+<p>  - 0 means no specular shine</p>
+<p>  - 255 is max shine intensity</p>
+<p><img alt="Avatar Editor Material Components" height="425" src="../../../assets/images/7c-81491da7.png" title="Avatar Editor Material Components" width="800"/>`</p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Emissive – as part of Specular component</b></span></p>
+<p>Adds the emissive component to the surface shading. The Emissive just boosts up the diffuse color based on the specular map blue channel.</p>
+<p> <span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>Specular Map Texture – RGBA texture</li>
+</ul>
+<p><strong><em>*Blue Channel</em></strong> holds the emissive intensity information:</p>
+<p>  - lower the values &gt;&gt; less emissive and more influenced by lighting</p>
+<p>  - higher values &gt;&gt; more emissive</p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Bekmann Specular</b></span></p>
+<p>The Animaze shader provides two types of specular highlight models: the classic Blinn-Phong distribution and the Beckmann distribution. The Beckmann specular is used in combination with Subsurface Scattering and Translucency components, to better approximate how light refracts, scatters and reflects on the skin-like surfaces, but it is not limited to that.</p>
+<p><span style="text-decoration: underline;">Requirements:</span></p>
+<ul>
+<li>Roughness - float value - a parameter between 0 and 1 measuring the surface roughness. Small values are shinier, larger values are rougher.</li>
+</ul>
+<p><img height="424" src="../../../assets/images/bekman_spec-4554429b.png" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Translucency</b></span></p>
+<p>The translucency component simulates the light going through the shaded object. It is used in the shading of skin or skin-like materials in combination with Subsurface Scattering and Bekmann specular, to better approximate how light refracts, scatters and reflects on the surface.</p>
+<p><span style="text-decoration: underline;">Requirements:</span></p>
+<p>A map obtained either through bake process or manually painted.</p>
+<ul>
+<li>AO (ambient occlusion map) with inverted normals through baking (to obtain the thickness of the model) or manually painted</li>
+</ul>
+<p>  - white areas &gt; the light passes through easier</p>
+<p>  - dark areas &gt; the light passes through harder</p>
+<p><img alt="Avatar Editor Material Components" height="426" src="../../../assets/images/9c-ff54af96.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p><span style="font-size: large;"><b>Subsurface Scatering - SSS<br/></b></span></p>
+<p>Subsurface scattering is necessary for the rendering of materials such as skin and flesh.  If  subsurface scattering is not used, the material may look unnatural, like plastic or metal. This component works by simulating how light penetrates a translucent surface like a grape for instance, and is absorbed and scattered and exits the surface at a different location. When light rays are traveling and hit a surface there are many different things that occur all at once. Some of the light is going to be reflected off, giving specular light.</p>
+<p>However, with certain materials that have a level of translucency some of the light rays are actually going to be absorbed into the surface. Once inside, the light rays will scatter all around and exit the surface at different locations, providing subsurface scattering.</p>
+<p>The Animaze Shader is capable of emulating skin and flesh, for a more natural look of the model.</p>
+<p><span style="text-decoration: underline;">Requirements</span></p>
+<ul>
+<li>scatter texture RGB:</li>
+<ul>
+<li><i>Red channel </i>– range of sub surface scattering</li>
+<ul>
+<li>0 value is for no subsurface scattering</li>
+<li>255 max subsurface scattering. Should fade towards 0 on mapping seams and  on solid details such as piercings/jewelry.</li>
+</ul>
+<li><i>Green channel </i>– direct light attenuation</li>
+<ul>
+<li>0 means no direct light (only ambient and radiosity)</li>
+<li>255 full direct light intensity.</li>
+</ul>
+<li><i>Blue channel</i></li>
+<ul>
+<li><i>0 value means that the amount of light bounces right off, it does not pass through the surface</i></li>
+<li><i>255 max value means that the light scatters deep in the skin </i></li>
+</ul>
+</ul>
+</ul>
+<p>The value should fade towards 0 on mapping seams and on solid details such as piercings/jewelry. The UV maps must be unique within 0-1 range, and the materials mustn’t overlap.</p>
+<p> </p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Tint Color</b></span></p>
+<p>Material component that tints the rendered surface with a certain color.</p>
+<p><span style="text-decoration: underline;">Requirements</span>:</p>
+<ul>
+<li>(*) Tint Color RGBA, where RGB tints the surface and Alpha makes the surface transparent.</li>
+</ul>
+<p><img alt="Avatar Editor Material Components" height="425" src="../../../assets/images/10c-8ee4cbea.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Alpha Test</b></span></p>
+<p>This component discards any pixels under a certain alpha value. Alpha test is done just after computing the diffuse color.</p>
+<p><span style="text-decoration: underline;">Requirements:</span></p>
+<ul>
+<li> (*) Alpha Test reference value – float value</li>
+</ul>
+<p><img alt="Avatar Editor Material Components" height="426" src="../../../assets/images/11c-a5f9b418.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Fur</b></span></p>
+<p>The Fur component renders the model in layers, creating the effect of a furry surface; it can be attained for short fur effects only.</p>
+<p>The component makes use of the Normals and vertex color geometry info to compute a general fur direction, where the vertex Red and Green channels give the direction in the Tangent and Binormal space, and the Alpha channel is used as a factor for the fur length.</p>
+<p>Furthermore, a surface can have areas without any fur or with shorter fur. This aspect can be controlled using a fur texture mask.</p>
+<p>Other options that control the quality of the fur rendering are: fur length, number of fur layers and a global fur direction multiplier.</p>
+<p style="text-align: center;"><img height="73" src="../../../assets/images/fur_note-6abbdb9c.png" width="608"/></p>
+<p dir="ltr" style="line-height: 1.38; text-align: justify; margin-top: 9pt; margin-bottom: 9pt;"><span style="text-decoration: underline;"><span style="font-size: 9pt; font-family: Arial; color: #2f2f2f; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;"></span></span></p>
+<p data-pm-slice="1 3 []"><strong>Asset Requirements</strong></p>
+<ul class="ak-ul">
+<li>
+<p>geometry exported with Normals info</p>
+</li>
+<li>
+<p>geometry exported with Vertex Color info</p>
+<ul class="ak-ul">
+<li>
+<p><em>Red </em>and<em> Green Channel </em>represents a direction in Tangent and Binormal plane.</p>
+</li>
+<li>
+<p><em>Alpha Chanel</em> is a fur length factor</p>
+</li>
+</ul>
+</li>
+<li>
+<p>diffuse texture – RGBA texture</p>
+</li>
+<li>
+<p>Fur Mask</p>
+<ul class="ak-ul">
+<li>
+<p><em>Red channel controls the mix between normal specular and aniso specular</em></p>
+<ul class="ak-ul">
+<li>
+<p><em>0 is normal</em></p>
+</li>
+<li>
+<p><em>255 is specular</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Green channel is an additional layer alpha control. Alpha is the length, all lower value pixels are discarded, everything above will render at a calculated opacity, the green channel adds an additional transparency control.</em></p>
+</li>
+<li>
+<p><em>Blue channel is the fur aniso specular intensity</em></p>
+</li>
+<li>
+<p><em>Alpha Channel is used as fur length, controlling a smoother blend between fur areas (values closer to 255) and furless areas (values closer to 0) of the rendered surface.</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Material options</strong></p>
+<ul class="ak-ul">
+<li>
+<p>Fur Direction Multiplier - helps you with emphasizing or downplaying the Fur Direction in your Animaze fur materials.</p>
+<ul class="ak-ul">
+<li>
+<p>The fur direction is read from vertex color info, to compute a general fur direction. It is being expressed in Tangent Space. The Red and Green vertex color channel values are used to perceptually “bend” the fur on the Tangent and Binormal axis respectively.</p>
+</li>
+<li>
+<p>You can change the fur direction by changing the values in the red and green channels in the vertices’ color component, and then you can amplify or downplay this established direction via the numeric value of the fur direction multiplier (it can also be negative to go in the opposite way).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Fur Length - value expressed in model space scale, controls the maximum fur length. Smaller values (0.01 for a 0.7m avatar) will make the surface seem opaque, while going for larger values (1 for a 0.7m avatar, which means the fur length is 1 meter), will make the fur layers visible and debunks the fur effect.</p>
+</li>
+<li>
+<p>Fur Specular Gloss - fur specular gloss value</p>
+</li>
+<li>
+<p>Fur Opacity - controls a self-shadow component of the fur, the higher the value the darker the roots become.</p>
+</li>
+<li>
+<p>Mesh Layers - number of mesh layers determines the fuzziness of the fur rendering, a high number will make the surface seem very dense, while a low number will make the avatar look like it extrudes layers.</p>
+</li>
+<li>
+<p>Fur Mask</p>
+</li>
+<li>
+<p>Fur Mask Mipmap Bias - a way to control the texture mipmap, the default value will make the fur details (e.g. clumps) will lose the effect at reasonable camera-to-surface distances, using this option you can offset the effect much further when fur details are insignificant anyway.</p>
+</li>
+</ul>
+<div><img alt="Avatar Editor Material Components" height="425" src="../../../assets/images/12c-554ece6f.png" title="Avatar Editor Material Components" width="800"/></div>
+<div></div>
+<div></div>
+<div>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Mouth AO</b></span></p>
+<p>The AnimazeShader has a simplistic, yet performing way to deal with the ambient occlusion of the mouth in all avatars. Based on some animation inputs, the diffuse is tinted dark, when closing the mouth, and bright, when opening the mouth.</p>
+<p>The mouth interior usually has a different texture than the one outside of the mouth, therefore, at import, the Animaze system will identify the two materials and will break the mesh into two separate ones, each assigned with its own texture map.</p>
+<p>This shader component applies solely to avatars, because it needs animation inputs. It can be added in the Editor Panel by pushing the button <b>Add Component</b> &gt;&gt; Fake Mouth AO.</p>
+<p><span style="text-decoration: underline;">Requirements:</span></p>
+<ul>
+<li>Mouth AO Texture – RGB texture.</li>
+</ul>
+<ul>
+<li>The texture holds the minimum brightness value in the red channel for when the avatar’s mouth is fully closed.</li>
+<li>The green channel is reserved for mouth fully opened.</li>
+<li>Blue channel it’s used for the tongue. It only contains a gradient where the base is the dark side.</li>
+</ul>
+<p><img alt="Avatar Editor Material Components" height="425" src="../../../assets/images/12cc-be47b079.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Shadows</b></span></p>
+<p>In Animaze, the rendered surface can cast and receive shadows, each process being independent from each other.</p>
+<ul>
+<li>Casting shadows makes the rendered surface to be rendered through a shadow pass, building up a shadow map.</li>
+<li>Receiving shadows makes the AnimazeShader map the already rendered shadow map.</li>
+</ul>
+<p>All 3 numerical values are used to get rid of the shadow mapping artifacts.</p>
+<ul>
+<li><b>Slope bias factor</b> - scale factor that is used to create a variable depth offset for each polygon when rendering the shadow map</li>
+<li><b>Slope bias units</b> - constant depth offset when rendering the shadow map;</li>
+<li><b>Depth bias</b> - screen space value that is used to offset the object depth before comparing it to the shadow map value.</li>
+</ul>
+<p><img alt="Avatar Editor Material Components" height="427" src="../../../assets/images/14c-2e2274cc.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Z Bias </b></span></p>
+<p>Renders the surface with a depth (Z) bias.</p>
+<p><img alt="Avatar Editor Material Components" height="425" src="../../../assets/images/13c-2b8a7495.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Cubism animated texture - Diffuse, Normal, Specular</b></span></p>
+<p>Hybrid avatars use cubism textures, find out more about this type of avatars <a href="../../hybriddoc/index.html">here</a>.</p>
+<p>You can assign live2D models as textures, enabling you to animate the Diffuse, Normal and Specular components.</p>
+<p><img alt="Avatar Editor Material Components" height="425" src="../../../assets/images/15c-eb21f435.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Cel Shading</b></span></p>
+<p>Cel shading, or “toon shading”, is an intentional non-photorealistic rendering which is generally used to make 3d graphic content appear with flat colors. <b></b></p>
+<p>A common theme of cel-shading which gives it that effective cartoon animation look is the use of bold outlines.</p>
+<p><img height="213" src="../../../assets/images/image035-b15a2dc3.png" width="415"/></p>
+<p></p>
+<p>Cel shading is supported by two separate material components, the main difference being the amount of fine-tuning and detail control needed for a particular look:</p>
+<ul>
+<li><b><span style="text-decoration: underline;">Dual-tone cel-shading</span></b> that has a set of parameters to control Diffuse intensity, Specular highlights, and Edges.</li>
+<li><b><span style="text-decoration: underline;">Multi-tone cel-shading</span></b> that uses textures to control Diffuse intensity, Specular Highlights, and Edges in far more fine detail.</li>
+</ul>
+<p> </p>
+<p><b>Edge outline</b></p>
+<p>The Animaze shader implements two outline methods that can be used simultaneously:</p>
+<ol start="1">
+<li>Dot based edge detection - the edges of the same surface are darkened. This method uses the dot product between the surface normal and light direction and decides based on a threshold if a pixel is on the outline of the rendered mesh or not.</li>
+<li>Expanded shell / Outline shell - the darkened outline is rendered on the exterior of the surface</li>
+</ol>
+<p> </p>
+<p>Currently, both outline methods render a darkened outline, there is no support for tinted outlines.</p>
+<p><span style="font-size: medium;"><b>Cel shading (no textures) - Dual Tone Cel Shading</b></span></p>
+<ul>
+<li><b>i</b>t can be added in Animaze Editor as mesh component</li>
+</ul>
+<p><img height="218" src="../../../assets/images/image036-8d81fc2e.png" width="509"/></p>
+<p></p>
+<p>Diffuse Threshold - light intensity threshold that decides between applying 1st and 2nd tone diffuse intensities</p>
+<p><img height="225" src="../../../assets/images/image037-e1ddf520.png" width="624"/></p>
+<p></p>
+<p>Diffuse minimum value - 1st tone diffuse intensity value</p>
+<p><img height="211" src="../../../assets/images/image038-793ff7fd.png" width="624"/></p>
+<p></p>
+<p>Diffuse maximum value - 2nd tone diffuse intensity value</p>
+<p><img height="215" src="../../../assets/images/image039-4af64d0a.png" width="624"/></p>
+<p></p>
+<p>Specular Threshold - light intensity threshold that decides between applying 1st and 2nd tone specular intensities</p>
+<p><img height="229" src="../../../assets/images/image040-9afa8c53.png" width="624"/></p>
+<p></p>
+<p>Specular minimum value - 1st tone specular intensity value</p>
+<p><img height="231" src="../../../assets/images/image041-2317d672.png" width="624"/></p>
+<p></p>
+<p>Specular maximum value - 2nd tone specular intensity value</p>
+<p><img height="229" src="../../../assets/images/image042-95ba2ffd.png" width="624"/></p>
+<p></p>
+<p>Edge Threshold - threshold used by the dot-based edge detection method</p>
+<p><img height="211" src="../../../assets/images/image043-cd9dca64.png" width="624"/></p>
+<p></p>
+<p>Edge minimum value - the intensity of the surface that is not the edge (factorizes the diffuse and specular tones)</p>
+<p><img height="212" src="../../../assets/images/image044-d7b00393.png" width="624"/></p>
+<p></p>
+<p>Edge outline width -  used by the expanded shell/outline shell method. Controls the size of the outline. Currently, the edge is always black.</p>
+<p><img height="259" src="../../../assets/images/image045-4898bd04.png" width="624"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: medium;"><b>Cel shading w/ texture - Multi-tone cel-shading</b></span></p>
+<p>Multi-tone cel-shading enables a finer detail of the rendered surface through use of various textures, that control the intensities of the diffuse, specular tone, and dot-based edge detection.</p>
+<p><b><span style="text-decoration: underline;">Diffuse Tones Texture</span></b></p>
+<ul>
+<li>The grayscale texture that maps light intensity (u coordinate) to diffuse tone intensity (texel color).</li>
+</ul>
+<p><i>Texture used</i> <img height="24" src="../../../assets/images/image046-4b7a2115.png" width="350"/></p>
+<p><img height="240" src="../../../assets/images/image047-4961cafc.png" width="552"/></p>
+<p></p>
+<p><i>Texture used</i> <img height="26" src="../../../assets/images/image048-b3414dd0.png" width="375"/></p>
+<p><img height="235" src="../../../assets/images/image049-a988b251.png" width="546"/></p>
+<p></p>
+<ul>
+<li>Animaze shader samples a single row, so the size of the texture can be width x 1 pixel</li>
+<li>Supports fine details by choosing to build the texture with steps or gradients</li>
+</ul>
+<p></p>
+<p><i>Texture used</i> <img height="26" src="../../../assets/images/image050-ee3e2d93.png" width="376"/></p>
+<p><img height="235" src="../../../assets/images/image051-5e9da642.png" width="546"/></p>
+<p></p>
+<i>Texture used </i><img height="25" src="../../../assets/images/image052-2a1f4f75.png" width="359"/></div>
+<div></div>
+<div><img height="228" src="../../../assets/images/image053-c9038cda.png" width="534"/></div>
+<div></div>
+<div></div>
+<div>
+<p>For maximum cel-shading effect make sure to use point filtering on texture (by default Animaze imports textures with linear filtering)</p>
+<p><img height="558" src="../../../assets/images/image055-42c868ab.jpg" width="286"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><span style="text-decoration: underline;"><b>Specular Tones Texture</b></span></p>
+<p>The grayscale texture that maps light intensity (u coordinate) to specular highlight tone intensity (texel color).</p>
+<ul>
+<li>Animaze shader samples a single row, so the size of the texture can be width x 1 pixel</li>
+<li>Supports fine details by choosing to build the texture with steps or gradients</li>
+</ul>
+<p><i>Texture used</i> <img height="27" src="../../../assets/images/image057-0d230edd.png" width="391"/></p>
+<p><img height="269" src="../../../assets/images/image058-a268b8b3.png" width="624"/></p>
+<p></p>
+<p><i>Texture used</i> <img height="27" src="../../../assets/images/image059-ac51dc0c.png" width="389"/></p>
+<p><img height="269" src="../../../assets/images/image060-9da27f7a.png" width="624"/></p>
+<p></p>
+<p>For maximum cel-shading effect make sure to use point filtering on texture (by default Animaze imports textures with linear filtering).</p>
+<p><img height="484" src="../../../assets/images/image061-7c16cf3d.png" width="247"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><span style="text-decoration: underline;"><b>Edge Tones Texture</b></span> - used for the dot-based edge detection</p>
+<p>The grayscale texture that maps the dot product between surface normal and light direction (U coordinate) to edge tone intensity (texel color).</p>
+<p><i>Texture used</i> <img height="32" src="../../../assets/images/image062-ff4077bc.png" width="462"/></p>
+<p><img height="269" src="../../../assets/images/image063-106d65c7.png" width="624"/></p>
+<p></p>
+<ul>
+<li>Animaze shader samples a single row, so the size of the texture can be width x 1 pixel</li>
+<li>Supports fine details by choosing to build the texture with steps or gradients</li>
+</ul>
+<p><i>Texture used</i> <img height="25" src="../../../assets/images/image065-6d0bb52a.png" width="360"/></p>
+<p><img height="267" src="../../../assets/images/image066-7daaf6f9.png" width="624"/></p>
+<p></p>
+<p>For maximum cel-shading effect make sure to use point filtering on texture (by default Animaze imports textures with linear filtering).<b> </b></p>
+<p><b>Edge outline width</b><b> </b>- used by the expanded shell/outline shell method. Controls the size of the outline. Currently, the edge is always black.</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><b>Additional components can be added to a selected mesh in the Editor Panel:</b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Specular Normal Mapping</b></span> - an extra normal map used for reflection and specular, usually used for eyes meshes.</p>
+<p><img alt="Avatar Editor Material Components" height="426" src="../../../assets/images/16c-f983dfef.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Static Color</b></span> - a color component that overrides any other color texture on that mesh; usually useful for particle systems. </p>
+<p><b><br/></b></p>
+<p><span style="font-size: large;"><b>Texture Alterator</b></span> - basically a gradient color mask used for dilation of the pupil which can be fed by animation data. In order to attain this, you must have a unique mapping for the eye, placed in its center. The mask with full intensity (white) must have the size of the pupil, while the gradient from white to black must have the size of the iris. </p>
+<p><img alt="Avatar Editor Material Components" height="426" src="../../../assets/images/17c-def7e980.png" title="Avatar Editor Material Components" width="800"/></p>
+<p></p>
+<p></p>
+<p><b><br/></b></p>
+<p><b><br/></b></p>
+<h2 data-renderer-start-pos="42732" id="Customization-Maps"><strong data-renderer-mark="true"><span class="inline-highlight active-highlight" data-id="193b86da-0004-42dc-8f77-8b347a610ccb" data-mark-annotation-type="inlineComment">Customization Maps</span></strong><span class="heading-anchor-wrapper"></span></h2>
+<p data-renderer-start-pos="42752">Animaze supports 2 types of color customizations, and we are detailing them below:</p>
+<h3 data-renderer-start-pos="42836" id="Classic-color-customization"><strong data-renderer-mark="true">Classic color customization</strong><span class="heading-anchor-wrapper"></span></h3>
+<p data-renderer-start-pos="42865">Allows full color control. Uses two textures: a <strong data-renderer-mark="true">Customization mask </strong>and a <strong data-renderer-mark="true">Desaturated Diffuse </strong>(grayscale)<strong data-renderer-mark="true"> </strong>texture.</p>
+<p data-renderer-start-pos="42980">For example, for customizing the Crown King prop pictured below, which has the respective Diffuse texture, you will need to create:</p>
+<p data-renderer-start-pos="42980"><img alt="customization maps" height="202" src="../../../assets/images/image-20220812-154916-049c74f0.png" title="customization maps" width="300"/></p>
+<p data-renderer-start-pos="42980"><img alt="customization maps" height="254" src="https://cdn.animaze.us/media/wysiwyg/AnimazeTechnicalDocumentation/customisation_maps/image-20220812-160036.png%20" title="customization maps" width="255"/></p>
+<p data-renderer-start-pos="42980"></p>
+<ul>
+<li>a de<strong data-renderer-mark="true">saturated Diffuse</strong> texture - lighter in color because the colors from customization mask will be overlayed on this texture</li>
+</ul>
+<p data-renderer-start-pos="42980"><img alt="customization maps" height="263" src="../../../assets/images/cstmCK_1_-45371181.png" title="customization maps" width="257"/></p>
+<p data-renderer-start-pos="42980"></p>
+<ul>
+<li>a <strong data-renderer-mark="true">Custom mask RGBA texture</strong> with info on all channels - break the parts you want to color separately. The green part represents the green channel, red for the red channel, and blue for the blue channel.</li>
+</ul>
+<p data-renderer-start-pos="42980"><img alt="add customization" height="257" src="../../../assets/images/image-20220812-165043-3ad8d507.png" title="customization maps" width="255"/></p>
+<p data-renderer-start-pos="42980"></p>
+<p data-renderer-start-pos="42980">The next step is to add these customization maps to your item. Do so by following<strong data-renderer-mark="true"> </strong><a class="css-tgpl01" data-renderer-mark="true" href="../../gettingstarted3d/customizationoptions3d/index.html" title="https://www.animaze.us/manual/gettingstarted3d/customizationoptions3d"><strong data-renderer-mark="true">this tutorial.</strong></a></p>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"><br/></strong></p>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"><br/></strong></p>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"></strong></p>
+<h3 data-renderer-start-pos="43585" id="Hue-Shifter-color-customization--"><strong data-renderer-mark="true">Hue Shifter color customization</strong> -<span class="heading-anchor-wrapper"></span></h3>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"></strong></p>
+<p data-renderer-start-pos="43620">Obtain more details and color variation, with less control over individual colors.</p>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"></strong></p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="43706">uses only an RGBA texture</p>
+<ul class="ak-ul" data-indent-level="2">
+<li>
+<p data-renderer-start-pos="43735">the texture must contain a black alpha channel</p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"></strong></p>
+<p data-renderer-start-pos="43787">The hue shifter makes method use of a color average that you need to calculate from the diffuse texture. Here is how:</p>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"></strong></p>
+<ul class="ak-ul" data-indent-level="1">
+<li>
+<p data-renderer-start-pos="43908">open the diffuse texture in Photoshop </p>
+</li>
+<li>
+<p data-renderer-start-pos="43950">make a selection of each part from the customization mask on the RGB channels (in our case, the prop has the gold part and the jewels part)</p>
+</li>
+<li>
+<p data-renderer-start-pos="44093">go to FILTER &gt; BLUR &gt; AVERAGE</p>
+</li>
+</ul>
+<div><img alt="customization maps" height="301" src="../../../assets/images/XI57L6_1-54f5c7ea.PNG" title="customization maps" width="300"/></div>
+<div></div>
+<div><img alt="customization maps" height="300" src="../../../assets/images/eh-218e73d1.png" title="About customisation maps" width="300"/></div>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"><br/></strong></p>
+<p data-renderer-start-pos="42980">Select the color with color picker, afterwhich you need to copy the color code you obtain and add it in the Editor with prefix FF. See example below:</p>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"><img alt="add customization" height="376" src="https://cdn.animaze.us/media/wysiwyg/AnimazeTechnicalDocumentation/customisation_maps/unnamed.png%20" title="customization maps" width="500"/></strong></p>
+<p data-renderer-start-pos="42980"><strong data-renderer-mark="true"><br/></strong></p>
+<p data-renderer-start-pos="42980">The code above is used further in Animaze Editor, to be set in the Customization Options, for Color &amp; Average Color:</p>
+<p data-renderer-start-pos="42980"><img alt="add customization" height="424" src="../../../assets/images/004-a6014f96.png" title="About customisation maps" width="800"/></p>
+<p data-renderer-start-pos="42980"></p>
+<p data-renderer-start-pos="44412">In the example above, we selected the golden part of the crown to show how it needs to be done. The same procedure must be ran for the parts of the diffuse texture that contain the jewels.</p>
+<p data-renderer-start-pos="44602">Add the Hue Shifter customization through Animaze Editor, as shown <strong><a class="css-tgpl01" data-renderer-mark="true" href="../../gettingstarted3d/customizationoptions3d/index.html" title="https://www.animaze.us/manual/gettingstarted3d/customizationoptions3d">here</a></strong>.</p>
+</div>
+</div></div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Editor User Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../abouteditor/index.html">
+                    About the Animaze Editor                </a>
+</li>
+<li>
+<a href="../steameditor/index.html">
+                    Steam Install Process                </a>
+</li>
+<li>
+<a href="../editorworkflow/index.html">
+                    Animaze Editor Workflow                 </a>
+</li>
+<li>
+<a href="../topbarmenu/index.html">
+                    Top Bar Menu                </a>
+</li>
+<li>
+<a href="../cameranavigationkeys/index.html">
+                    Camera Navigation Keys                </a>
+</li>
+<li>
+<a href="../mainpanels/index.html">
+                    Main Panels                </a>
+</li>
+<li>
+<a href="index.html">
+                    Material Components                </a>
+</li>
+<li>
+<a href="../animazeeditorenvironment/index.html">
+                    Environment Properties                 </a>
+</li>
+<li>
+<a href="../animazephysics/index.html">
+                    Animaze Physics                </a>
+</li>
+<li>
+<a href="../editorretargetingoverrides/index.html">
+                    Editor Retargeting Overrides                </a>
+</li>
+<li>
+<a href="../emotes/index.html">
+                    How to add animated Emotes                </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>
