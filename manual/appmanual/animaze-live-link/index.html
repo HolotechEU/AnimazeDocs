@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animaze Live Link – Multi-Cam Tracker &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body class="page-layout-2columns-left">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+<h1 class="manual-title">Animaze Live Link – Multi-Cam Tracker</h1>
+<div class="aw-page-container">
+<h2>Introduction</h2><p>Starting with version 1.27.12778, Animaze supports additional external tracking options. These include the new <strong>Animaze Live Link</strong>, an internally developed web app for motion tracking built on Google MediaPipe.</p><p>Simply put, this app allows you to use your smartphone as a camera and tracking device for Animaze, and more. Not only smartphones, any sufficiently powerful device on your local network capable of running a modern web browser can serve as a tracking source. It offloads both video processing and motion tracking computations from your Animaze PC, using the secondary device's GPU for optimized, hardware-accelerated performance.</p><p>Animaze Live Link is accessible through any web browser at <a href="https://holotecheu.github.io/WebAnimazeLink/">WebAnimazeLink</a> .</p><p>You can also install it locally as a Progressive Web App (PWA) using your browser's install feature, allowing it to run without an active internet connection.</p><p>Animaze Live Link provides face tracking quality comparable to ARKit, but supports a much wider range of devices beyond iPhones—including Android smartphones, PCs, and Macs.</p><p>In addition to head and face tracking, it supports hand and body tracking (though using body and hand tracking increases setup complexity and may require adjusting settings for optimal performance).</p><h2>How to Use – Single Camera Mode</h2><p>Setup is similar to other external tracking apps, such as linking to the original Animaze iOS app via wifi. In the Animaze PC app, navigate to Select Trackers &gt; Animaze Link and toggle it on.</p><p><img alt="Animaze Link tracker panel in the Animaze PC app, switched on and showing Not Connected status and the PC IP address" src="../../../assets/images/animaze-live-link-1-5b30a767.png"/></p><p>Take note of the IP address displayed there. </p><p>Next, open a web browser on a device connected to the same local network as your Animaze PC, and navigate to <a href="https://holotecheu.github.io/WebAnimazeLink/">WebAnimazeLink</a> .</p><p><img alt="Animaze Live Link web app streaming, with the Data config options on the left and tracking points over the video" src="../../../assets/images/animaze-live-link-2-90c3a5c6.png"/></p><p>You may need to adjust browser permissions and settings to allow access to your camera (especially on a PC if you haven't used a webcam in that browser previously).</p><h3> Webcam Access</h3><p>On smartphones, setup is typically automatic. On PCs, some configuration may be required. </p><p>Ensure the browser has permission to access your webcam (check browser camera and security settings), and verify that the correct physical camera is selected in your browser's camera settings. </p><p>The camera selection option varies by browser and platform. For example, in Chrome on Windows, it is located on the left side of the address bar (the green camera icon).</p><p><img alt="Browser address bar showing the camera access indicator above the Data config options" src="../../../assets/images/animaze-live-link-3-77957ce6.png"/></p><p>In other browsers, this option may appear in a different location.</p><p>2. Confirm that camera access is not blocked by OS-level permissions or antivirus software.</p><p>Note that in Windows, only one application can access a physical webcam at a time by default. If the input video feed does not appear in the Animaze Link web app despite granting browser permissions, the webcam is likely being used by another application. </p><p>To resolve this, either close the application currently using the webcam, or configure Windows camera settings to allow multi-app access for that webcam. </p><p><img alt="Windows camera settings with Allow multiple apps to use camera at the same time turned on" src="../../../assets/images/animaze-live-link-4-a6a86339.png"/></p><p>How to Enable Multi-App Camera Access in Windows 11</p><ul><li>Open the Start menu and select Settings (or press Win + I).</li><li>Select Bluetooth &amp; devices from the left sidebar.</li><li>Click Cameras, then select your webcam from the list of available devices.</li><li>Scroll down to Advanced camera options and click Edit.</li><li>Enable Allow multiple apps to use the camera at the same time (you can also select your preferred media resolution here).</li><li>Click Apply to save your changes.</li></ul><h3>Network Configuration</h3><p>In the Animaze web app, navigate to the Settings tab (cogwheel icon). Enter the exact IP address that was displayed in the Animaze desktop application under the Animaze Link tracker section, then click Save. Ensure your firewall settings allow both devices to connect over the local network.</p><p>Assign a unique name to this tracking device (a unique name is required if you plan to use multiple tracking devices simultaneously for separate head, hand, or body tracking later on).</p><p>Adjust any additional settings as needed. </p><p><img alt="Settings tab of the Animaze Live Link web app with PC IP address, device name, resolution and frame rate" src="../../../assets/images/animaze-live-link-5-c4139fc7.png"/></p><p>Return to the "Data config" tab.</p><p>For a basic setup, select "Send face" (with hands and body disabled) and enable "Body from head" to approximate body movement based on head positioning.</p><p><img alt="Data config tab with Send face and Body from head enabled" src="../../../assets/images/animaze-live-link-6-fe938ba5.png"/></p><h3>Start motion data stream</h3><p>Click the green button at the bottom of the video feed. Once clicked, it will turn red, indicating that tracking data is streaming to the Animaze PC app and your avatar should begin moving. </p><p><img alt="Animaze Live Link video feed with the green start button at the bottom" src="../../../assets/images/animaze-live-link-7-ddd2c573.png"/></p><p>Animaze Link is now configured and active.</p><h2>How to Use – Multi-Camera Mode</h2><p>You can enable additional tracking modules, such as hand and body tracking, within the same app instance. However, optimal framing for face tracking (close-up) differs from the wider framing required for effective hand or body tracking.</p><p>For optimal motion capture, use separate cameras positioned appropriately: one close-up for face tracking, and another placed further back with a wider field of view for hand or body tracking.</p><p>With Animaze Live Link, each tracking element (head, hands, or body) can run in separate app instances across multiple devices. As long as the devices are on the same local network, use separate cameras, and have unique device names, the Animaze desktop host will combine their tracking streams seamlessly.</p><p>If your PC has sufficient processing capacity, you can also run up to three separate instances on the same system using three webcams across three browser tabs. Alternatively, you can use separate smartphones placed around the performer—for example, one dedicated to face tracking, another for hands, and a third for body tracking.</p><p>Note that some general tracking parameters can be adjusted in the web tracking app and more specific ones within the Advanced Tracking settings in the Animaze desktop interface. Fine-tuning settings in both locations may be required for optimal tracking performance.</p><p><strong>Pro Tip: High-Performance Tracking</strong></p><p>If your webcam supports 60 FPS or higher but browser tracking appears capped at 24 or 30 FPS, close all open browser windows and launch your browser with frame rate limits disabled.</p><p>For Google Chrome, launch the application using the following command-line flags: </p><p><em>chrome.exe --args --disable-gpu-vsync --disable-frame-rate-limit</em></p>
+</div>
+</div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Desktop Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../appintro/index.html">
+                    Introduction                </a>
+</li>
+<li>
+<a href="../avatars/index.html">
+                    Avatar Customization and Retexturing                </a>
+</li>
+<li>
+<a href="../appbackgrounds/index.html">
+                    Background types, importing and customization                </a>
+</li>
+<li>
+<a href="../appvoiceeffects/index.html">
+                    Voice Effects                </a>
+</li>
+<li>
+<a href="../appemotes/index.html">
+                    Emotes                </a>
+</li>
+<li>
+<a href="../appprops/index.html">
+                    Props types and customization                </a>
+</li>
+<li>
+<a href="../spout2/index.html">
+                    Using Spout2 sources in Animaze                </a>
+</li>
+<li>
+<a href="../appanimations/index.html">
+                    Avatar Animations and special actions                </a>
+</li>
+<li>
+<a href="../quickscenes/index.html">
+                    Quick Scenes                </a>
+</li>
+<li>
+<a href="../dedwind/index.html">
+                    Dedicated Capture Window                </a>
+</li>
+<li>
+<a href="../voicemod/index.html">
+                    Leveraging Voicemod controls in Animaze                </a>
+</li>
+<li>
+<a href="../virtualcam/index.html">
+                    Animaze Virtual Camera                </a>
+</li>
+<li>
+<a href="../import3dh/index.html">
+                    Importing 3D avatars and hybrid avatars                </a>
+</li>
+<li>
+<a href="../import2d/index.html">
+                    Importing 2D avatars                </a>
+</li>
+<li>
+<a href="../vrmimp/index.html">
+                    Importing .VRM avatars                </a>
+</li>
+<li>
+<a href="../importrpms/index.html">
+                    Importing Ready Player Me avatars                </a>
+</li>
+<li>
+<a href="../trackers/index.html">
+                    Select Trackers                </a>
+</li>
+<li>
+<a href="../livelinkface/index.html">
+                    Live Link Face - Tracker                </a>
+</li><li><a href="index.html">Animaze Live Link – Multi-Cam Tracker</a></li>
+<li>
+<a href="../iphonetrack/index.html">
+                    iPhone tracking                </a>
+</li>
+<li>
+<a href="../webcamtracker/index.html">
+                    Webcam Tracker                </a>
+</li>
+<li>
+<a href="../tobii/index.html">
+                    Tobii Eye tracker                </a>
+</li>
+<li>
+<a href="../ultra/index.html">
+                    Ultraleap tracker                </a>
+</li>
+<li>
+<a href="../audiosync/index.html">
+                    Audio Based Lip sync                </a>
+</li>
+<li>
+<a href="../advtrack/index.html">
+                    Advanced Tracking Configuration                </a>
+</li>
+<li>
+<a href="../maxine/index.html">
+                    Using (alpha) Maxine AR Face Tracking in Animaze                </a>
+</li>
+<li>
+<a href="../subs/index.html">
+                    Subscriptions                </a>
+</li>
+<li>
+<a href="../requir/index.html">
+                    Minimum Requirements for PCs                </a>
+</li>
+<li>
+<a href="../keybinds/index.html">
+                    Keybinds controls                </a>
+</li>
+<li>
+<a href="../optwebcam/index.html">
+                    Optimizing Web Camera Tracking with Camera Angle and Ambient Light                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -970,6 +970,11 @@
     "url": "manual/appmanual/advtrack/"
   },
   {
+    "content": "Animaze Live Link \u2013 Multi-Cam Tracker Introduction Starting with version 1.27.12778, Animaze supports additional external tracking options. These include the new Animaze Live Link , an internally developed web app for motion tracking built on Google MediaPipe. Simply put, this app allows you to use ",
+    "title": "Animaze Live Link \u2013 Multi-Cam Tracker",
+    "url": "manual/appmanual/animaze-live-link/"
+  },
+  {
     "content": "Avatar Animations and special actions Both 2D and 3D avatars have a set of animations and poses, triggerable by keypress (usually Q, W, E, R, T). Upon keypress, special animations will play. Once complete, the avatar returns to its neutral pose. Many avatars have a base set of special animations, su",
     "title": "Avatar Animations and special actions",
     "url": "manual/appmanual/appanimations/"
@@ -1038,6 +1043,11 @@
     "content": "Keybinds controls To customize your key binds, follow these steps: Go to the controls Menu , by clicking the settings button in the app From here, y browse all the presets and customize them to your liking. You can reset the hotkeys back to the default settings by clicking the reset button at the ve",
     "title": "Keybinds controls",
     "url": "manual/appmanual/keybinds/"
+  },
+  {
+    "content": "Live Link Face - Tracker Starting with version 1.27.12778, Animaze supports more external tracking options, including Unreal\u2019s Live Link Face App. Usage Make sure you have installed Live Link Face on your phone, and that both your Animaze PC and phone with the Live Link App are on the same local net",
+    "title": "Live Link Face - Tracker",
+    "url": "manual/appmanual/livelinkface/"
   },
   {
     "content": "Using (alpha) Maxine AR Face Tracking in Animaze Animaze has added support for Maxine AR SDK with Face & Shoulders Tracking capabilities. Integration is still alpha version so there are things missing from the normal embodiment experience and UX (e.g. advanced tracking configurations). There are two",

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Link Face - Tracker &middot; Animaze</title>
+  <!-- Original animaze.us theme CSS, preserved as-is (the content below is
+       the site's real, unmodified markup — .columns/.column/.article-list/
+       etc. — so its own stylesheets style it far more faithfully than a
+       hand-rolled replica could). Loaded before our own style.css so our
+       header/search/footer overrides still win where they overlap. -->
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-m.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-base-l.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-faq.css">
+  <link rel="stylesheet" href="../../../assets/css/animaze-manual.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="../../../assets/js/search.js" defer></script>
+</head>
+<body class="page-layout-2columns-left">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../../index.html">Animaze</a>
+      <div class="site-search">
+        <input
+          type="search"
+          id="site-search-input"
+          placeholder="Search FAQ &amp; manual..."
+          autocomplete="off"
+          data-search-url="../../../search.json">
+        <div id="site-search-results" class="search-results" hidden></div>
+      </div>
+      <nav>
+        <a href="../../../faq/index.html">FAQ</a>
+        <a href="../../../manual/index.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="page">
+      <div class="columns"><div class="column main">
+<h1 class="manual-title">Live Link Face - Tracker</h1>
+<div class="aw-page-container">
+<p>Starting with version 1.27.12778, Animaze supports more external tracking options, including Unreal’s <a href="https://apps.apple.com/us/app/live-link-face/id1495370836">Live Link Face</a> App.</p><h2>Usage</h2><p>Make sure you have installed <a href="https://apps.apple.com/us/app/live-link-face/id1495370836">Live Link Face</a> on your phone, and that both your Animaze PC and phone with the Live Link App are on the same local network.</p><p>Connections are supported over Wi-Fi or a wired network—USB cables are not supported.</p><p>If using Wifi, to avoid congestion, use a modern Wifi standard; the more recent, the better. </p><p>The experience is similar to Animaze’s own iOS app, except that Live Link Face does not transmit head positions, only head rotations and expressions.</p><p>You need to configure a few key settings in the Live Link app. </p><p>1. Go to Settings (cogwheel icon in the upper left-hand corner of the Live Link app) </p><p><img alt="Live Link Face app top bar with the Settings cogwheel icon at the upper left" src="../../../assets/images/livelinkface-1-79825883.png"/></p><p>2. Make sure “Capture” &gt;  “Mode” is set to “ARKit”</p><p><img alt="Live Link Face Settings screen with Capture &gt; Mode set to ARKit" src="../../../assets/images/livelinkface-2-978b198a.png"/></p><p>3. In the “Streaming” section, make sure you have defined your Animaze Live Link target.</p><p>In the Streaming section, select Live Link to configure your target. If none exists, tap Add Target and enter the IP address and port displayed in the Animaze PC UI (found in the PC Animaze app under Select Trackers &gt; Live Link Face - make sure it is toggled on).</p><p><img alt="Streaming section of the Live Link Face settings showing the Animaze Live Link target" src="../../../assets/images/livelinkface-3-910f8fa2.png"/></p><p>Set a name that you will remember under “Subject Name”.</p><p>Then set the local network IP address and port under “Targets”,  “Add Target”. Source the IP address and port info from the Animaze PC UI (Select Trackers &gt; Live Link Face; they will be visible after you toggle it on), and copy it over to the phone.</p><p><img alt="Live Link Face tracker panel in the Animaze PC app showing the target name, IP address and port" src="../../../assets/images/livelinkface-4-dac2f5f7.png"/></p><p>Configuration is now complete. Note that the IP address shown in the PC app is read-only; simply copy it over to your phone.</p><p>You can, however, change the default port number as you wish if the default one is already taken. Make sure the same value that you set on the PC is also in your phone.</p><p>Now, if you go to the main Live Link Face App and set the Animaze target that you just defined, as soon as you start data capture, if you are using the Animaze LiveLink Tracker in the PC version of Animaze and the IP address and port are correct, you should see the motion in Animaze on your PC as well.</p><p>Note: If you see no motion on your PC, make sure there are no local network firewalls or security rules blocking the connection between the two apps or devices.</p>
+</div>
+</div><div class="sidebar sidebar-main"><div class="article-list aw-page-container">
+<h3 class="category-name">
+      Animaze Desktop Manual        <i class="custom-arrow"></i>
+</h3>
+<ul class="aw-list-style">
+<li>
+<a href="../appintro/index.html">
+                    Introduction                </a>
+</li>
+<li>
+<a href="../avatars/index.html">
+                    Avatar Customization and Retexturing                </a>
+</li>
+<li>
+<a href="../appbackgrounds/index.html">
+                    Background types, importing and customization                </a>
+</li>
+<li>
+<a href="../appvoiceeffects/index.html">
+                    Voice Effects                </a>
+</li>
+<li>
+<a href="../appemotes/index.html">
+                    Emotes                </a>
+</li>
+<li>
+<a href="../appprops/index.html">
+                    Props types and customization                </a>
+</li>
+<li>
+<a href="../spout2/index.html">
+                    Using Spout2 sources in Animaze                </a>
+</li>
+<li>
+<a href="../appanimations/index.html">
+                    Avatar Animations and special actions                </a>
+</li>
+<li>
+<a href="../quickscenes/index.html">
+                    Quick Scenes                </a>
+</li>
+<li>
+<a href="../dedwind/index.html">
+                    Dedicated Capture Window                </a>
+</li>
+<li>
+<a href="../voicemod/index.html">
+                    Leveraging Voicemod controls in Animaze                </a>
+</li>
+<li>
+<a href="../virtualcam/index.html">
+                    Animaze Virtual Camera                </a>
+</li>
+<li>
+<a href="../import3dh/index.html">
+                    Importing 3D avatars and hybrid avatars                </a>
+</li>
+<li>
+<a href="../import2d/index.html">
+                    Importing 2D avatars                </a>
+</li>
+<li>
+<a href="../vrmimp/index.html">
+                    Importing .VRM avatars                </a>
+</li>
+<li>
+<a href="../importrpms/index.html">
+                    Importing Ready Player Me avatars                </a>
+</li>
+<li>
+<a href="../trackers/index.html">
+                    Select Trackers                </a>
+</li>
+<li>
+<a href="index.html">
+                    Live Link Face - Tracker                </a>
+</li>
+<li>
+<a href="../animaze-live-link/index.html">
+                    Animaze Live Link – Multi-Cam Tracker                </a>
+</li>
+<li>
+<a href="../iphonetrack/index.html">
+                    iPhone tracking                </a>
+</li>
+<li>
+<a href="../webcamtracker/index.html">
+                    Webcam Tracker                </a>
+</li>
+<li>
+<a href="../tobii/index.html">
+                    Tobii Eye tracker                </a>
+</li>
+<li>
+<a href="../ultra/index.html">
+                    Ultraleap tracker                </a>
+</li>
+<li>
+<a href="../audiosync/index.html">
+                    Audio Based Lip sync                </a>
+</li>
+<li>
+<a href="../advtrack/index.html">
+                    Advanced Tracking Configuration                </a>
+</li>
+<li>
+<a href="../maxine/index.html">
+                    Using (alpha) Maxine AR Face Tracking in Animaze                </a>
+</li>
+<li>
+<a href="../subs/index.html">
+                    Subscriptions                </a>
+</li>
+<li>
+<a href="../requir/index.html">
+                    Minimum Requirements for PCs                </a>
+</li>
+<li>
+<a href="../keybinds/index.html">
+                    Keybinds controls                </a>
+</li>
+<li>
+<a href="../optwebcam/index.html">
+                    Optimizing Web Camera Tracking with Camera Angle and Ambient Light                 </a>
+</li>
+</ul>
+</div>
+</div></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Content migrated from animaze.us.</p>
+    </div>
+  </footer>
+</body>
+</html>
